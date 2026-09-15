@@ -1,517 +1,388 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Laserworks Ideas | Products</title>
 
-  <meta
-    name="description"
-    content="Explore Laserworks Ideas personalised laser cut, engraving and custom products in Cyprus."
-  >
+  <meta name="description" content="Explore Laserworks Ideas personalised laser cut and engraved products in Limassol, Cyprus.">
 
   <link rel="stylesheet" href="style.css">
-
-  <style>
-
-    .category-page {
-      padding: 60px 0;
-      min-height: 70vh;
-    }
-
-    .category-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .category-title h1 {
-      margin: 0 0 10px;
-      font-size: 30px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-bottom: 30px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .back-link:hover {
-      color: #d00000;
-    }
-
-    .category-products {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .category-product {
-      border: 1px solid #ddd;
-      background: #fff;
-      overflow: hidden;
-    }
-
-    .category-product-image {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background: #f5f5f5;
-    }
-
-    .category-product-image img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    .category-product-info {
-      padding: 15px;
-    }
-
-    .category-product-info h3 {
-      margin: 0 0 8px;
-      font-size: 14px;
-    }
-
-    .category-product-info p {
-      margin: 0 0 8px;
-      font-size: 12px;
-      line-height: 1.5;
-      color: #666;
-    }
-
-    .category-product-info strong {
-      font-size: 10px;
-      letter-spacing: 1px;
-    }
-
-    .no-products {
-      text-align: center;
-      padding: 50px 20px;
-      color: #666;
-      font-size: 14px;
-    }
-
-    @media (max-width: 800px) {
-
-      .category-products {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-      }
-
-      .category-title h1 {
-        font-size: 24px;
-      }
-
-    }
-
-    @media (max-width: 480px) {
-
-      .category-products {
-        gap: 10px;
-      }
-
-      .category-product-info {
-        padding: 10px;
-      }
-
-      .category-product-info h3 {
-        font-size: 12px;
-      }
-
-      .category-product-info p {
-        font-size: 10px;
-      }
-
-    }
-
-  </style>
-
 </head>
-
 
 <body>
 
+  <!-- HEADER -->
+  <header class="site-header">
 
-<header class="site-header">
-
-  <div class="top-row">
-
-    <div class="container top-row-inner">
+    <div class="header-top">
 
       <a href="index.html" class="logo">
         LASERWORKS IDEAS
       </a>
 
-      <div class="top-links">
+      <div class="contact-top">
 
-        <a href="index.html#categories">
-          CATEGORIES
+        <span class="contact-title">CONTACT US</span>
+
+        <a href="mailto:Laserworksideas@gmail.com">
+          EMAIL
         </a>
 
-        <a href="index.html#contact">
-          CONTACT US
+        <a href="viber://chat?number=%2B35799303580">
+          VIBER
+        </a>
+
+        <a href="https://wa.me/35799303580" target="_blank">
+          WHATSUP
         </a>
 
       </div>
 
-      <button
-        class="menu"
-        onclick="toggleMenu()"
-      >
-        ☰
-      </button>
+    </div>
+
+
+    <nav class="main-nav">
+
+      <a href="index.html">HOME</a>
+
+      <a href="index.html#categories">CATEGORIES</a>
+
+      <a href="index.html#gallery">GALLERY</a>
+
+      <a href="index.html#about">ABOUT US</a>
+
+      <a href="index.html#contact">CONTACT</a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- CATEGORY -->
+  <main class="section category-page">
+
+    <div class="section-heading">
+
+      <h1 id="categoryTitle">PRODUCTS</h1>
+
+      <div class="red-line"></div>
 
     </div>
 
-  </div>
 
-
-  <div class="contact-links-row">
-
-    <div class="container contact-links-inner">
-
-      <a href="mailto:Laserworksideas@gmail.com">
-        EMAIL
-      </a>
-
-      <a
-        href="https://wa.me/35799303580"
-        target="_blank"
-      >
-        WHATSAPP
-      </a>
-
-      <a href="viber://chat?number=%2B35799303580">
-        VIBER
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <nav id="mainNav" class="main-nav">
-
-    <a href="index.html#categories">
-      CATEGORIES
-    </a>
-
-    <a href="index.html#gallery">
-      GALLERY
-    </a>
-
-    <a href="index.html#about">
-      ABOUT US
-    </a>
-
-    <a href="index.html#contact">
-      CONTACT US
-    </a>
-
-  </nav>
-
-</header>
-
-
-<section class="category-page">
-
-  <div class="container">
-
-    <a
-      href="index.html#categories"
-      class="back-link"
-    >
+    <a href="index.html#categories" class="back-button">
       ← BACK TO CATEGORIES
     </a>
 
 
-    <div class="category-title">
+    <div id="productsContainer" class="category-products"></div>
 
-      <h1 id="categoryTitle">
-        PRODUCTS
-      </h1>
-
-    </div>
+  </main>
 
 
-    <div
-      id="categoryProducts"
-      class="category-products"
-    ></div>
-
-  </div>
-
-</section>
-
-
-<footer class="site-footer">
-
-  <div class="container">
-
-    <p>© 2026 LASERWORKS IDEAS</p>
+  <!-- FOOTER -->
+  <footer>
 
     <p>
-      LASER CUT • ENGRAVING • DESIGN
+      © 2026 LASERWORKS IDEAS · LIMASSOL, CYPRUS
     </p>
 
-  </div>
+  </footer>
 
-</footer>
 
+  <script src="products.js"></script>
 
-<script src="products.js"></script>
+  <script>
 
+    const params = new URLSearchParams(window.location.search);
 
-<script>
+    const selectedCategory = params.get("category") || "";
 
-function toggleMenu() {
 
-  document
-    .getElementById("mainNav")
-    .classList.toggle("open");
+    const categoryTitle = document.getElementById("categoryTitle");
 
-}
+    const productsContainer =
+      document.getElementById("productsContainer");
 
 
-/* ================= CATEGORY ================= */
+    /*
+      The website uses the new customer-facing category names,
+      while products.js contains some of the older internal names.
+    */
 
-const params =
-  new URLSearchParams(window.location.search);
+    const categoryMap = {
 
-const requestedCategory =
-  params.get("category") || "PERSONALISED GIFTS";
+      "CHRISTENING": [
+        "CHRISTENING"
+      ],
 
+      "WEDDINGS": [
+        "WEDDING"
+      ],
 
-/*
-  Website category
-  -> existing products.js category
-*/
+      "CORPORATE": [
+        "CORPORATE GIFTS"
+      ],
 
-const categoryMap = {
+      "SEASONAL": [
+        "SEASONAL ITEMS"
+      ],
 
-  "CHRISTENING": "CHRISTENING",
+      "PERSONALISED GIFTS": [
+        "PERSONALISED GIFTS"
+      ],
 
-  "WEDDINGS": "WEDDING",
+      "INVITATIONS": [
+        "INVITATIONS"
+      ]
 
-  "CORPORATE": "CORPORATE GIFTS",
+    };
 
-  "SEASONAL": "SEASONAL ITEMS",
 
-  "PERSONALISED GIFTS": "PERSONALISED GIFTS",
+    function getProductsForCategory(category) {
 
-  "INVITATIONS": "INVITATIONS"
+      if (!Array.isArray(products)) {
+        return [];
+      }
 
-};
 
+      /* CHRISTENING */
+      if (category === "CHRISTENING") {
 
-const titleMap = {
+        return products.filter(product =>
+          String(product.category || "").toUpperCase() === "CHRISTENING"
+        );
 
-  "CHRISTENING": "CHRISTENING",
+      }
 
-  "WEDDINGS": "WEDDINGS",
 
-  "BIRTHDAYS": "BIRTHDAYS",
+      /* WEDDINGS */
+      if (category === "WEDDINGS") {
 
-  "CORPORATE": "CORPORATE",
+        return products.filter(product =>
+          String(product.category || "").toUpperCase() === "WEDDING"
+        );
 
-  "SCHOOLS": "SCHOOLS",
+      }
 
-  "SEASONAL": "SEASONAL",
 
-  "PERSONALISED GIFTS": "PERSONALISED GIFTS",
+      /* CORPORATE */
+      if (category === "CORPORATE") {
 
-  "INVITATIONS": "INVITATIONS"
+        return products.filter(product =>
+          String(product.category || "").toUpperCase() === "CORPORATE GIFTS"
+        );
 
-};
+      }
 
 
-/* ================= PRODUCTS ================= */
+      /* SEASONAL */
+      if (category === "SEASONAL") {
 
-function getProductsForCategory(category) {
+        return products.filter(product =>
+          String(product.category || "").toUpperCase() === "SEASONAL ITEMS"
+        );
 
-  /*
-    Existing categories from products.js
-  */
+      }
 
-  if (categoryMap[category]) {
 
-    return products.filter(function(product) {
+      /* PERSONALISED GIFTS */
+      if (category === "PERSONALISED GIFTS") {
 
-      return product.category === categoryMap[category];
+        return products.filter(product =>
+          String(product.category || "").toUpperCase() === "PERSONALISED GIFTS"
+        );
 
-    });
+      }
 
-  }
 
+      /* INVITATIONS */
+      if (category === "INVITATIONS") {
 
-  /*
-    BIRTHDAYS
+        return products.filter(product =>
+          String(product.category || "").toUpperCase() === "INVITATIONS"
+        );
 
-    Uses the birthday-related products
-    already present in products.js.
-  */
+      }
 
-  if (category === "BIRTHDAYS") {
 
-    return products.filter(function(product) {
+      /*
+        BIRTHDAYS:
+        Products related to birthday/cake decorations
+        from the existing product list.
+      */
 
-      return (
+      if (category === "BIRTHDAYS") {
 
-        product.name
-          .toLowerCase()
-          .includes("cake topper")
+        return products.filter(product => {
 
-        ||
+          const text = (
+            String(product.name || "") + " " +
+            String(product.description || "") + " " +
+            String(product.subcategory || "")
+          ).toLowerCase();
 
-        product.name
-          .toLowerCase()
-          .includes("cut out")
+          return (
+            text.includes("cake") ||
+            text.includes("birthday") ||
+            text.includes("topper")
+          );
 
-      );
+        });
 
-    });
+      }
 
-  }
 
+      /*
+        SCHOOLS:
+        Products from the existing list that are
+        associated with school / educational items.
+      */
 
-  /*
-    SCHOOLS
+      if (category === "SCHOOLS") {
 
-    Uses the school-related products
-    already present in products.js.
-  */
+        return products.filter(product => {
 
-  if (category === "SCHOOLS") {
+          const text = (
+            String(product.name || "") + " " +
+            String(product.description || "") + " " +
+            String(product.subcategory || "")
+          ).toLowerCase();
 
-    return products.filter(function(product) {
+          return (
+            text.includes("school") ||
+            text.includes("pencil") ||
+            text.includes("educational") ||
+            text.includes("bookmark")
+          );
 
-      return (
+        });
 
-        product.subcategory === "Pencil Cases"
+      }
 
-        ||
 
-        product.subcategory === "Educational"
+      return [];
 
-      );
+    }
 
-    });
 
-  }
+    function createProductCard(product) {
 
+      const card = document.createElement("article");
 
-  return [];
+      card.className = "product-card";
 
-}
 
+      if (product.image) {
 
-/* ================= DISPLAY ================= */
+        const image = document.createElement("img");
 
-function displayProducts() {
+        image.src = product.image;
 
-  const title =
-    titleMap[requestedCategory] ||
-    requestedCategory;
+        image.alt = product.name || "Laserworks Ideas product";
 
-  document.getElementById(
-    "categoryTitle"
-  ).textContent = title;
+        card.appendChild(image);
 
+      }
 
-  const container =
-    document.getElementById(
-      "categoryProducts"
-    );
 
+      const content = document.createElement("div");
 
-  const categoryProducts =
-    getProductsForCategory(
-      requestedCategory
-    );
+      content.className = "product-card-content";
 
 
-  if (!categoryProducts.length) {
+      const title = document.createElement("h3");
 
-    container.innerHTML = `
-      <div class="no-products">
-        Products for this category
-        will be added soon.
-      </div>
-    `;
+      title.textContent =
+        product.name || "Personalised Product";
 
-    return;
+      content.appendChild(title);
 
-  }
 
+      if (product.description) {
 
-  categoryProducts.forEach(function(product) {
+        const description =
+          document.createElement("p");
 
-    const image =
-      product.images &&
-      product.images.length
-        ? product.images[0]
-        : "";
+        description.textContent =
+          product.description;
 
+        content.appendChild(description);
 
-    const imageHTML = image
-      ? `<img src="${image}" alt="${product.name}">`
-      : "";
+      }
 
 
-    container.innerHTML += `
+      if (product.price) {
 
-      <article class="category-product">
+        const price =
+          document.createElement("p");
 
-        <div class="category-product-image">
+        price.className = "product-price";
 
-          ${imageHTML}
+        price.textContent =
+          product.price;
 
-        </div>
+        content.appendChild(price);
 
-        <div class="category-product-info">
+      }
 
-          <h3>
-            ${product.name}
-          </h3>
 
-          <p>
-            ${product.description}
+      card.appendChild(content);
+
+      return card;
+
+    }
+
+
+    function renderCategory() {
+
+      const displayTitle =
+        selectedCategory || "PRODUCTS";
+
+      categoryTitle.textContent =
+        displayTitle;
+
+
+      const categoryProducts =
+        getProductsForCategory(selectedCategory);
+
+
+      productsContainer.innerHTML = "";
+
+
+      if (categoryProducts.length === 0) {
+
+        productsContainer.innerHTML = `
+          <p style="
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 50px 20px;
+          ">
+            Products coming soon.
           </p>
+        `;
 
-          <strong>
-            ${product.price}
-          </strong>
+        return;
 
-        </div>
-
-      </article>
-
-    `;
-
-  });
-
-}
+      }
 
 
-displayProducts();
+      categoryProducts.forEach(product => {
 
-</script>
+        productsContainer.appendChild(
+          createProductCard(product)
+        );
 
+      });
+
+    }
+
+
+    renderCategory();
+
+  </script>
 
 </body>
-
 </html>
-```

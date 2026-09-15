@@ -16,215 +16,272 @@
      ===================================================== -->
 
 <header>
-  <div class="container header-inner">
+
+  <!-- TOP ROW: LOGO + CONTACT DETAILS -->
+  <div class="container header-top">
 
     <a href="#" class="logo">LASERWORKS IDEAS</a>
 
+    <div class="header-contact">
+
+      <a href="mailto:Laserworksideas@gmail.com">
+        EMAIL
+      </a>
+
+      <a href="https://wa.me/35799303580" target="_blank">
+        WHATSAPP
+      </a>
+
+      <a href="viber://chat?number=%2B35799303580">
+        VIBER
+      </a>
+
+    </div>
+
     <button class="menu" onclick="toggleMenu()">☰</button>
 
-    <nav id="mainNav">
+  </div>
 
-      <div class="nav-dropdown">
-        <button class="nav-drop-button" onclick="toggleDropdown(event, 'christeningMenu')">
-          CHRISTENING ▾
-        </button>
 
-        <div class="dropdown-menu" id="christeningMenu">
-          <button onclick="selectCategory('CHRISTENING', 'Hangers')">
-            Hangers
+  <!-- MENU ROW -->
+  <div class="header-menu">
+
+    <div class="container">
+
+      <nav id="mainNav">
+
+        <div class="nav-dropdown">
+
+          <button class="nav-drop-button" onclick="toggleDropdown(event, 'christeningMenu')">
+            CHRISTENING ▾
           </button>
 
-          <button onclick="selectCategory('CHRISTENING', 'Wish Books')">
-            Wish Books
-          </button>
+          <div class="dropdown-menu" id="christeningMenu">
 
-          <button onclick="selectCategory('CHRISTENING', 'Christening Accessories')">
-            Christening Accessories
-          </button>
+            <button onclick="selectCategory('CHRISTENING', 'Hangers')">
+              Hangers
+            </button>
 
-          <button onclick="selectCategory('CHRISTENING', 'Frames')">
-            Frames
-          </button>
-        </div>
-      </div>
+            <button onclick="selectCategory('CHRISTENING', 'Wish Books')">
+              Wish Books
+            </button>
 
+            <button onclick="selectCategory('CHRISTENING', 'Christening Accessories')">
+              Christening Accessories
+            </button>
 
-      <div class="nav-dropdown">
-        <button class="nav-drop-button" onclick="toggleDropdown(event, 'weddingMenu')">
-          WEDDING ▾
-        </button>
+            <button onclick="selectCategory('CHRISTENING', 'Frames')">
+              Frames
+            </button>
 
-        <div class="dropdown-menu" id="weddingMenu">
-
-          <button onclick="selectCategory('WEDDING', 'Hangers')">
-            Hangers
-          </button>
-
-          <button onclick="selectCategory('WEDDING', 'Wedding Signs')">
-            Wedding Signs
-          </button>
-
-          <button onclick="selectCategory('WEDDING', 'Wedding Favours')">
-            Wedding Favours
-          </button>
+          </div>
 
         </div>
-      </div>
 
 
-      <div class="nav-dropdown">
-        <button class="nav-drop-button" onclick="toggleDropdown(event, 'seasonalMenu')">
-          SEASONAL ITEMS ▾
-        </button>
+        <div class="nav-dropdown">
 
-        <div class="dropdown-menu" id="seasonalMenu">
-
-          <button onclick="selectCategory('SEASONAL ITEMS', 'Seasonal Gifts')">
-            Seasonal Gifts
+          <button class="nav-drop-button" onclick="toggleDropdown(event, 'weddingMenu')">
+            WEDDING ▾
           </button>
+
+          <div class="dropdown-menu" id="weddingMenu">
+
+            <button onclick="selectCategory('WEDDING', 'Hangers')">
+              Hangers
+            </button>
+
+            <button onclick="selectCategory('WEDDING', 'Wedding Signs')">
+              Wedding Signs
+            </button>
+
+            <button onclick="selectCategory('WEDDING', 'Wedding Favours')">
+              Wedding Favours
+            </button>
+
+          </div>
 
         </div>
-      </div>
 
 
-      <div class="nav-dropdown">
-        <button class="nav-drop-button" onclick="toggleDropdown(event, 'personalisedMenu')">
-          PERSONALISED GIFTS ▾
-        </button>
+        <div class="nav-dropdown">
 
-        <div class="dropdown-menu" id="personalisedMenu">
-
-          <button onclick="selectCategory('PERSONALISED GIFTS', 'Photo Gifts')">
-            Photo Gifts
+          <button class="nav-drop-button" onclick="toggleDropdown(event, 'seasonalMenu')">
+            SEASONAL ITEMS ▾
           </button>
 
-          <button onclick="selectCategory('PERSONALISED GIFTS', 'Frames')">
-            Frames
-          </button>
+          <div class="dropdown-menu" id="seasonalMenu">
 
-          <button onclick="selectCategory('PERSONALISED GIFTS', 'Name Decorations')">
-            Name Decorations
-          </button>
+            <button onclick="selectCategory('SEASONAL ITEMS', 'Seasonal Gifts')">
+              Seasonal Gifts
+            </button>
 
-          <button onclick="selectCategory('PERSONALISED GIFTS', 'Keychains')">
-            Keychains
-          </button>
-
-          <button onclick="selectCategory('PERSONALISED GIFTS', 'Acrylic Frames')">
-            Acrylic Frames
-          </button>
+          </div>
 
         </div>
-      </div>
 
 
-      <div class="nav-dropdown">
-        <button class="nav-drop-button" onclick="toggleDropdown(event, 'boxesMenu')">
-          BOXES ▾
-        </button>
+        <div class="nav-dropdown">
 
-        <div class="dropdown-menu" id="boxesMenu">
-
-          <button onclick="selectCategory('BOXES', 'Tea Boxes')">
-            Tea Boxes
+          <button class="nav-drop-button" onclick="toggleDropdown(event, 'personalisedMenu')">
+            PERSONALISED GIFTS ▾
           </button>
 
-          <button onclick="selectCategory('BOXES', 'Wine Boxes')">
-            Wine Boxes
-          </button>
+          <div class="dropdown-menu" id="personalisedMenu">
 
-          <button onclick="selectCategory('BOXES', 'Choice Boxes')">
-            Choice Boxes
-          </button>
+            <button onclick="selectCategory('PERSONALISED GIFTS', 'Photo Gifts')">
+              Photo Gifts
+            </button>
+
+            <button onclick="selectCategory('PERSONALISED GIFTS', 'Frames')">
+              Frames
+            </button>
+
+            <button onclick="selectCategory('PERSONALISED GIFTS', 'Name Decorations')">
+              Name Decorations
+            </button>
+
+            <button onclick="selectCategory('PERSONALISED GIFTS', 'Keychains')">
+              Keychains
+            </button>
+
+            <button onclick="selectCategory('PERSONALISED GIFTS', 'Acrylic Frames')">
+              Acrylic Frames
+            </button>
+
+          </div>
 
         </div>
-      </div>
 
 
-      <div class="nav-dropdown">
-        <button class="nav-drop-button" onclick="toggleDropdown(event, 'corporateMenu')">
-          CORPORATE GIFTS ▾
-        </button>
+        <div class="nav-dropdown">
 
-        <div class="dropdown-menu" id="corporateMenu">
-
-          <button onclick="selectCategory('CORPORATE GIFTS', 'Gift Boxes')">
-            Gift Boxes
+          <button class="nav-drop-button" onclick="toggleDropdown(event, 'boxesMenu')">
+            BOXES ▾
           </button>
 
+          <div class="dropdown-menu" id="boxesMenu">
+
+            <button onclick="selectCategory('BOXES', 'Tea Boxes')">
+              Tea Boxes
+            </button>
+
+            <button onclick="selectCategory('BOXES', 'Wine Boxes')">
+              Wine Boxes
+            </button>
+
+            <button onclick="selectCategory('BOXES', 'Choice Boxes')">
+              Choice Boxes
+            </button>
+
+          </div>
+
         </div>
-      </div>
 
 
-      <div class="nav-dropdown">
-        <button class="nav-drop-button" onclick="toggleDropdown(event, 'cutoutsMenu')">
-          CUSTOMISED CUT OUTS ▾
-        </button>
+        <div class="nav-dropdown">
 
-        <div class="dropdown-menu" id="cutoutsMenu">
-
-          <button onclick="selectCategory('CUSTOMISED CUT OUTS', 'Laser Cut Outs')">
-            Laser Cut Outs
+          <button class="nav-drop-button" onclick="toggleDropdown(event, 'corporateMenu')">
+            CORPORATE GIFTS ▾
           </button>
 
+          <div class="dropdown-menu" id="corporateMenu">
+
+            <button onclick="selectCategory('CORPORATE GIFTS', 'Gift Boxes')">
+              Gift Boxes
+            </button>
+
+          </div>
+
         </div>
-      </div>
 
 
-      <div class="nav-dropdown">
-        <button class="nav-drop-button" onclick="toggleDropdown(event, 'decorMenu')">
-          DECOR ▾
-        </button>
+        <div class="nav-dropdown">
 
-        <div class="dropdown-menu" id="decorMenu">
-
-          <button onclick="selectCategory('DECOR', 'Decorations')">
-            Decorations
+          <button class="nav-drop-button" onclick="toggleDropdown(event, 'cutoutsMenu')">
+            CUSTOMISED CUT OUTS ▾
           </button>
 
+          <div class="dropdown-menu" id="cutoutsMenu">
+
+            <button onclick="selectCategory('CUSTOMISED CUT OUTS', 'Laser Cut Outs')">
+              Laser Cut Outs
+            </button>
+
+          </div>
+
         </div>
-      </div>
 
 
-      <div class="nav-dropdown">
-        <button class="nav-drop-button" onclick="toggleDropdown(event, 'otherMenu')">
-          OTHER GIFTS ▾
-        </button>
+        <div class="nav-dropdown">
 
-        <div class="dropdown-menu" id="otherMenu">
-
-          <button onclick="selectCategory('OTHER GIFTS', 'Gift Ideas')">
-            Gift Ideas
+          <button class="nav-drop-button" onclick="toggleDropdown(event, 'decorMenu')">
+            DECOR ▾
           </button>
 
+          <div class="dropdown-menu" id="decorMenu">
+
+            <button onclick="selectCategory('DECOR', 'Decorations')">
+              Decorations
+            </button>
+
+          </div>
+
         </div>
-      </div>
 
 
-      <div class="nav-dropdown">
-        <button class="nav-drop-button" onclick="toggleDropdown(event, 'invitationsMenu')">
-          INVITATIONS ▾
-        </button>
+        <div class="nav-dropdown">
 
-        <div class="dropdown-menu" id="invitationsMenu">
-
-          <button onclick="selectCategory('INVITATIONS', 'Invitations')">
-            Invitations
+          <button class="nav-drop-button" onclick="toggleDropdown(event, 'otherMenu')">
+            OTHER GIFTS ▾
           </button>
 
+          <div class="dropdown-menu" id="otherMenu">
+
+            <button onclick="selectCategory('OTHER GIFTS', 'Gift Ideas')">
+              Gift Ideas
+            </button>
+
+          </div>
+
         </div>
-      </div>
 
 
-      <a href="#names">NAMES & MONOGRAMS</a>
+        <div class="nav-dropdown">
 
-      <a href="#about">ABOUT</a>
+          <button class="nav-drop-button" onclick="toggleDropdown(event, 'invitationsMenu')">
+            INVITATIONS ▾
+          </button>
 
-      <a href="#contact">CONTACT</a>
+          <div class="dropdown-menu" id="invitationsMenu">
 
-    </nav>
+            <button onclick="selectCategory('INVITATIONS', 'Invitations')">
+              Invitations
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <a href="#names">
+          NAMES & MONOGRAMS
+        </a>
+
+        <a href="#about">
+          ABOUT
+        </a>
+
+        <a href="#contact">
+          CONTACT
+        </a>
+
+      </nav>
+
+    </div>
 
   </div>
+
 </header>
 
 
@@ -267,14 +324,9 @@
 
     </div>
 
-
-    <!-- This stays hidden.
-         Categories are now in the TOP MENU. -->
-
     <div id="categoryButtons" style="display:none;"></div>
 
     <div id="subcategoryButtons" style="display:none;"></div>
-
 
     <div class="product-grid" id="productGrid"></div>
 
@@ -528,6 +580,10 @@
 
 
     <div class="contact-buttons">
+
+      <a href="mailto:Laserworksideas@gmail.com">
+        EMAIL
+      </a>
 
       <a href="https://wa.me/35799303580" target="_blank">
         WHATSAPP

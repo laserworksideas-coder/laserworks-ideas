@@ -1,8 +1,4 @@
-/* =========================================================
-   LASERWORKS IDEAS
-   WHITE / BLACK / RED
-   ========================================================= */
-
+```css
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,7 +13,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: #ffffff;
   color: #111111;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 a {
@@ -25,28 +21,22 @@ a {
   text-decoration: none;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-}
 
-
-/* =========================================================
+/* =========================
    HEADER
-   ========================================================= */
+========================= */
 
 .site-header {
   background: #ffffff;
-  border-bottom: 1px solid #111111;
+  border-bottom: 1px solid #dddddd;
   position: relative;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .header-top {
-  max-width: 1250px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 22px 35px 18px;
-
+  padding: 22px 35px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,133 +44,123 @@ img {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
-  letter-spacing: 1.5px;
-  color: #111111;
+  letter-spacing: 1px;
   white-space: nowrap;
 }
 
 .contact-top {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 18px;
+  gap: 22px;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.7px;
 }
 
 .contact-title {
-  color: #e00000;
+  font-size: 12px;
   font-weight: 800;
 }
 
-.contact-top a {
-  transition: color 0.2s ease;
+.contact-top a:hover,
+.main-nav a:hover {
+  color: #d71920;
 }
-
-.contact-top a:hover {
-  color: #e00000;
-}
-
-
-/* =========================================================
-   MAIN MENU
-   ========================================================= */
 
 .main-nav {
-  max-width: 1250px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 35px 18px;
-
+  padding: 0 35px;
+  min-height: 48px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 42px;
+  justify-content: center;
+  gap: 45px;
+  border-top: 1px solid #eeeeee;
 }
 
 .main-nav a {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
   color: #111111;
-  transition: color 0.2s ease;
-}
-
-.main-nav a:hover {
-  color: #e00000;
 }
 
 
-/* =========================================================
+/* =========================
    HERO
-   ========================================================= */
+========================= */
 
 .hero {
+  min-height: 480px;
   background: #000000;
   color: #ffffff;
-  min-height: 390px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-align: center;
-  padding: 65px 25px;
+  padding: 70px 25px;
 }
 
 .hero-content {
-  max-width: 850px;
-  margin: 0 auto;
+  max-width: 900px;
 }
 
 .hero h1 {
   font-size: 31px;
-  line-height: 1.25;
+  line-height: 1.35;
   font-weight: 800;
-  letter-spacing: 1.8px;
-  margin-bottom: 20px;
+  letter-spacing: 1.5px;
 }
 
 .hero p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #ffffff;
-  margin-bottom: 30px;
+  margin: 25px auto 30px;
+  font-size: 15px;
+  max-width: 650px;
 }
 
-.hero-button {
+
+/* =========================
+   BUTTON
+========================= */
+
+.red-button {
   display: inline-block;
-
-  background: #e00000;
+  background: #d71920;
   color: #ffffff;
-
-  padding: 13px 25px;
-
+  border: 2px solid #d71920;
+  padding: 13px 24px;
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 1px;
-
-  border: 1px solid #e00000;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
-.hero-button:hover {
+.red-button:hover {
   background: #ffffff;
-  color: #000000;
+  color: #d71920;
 }
 
 
-/* =========================================================
+/* =========================
    GENERAL SECTIONS
-   ========================================================= */
+========================= */
 
-.section {
-  max-width: 1250px;
+.categories-section,
+.gallery-section,
+.about-section {
+  max-width: 1400px;
   margin: 0 auto;
   padding: 80px 35px;
 }
@@ -191,380 +171,305 @@ img {
 }
 
 .section-heading h2 {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
 }
 
-.red-line {
-  width: 45px;
-  height: 3px;
-  background: #e00000;
-  margin: 13px auto 0;
+.section-heading p {
+  margin-top: 10px;
+  font-size: 14px;
 }
 
 
-/* =========================================================
+/* =========================
    CATEGORIES
-   ========================================================= */
-
-.categories-section {
-  background: #ffffff;
-}
+========================= */
 
 .category-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 28px;
 }
 
 .category-card {
   display: block;
   background: #ffffff;
-  border: 1px solid #dddddd;
-
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.category-card:hover {
-  transform: translateY(-4px);
-  border-color: #e00000;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
 }
 
 .category-card img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  display: block;
 }
 
 .category-card h3 {
-  text-align: center;
-  padding: 17px 10px;
-
+  padding: 16px 5px 5px;
   font-size: 14px;
   font-weight: 800;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.7px;
+}
+
+.category-card:hover h3 {
+  color: #d71920;
 }
 
 
-/* =========================================================
+/* =========================
    GALLERY
-   ========================================================= */
+========================= */
 
 .gallery-section {
-  background: #f7f7f7;
-  max-width: none;
-  padding-left: 35px;
-  padding-right: 35px;
+  overflow: hidden;
 }
 
-.gallery-section .section-heading {
-  max-width: 1180px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.gallery-wrapper {
-  max-width: 1180px;
-  margin: 0 auto;
-
+.gallery-slider {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 15px;
+  width: 100%;
 }
 
-.gallery-track-wrapper {
+.gallery-window {
+  width: 100%;
   overflow: hidden;
 }
 
 .gallery-track {
   display: flex;
-  gap: 18px;
-  transition: transform 0.45s ease;
-  overflow: hidden;
   width: 100%;
+  transition: transform 0.45s ease;
+  will-change: transform;
 }
 
-.gallery-track img {
-  flex: 0 0 calc((100% - 36px) / 3);
+.gallery-item {
+  flex: 0 0 33.333333%;
+  width: 33.333333%;
+  padding: 0 8px;
+}
 
-  width: calc((100% - 36px) / 3);
+.gallery-item img {
+  width: 100%;
   aspect-ratio: 1 / 1;
-
   object-fit: cover;
-  background: #ffffff;
+  display: block;
 }
 
 .gallery-arrow {
-  flex: 0 0 38px;
-
-  width: 38px;
-  height: 38px;
-
-  border: 1px solid #111111;
-  background: #ffffff;
-  color: #111111;
-
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: 0;
+  background: #000000;
+  color: #ffffff;
   font-size: 22px;
-  line-height: 1;
-
   cursor: pointer;
-
+  z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
 }
 
 .gallery-arrow:hover {
-  background: #e00000;
-  color: #ffffff;
-  border-color: #e00000;
+  background: #d71920;
+}
+
+.gallery-arrow:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.gallery-prev {
+  left: 5px;
+}
+
+.gallery-next {
+  right: 5px;
 }
 
 
-/* =========================================================
+/* =========================
    ABOUT
-   ========================================================= */
+========================= */
 
-.about-section {
-  background: #ffffff;
-}
-
-.about-content {
+.about-text {
   max-width: 900px;
   margin: 0 auto;
+  text-align: center;
 }
 
-.about-content p {
-  font-size: 15px;
-  margin-bottom: 20px;
+.about-text p {
+  font-size: 14px;
+  margin-bottom: 22px;
 }
 
 
-/* =========================================================
+/* =========================
    CONTACT
-   ========================================================= */
+========================= */
 
 .contact-section {
-  background: #111111;
+  background: #000000;
   color: #ffffff;
-  max-width: none;
-  padding-left: 35px;
-  padding-right: 35px;
-}
-
-.contact-section .section-heading h2 {
-  color: #ffffff;
+  padding: 70px 35px;
 }
 
 .contact-grid {
-  max-width: 1180px;
+  max-width: 1400px;
   margin: 0 auto;
-
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-}
-
-.map-container {
-  min-height: 520px;
+  grid-template-columns: 1.2fr 1fr 0.8fr;
+  gap: 45px;
 }
 
 .map-container iframe {
   width: 100%;
-  height: 100%;
-  min-height: 520px;
+  height: 350px;
   border: 0;
 }
 
+.contact-form-area h2,
 .contact-details h2 {
   font-size: 20px;
-  font-weight: 800;
   margin-bottom: 25px;
-  letter-spacing: 0.8px;
+  font-weight: 800;
 }
 
-.contact-details form {
+.contact-form-area form {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  margin-bottom: 45px;
 }
 
-.contact-details input,
-.contact-details textarea {
+.contact-form-area input,
+.contact-form-area textarea {
   width: 100%;
-
+  border: 1px solid #555555;
   background: #ffffff;
   color: #111111;
-
-  border: 1px solid #ffffff;
-
-  padding: 13px 14px;
-
+  padding: 13px;
   font-family: inherit;
-  font-size: 14px;
-
-  outline: none;
+  font-size: 13px;
 }
 
-.contact-details textarea {
+.contact-form-area textarea {
   resize: vertical;
 }
 
-.contact-details input:focus,
-.contact-details textarea:focus {
-  border-color: #e00000;
+.contact-details p {
+  font-size: 13px;
+  margin-bottom: 22px;
 }
 
-.contact-details button {
-  align-self: flex-start;
-
-  background: #e00000;
-  color: #ffffff;
-
-  border: 1px solid #e00000;
-
-  padding: 13px 25px;
-
-  font-size: 12px;
+.contact-details strong {
   font-weight: 800;
-  letter-spacing: 1px;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-.contact-details button:hover {
-  background: #ffffff;
-  color: #111111;
-}
-
-.contact-info {
-  border-top: 1px solid #444444;
-  padding-top: 30px;
-}
-
-.contact-info p {
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.contact-info strong {
-  color: #e00000;
-  font-size: 12px;
-  letter-spacing: 0.8px;
-}
-
-.contact-info a:hover {
-  color: #e00000;
 }
 
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-  background: #000000;
-  color: #ffffff;
-  text-align: center;
-
-  padding: 22px 20px;
-
-  font-size: 11px;
-  letter-spacing: 0.8px;
-}
-
-
-/* =========================================================
+/* =========================
    CATEGORY PAGE
-   ========================================================= */
+========================= */
 
 .category-page {
-  min-height: 70vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 75px 35px 90px;
 }
 
-.category-products {
+.category-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.category-heading h1 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.category-heading p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 35px 25px;
 }
 
 .product-card {
-  border: 1px solid #dddddd;
   background: #ffffff;
+  min-width: 0;
 }
 
 .product-card img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  display: block;
 }
 
-.product-card-content {
-  padding: 18px;
+.product-info {
+  padding: 14px 3px 0;
 }
 
-.product-card h3 {
+.product-info h2 {
   font-size: 15px;
   font-weight: 800;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
-.product-card p {
+.product-info p {
   font-size: 13px;
-  margin-bottom: 10px;
+  line-height: 1.45;
 }
 
 .product-price {
-  color: #e00000;
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
   font-weight: 800;
 }
 
-.back-button {
-  display: inline-block;
-
-  background: #000000;
-  color: #ffffff;
-
-  padding: 12px 22px;
-
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.8px;
-
-  margin-bottom: 35px;
+.no-products {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 70px 20px;
+  font-size: 15px;
 }
 
-.back-button:hover {
-  background: #e00000;
+.back-home {
+  text-align: center;
+  margin-top: 65px;
 }
 
 
-/* =========================================================
-   MOBILE MENU
-   ========================================================= */
+/* =========================
+   FOOTER
+========================= */
 
-.menu-toggle {
-  display: none;
+footer {
+  background: #ffffff;
+  color: #111111;
+  text-align: center;
+  padding: 22px;
+  border-top: 1px solid #dddddd;
+}
+
+footer p {
+  font-size: 11px;
+  letter-spacing: 0.5px;
 }
 
 
-/* =========================================================
+/* =========================
    TABLET
-   ========================================================= */
+========================= */
 
 @media (max-width: 1000px) {
 
@@ -572,141 +477,183 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .category-products {
-    grid-template-columns: repeat(2, 1fr);
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .contact-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
-  .map-container {
-    min-height: 400px;
+  .contact-details {
+    grid-column: 1 / -1;
   }
 
-  .map-container iframe {
-    min-height: 400px;
+  .gallery-item {
+    flex-basis: 50%;
+    width: 50%;
+  }
+
+  .main-nav {
+    gap: 25px;
   }
 
 }
 
 
-/* =========================================================
+/* =========================
    MOBILE
-   ========================================================= */
+========================= */
 
 @media (max-width: 700px) {
 
   .header-top {
     padding: 18px 20px;
-    flex-direction: column;
-    gap: 12px;
   }
 
   .logo {
-    font-size: 21px;
+    font-size: 18px;
   }
 
   .contact-top {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px 15px;
-    font-size: 10px;
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 
   .main-nav {
-    padding: 0 20px 18px;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 0;
+    border-top: 1px solid #dddddd;
+    background: #ffffff;
+  }
+
+  .main-nav.mobile-open {
+    display: flex;
   }
 
   .main-nav a {
-    font-size: 11px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #eeeeee;
+    text-align: center;
   }
 
   .hero {
-    min-height: 330px;
-    padding: 50px 20px;
+    min-height: 420px;
+    padding: 55px 20px;
   }
 
   .hero h1 {
     font-size: 25px;
-    letter-spacing: 1px;
   }
 
   .hero p {
     font-size: 14px;
   }
 
-  .section {
+  .categories-section,
+  .gallery-section,
+  .about-section {
     padding: 60px 20px;
-  }
-
-  .section-heading {
-    margin-bottom: 32px;
-  }
-
-  .section-heading h2 {
-    font-size: 24px;
   }
 
   .category-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 18px;
   }
 
   .category-card h3 {
-    font-size: 11px;
-    padding: 13px 5px;
+    font-size: 12px;
+    padding-top: 11px;
   }
 
-  .gallery-section {
-    padding-left: 15px;
-    padding-right: 15px;
+  .section-heading {
+    margin-bottom: 30px;
   }
 
-  .gallery-wrapper {
-    gap: 8px;
+  .section-heading h2 {
+    font-size: 23px;
   }
 
-  .gallery-track {
-    gap: 10px;
-  }
-
-  .gallery-track img {
-    flex: 0 0 100%;
+  .gallery-item {
+    flex-basis: 100%;
     width: 100%;
+    padding: 0 4px;
   }
 
   .gallery-arrow {
-    flex: 0 0 32px;
-    width: 32px;
-    height: 32px;
-    font-size: 18px;
+    width: 38px;
+    height: 38px;
   }
 
-  .category-products {
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+  .gallery-prev {
+    left: 4px;
+  }
+
+  .gallery-next {
+    right: 4px;
   }
 
   .contact-section {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 55px 20px;
   }
 
   .contact-grid {
+    grid-template-columns: 1fr;
     gap: 35px;
+  }
+
+  .contact-details {
+    grid-column: auto;
+  }
+
+  .map-container iframe {
+    height: 300px;
+  }
+
+  .category-page {
+    padding: 55px 20px 70px;
+  }
+
+  .category-heading {
+    margin-bottom: 35px;
+  }
+
+  .category-heading h1 {
+    font-size: 24px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 15px;
+  }
+
+  .product-info h2 {
+    font-size: 13px;
+  }
+
+  .product-info p {
+    font-size: 12px;
   }
 
 }
 
 
-/* =========================================================
+/* =========================
    SMALL PHONES
-   ========================================================= */
+========================= */
 
-@media (max-width: 480px) {
+@media (max-width: 420px) {
+
+  .logo {
+    font-size: 16px;
+  }
 
   .hero h1 {
     font-size: 22px;
@@ -716,17 +663,17 @@ footer {
     font-size: 13px;
   }
 
-  .hero-button {
-    padding: 11px 17px;
-    font-size: 10px;
-  }
-
   .category-grid {
-    gap: 10px;
+    gap: 12px;
   }
 
-  .category-products {
-    grid-template-columns: 1fr;
+  .category-card h3 {
+    font-size: 11px;
+  }
+
+  .product-grid {
+    gap: 20px 10px;
   }
 
 }
+```

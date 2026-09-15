@@ -1,3 +1,33 @@
+/* =====================================================
+   LASERWORKS IDEAS
+   EDIT HERE - EASY FONT SETTINGS
+   ===================================================== */
+
+:root {
+
+  /* ✏️ CHANGE FONTS HERE */
+
+  --main-font: Georgia, "Times New Roman", serif;
+  --heading-font: Georgia, "Times New Roman", serif;
+  --text-font: Arial, Helvetica, sans-serif;
+
+
+  /* ✏️ MAIN COLOURS */
+
+  --black: #111111;
+  --red: #b5121b;
+  --white: #ffffff;
+  --light: #f7f7f7;
+  --grey: #777777;
+  --border: #dddddd;
+
+}
+
+
+/* =====================================================
+   GENERAL
+   ===================================================== */
+
 * {
   box-sizing: border-box;
 }
@@ -8,9 +38,9 @@ html {
 
 body {
   margin: 0;
-  font-family: "Georgia", "Times New Roman", serif;
-  background: #ffffff;
-  color: #333;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--text-font);
 }
 
 .container {
@@ -19,18 +49,20 @@ body {
 }
 
 
-/* HEADER */
+/* =====================================================
+   HEADER
+   ===================================================== */
 
 header {
-  background: #ffffff;
-  border-bottom: 1px solid #e8e2dc;
+  background: var(--white);
+  border-bottom: 2px solid var(--black);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 .header-inner {
-  min-height: 82px;
+  min-height: 85px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,79 +70,111 @@ header {
 
 .logo {
   text-decoration: none;
-  color: #292929;
-  font-size: 28px;
+  color: var(--black);
+  font-family: var(--heading-font);
+  font-size: 27px;
   font-weight: 600;
   letter-spacing: 1px;
 }
 
+.logo::after {
+  content: "";
+  display: block;
+  width: 45px;
+  height: 3px;
+  background: var(--red);
+  margin-top: 5px;
+}
+
 nav {
   display: flex;
-  gap: 32px;
+  gap: 30px;
 }
 
 nav a {
   text-decoration: none;
-  color: #333;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  font-weight: 600;
+  color: var(--black);
+  font-family: var(--text-font);
+  font-size: 12px;
+  font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
 nav a:hover {
-  color: #9a8065;
+  color: var(--red);
 }
 
 .menu {
   display: none;
   border: 0;
   background: none;
+  color: var(--black);
   font-size: 28px;
   cursor: pointer;
 }
 
 
-/* HERO */
+/* =====================================================
+   HERO
+   ===================================================== */
 
 .hero {
-  padding: 145px 20px;
+  padding: 150px 20px;
   text-align: center;
-  background: #f7f4f0;
+  background: var(--black);
+  color: var(--white);
 }
 
 .hero h1 {
   margin: 0 0 20px;
-  font-size: clamp(42px, 6vw, 68px);
+  font-family: var(--heading-font);
+  font-size: clamp(42px, 6vw, 70px);
   line-height: 1.1;
   font-weight: 500;
-  letter-spacing: 1px;
-  color: #2c2c2c;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: var(--red);
+  margin: 25px auto 0;
 }
 
 .hero p {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--text-font);
   font-size: 17px;
-  color: #777;
-  margin: 0 0 35px;
+  color: #dddddd;
+  margin: 28px 0 35px;
 }
 
 .button {
   display: inline-block;
-  padding: 15px 30px;
-  background: #333;
-  color: #fff;
+  padding: 15px 32px;
+  background: var(--red);
+  color: var(--white);
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--text-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  transition: .25s ease;
+}
+
+.button:hover {
+  background: var(--white);
+  color: var(--black);
 }
 
 
-/* SECTIONS */
+/* =====================================================
+   SECTIONS
+   ===================================================== */
 
 .section {
   padding: 90px 0;
@@ -122,23 +186,35 @@ nav a:hover {
 }
 
 .section-title h2 {
-  margin: 0 0 14px;
-  font-size: 36px;
-  font-weight: 500;
+  margin: 0 0 15px;
+  font-family: var(--heading-font);
+  font-size: 38px;
+  font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #292929;
+  color: var(--black);
+}
+
+.section-title h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--red);
+  margin: 15px auto 0;
 }
 
 .section-title p {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 18px 0 0;
+  font-family: var(--text-font);
   font-size: 14px;
-  color: #888;
+  color: var(--grey);
 }
 
 
-/* CATEGORY BUTTONS */
+/* =====================================================
+   CATEGORY BUTTONS
+   ===================================================== */
 
 .category-buttons,
 .subcategory-buttons {
@@ -150,16 +226,15 @@ nav a:hover {
 
 .category-button,
 .subcategory-button {
-  border: 1px solid #d9d1c8;
-  background: #fff;
-  color: #444;
+  border: 1px solid var(--black);
+  background: var(--white);
+  color: var(--black);
   padding: 13px 22px;
-  border-radius: 0;
   cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--text-font);
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1.3px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
   transition: all .25s ease;
 }
@@ -168,9 +243,9 @@ nav a:hover {
 .category-button.active,
 .subcategory-button:hover,
 .subcategory-button.active {
-  background: #333;
-  color: #fff;
-  border-color: #333;
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
 }
 
 .subcategory-buttons {
@@ -178,34 +253,36 @@ nav a:hover {
 }
 
 
-/* PRODUCTS */
+/* =====================================================
+   PRODUCTS / GALLERY
+   ===================================================== */
 
 .products-section {
-  background: #faf9f7;
+  background: var(--light);
 }
 
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 30px;
 }
 
 .product {
-  background: #fff;
-  border: 1px solid #eee8e2;
+  background: var(--white);
+  border: 1px solid var(--border);
   overflow: hidden;
   transition: all .3s ease;
 }
 
 .product:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, .08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
 }
 
 .product-image {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #f4f2ef;
+  background: #eeeeee;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,7 +298,15 @@ nav a:hover {
 }
 
 .product:hover .product-image img {
-  transform: scale(1.03);
+  transform: scale(1.04);
+}
+
+.no-image {
+  font-family: var(--text-font);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #999999;
+  text-transform: uppercase;
 }
 
 .product-info {
@@ -231,53 +316,155 @@ nav a:hover {
 
 .product-info h3 {
   margin: 0 0 10px;
+  font-family: var(--heading-font);
   font-size: 21px;
-  font-weight: 500;
-  color: #333;
+  font-weight: 600;
+  color: var(--black);
 }
 
 .product-info p {
   margin: 0 auto 16px;
   max-width: 300px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #888;
+  font-family: var(--text-font);
+  color: var(--grey);
   line-height: 1.6;
   font-size: 13px;
 }
 
 .product-info strong {
   display: block;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--text-font);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #9a8065;
+  color: var(--red);
 }
 
 
-/* ABOUT */
+/* =====================================================
+   NAMES • MONOGRAMS • NUMBERS
+   ===================================================== */
+
+.names-section {
+  background: var(--white);
+}
+
+.customiser {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--red);
+}
+
+.custom-field {
+  margin-bottom: 22px;
+}
+
+.custom-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--text-font);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.custom-field input,
+.custom-field select {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 15px;
+  border: 1px solid #cccccc;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--text-font);
+  font-size: 14px;
+  outline: none;
+}
+
+.custom-field input:focus,
+.custom-field select:focus {
+  border-color: var(--red);
+}
+
+.custom-summary {
+  margin-top: 35px;
+  padding: 28px;
+  background: var(--black);
+  color: var(--white);
+}
+
+.custom-summary h3 {
+  margin: 0 0 20px;
+  font-family: var(--heading-font);
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.custom-summary p {
+  margin: 8px 0;
+  font-family: var(--text-font);
+  font-size: 14px;
+  color: #dddddd;
+}
+
+.custom-summary strong {
+  color: var(--white);
+}
+
+.quotation-price {
+  margin-top: 25px;
+  padding: 16px;
+  background: var(--red);
+  color: var(--white);
+  text-align: center;
+  font-family: var(--text-font);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+
+/* =====================================================
+   ABOUT
+   ===================================================== */
 
 .about-section {
   text-align: center;
-  background: #fff;
+  background: var(--light);
 }
 
 .about-section p {
   max-width: 800px;
   margin: 0 auto 15px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--text-font);
   line-height: 1.8;
-  color: #777;
+  color: var(--grey);
   font-size: 15px;
 }
 
 
-/* CONTACT */
+/* =====================================================
+   CONTACT
+   ===================================================== */
 
 .contact-section {
-  background: #f7f4f0;
+  background: var(--black);
   text-align: center;
+}
+
+.contact-section .section-title h2 {
+  color: var(--white);
+}
+
+.contact-section .section-title p {
+  color: #bbbbbb;
 }
 
 .contact-buttons {
@@ -289,31 +476,40 @@ nav a:hover {
 
 .contact-buttons a {
   display: inline-block;
-  padding: 14px 26px;
-  background: #333;
-  color: #fff;
+  padding: 14px 28px;
+  background: var(--red);
+  color: var(--white);
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--text-font);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1.3px;
   text-transform: uppercase;
 }
 
+.contact-buttons a:hover {
+  background: var(--white);
+  color: var(--black);
+}
 
-/* FOOTER */
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
 
 footer {
-  background: #292929;
-  color: #aaa;
+  background: #000000;
+  color: #999999;
   text-align: center;
   padding: 28px 10px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--text-font);
   font-size: 12px;
 }
 
 
-/* MOBILE */
+/* =====================================================
+   MOBILE
+   ===================================================== */
 
 @media (max-width: 800px) {
 
@@ -324,13 +520,13 @@ footer {
   nav {
     display: none;
     position: absolute;
-    top: 82px;
+    top: 85px;
     left: 0;
     right: 0;
-    background: #fff;
+    background: var(--white);
     flex-direction: column;
     gap: 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 2px solid var(--black);
   }
 
   nav.open {
@@ -339,11 +535,11 @@ footer {
 
   nav a {
     padding: 16px 5%;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #eeeeee;
   }
 
   .hero {
-    padding: 95px 20px;
+    padding: 100px 20px;
   }
 
   .section {
@@ -351,7 +547,7 @@ footer {
   }
 
   .section-title h2 {
-    font-size: 28px;
+    font-size: 29px;
     letter-spacing: 2px;
   }
 
@@ -368,7 +564,12 @@ footer {
     font-size: 17px;
   }
 
+  .customiser {
+    padding: 25px 18px;
+  }
+
 }
+
 
 @media (max-width: 500px) {
 
@@ -383,6 +584,10 @@ footer {
   .category-button,
   .subcategory-button {
     width: 100%;
+  }
+
+  .custom-summary {
+    padding: 20px;
   }
 
 }

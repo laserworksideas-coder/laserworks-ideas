@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,207 +6,510 @@
 
   <title>Laserworks Ideas | Laser Cutting & Engraving Cyprus</title>
 
-  <meta name="description" content="Laserworks Ideas is a creative laser cutting and engraving studio in Limassol, Cyprus, specialising in custom MDF, wood and acrylic creations, personalised gifts, decorations and corporate gifts.">
+  <meta
+    name="description"
+    content="Laserworks Ideas is a creative laser cutting and engraving studio in Limassol, Cyprus, specialising in custom MDF, wood and acrylic creations, personalised gifts, decorations and corporate gifts."
+  >
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header class="site-header">
 
-    <!-- TOP ROW -->
     <div class="top-row">
       <div class="container top-row-inner">
 
-        <a href="#" class="logo">LASERWORKS IDEAS</a>
+        <a href="#" class="logo">
+          LASERWORKS IDEAS
+        </a>
 
-        <div class="top-links">
-          <a href="#about">ABOUT</a>
-          <a href="#contact">CONTACT</a>
+        <div class="header-contact">
+
+          <span class="header-contact-title">
+            CONTACT US
+          </span>
+
+          <a href="mailto:Laserworksideas@gmail.com">
+            Laserworksideas@gmail.com
+          </a>
+
+          <a
+            href="https://wa.me/35799303580"
+            target="_blank"
+            rel="noopener"
+          >
+            WHATSAPP +357 99 303580
+          </a>
+
+          <a href="viber://chat?number=%2B35799303580">
+            VIBER +357 99 303580
+          </a>
+
         </div>
 
-        <button class="menu" onclick="toggleMenu()">☰</button>
-
-      </div>
-    </div>
-
-    <!-- CONTACT LINKS -->
-    <div class="contact-links-row">
-      <div class="container contact-links-inner">
-
-        <a href="mailto:Laserworksideas@gmail.com">
-          EMAIL
-        </a>
-
-        <a href="https://wa.me/35799303580" target="_blank">
-          WHATSAPP
-        </a>
-
-        <a href="viber://chat?number=%2B35799303580">
-          VIBER
-        </a>
+        <button
+          class="menu"
+          onclick="toggleMenu()"
+          aria-label="Open menu"
+        >
+          ☰
+        </button>
 
       </div>
     </div>
 
 
-    <!-- NAVIGATION -->
+    <!-- =========================
+         MAIN NAVIGATION
+    ========================== -->
+
     <nav id="mainNav" class="main-nav">
 
       <!-- CHRISTENING -->
+
       <div class="nav-dropdown">
+
         <button onclick="toggleDropdown(event, 'christeningMenu')">
           CHRISTENING
         </button>
 
         <div id="christeningMenu" class="dropdown-menu">
-          <a href="#" onclick="selectCategory('CHRISTENING','All')">ALL</a>
-          <a href="#" onclick="selectCategory('CHRISTENING','Christening Accessories')">ACCESSORIES</a>
-          <a href="#" onclick="selectCategory('CHRISTENING','Christening Decorations')">DECORATIONS</a>
-          <a href="#" onclick="selectCategory('CHRISTENING','Christening Gifts')">GIFTS</a>
+
+          <a
+            href="#"
+            onclick="selectCategory('CHRISTENING','All')"
+          >
+            ALL
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('CHRISTENING','Christening Accessories')"
+          >
+            ACCESSORIES
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('CHRISTENING','Christening Decorations')"
+          >
+            DECORATIONS
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('CHRISTENING','Christening Gifts')"
+          >
+            GIFTS
+          </a>
+
         </div>
+
       </div>
 
 
       <!-- WEDDING -->
+
       <div class="nav-dropdown">
+
         <button onclick="toggleDropdown(event, 'weddingMenu')">
           WEDDING
         </button>
 
         <div id="weddingMenu" class="dropdown-menu">
-          <a href="#" onclick="selectCategory('WEDDING','All')">ALL</a>
-          <a href="#" onclick="selectCategory('WEDDING','Wedding Decorations')">DECORATIONS</a>
-          <a href="#" onclick="selectCategory('WEDDING','Wedding Gifts')">GIFTS</a>
-          <a href="#" onclick="selectCategory('WEDDING','Wedding Details')">DETAILS</a>
+
+          <a
+            href="#"
+            onclick="selectCategory('WEDDING','All')"
+          >
+            ALL
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('WEDDING','Wedding Decorations')"
+          >
+            DECORATIONS
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('WEDDING','Wedding Gifts')"
+          >
+            GIFTS
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('WEDDING','Wedding Details')"
+          >
+            DETAILS
+          </a>
+
         </div>
+
       </div>
 
 
       <!-- SEASONAL ITEMS -->
+
       <div class="nav-dropdown">
+
         <button onclick="toggleDropdown(event, 'seasonalMenu')">
           SEASONAL ITEMS
         </button>
 
         <div id="seasonalMenu" class="dropdown-menu">
-          <a href="#" onclick="selectCategory('SEASONAL ITEMS','All')">ALL</a>
-          <a href="#" onclick="selectCategory('SEASONAL ITEMS','Christmas')">CHRISTMAS</a>
-          <a href="#" onclick="selectCategory('SEASONAL ITEMS','Valentine')">VALENTINE</a>
-          <a href="#" onclick="selectCategory('SEASONAL ITEMS','Easter')">EASTER</a>
-          <a href="#" onclick="selectCategory('SEASONAL ITEMS','Other')">OTHER</a>
+
+          <a
+            href="#"
+            onclick="selectCategory('SEASONAL ITEMS','All')"
+          >
+            ALL
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('SEASONAL ITEMS','Christmas')"
+          >
+            CHRISTMAS
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('SEASONAL ITEMS','Valentine')"
+          >
+            VALENTINE
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('SEASONAL ITEMS','Easter')"
+          >
+            EASTER
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('SEASONAL ITEMS','Other')"
+          >
+            OTHER
+          </a>
+
         </div>
+
       </div>
 
 
       <!-- PERSONALISED GIFTS -->
+
       <div class="nav-dropdown">
+
         <button onclick="toggleDropdown(event, 'personalisedMenu')">
           PERSONALISED GIFTS
         </button>
 
         <div id="personalisedMenu" class="dropdown-menu">
-          <a href="#" onclick="selectCategory('PERSONALISED GIFTS','All')">ALL</a>
-          <a href="#" onclick="selectCategory('PERSONALISED GIFTS','Children')">CHILDREN</a>
-          <a href="#" onclick="selectCategory('PERSONALISED GIFTS','Adults')">ADULTS</a>
-          <a href="#" onclick="selectCategory('PERSONALISED GIFTS','Teachers')">TEACHERS</a>
+
+          <a
+            href="#"
+            onclick="selectCategory('PERSONALISED GIFTS','All')"
+          >
+            ALL
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('PERSONALISED GIFTS','Children')"
+          >
+            CHILDREN
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('PERSONALISED GIFTS','Adults')"
+          >
+            ADULTS
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('PERSONALISED GIFTS','Teachers')"
+          >
+            TEACHERS
+          </a>
+
         </div>
+
       </div>
 
 
       <!-- BOXES -->
+
       <div class="nav-dropdown">
+
         <button onclick="toggleDropdown(event, 'boxesMenu')">
           BOXES
         </button>
 
         <div id="boxesMenu" class="dropdown-menu">
-          <a href="#" onclick="selectCategory('BOXES','All')">ALL</a>
-          <a href="#" onclick="selectCategory('BOXES','Gift Boxes')">GIFT BOXES</a>
-          <a href="#" onclick="selectCategory('BOXES','Wedding Boxes')">WEDDING</a>
-          <a href="#" onclick="selectCategory('BOXES','Corporate Boxes')">CORPORATE</a>
+
+          <a
+            href="#"
+            onclick="selectCategory('BOXES','All')"
+          >
+            ALL
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('BOXES','Gift Boxes')"
+          >
+            GIFT BOXES
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('BOXES','Wedding Boxes')"
+          >
+            WEDDING
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('BOXES','Corporate Boxes')"
+          >
+            CORPORATE
+          </a>
+
         </div>
+
       </div>
 
 
       <!-- CORPORATE GIFTS -->
+
       <div class="nav-dropdown">
+
         <button onclick="toggleDropdown(event, 'corporateMenu')">
           CORPORATE GIFTS
         </button>
 
         <div id="corporateMenu" class="dropdown-menu">
-          <a href="#" onclick="selectCategory('CORPORATE GIFTS','All')">ALL</a>
-          <a href="#" onclick="selectCategory('CORPORATE GIFTS','Corporate Gifts')">GIFTS</a>
-          <a href="#" onclick="selectCategory('CORPORATE GIFTS','Corporate Awards')">AWARDS</a>
-          <a href="#" onclick="selectCategory('CORPORATE GIFTS','Corporate Accessories')">ACCESSORIES</a>
+
+          <a
+            href="#"
+            onclick="selectCategory('CORPORATE GIFTS','All')"
+          >
+            ALL
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('CORPORATE GIFTS','Corporate Gifts')"
+          >
+            GIFTS
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('CORPORATE GIFTS','Corporate Awards')"
+          >
+            AWARDS
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('CORPORATE GIFTS','Corporate Accessories')"
+          >
+            ACCESSORIES
+          </a>
+
         </div>
+
       </div>
 
 
       <!-- CUSTOMISED CUT OUTS -->
+
       <div class="nav-dropdown">
+
         <button onclick="toggleDropdown(event, 'cutoutsMenu')">
           CUSTOMISED CUT OUTS
         </button>
 
         <div id="cutoutsMenu" class="dropdown-menu">
-          <a href="#" onclick="selectCategory('CUSTOMISED CUT OUTS','All')">ALL</a>
-          <a href="#" onclick="selectCategory('CUSTOMISED CUT OUTS','Names')">NAMES</a>
-          <a href="#" onclick="selectCategory('CUSTOMISED CUT OUTS','Numbers')">NUMBERS</a>
-          <a href="#" onclick="selectCategory('CUSTOMISED CUT OUTS','Shapes')">SHAPES</a>
+
+          <a
+            href="#"
+            onclick="selectCategory('CUSTOMISED CUT OUTS','All')"
+          >
+            ALL
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('CUSTOMISED CUT OUTS','Names')"
+          >
+            NAMES
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('CUSTOMISED CUT OUTS','Numbers')"
+          >
+            NUMBERS
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('CUSTOMISED CUT OUTS','Shapes')"
+          >
+            SHAPES
+          </a>
+
         </div>
+
       </div>
 
 
       <!-- DECOR -->
+
       <div class="nav-dropdown">
+
         <button onclick="toggleDropdown(event, 'decorMenu')">
           DECOR
         </button>
 
         <div id="decorMenu" class="dropdown-menu">
-          <a href="#" onclick="selectCategory('DECOR','All')">ALL</a>
-          <a href="#" onclick="selectCategory('DECOR','Home Decor')">HOME</a>
-          <a href="#" onclick="selectCategory('DECOR','Event Decor')">EVENTS</a>
-          <a href="#" onclick="selectCategory('DECOR','Wall Decor')">WALL DECOR</a>
+
+          <a
+            href="#"
+            onclick="selectCategory('DECOR','All')"
+          >
+            ALL
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('DECOR','Home Decor')"
+          >
+            HOME
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('DECOR','Event Decor')"
+          >
+            EVENTS
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('DECOR','Wall Decor')"
+          >
+            WALL DECOR
+          </a>
+
         </div>
+
       </div>
 
 
       <!-- OTHER GIFTS -->
+
       <div class="nav-dropdown">
+
         <button onclick="toggleDropdown(event, 'otherMenu')">
           OTHER GIFTS
         </button>
 
         <div id="otherMenu" class="dropdown-menu">
-          <a href="#" onclick="selectCategory('OTHER GIFTS','All')">ALL</a>
-          <a href="#" onclick="selectCategory('OTHER GIFTS','Gifts')">GIFTS</a>
-          <a href="#" onclick="selectCategory('OTHER GIFTS','Accessories')">ACCESSORIES</a>
+
+          <a
+            href="#"
+            onclick="selectCategory('OTHER GIFTS','All')"
+          >
+            ALL
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('OTHER GIFTS','Gifts')"
+          >
+            GIFTS
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('OTHER GIFTS','Accessories')"
+          >
+            ACCESSORIES
+          </a>
+
         </div>
+
       </div>
 
 
       <!-- INVITATIONS -->
+
       <div class="nav-dropdown">
+
         <button onclick="toggleDropdown(event, 'invitationsMenu')">
           INVITATIONS
         </button>
 
         <div id="invitationsMenu" class="dropdown-menu">
-          <a href="#" onclick="selectCategory('INVITATIONS','All')">ALL</a>
-          <a href="#" onclick="selectCategory('INVITATIONS','Christening')">CHRISTENING</a>
-          <a href="#" onclick="selectCategory('INVITATIONS','Wedding')">WEDDING</a>
-          <a href="#" onclick="selectCategory('INVITATIONS','Birthday')">BIRTHDAY</a>
-          <a href="#" onclick="selectCategory('INVITATIONS','Other')">OTHER</a>
+
+          <a
+            href="#"
+            onclick="selectCategory('INVITATIONS','All')"
+          >
+            ALL
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('INVITATIONS','Christening')"
+          >
+            CHRISTENING
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('INVITATIONS','Wedding')"
+          >
+            WEDDING
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('INVITATIONS','Birthday')"
+          >
+            BIRTHDAY
+          </a>
+
+          <a
+            href="#"
+            onclick="selectCategory('INVITATIONS','Other')"
+          >
+            OTHER
+          </a>
+
         </div>
+
       </div>
 
 
-      <!-- NAMES -->
+      <!-- CUSTOMISER -->
+
       <a href="#customiser" class="nav-customiser">
         NAMES • MONOGRAMS
       </a>
@@ -217,18 +519,26 @@
   </header>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================== -->
+
   <section class="hero">
 
     <div class="container hero-content">
 
-      <h1>LASER CUT • ENGRAVING • DESIGN</h1>
+      <h1>
+        LASER CUT • ENGRAVING • DESIGN
+      </h1>
 
       <p>
         Custom creations made with precision, creativity and attention to detail.
       </p>
 
-      <a href="#products" class="hero-button">
+      <a
+        href="#products"
+        class="hero-button"
+      >
         VIEW OUR CREATIONS
       </a>
 
@@ -237,34 +547,57 @@
   </section>
 
 
-  <!-- PRODUCTS -->
-  <section id="products" class="products-section">
+  <!-- =========================
+       OUR CREATIONS
+  ========================== -->
+
+  <section id="products" class="products-section section">
 
     <div class="container">
 
       <div class="section-heading">
-        <h2>OUR CREATIONS</h2>
-        <p>Explore our handmade and personalised creations.</p>
+
+        <h2>
+          OUR CREATIONS
+        </h2>
+
+        <p>
+          Explore our handmade and personalised creations.
+        </p>
+
       </div>
 
-      <div id="productGrid" class="product-grid"></div>
+      <div
+        id="productGrid"
+        class="product-grid"
+      ></div>
 
     </div>
 
   </section>
 
 
-  <!-- CUSTOMISER -->
-  <section id="customiser" class="customiser-section">
+  <!-- =========================
+       CUSTOMISER
+  ========================== -->
+
+  <section
+    id="customiser"
+    class="customiser-section section"
+  >
 
     <div class="container">
 
       <div class="section-heading">
-        <h2>NAMES • MONOGRAMS • NUMBERS</h2>
+
+        <h2>
+          NAMES • MONOGRAMS • NUMBERS
+        </h2>
 
         <p>
           Create your own personalised cut-out.
         </p>
+
       </div>
 
 
@@ -276,12 +609,29 @@
             TYPE
           </label>
 
-          <select id="customType" onchange="updateSummary()">
-            <option value="Name">Name</option>
-            <option value="Monogram">Monogram</option>
-            <option value="Number">Number</option>
-            <option value="Word">Word</option>
-            <option value="Phrase">Phrase</option>
+          <select
+            id="customType"
+            onchange="updateSummary()"
+          >
+            <option value="Name">
+              Name
+            </option>
+
+            <option value="Monogram">
+              Monogram
+            </option>
+
+            <option value="Number">
+              Number
+            </option>
+
+            <option value="Word">
+              Word
+            </option>
+
+            <option value="Phrase">
+              Phrase
+            </option>
           </select>
 
         </div>
@@ -327,9 +677,14 @@
             MATERIAL
           </label>
 
-          <select id="customMaterial" onchange="updateSummary()">
+          <select
+            id="customMaterial"
+            onchange="updateSummary()"
+          >
 
-            <option value="Wood">Wood</option>
+            <option value="Wood">
+              Wood
+            </option>
 
             <option value="MDF 3mm">
               MDF 3mm
@@ -383,7 +738,9 @@
 
         <div class="custom-summary">
 
-          <h3>YOUR REQUEST</h3>
+          <h3>
+            YOUR REQUEST
+          </h3>
 
           <div id="customSummaryText">
             Please enter your details.
@@ -406,44 +763,46 @@
   </section>
 
 
-  <!-- ABOUT -->
-  <section id="about" class="about-section">
+  <!-- =========================
+       ABOUT
+  ========================== -->
+
+  <section
+    id="about"
+    class="about-section section"
+  >
 
     <div class="container">
 
       <div class="section-heading">
-        <h2>ABOUT LASERWORKS IDEAS</h2>
+
+        <h2>
+          ABOUT LASERWORKS IDEAS
+        </h2>
+
       </div>
 
 
       <div class="about-content">
 
         <p>
-          Laserworks Ideas is a creative laser cutting and engraving studio based in
-          Limassol, Cyprus, specialising in custom-made MDF, wood and acrylic creations.
+          Laserworks Ideas is a creative laser cutting and engraving studio based in Limassol, Cyprus, specialising in custom-made MDF, wood and acrylic creations.
         </p>
 
         <p>
-          We combine precision, creativity and attention to detail to create personalised
-          gifts, names, signs, decorations and unique custom designs for christenings,
-          birthdays, weddings, schools, events and special occasions.
+          We combine precision, creativity and attention to detail to create personalised gifts, names, signs, decorations and unique custom designs for christenings, birthdays, weddings, schools, events and special occasions.
         </p>
 
         <p>
-          Alongside laser cutting and engraving, we offer personalised clothing printing,
-          custom event decorations and a wide range of unique gift details, including
-          balloons, soaps, candy and cake decorations.
+          Alongside laser cutting and engraving, we offer personalised clothing printing, custom event decorations and a wide range of unique gift details, including balloons, soaps, candy and cake decorations.
         </p>
 
         <p>
-          We also create bespoke corporate gifts and collaborate with event planners,
-          businesses and professionals to bring their ideas to life.
+          We also create bespoke corporate gifts and collaborate with event planners, businesses and professionals to bring their ideas to life.
         </p>
 
         <p>
-          Whether you are looking for a personalised gift, a custom decoration or a
-          complete creative solution for your event, we are here to turn your idea into
-          something special.
+          Whether you are looking for a personalised gift, a custom decoration or a complete creative solution for your event, we are here to turn your idea into something special.
         </p>
 
         <p class="about-highlight">
@@ -459,14 +818,22 @@
   </section>
 
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact-section">
+  <!-- =========================
+       CONTACT
+  ========================== -->
+
+  <section
+    id="contact"
+    class="contact-section section"
+  >
 
     <div class="container">
 
       <div class="section-heading">
 
-        <h2>CONTACT US</h2>
+        <h2>
+          CONTACT US
+        </h2>
 
         <p>
           Have an idea? Contact us and request your quotation.
@@ -475,87 +842,35 @@
       </div>
 
 
-      <div class="contact-layout">
+      <!-- MAP -->
 
+      <div class="contact-map">
 
-        <!-- CONTACT INFORMATION -->
-        <div class="contact-info">
+        <div class="map-container">
 
-          <h3>LASERWORKS IDEAS</h3>
-
-          <div class="contact-item">
-
-            <strong>ADDRESS</strong>
-
-            <p>
-              33a Despoinas Pattichi<br>
-              Limassol 3071<br>
-              Cyprus
-            </p>
-
-          </div>
-
-
-          <div class="contact-item">
-
-            <strong>EMAIL</strong>
-
-            <p>
-              <a href="mailto:Laserworksideas@gmail.com">
-                Laserworksideas@gmail.com
-              </a>
-            </p>
-
-          </div>
-
-
-          <div class="contact-item">
-
-            <strong>WHATSAPP</strong>
-
-            <p>
-              <a
-                href="https://wa.me/35799303580"
-                target="_blank"
-              >
-                +357 99 303580
-              </a>
-            </p>
-
-          </div>
-
-
-          <div class="contact-item">
-
-            <strong>VIBER</strong>
-
-            <p>
-              <a href="viber://chat?number=%2B35799303580">
-                +357 99 303580
-              </a>
-            </p>
-
-          </div>
-
-
-          <!-- MAP -->
-          <div class="map-container">
-
-            <iframe
-              src="https://www.google.com/maps?q=33a+Despoinas+Pattichi,+Limassol,+Cyprus&output=embed"
-              loading="lazy"
-              allowfullscreen>
-            </iframe>
-
-          </div>
+          <iframe
+            src="https://www.google.com/maps?q=33a+Despoinas+Pattichi,+Limassol,+Cyprus&output=embed"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
 
         </div>
 
+      </div>
 
-        <!-- QUOTATION FORM -->
+
+      <!-- MESSAGE + DETAILS -->
+
+      <div class="contact-layout">
+
+
+        <!-- SEND MESSAGE -->
+
         <div class="quotation-form">
 
-          <h3>SEND A QUOTATION</h3>
+          <h3>
+            SEND US A MESSAGE
+          </h3>
 
           <form onsubmit="sendQuotation(event)">
 
@@ -618,11 +933,95 @@
             </div>
 
 
-            <button type="submit" class="quotation-button">
-              SEND A QUOTATION
+            <button
+              type="submit"
+              class="quotation-button"
+            >
+              SEND A MESSAGE
             </button>
 
           </form>
+
+        </div>
+
+
+        <!-- CONTACT DETAILS -->
+
+        <div class="contact-info">
+
+          <h3>
+            CONTACT DETAILS
+          </h3>
+
+
+          <div class="contact-item">
+
+            <strong>
+              ADDRESS
+            </strong>
+
+            <p>
+              33A Despoinas Pattichi<br>
+              Limassol 3071<br>
+              Cyprus
+            </p>
+
+          </div>
+
+
+          <div class="contact-item">
+
+            <strong>
+              EMAIL
+            </strong>
+
+            <p>
+
+              <a href="mailto:Laserworksideas@gmail.com">
+                Laserworksideas@gmail.com
+              </a>
+
+            </p>
+
+          </div>
+
+
+          <div class="contact-item">
+
+            <strong>
+              WHATSAPP
+            </strong>
+
+            <p>
+
+              <a
+                href="https://wa.me/35799303580"
+                target="_blank"
+                rel="noopener"
+              >
+                +357 99 303580
+              </a>
+
+            </p>
+
+          </div>
+
+
+          <div class="contact-item">
+
+            <strong>
+              VIBER
+            </strong>
+
+            <p>
+
+              <a href="viber://chat?number=%2B35799303580">
+                +357 99 303580
+              </a>
+
+            </p>
+
+          </div>
 
         </div>
 
@@ -633,7 +1032,10 @@
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer class="site-footer">
 
     <div class="container">
@@ -651,12 +1053,19 @@
   </footer>
 
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox">
+  <!-- =========================
+       LIGHTBOX
+  ========================== -->
+
+  <div
+    id="lightbox"
+    class="lightbox"
+  >
 
     <button
       class="lightbox-close"
       onclick="closeLightbox()"
+      aria-label="Close"
     >
       ×
     </button>
@@ -664,6 +1073,7 @@
     <button
       class="lightbox-prev"
       onclick="previousImage()"
+      aria-label="Previous"
     >
       ‹
     </button>
@@ -677,6 +1087,7 @@
     <button
       class="lightbox-next"
       onclick="nextImage()"
+      aria-label="Next"
     >
       ›
     </button>
@@ -684,23 +1095,28 @@
   </div>
 
 
-  <!-- JAVASCRIPT -->
+  <!-- =========================
+       PRODUCTS
+  ========================== -->
+
   <script src="products.js"></script>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
 
   <script>
 
-    /* MOBILE MENU */
-
     function toggleMenu() {
 
-      const nav = document.getElementById("mainNav");
-
-      nav.classList.toggle("open");
+      document
+        .getElementById("mainNav")
+        .classList
+        .toggle("open");
 
     }
 
-
-    /* DROPDOWN MENU */
 
     function toggleDropdown(event, menuId) {
 
@@ -723,8 +1139,6 @@
     }
 
 
-    /* CATEGORY */
-
     function selectCategory(category, subcategory) {
 
       event.preventDefault();
@@ -736,7 +1150,12 @@
         });
 
       if (typeof showProducts === "function") {
-        showProducts(category, subcategory);
+
+        showProducts(
+          category,
+          subcategory
+        );
+
       }
 
       document
@@ -748,10 +1167,11 @@
     }
 
 
-    /* PRODUCT IMAGE */
+    /* =========================
+       PRODUCT IMAGES
+    ========================== */
 
     let currentProductImages = [];
-
     let currentImageIndex = 0;
 
 
@@ -759,14 +1179,18 @@
 
       const product = products[productIndex];
 
-      if (!product || !product.images) return;
+      if (!product || !product.images) {
+        return;
+      }
 
       const mainImage =
         document.getElementById(
           "main-image-" + productIndex
         );
 
-      if (!mainImage) return;
+      if (!mainImage) {
+        return;
+      }
 
       mainImage.src =
         product.images[imageIndex];
@@ -774,19 +1198,21 @@
     }
 
 
-    /* LIGHTBOX */
+    /* =========================
+       LIGHTBOX
+    ========================== */
 
     function openLightbox(images, index) {
 
       currentProductImages = images;
-
       currentImageIndex = index;
 
       updateLightbox();
 
       document
         .getElementById("lightbox")
-        .classList.add("open");
+        .classList
+        .add("open");
 
     }
 
@@ -794,9 +1220,13 @@
     function updateLightbox() {
 
       const image =
-        document.getElementById("lightboxImage");
+        document.getElementById(
+          "lightboxImage"
+        );
 
-      if (!currentProductImages.length) return;
+      if (!currentProductImages.length) {
+        return;
+      }
 
       image.src =
         currentProductImages[currentImageIndex];
@@ -808,20 +1238,25 @@
 
       document
         .getElementById("lightbox")
-        .classList.remove("open");
+        .classList
+        .remove("open");
 
     }
 
 
     function previousImage() {
 
-      if (!currentProductImages.length) return;
+      if (!currentProductImages.length) {
+        return;
+      }
 
       currentImageIndex--;
 
       if (currentImageIndex < 0) {
+
         currentImageIndex =
           currentProductImages.length - 1;
+
       }
 
       updateLightbox();
@@ -831,7 +1266,9 @@
 
     function nextImage() {
 
-      if (!currentProductImages.length) return;
+      if (!currentProductImages.length) {
+        return;
+      }
 
       currentImageIndex++;
 
@@ -839,7 +1276,9 @@
         currentImageIndex >=
         currentProductImages.length
       ) {
+
         currentImageIndex = 0;
+
       }
 
       updateLightbox();
@@ -847,28 +1286,41 @@
     }
 
 
-    /* CUSTOMISER */
+    /* =========================
+       CUSTOMISER
+    ========================== */
 
     function updateSummary() {
 
       const type =
-        document.getElementById("customType").value;
+        document.getElementById(
+          "customType"
+        ).value;
 
       const text =
-        document.getElementById("customText").value;
+        document.getElementById(
+          "customText"
+        ).value;
 
       const size =
-        document.getElementById("customSize").value;
+        document.getElementById(
+          "customSize"
+        ).value;
 
       const material =
-        document.getElementById("customMaterial").value;
+        document.getElementById(
+          "customMaterial"
+        ).value;
 
       const quantity =
-        document.getElementById("customQuantity").value;
-
+        document.getElementById(
+          "customQuantity"
+        ).value;
 
       const summary =
-        document.getElementById("customSummaryText");
+        document.getElementById(
+          "customSummaryText"
+        );
 
 
       if (!text) {
@@ -882,11 +1334,32 @@
 
 
       summary.innerHTML = `
-        <p><strong>Type:</strong> ${type}</p>
-        <p><strong>Text:</strong> ${text}</p>
-        <p><strong>Size:</strong> ${size} cm</p>
-        <p><strong>Material:</strong> ${material}</p>
-        <p><strong>Quantity:</strong> ${quantity}</p>
+
+        <p>
+          <strong>Type:</strong>
+          ${type}
+        </p>
+
+        <p>
+          <strong>Text:</strong>
+          ${text}
+        </p>
+
+        <p>
+          <strong>Size:</strong>
+          ${size} cm
+        </p>
+
+        <p>
+          <strong>Material:</strong>
+          ${material}
+        </p>
+
+        <p>
+          <strong>Quantity:</strong>
+          ${quantity}
+        </p>
+
       `;
 
     }
@@ -895,28 +1368,40 @@
     function prepareQuotation() {
 
       const type =
-        document.getElementById("customType").value;
+        document.getElementById(
+          "customType"
+        ).value;
 
       const text =
-        document.getElementById("customText").value;
+        document.getElementById(
+          "customText"
+        ).value;
 
       const size =
-        document.getElementById("customSize").value;
+        document.getElementById(
+          "customSize"
+        ).value;
 
       const material =
-        document.getElementById("customMaterial").value;
+        document.getElementById(
+          "customMaterial"
+        ).value;
 
       const quantity =
-        document.getElementById("customQuantity").value;
-
+        document.getElementById(
+          "customQuantity"
+        ).value;
 
       const message =
-        document.getElementById("message");
+        document.getElementById(
+          "message"
+        );
 
 
       if (message) {
 
         message.value =
+
 `CUSTOM CUT-OUT QUOTATION
 
 Type: ${type}
@@ -930,7 +1415,9 @@ Quantity: ${quantity}`;
     }
 
 
-    /* SEND QUOTATION */
+    /* =========================
+       QUOTATION FORM
+    ========================== */
 
     function sendQuotation(event) {
 
@@ -938,16 +1425,24 @@ Quantity: ${quantity}`;
 
 
       const name =
-        document.getElementById("name").value;
+        document.getElementById(
+          "name"
+        ).value;
 
       const email =
-        document.getElementById("email").value;
+        document.getElementById(
+          "email"
+        ).value;
 
       const phone =
-        document.getElementById("phone").value;
+        document.getElementById(
+          "phone"
+        ).value;
 
       const message =
-        document.getElementById("message").value;
+        document.getElementById(
+          "message"
+        ).value;
 
 
       const subject =
@@ -958,6 +1453,7 @@ Quantity: ${quantity}`;
 
       const body =
         encodeURIComponent(
+
 `Hello Laserworks Ideas,
 
 I would like to request a quotation.
@@ -970,6 +1466,7 @@ Request:
 ${message}
 
 Thank you.`
+
         );
 
 
@@ -979,7 +1476,9 @@ Thank you.`
     }
 
 
-    /* CLOSE LIGHTBOX WITH ESCAPE */
+    /* =========================
+       KEYBOARD
+    ========================== */
 
     document.addEventListener(
       "keydown",
@@ -1001,20 +1500,30 @@ Thank you.`
     );
 
 
-    /* CLOSE DROPDOWNS WHEN CLICKING OUTSIDE */
+    /* =========================
+       CLOSE DROPDOWNS
+    ========================== */
 
     document.addEventListener(
       "click",
       function(event) {
 
         if (
-          !event.target.closest(".nav-dropdown")
+          !event.target.closest(
+            ".nav-dropdown"
+          )
         ) {
 
           document
-            .querySelectorAll(".dropdown-menu")
+            .querySelectorAll(
+              ".dropdown-menu"
+            )
             .forEach(menu => {
-              menu.classList.remove("show");
+
+              menu.classList.remove(
+                "show"
+              );
+
             });
 
         }
@@ -1023,14 +1532,18 @@ Thank you.`
     );
 
 
-    /* INITIAL PRODUCTS */
+    /* =========================
+       LOAD PRODUCTS
+    ========================== */
 
     if (
       typeof products !== "undefined" &&
       products.length
     ) {
 
-      showProducts(products[0].category);
+      showProducts(
+        products[0].category
+      );
 
     }
 
@@ -1038,4 +1551,3 @@ Thank you.`
 
 </body>
 </html>
-```

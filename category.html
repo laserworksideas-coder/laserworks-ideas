@@ -71,19 +71,23 @@
 
 <script>
 
+/* MOBILE MENU */
+
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 
-menuToggle.addEventListener("click", () => {
+menuToggle.addEventListener("click", function () {
   mainNav.classList.toggle("mobile-open");
 });
 
 document.querySelectorAll(".main-nav a").forEach(link => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click", function () {
     mainNav.classList.remove("mobile-open");
   });
 });
 
+
+/* CATEGORY */
 
 const params = new URLSearchParams(window.location.search);
 const category = params.get("category");
@@ -117,7 +121,8 @@ const descriptions = {
 };
 
 
-title.textContent = categoryNames[category] || category || "OUR PRODUCTS";
+title.textContent =
+  categoryNames[category] || category || "OUR PRODUCTS";
 
 description.textContent =
   descriptions[category] ||
@@ -125,7 +130,7 @@ description.textContent =
 
 
 /*
-   FIND PRODUCTS
+  FILTER PRODUCTS
 */
 
 let filteredProducts = [];
@@ -180,16 +185,14 @@ else if (category === "SCHOOLS") {
 }
 
 
-/* NORMAL CATEGORIES */
+/* ALL OTHER CATEGORIES */
 
 else {
 
   filteredProducts = products.filter(product => {
 
-    const productCategory =
-      String(product.category || "").trim().toUpperCase();
-
-    return productCategory === String(category || "").trim().toUpperCase();
+    return String(product.category || "").trim().toUpperCase() ===
+           String(category || "").trim().toUpperCase();
 
   });
 
@@ -197,10 +200,10 @@ else {
 
 
 /*
-   SHOW PRODUCTS
+  DISPLAY PRODUCTS
 */
 
-if (!filteredProducts.length) {
+if (filteredProducts.length === 0) {
 
   grid.innerHTML = `
     <div class="no-products">

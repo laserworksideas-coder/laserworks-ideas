@@ -1,4 +1,3 @@
-```javascript
 const categories = [
   "CHRISTENING",
   "WEDDING",
@@ -11,7 +10,6 @@ const categories = [
   "OTHER GIFTS",
   "INVITATIONS"
 ];
-
 
 const products = [
 
@@ -55,7 +53,6 @@ const products = [
     images: ["product-9.jpg"]
   },
 
-
   // =========================
   // WEDDING
   // =========================
@@ -87,7 +84,6 @@ const products = [
     images: ["product-16.jpg"]
   },
 
-
   // =========================
   // SEASONAL ITEMS
   // =========================
@@ -100,7 +96,6 @@ const products = [
     price: "Ask for quotation",
     images: []
   },
-
 
   // =========================
   // PERSONALISED GIFTS
@@ -160,7 +155,6 @@ const products = [
     images: ["product-12.jpg"]
   },
 
-  // New
   {
     category: "PERSONALISED GIFTS",
     subcategory: "Keychains",
@@ -177,51 +171,6 @@ const products = [
     description: "Custom keyrings made for gifts and special occasions.",
     price: "Ask for quotation",
     images: ["product-28.jpg"]
-  },
-
-  {
-    category: "PERSONALISED GIFTS",
-    subcategory: "Keychains",
-    name: "Personalised Keyrings",
-    description: "Custom-made personalised keyring.",
-    price: "Ask for quotation",
-    images: ["product-29.jpg"]
-  },
-
-  {
-    category: "PERSONALISED GIFTS",
-    subcategory: "Keychains",
-    name: "Personalised Keyrings",
-    description: "Unique personalised keyring design.",
-    price: "Ask for quotation",
-    images: ["product-30.jpg"]
-  },
-
-  {
-    category: "PERSONALISED GIFTS",
-    subcategory: "Keychains",
-    name: "Personalised Keyrings",
-    description: "Handmade personalised keyring.",
-    price: "Ask for quotation",
-    images: ["product-31.jpg"]
-  },
-
-  {
-    category: "PERSONALISED GIFTS",
-    subcategory: "Keychains",
-    name: "Personalised Keyrings",
-    description: "Custom personalised keyring.",
-    price: "Ask for quotation",
-    images: ["product-32.jpg"]
-  },
-
-  {
-    category: "PERSONALISED GIFTS",
-    subcategory: "Koumparas",
-    name: "Personalised Koumparas",
-    description: "Personalised money box for special occasions.",
-    price: "Ask for quotation",
-    images: ["product-27.jpg"]
   },
 
   {
@@ -249,6 +198,24 @@ const products = [
     description: "Custom-made gift for a newborn.",
     price: "Ask for quotation",
     images: ["product-31.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Keychains",
+    name: "Personalised Keyrings",
+    description: "Custom-made personalised keyrings.",
+    price: "Ask for quotation",
+    images: ["product-32.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Koumparas",
+    name: "Personalised Koumparas",
+    description: "Personalised money box for special occasions.",
+    price: "Ask for quotation",
+    images: ["product-27.jpg"]
   },
 
   {
@@ -314,7 +281,6 @@ const products = [
     images: ["product-40.jpg"]
   },
 
-
   // =========================
   // BOXES
   // =========================
@@ -364,7 +330,6 @@ const products = [
     images: ["product-41.jpg"]
   },
 
-
   // =========================
   // CORPORATE GIFTS
   // =========================
@@ -377,7 +342,6 @@ const products = [
     price: "Ask for quotation",
     images: ["product-17.jpg"]
   },
-
 
   // =========================
   // CUSTOMISED CUT OUTS
@@ -410,7 +374,6 @@ const products = [
     images: ["product-20.jpg"]
   },
 
-
   // =========================
   // DECOR
   // =========================
@@ -441,7 +404,6 @@ const products = [
     price: "Ask for quotation",
     images: ["product-22.jpg"]
   },
-
 
   // =========================
   // OTHER GIFTS
@@ -474,7 +436,6 @@ const products = [
     images: ["product-24.jpg"]
   },
 
-
   // =========================
   // INVITATIONS
   // =========================
@@ -489,6 +450,3 @@ const products = [
   }
 
 ];
-```
-
-**Σημείωση:** Έβαλα τα `product-25` και `product-28` ως keyrings και τα `29–31` ως newborn, επειδή μου τα έγραψες με επικάλυψη (`25–32 keyrings` και `29–31 newborns`). Άρα αυτά τα 3 τα έχω προσωρινά ως **Newborn**, όχι διπλά. Αν οι φωτογραφίες 29–31 είναι τελικά keyrings, το αλλάζουμε αμέσως.

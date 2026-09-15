@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Laserworks Ideas | Handmade & Personalised Gifts in Limassol, Cyprus</title>
-
-  <meta name="description" content="Handmade and personalised wooden and acrylic gifts, baptism, wedding, birthday, school and corporate gifts in Limassol, Cyprus.">
+  <title>Laserworks Ideas</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -15,85 +13,310 @@
 
 <header>
   <div class="container header-inner">
-    <a href="#" class="logo">Laserworks Ideas</a>
 
-    <button class="menu" aria-label="Menu">☰</button>
+    <a href="#" class="logo">
+      Laserworks Ideas
+    </a>
 
-    <nav>
-      <a href="#home">Home</a>
+    <button class="menu" id="menu">
+      ☰
+    </button>
+
+    <nav id="nav">
       <a href="#categories">Categories</a>
-      <a href="#products">Products</a>
+      <a href="#names">Names & Monograms</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
+
   </div>
 </header>
 
 
-<main>
+<!-- HERO -->
 
-<section id="home" class="hero">
+<section class="hero">
+
   <div class="container">
-    <h1>Handmade & Personalised Gifts</h1>
+
+    <h1>HANDMADE CREATIONS</h1>
 
     <p>
-      Unique wooden & acrylic creations made especially for you.
+      Wooden & Acrylic Personalised Creations
     </p>
 
-    <a href="#categories" class="button">Explore Our Creations</a>
+    <a href="#categories" class="button">
+      Explore Collections
+    </a>
+
   </div>
+
 </section>
 
 
-<section id="categories" class="section">
+<!-- CATEGORIES -->
+
+<section class="section" id="categories">
+
   <div class="container">
 
     <div class="section-title">
-      <h2>Our Categories</h2>
-      <p>Choose a category to explore our creations.</p>
+
+      <h2>CATEGORIES</h2>
+
+      <p>
+        Explore our handmade creations
+      </p>
+
     </div>
+
 
     <div id="category-buttons" class="category-buttons"></div>
 
     <div id="subcategory-buttons" class="subcategory-buttons"></div>
 
   </div>
+
 </section>
 
 
-<section id="products" class="section products-section">
+<!-- PRODUCTS / GALLERY -->
+
+<section class="section products-section">
 
   <div class="container">
 
     <div class="section-title">
-      <h2 id="products-title">Our Products</h2>
-      <p id="products-subtitle">Choose a category above.</p>
+
+      <h2 id="products-title">
+        PRODUCTS
+      </h2>
+
     </div>
 
-    <div id="product-grid" class="product-grid"></div>
+    <div
+      id="product-grid"
+      class="product-grid">
+    </div>
 
   </div>
 
 </section>
 
 
-<section id="about" class="section about-section">
+<!-- NAMES & MONOGRAMS -->
+
+<section class="section names-section" id="names">
 
   <div class="container">
 
     <div class="section-title">
-      <h2>About Laserworks Ideas</h2>
+
+      <h2>NAMES • MONOGRAMS • NUMBERS</h2>
+
+      <p>
+        Create your personalised name, monogram or number
+      </p>
+
+    </div>
+
+
+    <div class="customiser">
+
+      <!-- TYPE -->
+
+      <div class="custom-field">
+
+        <label>
+          WHAT WOULD YOU LIKE?
+        </label>
+
+        <select id="custom-type">
+
+          <option value="Name">
+            Name
+          </option>
+
+          <option value="Monogram">
+            Monogram
+          </option>
+
+          <option value="Number">
+            Number
+          </option>
+
+          <option value="Word / Phrase">
+            Word / Phrase
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- TEXT -->
+
+      <div class="custom-field">
+
+        <label>
+          YOUR TEXT
+        </label>
+
+        <input
+          type="text"
+          id="custom-text"
+          placeholder="Write your name / word">
+
+      </div>
+
+
+      <!-- SIZE -->
+
+      <div class="custom-field">
+
+        <label>
+          SIZE (2CM – 80CM)
+        </label>
+
+        <input
+          type="number"
+          id="custom-size"
+          min="2"
+          max="80"
+          placeholder="Example: 30">
+
+      </div>
+
+
+      <!-- MATERIAL -->
+
+      <div class="custom-field">
+
+        <label>
+          MATERIAL
+        </label>
+
+        <select id="custom-material">
+
+          <option value="Wood">
+            Wood
+          </option>
+
+          <option value="MDF 3mm">
+            MDF 3mm
+          </option>
+
+          <option value="MDF 4mm">
+            MDF 4mm
+          </option>
+
+          <option value="MDF 6mm">
+            MDF 6mm
+          </option>
+
+          <option value="Acrylic Gold">
+            Acrylic Gold
+          </option>
+
+          <option value="Acrylic Silver">
+            Acrylic Silver
+          </option>
+
+          <option value="Acrylic Rose Gold">
+            Acrylic Rose Gold
+          </option>
+
+          <option value="Acrylic Other Colour">
+            Acrylic Other Colour
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- QUANTITY -->
+
+      <div class="custom-field">
+
+        <label>
+          QUANTITY
+        </label>
+
+        <input
+          type="number"
+          id="custom-quantity"
+          min="1"
+          value="1">
+
+      </div>
+
+
+      <!-- SUMMARY -->
+
+      <div class="custom-summary">
+
+        <h3>
+          YOUR SELECTION
+        </h3>
+
+        <p>
+          <strong>Type:</strong>
+          <span id="summary-type">Name</span>
+        </p>
+
+        <p>
+          <strong>Text:</strong>
+          <span id="summary-text">-</span>
+        </p>
+
+        <p>
+          <strong>Size:</strong>
+          <span id="summary-size">-</span>
+        </p>
+
+        <p>
+          <strong>Material:</strong>
+          <span id="summary-material">Wood</span>
+        </p>
+
+        <p>
+          <strong>Quantity:</strong>
+          <span id="summary-quantity">1</span>
+        </p>
+
+        <div class="quotation-price">
+          ASK FOR QUOTATION
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="section about-section" id="about">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>ABOUT US</h2>
+
     </div>
 
     <p>
-      At Laserworks Ideas, we create handmade wooden and acrylic
-      personalised gifts and decorations for every special occasion.
+      Laserworks Ideas creates handmade wooden and acrylic
+      personalised creations for every special occasion.
     </p>
 
     <p>
-      Baptisms, weddings, birthdays, school gifts, corporate gifts
-      and unique personalised creations are made with care and attention
-      to detail.
+      Each creation is carefully designed and made with love.
     </p>
 
   </div>
@@ -101,28 +324,30 @@
 </section>
 
 
-<section id="contact" class="section contact-section">
+<!-- CONTACT -->
+
+<section class="section contact-section" id="contact">
 
   <div class="container">
 
     <div class="section-title">
-      <h2>Contact Us</h2>
-      <p>For orders and quotations, contact us directly.</p>
+
+      <h2>CONTACT</h2>
+
+      <p>
+        Contact us for your personalised creation
+      </p>
+
     </div>
 
     <div class="contact-buttons">
 
-      <a href="https://wa.me/35799303580" target="_blank">
-        WhatsApp
+      <a href="tel:+35799303580">
+        CALL
       </a>
 
-      <a href="https://www.instagram.com/laserworks_ideas/" target="_blank">
-        Instagram
-      </a>
-
-      <a href="https://www.google.com/maps/search/?api=1&query=Despoinas+Pattichi+33a+Limassol+Cyprus"
-         target="_blank">
-        Google Maps
+      <a href="https://wa.me/35799303580">
+        WHATSAPP
       </a>
 
     </div>
@@ -131,122 +356,107 @@
 
 </section>
 
-</main>
 
+<!-- FOOTER -->
 
 <footer>
-  <div class="container">
-    <p>© <span id="year"></span> Laserworks Ideas. All rights reserved.</p>
-  </div>
+
+  © 2026 Laserworks Ideas
+
 </footer>
 
 
 <script src="products.js"></script>
 
+
 <script>
 
-document.getElementById("year").textContent = new Date().getFullYear();
+const categoryButtons =
+  document.getElementById("category-buttons");
 
-const categoryButtons = document.getElementById("category-buttons");
-const subcategoryButtons = document.getElementById("subcategory-buttons");
-const productGrid = document.getElementById("product-grid");
+const subcategoryButtons =
+  document.getElementById("subcategory-buttons");
 
-const productsTitle = document.getElementById("products-title");
-const productsSubtitle = document.getElementById("products-subtitle");
+const productGrid =
+  document.getElementById("product-grid");
 
-
-function getCategories() {
-
-  return [...new Set(products.map(product => product.category))];
-
-}
-
-
-function getSubcategories(category) {
-
-  return [
-    ...new Set(
-      products
-        .filter(product => product.category === category)
-        .map(product => product.subcategory)
-    )
-  ];
-
-}
+const productsTitle =
+  document.getElementById("products-title");
 
 
 function showProducts(category, subcategory = null) {
 
   productGrid.innerHTML = "";
 
-  let filteredProducts = products.filter(product => {
-
-    if (product.category !== category) {
-      return false;
-    }
-
-    if (subcategory && product.subcategory !== subcategory) {
-      return false;
-    }
-
-    return true;
-
-  });
-
+  let filteredProducts =
+    products.filter(product =>
+      product.category === category
+    );
 
   if (subcategory) {
 
-    productsTitle.textContent = subcategory;
-    productsSubtitle.textContent = category;
-
-  } else {
-
-    productsTitle.textContent = category;
-    productsSubtitle.textContent = "Our creations";
+    filteredProducts =
+      filteredProducts.filter(product =>
+        product.subcategory === subcategory
+      );
 
   }
 
 
+  productsTitle.textContent =
+    subcategory || category;
+
+
   filteredProducts.forEach(product => {
 
-    const card = document.createElement("article");
+    const card =
+      document.createElement("div");
 
     card.className = "product";
+
+
+    const image =
+      product.images && product.images.length
+        ? product.images[0]
+        : null;
+
 
     card.innerHTML = `
 
       <div class="product-image">
 
-        <img
-          src="${product.image}"
-          alt="${product.name}"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-        >
-
-        <span style="display:none">YOUR PHOTO</span>
+        ${
+          image
+          ? `<img src="${image}" alt="${product.name}">`
+          : `<div class="no-image">
+               PHOTO COMING SOON
+             </div>`
+        }
 
       </div>
 
 
       <div class="product-info">
 
-        <h3>${product.name}</h3>
+        <h3>
+          ${product.name}
+        </h3>
 
-        <p>${product.description}</p>
+        <p>
+          ${product.description}
+        </p>
 
-        <strong>${product.price}</strong>
+        <strong>
+          ASK FOR QUOTATION
+        </strong>
 
       </div>
 
     `;
 
+
     productGrid.appendChild(card);
 
-  });
-
-
-  document.getElementById("products").scrollIntoView({
-    behavior: "smooth"
   });
 
 }
@@ -256,49 +466,47 @@ function showSubcategories(category) {
 
   subcategoryButtons.innerHTML = "";
 
-  const subcategories = getSubcategories(category);
 
+  const subcategories =
+    [...new Set(
 
-  const allButton = document.createElement("button");
+      products
+        .filter(product =>
+          product.category === category
+        )
+        .map(product =>
+          product.subcategory
+        )
 
-  allButton.textContent = "View All";
-
-  allButton.className = "subcategory-button active";
-
-  allButton.onclick = () => {
-
-    document
-      .querySelectorAll(".subcategory-button")
-      .forEach(button => button.classList.remove("active"));
-
-    allButton.classList.add("active");
-
-    showProducts(category);
-
-  };
-
-  subcategoryButtons.appendChild(allButton);
+    )];
 
 
   subcategories.forEach(subcategory => {
 
-    const button = document.createElement("button");
+    const button =
+      document.createElement("button");
 
-    button.textContent = subcategory;
+    button.className =
+      "subcategory-button";
 
-    button.className = "subcategory-button";
+    button.textContent =
+      subcategory;
+
 
     button.onclick = () => {
 
       document
         .querySelectorAll(".subcategory-button")
-        .forEach(button => button.classList.remove("active"));
+        .forEach(btn =>
+          btn.classList.remove("active")
+        );
 
       button.classList.add("active");
 
       showProducts(category, subcategory);
 
     };
+
 
     subcategoryButtons.appendChild(button);
 
@@ -307,61 +515,136 @@ function showSubcategories(category) {
 }
 
 
-function createCategoryButtons() {
+categories.forEach((category, index) => {
 
-  categoryButtons.innerHTML = "";
+  const button =
+    document.createElement("button");
 
-  getCategories().forEach((category, index) => {
+  button.className =
+    "category-button";
 
-    const button = document.createElement("button");
-
-    button.textContent = category;
-
-    button.className = "category-button";
-
-    button.onclick = () => {
-
-      document
-        .querySelectorAll(".category-button")
-        .forEach(button => button.classList.remove("active"));
-
-      button.classList.add("active");
-
-      showSubcategories(category);
-
-      showProducts(category);
-
-    };
+  button.textContent =
+    category;
 
 
-    categoryButtons.appendChild(button);
+  button.onclick = () => {
+
+    document
+      .querySelectorAll(".category-button")
+      .forEach(btn =>
+        btn.classList.remove("active")
+      );
+
+    button.classList.add("active");
+
+    showSubcategories(category);
+
+    showProducts(category);
+
+  };
 
 
-    if (index === 0) {
+  categoryButtons.appendChild(button);
 
-      button.classList.add("active");
+  
+  if (index === 0) {
 
-      showSubcategories(category);
+    button.classList.add("active");
 
-      showProducts(category);
+    showSubcategories(category);
 
-    }
+    showProducts(category);
 
-  });
+  }
+
+});
+
+
+/* MOBILE MENU */
+
+const menu =
+  document.getElementById("menu");
+
+const nav =
+  document.getElementById("nav");
+
+
+menu.addEventListener("click", () => {
+
+  nav.classList.toggle("open");
+
+});
+
+
+/* CUSTOMISER */
+
+const customType =
+  document.getElementById("custom-type");
+
+const customText =
+  document.getElementById("custom-text");
+
+const customSize =
+  document.getElementById("custom-size");
+
+const customMaterial =
+  document.getElementById("custom-material");
+
+const customQuantity =
+  document.getElementById("custom-quantity");
+
+
+function updateSummary() {
+
+  document.getElementById("summary-type")
+    .textContent =
+    customType.value;
+
+  document.getElementById("summary-text")
+    .textContent =
+    customText.value || "-";
+
+  document.getElementById("summary-size")
+    .textContent =
+    customSize.value
+      ? customSize.value + " cm"
+      : "-";
+
+  document.getElementById("summary-material")
+    .textContent =
+    customMaterial.value;
+
+  document.getElementById("summary-quantity")
+    .textContent =
+    customQuantity.value;
 
 }
 
 
-createCategoryButtons();
+customType.addEventListener(
+  "input",
+  updateSummary
+);
 
+customText.addEventListener(
+  "input",
+  updateSummary
+);
 
-document
-  .querySelector(".menu")
-  .addEventListener("click", () => {
+customSize.addEventListener(
+  "input",
+  updateSummary
+);
 
-    document.querySelector("nav").classList.toggle("open");
+customMaterial.addEventListener(
+  "input",
+  updateSummary
+);
 
-  });
+customQuantity.addEventListener(
+  "input",
+  updateSummary
+);
 
 </script>
 

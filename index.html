@@ -70,7 +70,6 @@
 
     </div>
 
-
     <div id="category-buttons" class="category-buttons"></div>
 
     <div id="subcategory-buttons" class="subcategory-buttons"></div>
@@ -104,6 +103,39 @@
 </section>
 
 
+<!-- IMAGE LIGHTBOX -->
+
+<div id="lightbox" class="lightbox">
+
+  <button class="lightbox-close" id="lightbox-close">
+    ×
+  </button>
+
+  <button class="lightbox-prev" id="lightbox-prev">
+    ‹
+  </button>
+
+  <div class="lightbox-content">
+
+    <img
+      id="lightbox-image"
+      src=""
+      alt="">
+
+    <div
+      id="lightbox-counter"
+      class="lightbox-counter">
+    </div>
+
+  </div>
+
+  <button class="lightbox-next" id="lightbox-next">
+    ›
+  </button>
+
+</div>
+
+
 <!-- NAMES & MONOGRAMS -->
 
 <section class="section names-section" id="names">
@@ -122,8 +154,6 @@
 
 
     <div class="customiser">
-
-      <!-- TYPE -->
 
       <div class="custom-field">
 
@@ -154,8 +184,6 @@
       </div>
 
 
-      <!-- TEXT -->
-
       <div class="custom-field">
 
         <label>
@@ -169,8 +197,6 @@
 
       </div>
 
-
-      <!-- SIZE -->
 
       <div class="custom-field">
 
@@ -187,8 +213,6 @@
 
       </div>
 
-
-      <!-- MATERIAL -->
 
       <div class="custom-field">
 
@@ -235,8 +259,6 @@
       </div>
 
 
-      <!-- QUANTITY -->
-
       <div class="custom-field">
 
         <label>
@@ -251,8 +273,6 @@
 
       </div>
 
-
-      <!-- SUMMARY -->
 
       <div class="custom-summary">
 
@@ -384,14 +404,25 @@ const productsTitle =
   document.getElementById("products-title");
 
 
+/* =====================================================
+   PRODUCT GALLERY
+   ===================================================== */
+
+let currentImages = [];
+
+let currentImageIndex = 0;
+
+
 function showProducts(category, subcategory = null) {
 
   productGrid.innerHTML = "";
+
 
   let filteredProducts =
     products.filter(product =>
       product.category === category
     );
+
 
   if (subcategory) {
 
@@ -415,26 +446,74 @@ function showProducts(category, subcategory = null) {
     card.className = "product";
 
 
-    const image =
-      product.images && product.images.length
-        ? product.images[0]
-        : null;
+    const images =
+      product.images || [];
+
+
+    let galleryHTML = "";
+
+
+    if (images.length > 0) {
+
+      galleryHTML = `
+
+        <div class="product-gallery">
+
+          <div class="main-product-image">
+
+            <img
+              src="${images[0]}"
+              alt="${product.name}"
+              class="gallery-main-image">
+
+          </div>
+
+          ${
+            images.length > 1
+            ?
+            `<div class="gallery-thumbnails">
+
+              ${
+                images.map((image, index) => `
+
+                  <img
+                    src="${image}"
+                    alt="${product.name}"
+                    class="gallery-thumbnail"
+                    data-index="${index}">
+
+                `).join("")
+              }
+
+            </div>`
+            :
+            ""
+          }
+
+        </div>
+
+      `;
+
+    } else {
+
+      galleryHTML = `
+
+        <div class="product-image">
+
+          <div class="no-image">
+            PHOTO COMING SOON
+          </div>
+
+        </div>
+
+      `;
+
+    }
 
 
     card.innerHTML = `
 
-      <div class="product-image">
-
-        ${
-          image
-          ? `<img src="${image}" alt="${product.name}">`
-          : `<div class="no-image">
-               PHOTO COMING SOON
-             </div>`
-        }
-
-      </div>
-
+      ${galleryHTML}
 
       <div class="product-info">
 
@@ -457,10 +536,208 @@ function showProducts(category, subcategory = null) {
 
     productGrid.appendChild(card);
 
+
+    const mainImage =
+      card.querySelector(".gallery-main-image");
+
+
+    if (mainImage) {
+
+      mainImage.addEventListener("click", () => {
+
+        openLightbox(images, 0);
+
+      });
+
+
+      const thumbnails =
+        card.querySelectorAll(".gallery-thumbnail");
+
+
+      thumbnails.forEach(thumbnail => {
+
+        thumbnail.addEventListener("click", () => {
+
+          const index =
+            Number(thumbnail.dataset.index);
+
+
+          mainImage.src =
+            images[index];
+
+
+          openLightbox(images, index);
+
+        });
+
+      });
+
+    }
+
   });
 
 }
 
+
+/* =====================================================
+   LIGHTBOX
+   ===================================================== */
+
+const lightbox =
+  document.getElementById("lightbox");
+
+const lightboxImage =
+  document.getElementById("lightbox-image");
+
+const lightboxCounter =
+  document.getElementById("lightbox-counter");
+
+
+function openLightbox(images, index) {
+
+  currentImages = images;
+
+  currentImageIndex = index;
+
+  updateLightbox();
+
+  lightbox.classList.add("open");
+
+}
+
+
+function updateLightbox() {
+
+  if (!currentImages.length) {
+    return;
+  }
+
+
+  lightboxImage.src =
+    currentImages[currentImageIndex];
+
+
+  lightboxCounter.textContent =
+    `${currentImageIndex + 1} / ${currentImages.length}`;
+
+}
+
+
+function closeLightbox() {
+
+  lightbox.classList.remove("open");
+
+}
+
+
+document
+  .getElementById("lightbox-close")
+  .addEventListener(
+    "click",
+    closeLightbox
+  );
+
+
+document
+  .getElementById("lightbox-prev")
+  .addEventListener(
+    "click",
+    () => {
+
+      if (!currentImages.length) {
+        return;
+      }
+
+      currentImageIndex--;
+
+      if (currentImageIndex < 0) {
+
+        currentImageIndex =
+          currentImages.length - 1;
+
+      }
+
+      updateLightbox();
+
+    }
+  );
+
+
+document
+  .getElementById("lightbox-next")
+  .addEventListener(
+    "click",
+    () => {
+
+      if (!currentImages.length) {
+        return;
+      }
+
+      currentImageIndex++;
+
+      if (
+        currentImageIndex >=
+        currentImages.length
+      ) {
+
+        currentImageIndex = 0;
+
+      }
+
+      updateLightbox();
+
+    }
+  );
+
+
+lightbox.addEventListener("click", (event) => {
+
+  if (event.target === lightbox) {
+
+    closeLightbox();
+
+  }
+
+});
+
+
+document.addEventListener("keydown", (event) => {
+
+  if (!lightbox.classList.contains("open")) {
+    return;
+  }
+
+
+  if (event.key === "Escape") {
+
+    closeLightbox();
+
+  }
+
+
+  if (event.key === "ArrowLeft") {
+
+    document
+      .getElementById("lightbox-prev")
+      .click();
+
+  }
+
+
+  if (event.key === "ArrowRight") {
+
+    document
+      .getElementById("lightbox-next")
+      .click();
+
+  }
+
+});
+
+
+/* =====================================================
+   SUBCATEGORIES
+   ===================================================== */
 
 function showSubcategories(category) {
 
@@ -486,8 +763,10 @@ function showSubcategories(category) {
     const button =
       document.createElement("button");
 
+
     button.className =
       "subcategory-button";
+
 
     button.textContent =
       subcategory;
@@ -501,9 +780,14 @@ function showSubcategories(category) {
           btn.classList.remove("active")
         );
 
+
       button.classList.add("active");
 
-      showProducts(category, subcategory);
+
+      showProducts(
+        category,
+        subcategory
+      );
 
     };
 
@@ -515,13 +799,19 @@ function showSubcategories(category) {
 }
 
 
+/* =====================================================
+   CATEGORIES
+   ===================================================== */
+
 categories.forEach((category, index) => {
 
   const button =
     document.createElement("button");
 
+
   button.className =
     "category-button";
+
 
   button.textContent =
     category;
@@ -535,7 +825,9 @@ categories.forEach((category, index) => {
         btn.classList.remove("active")
       );
 
+
     button.classList.add("active");
+
 
     showSubcategories(category);
 
@@ -546,7 +838,7 @@ categories.forEach((category, index) => {
 
   categoryButtons.appendChild(button);
 
-  
+
   if (index === 0) {
 
     button.classList.add("active");
@@ -560,7 +852,9 @@ categories.forEach((category, index) => {
 });
 
 
-/* MOBILE MENU */
+/* =====================================================
+   MOBILE MENU
+   ===================================================== */
 
 const menu =
   document.getElementById("menu");
@@ -576,7 +870,9 @@ menu.addEventListener("click", () => {
 });
 
 
-/* CUSTOMISER */
+/* =====================================================
+   CUSTOMISER
+   ===================================================== */
 
 const customType =
   document.getElementById("custom-type");
@@ -600,9 +896,11 @@ function updateSummary() {
     .textContent =
     customType.value;
 
+
   document.getElementById("summary-text")
     .textContent =
     customText.value || "-";
+
 
   document.getElementById("summary-size")
     .textContent =
@@ -610,9 +908,11 @@ function updateSummary() {
       ? customSize.value + " cm"
       : "-";
 
+
   document.getElementById("summary-material")
     .textContent =
     customMaterial.value;
+
 
   document.getElementById("summary-quantity")
     .textContent =

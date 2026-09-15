@@ -1,18 +1,12 @@
 /* =====================================================
    LASERWORKS IDEAS
-   EDIT HERE - EASY FONT SETTINGS
+   EDIT HERE
    ===================================================== */
 
 :root {
-
-  /* ✏️ CHANGE FONTS HERE */
-
   --main-font: Georgia, "Times New Roman", serif;
   --heading-font: Georgia, "Times New Roman", serif;
   --text-font: Arial, Helvetica, sans-serif;
-
-
-  /* ✏️ MAIN COLOURS */
 
   --black: #111111;
   --red: #b5121b;
@@ -20,7 +14,6 @@
   --light: #f7f7f7;
   --grey: #777777;
   --border: #dddddd;
-
 }
 
 
@@ -86,24 +79,113 @@ header {
   margin-top: 5px;
 }
 
+
+/* =====================================================
+   MAIN NAVIGATION
+   ===================================================== */
+
 nav {
   display: flex;
-  gap: 30px;
+  align-items: center;
+  gap: 8px;
 }
 
-nav a {
+nav a,
+.nav-drop-button {
   text-decoration: none;
   color: var(--black);
   font-family: var(--text-font);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
-nav a:hover {
+nav a {
+  padding: 12px 9px;
+}
+
+nav a:hover,
+.nav-drop-button:hover {
   color: var(--red);
 }
+
+
+/* =====================================================
+   DROPDOWN
+   ===================================================== */
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-drop-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 12px 9px;
+  white-space: nowrap;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+
+  min-width: 220px;
+
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--red);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .15);
+
+  display: none;
+
+  z-index: 2000;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu button {
+  width: 100%;
+  display: block;
+
+  padding: 13px 16px;
+
+  border: none;
+  border-bottom: 1px solid #eeeeee;
+
+  background: var(--white);
+  color: var(--black);
+
+  text-align: left;
+
+  font-family: var(--text-font);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .8px;
+
+  cursor: pointer;
+
+  text-transform: uppercase;
+}
+
+.dropdown-menu button:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu button:hover {
+  background: var(--red);
+  color: var(--white);
+}
+
+
+/* =====================================================
+   MOBILE MENU BUTTON
+   ===================================================== */
 
 .menu {
   display: none;
@@ -163,7 +245,6 @@ nav a:hover {
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  transition: .25s ease;
 }
 
 .button:hover {
@@ -213,48 +294,7 @@ nav a:hover {
 
 
 /* =====================================================
-   CATEGORY BUTTONS
-   ===================================================== */
-
-.category-buttons,
-.subcategory-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.category-button,
-.subcategory-button {
-  border: 1px solid var(--black);
-  background: var(--white);
-  color: var(--black);
-  padding: 13px 22px;
-  cursor: pointer;
-  font-family: var(--text-font);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  transition: all .25s ease;
-}
-
-.category-button:hover,
-.category-button.active,
-.subcategory-button:hover,
-.subcategory-button.active {
-  background: var(--red);
-  color: var(--white);
-  border-color: var(--red);
-}
-
-.subcategory-buttons {
-  margin-top: 22px;
-}
-
-
-/* =====================================================
-   PRODUCTS / GALLERY
+   PRODUCTS
    ===================================================== */
 
 .products-section {
@@ -281,16 +321,13 @@ nav a:hover {
 
 
 /* =====================================================
-   SQUARE PRODUCT GALLERY
+   SQUARE PRODUCT PHOTOS
    ===================================================== */
 
 .product-gallery {
   width: 100%;
   background: var(--white);
 }
-
-
-/* PERFECT SQUARE */
 
 .main-product-image {
   width: 100%;
@@ -305,9 +342,6 @@ nav a:hover {
   overflow: hidden;
   cursor: pointer;
 }
-
-
-/* SHOW WHOLE PHOTO */
 
 .gallery-main-image {
   width: 100%;
@@ -326,7 +360,7 @@ nav a:hover {
 
 
 /* =====================================================
-   GALLERY THUMBNAILS
+   THUMBNAILS
    ===================================================== */
 
 .gallery-thumbnails {
@@ -335,7 +369,6 @@ nav a:hover {
   padding: 10px;
 
   overflow-x: auto;
-
   background: var(--white);
 }
 
@@ -350,7 +383,6 @@ nav a:hover {
   border: 1px solid var(--border);
 
   cursor: pointer;
-
   flex-shrink: 0;
 }
 
@@ -447,7 +479,6 @@ nav a:hover {
 .lightbox-content {
   max-width: 90vw;
   max-height: 90vh;
-
   text-align: center;
 }
 
@@ -466,9 +497,7 @@ nav a:hover {
 
 .lightbox-counter {
   margin-top: 12px;
-
   color: var(--white);
-
   font-family: var(--text-font);
   font-size: 13px;
 }
@@ -484,28 +513,24 @@ nav a:hover {
   color: var(--white);
 
   cursor: pointer;
-
   z-index: 10000;
 }
 
 .lightbox-close {
   top: 20px;
   right: 30px;
-
   font-size: 45px;
 }
 
 .lightbox-prev {
   left: 25px;
   top: 50%;
-
   font-size: 60px;
 }
 
 .lightbox-next {
   right: 25px;
   top: 50%;
-
   font-size: 60px;
 }
 
@@ -540,6 +565,7 @@ nav a:hover {
 .custom-field label {
   display: block;
   margin-bottom: 8px;
+
   font-family: var(--text-font);
   font-size: 11px;
   font-weight: 800;
@@ -552,12 +578,17 @@ nav a:hover {
 .custom-field select {
   width: 100%;
   min-height: 50px;
+
   padding: 12px 15px;
+
   border: 1px solid #cccccc;
+
   background: var(--white);
   color: var(--black);
+
   font-family: var(--text-font);
   font-size: 14px;
+
   outline: none;
 }
 
@@ -569,22 +600,27 @@ nav a:hover {
 .custom-summary {
   margin-top: 35px;
   padding: 28px;
+
   background: var(--black);
   color: var(--white);
 }
 
 .custom-summary h3 {
   margin: 0 0 20px;
+
   font-family: var(--heading-font);
   font-size: 24px;
+
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .custom-summary p {
   margin: 8px 0;
+
   font-family: var(--text-font);
   font-size: 14px;
+
   color: #dddddd;
 }
 
@@ -595,9 +631,12 @@ nav a:hover {
 .quotation-price {
   margin-top: 25px;
   padding: 16px;
+
   background: var(--red);
   color: var(--white);
+
   text-align: center;
+
   font-family: var(--text-font);
   font-size: 13px;
   font-weight: 800;
@@ -617,8 +656,10 @@ nav a:hover {
 .about-section p {
   max-width: 800px;
   margin: 0 auto 15px;
+
   font-family: var(--text-font);
   line-height: 1.8;
+
   color: var(--grey);
   font-size: 15px;
 }
@@ -650,10 +691,14 @@ nav a:hover {
 
 .contact-buttons a {
   display: inline-block;
+
   padding: 14px 28px;
+
   background: var(--red);
   color: var(--white);
+
   text-decoration: none;
+
   font-family: var(--text-font);
   font-size: 12px;
   font-weight: 700;
@@ -674,8 +719,11 @@ nav a:hover {
 footer {
   background: #000000;
   color: #999999;
+
   text-align: center;
+
   padding: 28px 10px;
+
   font-family: var(--text-font);
   font-size: 12px;
 }
@@ -685,6 +733,22 @@ footer {
    MOBILE
    ===================================================== */
 
+@media (max-width: 1100px) {
+
+  nav {
+    gap: 2px;
+  }
+
+  nav a,
+  .nav-drop-button {
+    font-size: 10px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+}
+
+
 @media (max-width: 800px) {
 
   .menu {
@@ -693,14 +757,24 @@ footer {
 
   nav {
     display: none;
+
     position: absolute;
+
     top: 85px;
     left: 0;
     right: 0;
+
     background: var(--white);
+
     flex-direction: column;
+    align-items: stretch;
+
     gap: 0;
+
     border-bottom: 2px solid var(--black);
+
+    max-height: calc(100vh - 85px);
+    overflow-y: auto;
   }
 
   nav.open {
@@ -711,6 +785,40 @@ footer {
     padding: 16px 5%;
     border-top: 1px solid #eeeeee;
   }
+
+
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .nav-drop-button {
+    width: 100%;
+
+    padding: 16px 5%;
+
+    text-align: left;
+
+    border-top: 1px solid #eeeeee;
+  }
+
+
+  .dropdown-menu {
+    position: static;
+
+    width: 100%;
+
+    min-width: 0;
+
+    border-top: none;
+    border-left: 4px solid var(--red);
+
+    box-shadow: none;
+  }
+
+  .dropdown-menu button {
+    padding: 14px 8%;
+  }
+
 
   .hero {
     padding: 100px 20px;
@@ -724,6 +832,7 @@ footer {
     font-size: 29px;
     letter-spacing: 2px;
   }
+
 
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -753,11 +862,6 @@ footer {
 
   .product-grid {
     grid-template-columns: 1fr;
-  }
-
-  .category-button,
-  .subcategory-button {
-    width: 100%;
   }
 
   .custom-summary {

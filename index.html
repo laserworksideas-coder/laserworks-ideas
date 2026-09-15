@@ -1,495 +1,143 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>LASERWORKS IDEAS | LASER CUTTING • LASER ENGRAVING • DESIGN • PERSONALISED GIFTS</title>
-
-  <meta
-    name="description"
-    content="Laserworks Ideas in Limassol, Cyprus. Laser cutting, laser engraving, design and personalised gifts in MDF, wood and acrylic for christenings, weddings, events, gifts and businesses."
-  >
+  <title>Laserworks Ideas | Laser Cutting & Personalised Gifts Cyprus</title>
+  <meta name="description" content="Laser cutting, laser engraving, personalised gifts, christening, wedding, birthday and corporate creations in Cyprus.">
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="top-row">
-  <div class="container top-row-inner">
+<!-- =========================
+     HEADER
+========================= -->
 
-    <a href="#home" class="logo">
-      LASERWORKS IDEAS
-    </a>
+<header>
 
-    <div class="header-contact">
+  <div class="top-row">
+    <div class="container top-row-inner">
 
-      <span class="header-contact-title">
-        CONTACT US
-      </span>
+      <a href="#home" class="logo">LASERWORKS IDEAS</a>
 
-      <a href="mailto:laserworksideas@gmail.com">
-        laserworksideas@gmail.com
-      </a>
+      <div class="header-contact">
 
-      <a href="tel:+35725322025">
-        +357 25 322025
-      </a>
+        <span class="header-contact-title">CONTACT US</span>
 
-      <a href="tel:+35799303580">
-        +357 99 303580
-      </a>
+        <a href="mailto:laserworksideas@gmail.com">
+          laserworksideas@gmail.com
+        </a>
 
-      <a
-        href="https://wa.me/35799303580"
-        target="_blank"
-        rel="noopener"
-      >
-        WHATSAPP
-      </a>
+        <a href="tel:+35725322025">
+          +357 25 322025
+        </a>
 
-      <a href="viber://chat?number=%2B35799303580">
-        VIBER
-      </a>
+        <a href="tel:+35799303580">
+          +357 99 303580
+        </a>
+
+        <a href="https://wa.me/35799303580" target="_blank">
+          WhatsApp
+        </a>
+
+        <a href="viber://chat?number=%2B35799303580">
+          Viber
+        </a>
+
+      </div>
+
+      <button class="menu" id="menuButton">☰</button>
 
     </div>
-
-    <button
-      class="menu"
-      id="menuButton"
-      aria-label="Open menu"
-    >
-      ☰
-    </button>
-
   </div>
+
+
+  <nav class="main-nav" id="mainNav">
+
+    <a href="#home">HOME</a>
+
+    <div class="nav-dropdown">
+      <button type="button" id="productsButton">
+        PRODUCTS ▾
+      </button>
+
+      <div class="dropdown-menu" id="productsMenu">
+        <a href="#christening">CHRISTENING</a>
+        <a href="#weddings">WEDDINGS</a>
+        <a href="#birthdays">BIRTHDAYS</a>
+        <a href="#corporate">CORPORATE</a>
+        <a href="#schools">SCHOOLS</a>
+        <a href="#gifts">PERSONALISED GIFTS</a>
+      </div>
+    </div>
+
+    <a href="#customiser">CUSTOMISER</a>
+
+    <a href="#about">ABOUT US</a>
+
+    <a href="#contact">CONTACT</a>
+
+    <a href="#gallery">GALLERY</a>
+
+  </nav>
+
 </header>
-
-
-<nav class="main-nav" id="mainNav">
-
-  <div class="nav-dropdown">
-
-    <button type="button" data-category="CHRISTENING">
-      CHRISTENING
-      <span>⌄</span>
-    </button>
-
-    <div class="dropdown-menu">
-
-      <a href="#products" data-category="CHRISTENING">
-        ALL CHRISTENING
-      </a>
-
-      <a
-        href="#products"
-        data-category="CHRISTENING"
-        data-subcategory="Hangers"
-      >
-        HANGERS
-      </a>
-
-      <a
-        href="#products"
-        data-category="CHRISTENING"
-        data-subcategory="Wish Books"
-      >
-        WISH BOOKS
-      </a>
-
-      <a
-        href="#products"
-        data-category="CHRISTENING"
-        data-subcategory="Christening Accessories"
-      >
-        CHRISTENING ACCESSORIES
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <div class="nav-dropdown">
-
-    <button type="button" data-category="WEDDING">
-      WEDDING
-      <span>⌄</span>
-    </button>
-
-    <div class="dropdown-menu">
-
-      <a href="#products" data-category="WEDDING">
-        ALL WEDDING
-      </a>
-
-      <a
-        href="#products"
-        data-category="WEDDING"
-        data-subcategory="Hangers"
-      >
-        HANGERS
-      </a>
-
-      <a
-        href="#products"
-        data-category="WEDDING"
-        data-subcategory="Wedding Signs"
-      >
-        WEDDING SIGNS
-      </a>
-
-      <a
-        href="#products"
-        data-category="WEDDING"
-        data-subcategory="Wedding Favours"
-      >
-        WEDDING FAVOURS
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <div class="nav-dropdown">
-
-    <button type="button" data-category="SEASONAL ITEMS">
-      SEASONAL ITEMS
-      <span>⌄</span>
-    </button>
-
-    <div class="dropdown-menu">
-
-      <a href="#products" data-category="SEASONAL ITEMS">
-        ALL SEASONAL ITEMS
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <div class="nav-dropdown">
-
-    <button type="button" data-category="PERSONALISED GIFTS">
-      PERSONALISED GIFTS
-      <span>⌄</span>
-    </button>
-
-    <div class="dropdown-menu">
-
-      <a href="#products" data-category="PERSONALISED GIFTS">
-        ALL PERSONALISED GIFTS
-      </a>
-
-      <a
-        href="#products"
-        data-category="PERSONALISED GIFTS"
-        data-subcategory="Keychains"
-      >
-        KEYCHAINS
-      </a>
-
-      <a
-        href="#products"
-        data-category="PERSONALISED GIFTS"
-        data-subcategory="Newborn Gifts"
-      >
-        NEWBORN GIFTS
-      </a>
-
-      <a
-        href="#products"
-        data-category="PERSONALISED GIFTS"
-        data-subcategory="Koumparas"
-      >
-        KOUMPARAS
-      </a>
-
-      <a
-        href="#products"
-        data-category="PERSONALISED GIFTS"
-        data-subcategory="Pencil Cases"
-      >
-        PENCIL CASES
-      </a>
-
-      <a
-        href="#products"
-        data-category="PERSONALISED GIFTS"
-        data-subcategory="Magnets"
-      >
-        MAGNETS
-      </a>
-
-      <a
-        href="#products"
-        data-category="PERSONALISED GIFTS"
-        data-subcategory="Door Hangers"
-      >
-        DOOR HANGERS
-      </a>
-
-      <a
-        href="#products"
-        data-category="PERSONALISED GIFTS"
-        data-subcategory="Photo Frames"
-      >
-        PHOTO FRAMES
-      </a>
-
-      <a
-        href="#products"
-        data-category="PERSONALISED GIFTS"
-        data-subcategory="Educational"
-      >
-        EDUCATIONAL
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <div class="nav-dropdown">
-
-    <button type="button" data-category="BOXES">
-      BOXES
-      <span>⌄</span>
-    </button>
-
-    <div class="dropdown-menu">
-
-      <a href="#products" data-category="BOXES">
-        ALL BOXES
-      </a>
-
-      <a
-        href="#products"
-        data-category="BOXES"
-        data-subcategory="Tea Boxes"
-      >
-        TEA BOXES
-      </a>
-
-      <a
-        href="#products"
-        data-category="BOXES"
-        data-subcategory="Wine Boxes"
-      >
-        WINE BOXES
-      </a>
-
-      <a
-        href="#products"
-        data-category="BOXES"
-        data-subcategory="Gift Boxes"
-      >
-        GIFT BOXES
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <div class="nav-dropdown">
-
-    <button type="button" data-category="CORPORATE GIFTS">
-      CORPORATE GIFTS
-      <span>⌄</span>
-    </button>
-
-    <div class="dropdown-menu">
-
-      <a href="#products" data-category="CORPORATE GIFTS">
-        CORPORATE GIFTS
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <div class="nav-dropdown">
-
-    <button type="button" data-category="CUSTOMISED CUT OUTS">
-      CUSTOMISED CUT OUTS
-      <span>⌄</span>
-    </button>
-
-    <div class="dropdown-menu">
-
-      <a href="#products" data-category="CUSTOMISED CUT OUTS">
-        ALL CUT OUTS
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <div class="nav-dropdown">
-
-    <button type="button" data-category="DECOR">
-      DECOR
-      <span>⌄</span>
-    </button>
-
-    <div class="dropdown-menu">
-
-      <a href="#products" data-category="DECOR">
-        ALL DECOR
-      </a>
-
-      <a
-        href="#products"
-        data-category="DECOR"
-        data-subcategory="Cake Toppers"
-      >
-        CAKE TOPPERS
-      </a>
-
-      <a
-        href="#products"
-        data-category="DECOR"
-        data-subcategory="Foamboard"
-      >
-        FOAMBOARD
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <div class="nav-dropdown">
-
-    <button type="button" data-category="OTHER GIFTS">
-      OTHER GIFTS
-      <span>⌄</span>
-    </button>
-
-    <div class="dropdown-menu">
-
-      <a href="#products" data-category="OTHER GIFTS">
-        ALL OTHER GIFTS
-      </a>
-
-      <a
-        href="#products"
-        data-category="OTHER GIFTS"
-        data-subcategory="Clothing"
-      >
-        CLOTHING
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <div class="nav-dropdown">
-
-    <button type="button" data-category="INVITATIONS">
-      INVITATIONS
-      <span>⌄</span>
-    </button>
-
-    <div class="dropdown-menu">
-
-      <a href="#products" data-category="INVITATIONS">
-        INVITATIONS
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <a href="#gallery">
-    GALLERY
-  </a>
-
-
-  <a href="#customiser">
-    NAMES • MONOGRAMS
-  </a>
-
-</nav>
 
 
 <!-- =========================
      HERO
-========================== -->
+========================= -->
 
 <section class="hero" id="home">
 
   <div class="hero-content">
 
     <h1>
-      LASER CUTTING
-      <br>
-      LASER ENGRAVING
-      <br>
-      DESIGN
-      <br>
+      LASER CUTTING<br>
+      LASER ENGRAVING<br>
+      DESIGN<br>
       PERSONALISED GIFTS
     </h1>
 
     <p>
-      CUSTOM-MADE CREATIONS IN MDF, WOOD AND ACRYLIC
-      FOR SPECIAL OCCASIONS, GIFTS, EVENTS AND BUSINESSES.
+      Creative personalised creations for every special occasion.
     </p>
 
-
-    <!-- HERO SLIDER -->
+    <a href="#gallery" class="hero-button">
+      VIEW GALLERY
+    </a>
 
     <div class="hero-slider">
 
       <button
-        class="hero-slider-arrow hero-slider-prev"
-        id="heroSliderPrev"
-        aria-label="Previous photo"
-      >
+        type="button"
+        class="hero-slider-arrow"
+        id="heroSliderPrev">
         ‹
       </button>
 
-
       <div
         class="hero-slider-image"
-        id="heroSliderImage"
-      >
+        id="heroSliderImage">
 
         <img
           id="heroSliderImg"
           src=""
-          alt="LASERWORKS IDEAS"
-        >
+          alt="Laserworks Ideas">
 
       </div>
 
-
       <button
-        class="hero-slider-arrow hero-slider-next"
-        id="heroSliderNext"
-        aria-label="Next photo"
-      >
+        type="button"
+        class="hero-slider-arrow"
+        id="heroSliderNext">
         ›
       </button>
 
     </div>
-
-
-    <a
-      href="#products"
-      class="hero-button"
-    >
-      EXPLORE OUR CREATIONS
-    </a>
 
   </div>
 
@@ -498,65 +146,150 @@
 
 <!-- =========================
      PRODUCTS
-========================== -->
+========================= -->
 
-<section
-  class="section products-section"
-  id="products"
->
+<main>
 
-  <div class="container">
+  <section class="section products-section" id="christening">
 
-    <div class="section-heading">
+    <div class="container">
 
-      <h2 id="productsTitle">
-        OUR CREATIONS
-      </h2>
+      <div class="section-heading">
+        <h2>CHRISTENING</h2>
+        <p>Personalised creations for your special day.</p>
+      </div>
 
-      <p id="productsDescription">
-        EXPLORE OUR PERSONALISED AND HANDMADE CREATIONS.
-      </p>
+      <div class="product-grid" id="christeningProducts"></div>
 
     </div>
 
-    <div
-      id="productGrid"
-      class="product-grid"
-    ></div>
+  </section>
 
-  </div>
 
-</section>
+  <section class="section products-section" id="weddings">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>WEDDINGS</h2>
+        <p>Personalised details and decorations for weddings.</p>
+      </div>
+
+      <div class="product-grid" id="weddingProducts"></div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section products-section" id="birthdays">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>BIRTHDAYS</h2>
+        <p>Unique personalised creations for every birthday.</p>
+      </div>
+
+      <div class="product-grid" id="birthdayProducts"></div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section products-section" id="corporate">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>CORPORATE</h2>
+        <p>Corporate gifts, boxes and personalised creations.</p>
+      </div>
+
+      <div class="product-grid" id="corporateProducts"></div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section products-section" id="schools">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>SCHOOLS</h2>
+        <p>Creative personalised products for schools and events.</p>
+      </div>
+
+      <div class="product-grid" id="schoolProducts"></div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section products-section" id="gifts">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>PERSONALISED GIFTS</h2>
+        <p>Unique personalised gifts made for every occasion.</p>
+      </div>
+
+      <div class="product-grid" id="giftProducts"></div>
+
+    </div>
+
+  </section>
 
 
 <!-- =========================
      GALLERY
-     NOW AT THE END OF CATEGORIES
-========================== -->
+========================= -->
 
-<section
-  class="section products-section"
-  id="gallery"
->
+<section class="section gallery-section" id="gallery">
 
   <div class="container">
 
     <div class="section-heading">
 
-      <h2>
-        GALLERY
-      </h2>
+      <h2>GALLERY</h2>
 
       <p>
-        EXPLORE OUR COMPLETE COLLECTION OF CREATIONS.
+        Explore some of our creations.
       </p>
 
     </div>
 
-    <div
-      id="galleryGrid"
-      class="product-grid"
-    ></div>
+    <div class="gallery-slider">
+
+      <button
+        type="button"
+        class="gallery-arrow"
+        id="galleryPrev">
+        ‹
+      </button>
+
+      <div class="gallery-image-box">
+
+        <img
+          id="galleryImage"
+          src=""
+          alt="Laserworks Ideas Gallery">
+
+      </div>
+
+      <button
+        type="button"
+        class="gallery-arrow"
+        id="galleryNext">
+        ›
+      </button>
+
+    </div>
 
   </div>
 
@@ -565,23 +298,18 @@
 
 <!-- =========================
      CUSTOMISER
-========================== -->
+========================= -->
 
-<section
-  class="section customiser-section"
-  id="customiser"
->
+<section class="section customiser-section" id="customiser">
 
   <div class="container">
 
     <div class="section-heading">
 
-      <h2>
-        PERSONALISE YOUR CREATION
-      </h2>
+      <h2>CUSTOMISER</h2>
 
       <p>
-        TELL US WHAT YOU WOULD LIKE AND WE WILL CREATE IT FOR YOU.
+        Tell us what you need and request a quotation.
       </p>
 
     </div>
@@ -592,14 +320,13 @@
       <div class="custom-field">
 
         <label for="customName">
-          NAME / TEXT
+          NAME / DESIGN
         </label>
 
         <input
           type="text"
           id="customName"
-          placeholder="ENTER YOUR NAME OR TEXT"
-        >
+          placeholder="Enter name or design">
 
       </div>
 
@@ -613,22 +340,22 @@
         <select id="customMaterial">
 
           <option value="">
-            SELECT MATERIAL
+            Select material
           </option>
 
           <option value="MDF">
             MDF
           </option>
 
-          <option value="Wood">
+          <option value="WOOD">
             WOOD
           </option>
 
-          <option value="Acrylic">
+          <option value="ACRYLIC">
             ACRYLIC
           </option>
 
-          <option value="Other">
+          <option value="OTHER">
             OTHER
           </option>
 
@@ -646,8 +373,7 @@
         <input
           type="text"
           id="customSize"
-          placeholder="E.G. 20 CM"
-        >
+          placeholder="e.g. 20 x 30 cm">
 
       </div>
 
@@ -661,7 +387,7 @@
         <select id="customOccasion">
 
           <option value="">
-            SELECT OCCASION
+            Select occasion
           </option>
 
           <option value="Christening">
@@ -676,16 +402,16 @@
             BIRTHDAY
           </option>
 
-          <option value="Newborn">
-            NEWBORN
-          </option>
-
-          <option value="Gift">
-            GIFT
-          </option>
-
           <option value="Corporate">
             CORPORATE
+          </option>
+
+          <option value="School">
+            SCHOOL
+          </option>
+
+          <option value="Personalised Gift">
+            PERSONALISED GIFT
           </option>
 
           <option value="Other">
@@ -699,36 +425,36 @@
 
       <div class="custom-summary">
 
-        <h3>
-          YOUR REQUEST
-        </h3>
+        <h3>REQUEST A QUOTATION</h3>
 
         <p>
-          <strong>NAME / TEXT:</strong>
-          <span id="summaryName">—</span>
+          <strong>NAME / DESIGN:</strong>
+          <span id="summaryName">-</span>
         </p>
 
         <p>
           <strong>MATERIAL:</strong>
-          <span id="summaryMaterial">—</span>
+          <span id="summaryMaterial">-</span>
         </p>
 
         <p>
           <strong>SIZE:</strong>
-          <span id="summarySize">—</span>
+          <span id="summarySize">-</span>
         </p>
 
         <p>
           <strong>OCCASION:</strong>
-          <span id="summaryOccasion">—</span>
+          <span id="summaryOccasion">-</span>
         </p>
 
-        <a
-          href="#contact"
+        <button
+          type="button"
           class="custom-button"
-        >
+          id="quotationButton">
+
           REQUEST A QUOTATION
-        </a>
+
+        </button>
 
       </div>
 
@@ -741,47 +467,34 @@
 
 <!-- =========================
      ABOUT
-========================== -->
+========================= -->
 
-<section
-  class="section about-section"
-  id="about"
->
+<section class="section about-section" id="about">
 
   <div class="container">
 
     <div class="section-heading">
 
-      <h2>
-        ABOUT LASERWORKS IDEAS
-      </h2>
+      <h2>ABOUT US</h2>
 
     </div>
 
     <div class="about-content">
 
       <p>
-        LASERWORKS IDEAS CREATES PERSONALISED LASER-CUT AND ENGRAVED
-        PRODUCTS IN MDF, WOOD AND ACRYLIC, DESIGNED FOR SPECIAL
-        OCCASIONS, GIFTS, EVENTS AND BUSINESSES.
+        At Laserworks Ideas, we create personalised laser-cut
+        and engraved products designed especially for you.
       </p>
 
       <p>
-        FROM PERSONALISED NAMES AND DECORATIONS TO CHRISTENING
-        ACCESSORIES, WEDDING DETAILS, GIFT BOXES, CORPORATE GIFTS
-        AND CUSTOMISED CREATIONS, EVERY PIECE IS MADE WITH ATTENTION
-        TO DETAIL.
+        From christenings, weddings and birthdays to corporate
+        gifts, school products and personalised creations,
+        every project is made with attention to detail.
       </p>
 
-      <div class="about-highlight">
-
-        <p>
-          <strong>
-            PERSONALISED. CREATIVE. MADE FOR YOU.
-          </strong>
-        </p>
-
-      </div>
+      <p class="about-highlight">
+        <strong>DESIGNED FOR YOU. CREATED BY US.</strong>
+      </p>
 
     </div>
 
@@ -792,33 +505,31 @@
 
 <!-- =========================
      CONTACT
-========================== -->
+========================= -->
 
-<section
-  class="section contact-section"
-  id="contact"
->
+<section class="section contact-section" id="contact">
 
   <div class="container">
 
     <div class="section-heading">
 
-      <h2>
-        CONTACT US
-      </h2>
+      <h2>CONTACT</h2>
+
+      <p>
+        Contact us for information or request a quotation.
+      </p>
 
     </div>
+
 
     <div class="contact-map">
 
       <div class="map-container">
 
         <iframe
-          src="https://www.google.com/maps?q=Laserworks%20Ideas%2C%20Limassol%2C%20Cyprus&output=embed"
-          loading="lazy"
-          allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+          src="https://www.google.com/maps?q=Despoinas%20Pattichi%2033A%20Limassol%20Cyprus&output=embed"
+          loading="lazy">
+        </iframe>
 
       </div>
 
@@ -827,34 +538,82 @@
 
     <div class="contact-layout">
 
+
+      <div class="contact-info">
+
+        <h3>CONTACT DETAILS</h3>
+
+
+        <div class="contact-item">
+
+          <strong>EMAIL</strong>
+
+          <p>
+            <a href="mailto:laserworksideas@gmail.com">
+              laserworksideas@gmail.com
+            </a>
+          </p>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <strong>LANDLINE</strong>
+
+          <p>
+            <a href="tel:+35725322025">
+              +357 25 322025
+            </a>
+          </p>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <strong>MOBILE / WHATSAPP / VIBER</strong>
+
+          <p>
+            <a href="tel:+35799303580">
+              +357 99 303580
+            </a>
+          </p>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <strong>ADDRESS</strong>
+
+          <p>
+            Despoinas Pattichi 33A<br>
+            Limassol, Cyprus
+          </p>
+
+        </div>
+
+      </div>
+
+
       <div class="quotation-form">
 
-        <h3>
-          SEND US A MESSAGE
-        </h3>
+        <h3>SEND US A MESSAGE</h3>
 
         <form
           action="https://formsubmit.co/laserworksideas@gmail.com"
-          method="POST"
-        >
+          method="POST">
 
           <input
             type="hidden"
             name="_subject"
-            value="NEW ENQUIRY FROM LASERWORKS IDEAS WEBSITE"
-          >
+            value="Laserworks Ideas Website Enquiry">
 
           <input
             type="hidden"
             name="_captcha"
-            value="false"
-          >
-
-          <input
-            type="hidden"
-            name="_template"
-            value="table"
-          >
+            value="false">
 
 
           <div class="form-field">
@@ -867,9 +626,7 @@
               type="text"
               id="name"
               name="name"
-              placeholder="YOUR NAME"
-              required
-            >
+              required>
 
           </div>
 
@@ -884,9 +641,7 @@
               type="email"
               id="email"
               name="email"
-              placeholder="YOUR EMAIL"
-              required
-            >
+              required>
 
           </div>
 
@@ -898,11 +653,9 @@
             </label>
 
             <input
-              type="text"
+              type="tel"
               id="phone"
-              name="phone"
-              placeholder="YOUR PHONE NUMBER"
-            >
+              name="phone">
 
           </div>
 
@@ -917,9 +670,7 @@
               id="message"
               name="message"
               rows="7"
-              placeholder="TELL US WHAT YOU NEED..."
-              required
-            ></textarea>
+              required></textarea>
 
           </div>
 
@@ -932,107 +683,6 @@
 
       </div>
 
-
-      <div class="contact-info">
-
-        <h3>
-          CONTACT DETAILS
-        </h3>
-
-
-        <div class="contact-item">
-
-          <strong>
-            EMAIL
-          </strong>
-
-          <p>
-            <a href="mailto:laserworksideas@gmail.com">
-              laserworksideas@gmail.com
-            </a>
-          </p>
-
-        </div>
-
-
-        <div class="contact-item">
-
-          <strong>
-            LANDLINE
-          </strong>
-
-          <p>
-            <a href="tel:+35725322025">
-              +357 25 322025
-            </a>
-          </p>
-
-        </div>
-
-
-        <div class="contact-item">
-
-          <strong>
-            MOBILE / WHATSAPP / VIBER
-          </strong>
-
-          <p>
-            <a href="tel:+35799303580">
-              +357 99 303580
-            </a>
-          </p>
-
-        </div>
-
-
-        <div class="contact-item">
-
-          <strong>
-            WHATSAPP
-          </strong>
-
-          <p>
-            <a
-              href="https://wa.me/35799303580"
-              target="_blank"
-              rel="noopener"
-            >
-              MESSAGE US ON WHATSAPP
-            </a>
-          </p>
-
-        </div>
-
-
-        <div class="contact-item">
-
-          <strong>
-            VIBER
-          </strong>
-
-          <p>
-            <a href="viber://chat?number=%2B35799303580">
-              MESSAGE US ON VIBER
-            </a>
-          </p>
-
-        </div>
-
-
-        <div class="contact-item">
-
-          <strong>
-            LOCATION
-          </strong>
-
-          <p>
-            LIMASSOL, CYPRUS
-          </p>
-
-        </div>
-
-      </div>
-
     </div>
 
   </div>
@@ -1040,11 +690,52 @@
 </section>
 
 
+</main>
+
+
+<!-- =========================
+     LIGHTBOX
+========================= -->
+
+<div class="lightbox" id="lightbox">
+
+  <button
+    type="button"
+    class="lightbox-close"
+    id="lightboxClose">
+    ×
+  </button>
+
+  <button
+    type="button"
+    class="lightbox-prev"
+    id="lightboxPrev">
+    ‹
+  </button>
+
+  <img
+    id="lightboxImage"
+    src=""
+    alt="Laserworks Ideas">
+
+  <button
+    type="button"
+    class="lightbox-next"
+    id="lightboxNext">
+    ›
+  </button>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer class="site-footer">
 
   <p>
-    © <span id="currentYear"></span>
-    LASERWORKS IDEAS. ALL RIGHTS RESERVED.
+    © 2026 LASERWORKS IDEAS
   </p>
 
   <p>
@@ -1054,80 +745,89 @@
 </footer>
 
 
-<!-- LIGHTBOX -->
-
-<div
-  class="lightbox"
-  id="lightbox"
->
-
-  <button
-    class="lightbox-close"
-    id="lightboxClose"
-    aria-label="Close"
-  >
-    ×
-  </button>
-
-  <button
-    class="lightbox-prev"
-    id="lightboxPrev"
-    aria-label="Previous image"
-  >
-    ‹
-  </button>
-
-  <img
-    id="lightboxImage"
-    src=""
-    alt="LASERWORKS IDEAS PRODUCT"
-  >
-
-  <button
-    class="lightbox-next"
-    id="lightboxNext"
-    aria-label="Next image"
-  >
-    ›
-  </button>
-
-</div>
-
-
 <script src="products.js"></script>
 
 
 <script>
 
 /* =========================
-   ELEMENTS
+   MENU
 ========================= */
 
-const productGrid =
-  document.getElementById("productGrid");
+const menuButton = document.getElementById("menuButton");
+const mainNav = document.getElementById("mainNav");
 
-const galleryGrid =
-  document.getElementById("galleryGrid");
-
-const productsTitle =
-  document.getElementById("productsTitle");
-
-const productsDescription =
-  document.getElementById("productsDescription");
+menuButton.addEventListener("click", function () {
+  mainNav.classList.toggle("open");
+});
 
 
 /* =========================
-   ESCAPE HTML
+   PRODUCTS DROPDOWN
 ========================= */
 
-function escapeHTML(value) {
+const productsButton = document.getElementById("productsButton");
+const productsMenu = document.getElementById("productsMenu");
 
-  return String(value || "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
+productsButton.addEventListener("click", function (event) {
+
+  event.stopPropagation();
+
+  productsMenu.classList.toggle("show");
+
+});
+
+
+document.addEventListener("click", function () {
+
+  productsMenu.classList.remove("show");
+
+});
+
+
+/* =========================
+   PRODUCT DATA
+========================= */
+
+const allProducts =
+  typeof products !== "undefined" && Array.isArray(products)
+    ? products
+    : [];
+
+
+/*
+   This function accepts different category names
+   so it works with your existing products.js.
+*/
+
+function getProductsForCategory(categoryNames) {
+
+  const result = [];
+
+  allProducts.forEach(function(product) {
+
+    const category =
+      String(
+        product.category ||
+        product.categories ||
+        ""
+      ).toLowerCase();
+
+    const match = categoryNames.some(function(name) {
+
+      return category.includes(
+        name.toLowerCase()
+      );
+
+    });
+
+    if (match) {
+      result.push(product);
+    }
+
+  });
+
+  return result.slice(0, 4);
 
 }
 
@@ -1138,84 +838,146 @@ function escapeHTML(value) {
 
 function createProductCard(product) {
 
-  const card =
-    document.createElement("article");
+  const images =
+    Array.isArray(product.images)
+      ? product.images
+      : product.image
+        ? [product.image]
+        : [];
+
+  const firstImage = images[0] || "";
+
+  const card = document.createElement("div");
 
   card.className = "product";
 
-  const images =
-    Array.isArray(product.images)
-      ? product.images.filter(Boolean)
-      : [];
 
-  let imageHTML = "";
+  const gallery = document.createElement("div");
 
-  if (images.length > 0) {
+  gallery.className = "product-gallery";
 
-    imageHTML = `
 
-      <div class="product-gallery">
+  const mainImage = document.createElement("div");
 
-        <div
-          class="main-product-image"
-          onclick='openLightbox(${JSON.stringify(images)}, 0)'
-        >
+  mainImage.className = "main-product-image";
 
-          <img
-            src="./${images[0]}"
-            alt="${escapeHTML(product.name)}"
-            class="gallery-main-image"
-            loading="lazy"
-          >
 
-        </div>
+  if (firstImage) {
 
-      </div>
+    const img = document.createElement("img");
 
-    `;
+    img.className = "gallery-main-image";
 
-  } else {
+    img.src = firstImage;
 
-    imageHTML = `
+    img.alt = product.name || "Laserworks Ideas";
 
-      <div class="product-gallery">
+    mainImage.appendChild(img);
 
-        <div class="main-product-image">
+    mainImage.addEventListener("click", function () {
 
-          <div class="no-image">
-            IMAGE COMING SOON
-          </div>
+      openLightbox(images, 0);
 
-        </div>
-
-      </div>
-
-    `;
+    });
 
   }
 
 
-  card.innerHTML = `
+  gallery.appendChild(mainImage);
 
-    ${imageHTML}
 
-    <div class="product-info">
+  if (images.length > 1) {
 
-      <h3>
-        ${escapeHTML(product.name)}
-      </h3>
+    const thumbnails =
+      document.createElement("div");
 
-      <p>
-        ${escapeHTML(product.description)}
-      </p>
+    thumbnails.className = "gallery-thumbnails";
 
-      <strong>
-        ${escapeHTML(product.price)}
-      </strong>
 
-    </div>
+    images.forEach(function(image, index) {
 
-  `;
+      const thumb =
+        document.createElement("img");
+
+      thumb.src = image;
+
+      thumb.className =
+        "gallery-thumbnail";
+
+      thumb.alt =
+        product.name || "Product";
+
+
+      thumb.addEventListener(
+        "click",
+        function(event) {
+
+          event.stopPropagation();
+
+          const main =
+            mainImage.querySelector("img");
+
+          if (main) {
+            main.src = image;
+          }
+
+        }
+      );
+
+
+      thumbnails.appendChild(thumb);
+
+    });
+
+
+    gallery.appendChild(thumbnails);
+
+  }
+
+
+  card.appendChild(gallery);
+
+
+  const info =
+    document.createElement("div");
+
+  info.className = "product-info";
+
+
+  const title =
+    document.createElement("h3");
+
+  title.textContent =
+    product.name ||
+    product.title ||
+    "PERSONALISED CREATION";
+
+
+  const description =
+    document.createElement("p");
+
+  description.textContent =
+    product.description || "";
+
+
+  info.appendChild(title);
+  info.appendChild(description);
+
+
+  if (product.price) {
+
+    const price =
+      document.createElement("strong");
+
+    price.textContent =
+      product.price;
+
+    info.appendChild(price);
+
+  }
+
+
+  card.appendChild(info);
 
 
   return card;
@@ -1225,84 +987,26 @@ function createProductCard(product) {
 
 /* =========================
    SHOW PRODUCTS
-   MAXIMUM 4
 ========================= */
 
-function showProducts(
-  category = null,
-  subcategory = null
-) {
+function showProducts(elementId, categories) {
 
-  let filtered =
-    products.filter(product => {
+  const container =
+    document.getElementById(elementId);
 
-      const categoryMatch =
-        !category ||
-        product.category === category;
-
-      const subcategoryMatch =
-        !subcategory ||
-        product.subcategory === subcategory;
-
-      return categoryMatch &&
-             subcategoryMatch;
-
-    });
-
-
-  filtered =
-    filtered.slice(0, 4);
-
-
-  productGrid.innerHTML = "";
-
-
-  if (category) {
-
-    productsTitle.textContent =
-      category;
-
-    productsDescription.textContent =
-      subcategory
-        ? subcategory.toUpperCase()
-        : `EXPLORE OUR ${category.toUpperCase()} CREATIONS.`;
-
-  } else {
-
-    productsTitle.textContent =
-      "OUR CREATIONS";
-
-    productsDescription.textContent =
-      "EXPLORE OUR PERSONALISED AND HANDMADE CREATIONS.";
-
-  }
-
-
-  if (!filtered.length) {
-
-    productGrid.innerHTML = `
-
-      <div style="
-        grid-column:1/-1;
-        padding:40px;
-        text-align:center;
-        border:1px solid #000;
-      ">
-
-        NO PRODUCTS AVAILABLE YET.
-
-      </div>
-
-    `;
-
+  if (!container) {
     return;
-
   }
 
+  const selected =
+    getProductsForCategory(categories);
 
-  filtered.forEach(product => {
+  container.innerHTML = "";
 
-    productGrid.appendChild(
+
+  selected.forEach(function(product) {
+
+    container.appendChild(
       createProductCard(product)
     );
 
@@ -1311,67 +1015,87 @@ function showProducts(
 }
 
 
+/*
+   If your products.js uses the category names
+   below, the correct 4 products will appear.
+*/
+
+showProducts(
+  "christeningProducts",
+  ["christening"]
+);
+
+showProducts(
+  "weddingProducts",
+  ["wedding"]
+);
+
+showProducts(
+  "birthdayProducts",
+  ["birthday"]
+);
+
+showProducts(
+  "corporateProducts",
+  ["corporate"]
+);
+
+showProducts(
+  "schoolProducts",
+  ["school"]
+);
+
+showProducts(
+  "giftProducts",
+  ["gift", "personalised"]
+);
+
+
 /* =========================
-   FULL GALLERY
+   ALL IMAGES
 ========================= */
 
-function showFullGallery() {
+const galleryImages = [];
 
-  galleryGrid.innerHTML = "";
+allProducts.forEach(function(product) {
 
-  products.forEach(product => {
-
-    const images =
-      Array.isArray(product.images)
-        ? product.images.filter(Boolean)
+  const images =
+    Array.isArray(product.images)
+      ? product.images
+      : product.image
+        ? [product.image]
         : [];
 
-    images.forEach(image => {
+  images.forEach(function(image) {
 
-      const card =
-        document.createElement("article");
+    if (
+      image &&
+      !galleryImages.includes(image)
+    ) {
 
-      card.className = "product";
+      galleryImages.push(image);
 
-      card.innerHTML = `
-
-        <div class="product-gallery">
-
-          <div
-            class="main-product-image"
-            onclick='openLightbox(["${image}"], 0)'
-          >
-
-            <img
-              src="./${image}"
-              alt="${escapeHTML(product.name)}"
-              class="gallery-main-image"
-              loading="lazy"
-            >
-
-          </div>
-
-        </div>
-
-        <div class="product-info">
-
-          <h3>
-            ${escapeHTML(product.name)}
-          </h3>
-
-          <p>
-            ${escapeHTML(product.category)}
-          </p>
-
-        </div>
-
-      `;
-
-      galleryGrid.appendChild(card);
-
-    });
+    }
 
   });
+
+});
+
+
+/*
+   Fallback if products.js does not provide
+   the images correctly.
+*/
+
+if (galleryImages.length === 0) {
+
+  for (let i = 1; i <= 41; i++) {
+
+    galleryImages.push(
+      "./product-" + i + ".jpg"
+    );
+
+  }
 
 }
 
@@ -1380,185 +1104,182 @@ function showFullGallery() {
    HERO SLIDER
 ========================= */
 
-let heroSliderImages = [];
+let heroIndex = 0;
 
-let heroSliderIndex = 0;
-
-
-/* GET ALL PRODUCT IMAGES */
-
-function loadHeroSliderImages() {
-
-  heroSliderImages = [];
-
-  products.forEach(product => {
-
-    if (
-      Array.isArray(product.images)
-    ) {
-
-      product.images
-        .filter(Boolean)
-        .forEach(image => {
-
-          if (
-            !heroSliderImages.includes(image)
-          ) {
-
-            heroSliderImages.push(image);
-
-          }
-
-        });
-
-    }
-
-  });
+const heroImage =
+  document.getElementById("heroSliderImg");
 
 
-  if (heroSliderImages.length) {
+function showHeroImage() {
 
-    updateHeroSlider();
-
-  }
-
-}
-
-
-function updateHeroSlider() {
-
-  const image =
-    document.getElementById(
-      "heroSliderImg"
-    );
-
-  if (!image || !heroSliderImages.length) {
+  if (!heroImage || galleryImages.length === 0) {
     return;
   }
 
-
-  image.classList.remove(
-    "hero-slide-visible"
-  );
-
-
-  setTimeout(() => {
-
-    image.src =
-      "./" +
-      heroSliderImages[heroSliderIndex];
-
-    image.classList.add(
-      "hero-slide-visible"
-    );
-
-  }, 100);
-
-}
-
-
-function previousHeroSlide() {
-
-  if (!heroSliderImages.length) {
-    return;
-  }
-
-
-  heroSliderIndex =
-    (
-      heroSliderIndex -
-      1 +
-      heroSliderImages.length
-    ) %
-    heroSliderImages.length;
-
-
-  updateHeroSlider();
-
-}
-
-
-function nextHeroSlide() {
-
-  if (!heroSliderImages.length) {
-    return;
-  }
-
-
-  heroSliderIndex =
-    (
-      heroSliderIndex +
-      1
-    ) %
-    heroSliderImages.length;
-
-
-  updateHeroSlider();
+  heroImage.src =
+    galleryImages[heroIndex];
 
 }
 
 
 document
   .getElementById("heroSliderPrev")
-  .addEventListener(
-    "click",
-    function(event) {
+  .addEventListener("click", function() {
 
-      event.preventDefault();
-      event.stopPropagation();
+    heroIndex--;
 
-      previousHeroSlide();
-
+    if (heroIndex < 0) {
+      heroIndex =
+        galleryImages.length - 1;
     }
-  );
+
+    showHeroImage();
+
+  });
 
 
 document
   .getElementById("heroSliderNext")
-  .addEventListener(
-    "click",
-    function(event) {
+  .addEventListener("click", function() {
 
-      event.preventDefault();
-      event.stopPropagation();
+    heroIndex++;
 
-      nextHeroSlide();
+    if (
+      heroIndex >=
+      galleryImages.length
+    ) {
+
+      heroIndex = 0;
 
     }
-  );
+
+    showHeroImage();
+
+  });
 
 
 document
   .getElementById("heroSliderImage")
-  .addEventListener(
-    "click",
-    function() {
+  .addEventListener("click", function() {
 
-      document
-        .getElementById("gallery")
-        .scrollIntoView({
-          behavior: "smooth"
-        });
+    document
+      .getElementById("gallery")
+      .scrollIntoView({
+        behavior: "smooth"
+      });
+
+  });
+
+
+showHeroImage();
+
+
+/* Automatic hero slider */
+
+setInterval(function() {
+
+  heroIndex++;
+
+  if (
+    heroIndex >=
+    galleryImages.length
+  ) {
+
+    heroIndex = 0;
+
+  }
+
+  showHeroImage();
+
+}, 5000);
+
+
+/* =========================
+   GALLERY SLIDER
+========================= */
+
+let galleryIndex = 0;
+
+const galleryImage =
+  document.getElementById("galleryImage");
+
+
+function showGalleryImage() {
+
+  if (
+    !galleryImage ||
+    galleryImages.length === 0
+  ) {
+    return;
+  }
+
+  galleryImage.src =
+    galleryImages[galleryIndex];
+
+}
+
+
+document
+  .getElementById("galleryPrev")
+  .addEventListener("click", function() {
+
+    galleryIndex--;
+
+    if (galleryIndex < 0) {
+
+      galleryIndex =
+        galleryImages.length - 1;
 
     }
-  );
+
+    showGalleryImage();
+
+  });
 
 
-/* AUTO SLIDE */
+document
+  .getElementById("galleryNext")
+  .addEventListener("click", function() {
 
-setInterval(
+    galleryIndex++;
+
+    if (
+      galleryIndex >=
+      galleryImages.length
+    ) {
+
+      galleryIndex = 0;
+
+    }
+
+    showGalleryImage();
+
+  });
+
+
+galleryImage.addEventListener(
+  "click",
   function() {
 
-    nextHeroSlide();
+    openLightbox(
+      galleryImages,
+      galleryIndex
+    );
 
-  },
-  4500
+  }
 );
+
+
+showGalleryImage();
 
 
 /* =========================
    LIGHTBOX
 ========================= */
+
+let lightboxImages = [];
+let lightboxIndex = 0;
+
 
 const lightbox =
   document.getElementById("lightbox");
@@ -1566,27 +1287,10 @@ const lightbox =
 const lightboxImage =
   document.getElementById("lightboxImage");
 
-const lightboxClose =
-  document.getElementById("lightboxClose");
 
-const lightboxPrev =
-  document.getElementById("lightboxPrev");
+function openLightbox(images, index) {
 
-const lightboxNext =
-  document.getElementById("lightboxNext");
-
-
-let lightboxImages = [];
-
-let lightboxIndex = 0;
-
-
-function openLightbox(
-  images,
-  index = 0
-) {
-
-  if (!images || !images.length) {
+  if (!images || images.length === 0) {
     return;
   }
 
@@ -1598,9 +1302,6 @@ function openLightbox(
 
   lightbox.classList.add("open");
 
-  document.body.style.overflow =
-    "hidden";
-
 }
 
 
@@ -1611,74 +1312,56 @@ function updateLightbox() {
   }
 
   lightboxImage.src =
-    "./" +
     lightboxImages[lightboxIndex];
 
 }
 
 
-function closeLightbox() {
+document
+  .getElementById("lightboxClose")
+  .addEventListener("click", function() {
 
-  lightbox.classList.remove("open");
+    lightbox.classList.remove("open");
 
-  document.body.style.overflow = "";
-
-}
+  });
 
 
-function previousLightboxImage() {
+document
+  .getElementById("lightboxPrev")
+  .addEventListener("click", function() {
 
-  if (!lightboxImages.length) {
-    return;
-  }
+    lightboxIndex--;
 
-  lightboxIndex =
-    (
-      lightboxIndex -
-      1 +
+    if (lightboxIndex < 0) {
+
+      lightboxIndex =
+        lightboxImages.length - 1;
+
+    }
+
+    updateLightbox();
+
+  });
+
+
+document
+  .getElementById("lightboxNext")
+  .addEventListener("click", function() {
+
+    lightboxIndex++;
+
+    if (
+      lightboxIndex >=
       lightboxImages.length
-    ) %
-    lightboxImages.length;
+    ) {
 
-  updateLightbox();
+      lightboxIndex = 0;
 
-}
+    }
 
+    updateLightbox();
 
-function nextLightboxImage() {
-
-  if (!lightboxImages.length) {
-    return;
-  }
-
-  lightboxIndex =
-    (
-      lightboxIndex +
-      1
-    ) %
-    lightboxImages.length;
-
-  updateLightbox();
-
-}
-
-
-lightboxClose.addEventListener(
-  "click",
-  closeLightbox
-);
-
-
-lightboxPrev.addEventListener(
-  "click",
-  previousLightboxImage
-);
-
-
-lightboxNext.addEventListener(
-  "click",
-  nextLightboxImage
-);
+  });
 
 
 lightbox.addEventListener(
@@ -1686,167 +1369,13 @@ lightbox.addEventListener(
   function(event) {
 
     if (event.target === lightbox) {
-      closeLightbox();
+
+      lightbox.classList.remove("open");
+
     }
 
   }
 );
-
-
-document.addEventListener(
-  "keydown",
-  function(event) {
-
-    if (
-      !lightbox.classList.contains("open")
-    ) {
-      return;
-    }
-
-    if (event.key === "Escape") {
-      closeLightbox();
-    }
-
-    if (event.key === "ArrowLeft") {
-      previousLightboxImage();
-    }
-
-    if (event.key === "ArrowRight") {
-      nextLightboxImage();
-    }
-
-  }
-);
-
-
-/* =========================
-   MOBILE MENU
-========================= */
-
-const menuButton =
-  document.getElementById("menuButton");
-
-const mainNav =
-  document.getElementById("mainNav");
-
-
-menuButton.addEventListener(
-  "click",
-  function() {
-
-    mainNav.classList.toggle("open");
-
-  }
-);
-
-
-/* =========================
-   DROPDOWN MENUS
-========================= */
-
-document
-  .querySelectorAll(".nav-dropdown > button")
-  .forEach(button => {
-
-    button.addEventListener(
-      "click",
-      function(event) {
-
-        event.stopPropagation();
-
-        const dropdown =
-          this.parentElement
-            .querySelector(".dropdown-menu");
-
-
-        document
-          .querySelectorAll(".dropdown-menu")
-          .forEach(menu => {
-
-            if (menu !== dropdown) {
-              menu.classList.remove("show");
-            }
-
-          });
-
-
-        dropdown.classList.toggle("show");
-
-      }
-    );
-
-  });
-
-
-document.addEventListener(
-  "click",
-  function() {
-
-    document
-      .querySelectorAll(".dropdown-menu")
-      .forEach(menu => {
-
-        menu.classList.remove("show");
-
-      });
-
-  }
-);
-
-
-/* =========================
-   CATEGORY LINKS
-========================= */
-
-document
-  .querySelectorAll("[data-category]")
-  .forEach(element => {
-
-    element.addEventListener(
-      "click",
-      function(event) {
-
-        const category =
-          this.getAttribute(
-            "data-category"
-          );
-
-
-        if (!category) {
-          return;
-        }
-
-
-        event.preventDefault();
-
-
-        const subcategory =
-          this.getAttribute(
-            "data-subcategory"
-          );
-
-
-        showProducts(
-          category,
-          subcategory
-        );
-
-
-        document
-          .querySelector("#products")
-          .scrollIntoView({
-            behavior: "smooth"
-          });
-
-
-        mainNav.classList.remove(
-          "open"
-        );
-
-      }
-    );
-
-  });
 
 
 /* =========================
@@ -1854,121 +1383,138 @@ document
 ========================= */
 
 const customName =
-  document.getElementById(
-    "customName"
-  );
+  document.getElementById("customName");
 
 const customMaterial =
-  document.getElementById(
-    "customMaterial"
-  );
+  document.getElementById("customMaterial");
 
 const customSize =
-  document.getElementById(
-    "customSize"
-  );
+  document.getElementById("customSize");
 
 const customOccasion =
-  document.getElementById(
-    "customOccasion"
-  );
+  document.getElementById("customOccasion");
 
 
-const summaryName =
+function updateSummary() {
+
   document.getElementById(
     "summaryName"
-  );
+  ).textContent =
+    customName.value || "-";
 
-const summaryMaterial =
+
   document.getElementById(
     "summaryMaterial"
-  );
+  ).textContent =
+    customMaterial.value || "-";
 
-const summarySize =
+
   document.getElementById(
     "summarySize"
-  );
+  ).textContent =
+    customSize.value || "-";
 
-const summaryOccasion =
+
   document.getElementById(
     "summaryOccasion"
-  );
-
-
-function updateCustomiser() {
-
-  summaryName.textContent =
-    customName.value || "—";
-
-  summaryMaterial.textContent =
-    customMaterial.value || "—";
-
-  summarySize.textContent =
-    customSize.value || "—";
-
-  summaryOccasion.textContent =
-    customOccasion.value || "—";
+  ).textContent =
+    customOccasion.value || "-";
 
 }
 
 
 customName.addEventListener(
   "input",
-  updateCustomiser
+  updateSummary
 );
 
 customMaterial.addEventListener(
   "change",
-  updateCustomiser
+  updateSummary
 );
 
 customSize.addEventListener(
   "input",
-  updateCustomiser
+  updateSummary
 );
 
 customOccasion.addEventListener(
   "change",
-  updateCustomiser
+  updateSummary
 );
 
 
 /* =========================
-   YEAR
+   REQUEST QUOTATION
 ========================= */
 
-document.getElementById(
-  "currentYear"
-).textContent =
-  new Date().getFullYear();
+document
+  .getElementById("quotationButton")
+  .addEventListener("click", function() {
+
+    const name =
+      customName.value.trim();
+
+    const material =
+      customMaterial.value;
+
+    const size =
+      customSize.value.trim();
+
+    const occasion =
+      customOccasion.value;
+
+
+    const message =
+      "REQUEST FOR QUOTATION\n\n" +
+
+      "NAME / DESIGN: " +
+      (name || "-") +
+
+      "\nMATERIAL: " +
+      (material || "-") +
+
+      "\nSIZE: " +
+      (size || "-") +
+
+      "\nOCCASION: " +
+      (occasion || "-");
+
+
+    document.getElementById(
+      "message"
+    ).value = message;
+
+
+    document
+      .getElementById("contact")
+      .scrollIntoView({
+        behavior: "smooth"
+      });
+
+  });
 
 
 /* =========================
-   INITIAL LOAD
+   NAVIGATION CLOSE MOBILE
 ========================= */
 
-document.addEventListener(
-  "DOMContentLoaded",
-  function() {
+document
+  .querySelectorAll(".main-nav a")
+  .forEach(function(link) {
 
-    if (
-      typeof products !== "undefined" &&
-      Array.isArray(products)
-    ) {
+    link.addEventListener(
+      "click",
+      function() {
 
-      showProducts();
+        mainNav.classList.remove("open");
 
-      showFullGallery();
+      }
+    );
 
-      loadHeroSliderImages();
-
-    }
-
-  }
-);
+  });
 
 </script>
 
 </body>
 </html>
-```

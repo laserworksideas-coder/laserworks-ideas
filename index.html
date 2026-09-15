@@ -455,5 +455,621 @@
 
         <h3>SEND A QUOTATION</h3>
 
-        <fo
+        <form onsubmit="sendQuotation(event)">
+
+          <input
+            type="text"
+            id="quoteName"
+            placeholder="Your Name"
+            required
+          >
+
+          <input
+            type="email"
+            id="quoteEmail"
+            placeholder="Your Email"
+            required
+          >
+
+          <input
+            type="tel"
+            id="quotePhone"
+            placeholder="Phone Number"
+          >
+
+          <textarea
+            id="quoteMessage"
+            placeholder="Tell us what you would like..."
+            rows="6"
+            required
+          ></textarea>
+
+          <button type="submit">
+            SEND A QUOTATION
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+    <!-- MAP -->
+
+    <div class="map-container">
+
+      <iframe
+        src="https://www.google.com/maps?q=33a+Despoinas+Pattichi,+Limassol,+Cyprus&output=embed"
+        width="100%"
+        height="380"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  © 2026 LASERWORKS IDEAS — Handmade Wooden & Acrylic Creations
+
+</footer>
+
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+  <button
+    class="lightbox-close"
+    onclick="closeLightbox()">
+    ×
+  </button>
+
+  <button
+    class="lightbox-prev"
+    onclick="previousImage()">
+    ‹
+  </button>
+
+  <div class="lightbox-content">
+
+    <img
+      id="lightbox-image"
+      src=""
+      alt=""
+    >
+
+    <div
+      class="lightbox-counter"
+      id="lightboxCounter">
+    </div>
+
+  </div>
+
+  <button
+    class="lightbox-next"
+    onclick="nextImage()">
+    ›
+  </button>
+
+</div>
+
+
+<script src="products.js"></script>
+
+
+<script>
+
+function toggleMenu() {
+
+  const nav = document.getElementById("mainNav");
+
+  nav.classList.toggle("open");
+
+}
+
+
+function toggleDropdown(event, menuId) {
+
+  event.stopPropagation();
+
+  const clickedMenu =
+    document.getElementById(menuId);
+
+  document.querySelectorAll(".dropdown-menu").forEach(menu => {
+
+    if (menu !== clickedMenu) {
+      menu.classList.remove("show");
+    }
+
+  });
+
+  clickedMenu.classList.toggle("show");
+
+}
+
+
+document.addEventListener("click", function() {
+
+  document.querySelectorAll(".dropdown-menu").forEach(menu => {
+
+    menu.classList.remove("show");
+
+  });
+
+});
+
+
+function selectCategory(category, subcategory) {
+
+  showProducts(category, subcategory);
+
+  document.querySelectorAll(".dropdown-menu").forEach(menu => {
+
+    menu.classList.remove("show");
+
+  });
+
+  document.getElementById("products").scrollIntoView({
+    behavior: "smooth"
+  });
+
+}
+
+
+let currentImages = [];
+let currentImageIndex = 0;
+
+
+function showProducts(category, subcategory = null) {
+
+  const grid =
+    document.getElementById("productGrid");
+
+  const title =
+    document.getElementById("productsTitle");
+
+  const subtitle =
+    document.getElementById("productsSubtitle");
+
+  grid.innerHTML = "";
+
+
+  let filteredProducts = products.filter(product => {
+
+    if (product.category !== category) {
+      return false;
+    }
+
+    if (
+      subcategory &&
+      product.subcategory !== subcategory
+    ) {
+      return false;
+    }
+
+    return true;
+
+  });
+
+
+  if (subcategory) {
+
+    title.textContent =
+      subcategory.toUpperCase();
+
+    subtitle.textContent =
+      category.toUpperCase();
+
+  } else {
+
+    title.textContent =
+      category.toUpperCase();
+
+    subtitle.textContent =
+      "Explore our handmade creations.";
+
+  }
+
+
+  if (filteredProducts.length === 0) {
+
+    grid.innerHTML = `
+      <div style="
+        grid-column: 1 / -1;
+        text-align:center;
+        padding:60px 20px;
+        color:#777;
+      ">
+        No products available yet.
+      </div>
+    `;
+
+    return;
+
+  }
+
+
+  filteredProducts.forEach(product => {
+
+    const card =
+      document.createElement("div");
+
+    card.className = "product";
+
+    let galleryHTML = "";
+
+
+    if (
+      product.images &&
+      product.images.length > 0
+    ) {
+
+      const firstImage =
+        product.images[0];
+
+      galleryHTML += `
+        <div class="product-gallery">
+
+          <div
+            class="main-product-image"
+            onclick='openLightbox(${JSON.stringify(product.images)}, 0)'
+          >
+
+            <img
+              class="gallery-main-image"
+              src="${firstImage}"
+              alt="${product.name}"
+            >
+
+          </div>
+      `;
+
+
+      if (product.images.length > 1) {
+
+        galleryHTML +=
+          `<div class="gallery-thumbnails">`;
+
+
+        product.images.forEach(
+          (image, index) => {
+
+            galleryHTML += `
+              <img
+                class="gallery-thumbnail"
+                src="${image}"
+                alt="${product.name}"
+                onclick='changeProductImage(this, ${JSON.stringify(product.images)}, ${index})'
+              >
+            `;
+
+          }
+        );
+
+
+        galleryHTML += `</div>`;
+
+      }
+
+
+      galleryHTML += `</div>`;
+
+    } else {
+
+      galleryHTML = `
+        <div class="product-image">
+
+          <div class="no-image">
+            Photo coming soon
+          </div>
+
+        </div>
+      `;
+
+    }
+
+
+    card.innerHTML = `
+      ${galleryHTML}
+
+      <div class="product-info">
+
+        <h3>${product.name}</h3>
+
+        <p>${product.description}</p>
+
+        <strong>
+          ASK FOR QUOTATION
+        </strong>
+
+      </div>
+    `;
+
+
+    grid.appendChild(card);
+
+  });
+
+}
+
+
+function changeProductImage(
+  element,
+  images,
+  index
+) {
+
+  const gallery =
+    element.closest(".product-gallery");
+
+  const mainImage =
+    gallery.querySelector(
+      ".gallery-main-image"
+    );
+
+  mainImage.src =
+    images[index];
+
+  mainImage.onclick =
+    function() {
+
+      openLightbox(
+        images,
+        index
+      );
+
+    };
+
+}
+
+
+function openLightbox(images, index) {
+
+  currentImages = images;
+
+  currentImageIndex = index;
+
+  updateLightbox();
+
+  document
+    .getElementById("lightbox")
+    .classList.add("open");
+
+}
+
+
+function updateLightbox() {
+
+  const image =
+    document.getElementById(
+      "lightbox-image"
+    );
+
+  const counter =
+    document.getElementById(
+      "lightboxCounter"
+    );
+
+  image.src =
+    currentImages[currentImageIndex];
+
+  counter.textContent =
+    `${currentImageIndex + 1} / ${currentImages.length}`;
+
+}
+
+
+function closeLightbox() {
+
+  document
+    .getElementById("lightbox")
+    .classList.remove("open");
+
+}
+
+
+function previousImage() {
+
+  if (currentImages.length === 0) {
+    return;
+  }
+
+  currentImageIndex--;
+
+  if (currentImageIndex < 0) {
+
+    currentImageIndex =
+      currentImages.length - 1;
+
+  }
+
+  updateLightbox();
+
+}
+
+
+function nextImage() {
+
+  if (currentImages.length === 0) {
+    return;
+  }
+
+  currentImageIndex++;
+
+  if (
+    currentImageIndex >=
+    currentImages.length
+  ) {
+
+    currentImageIndex = 0;
+
+  }
+
+  updateLightbox();
+
+}
+
+
+function updateSummary() {
+
+  const type =
+    document.getElementById(
+      "customType"
+    ).value;
+
+  const text =
+    document.getElementById(
+      "customText"
+    ).value;
+
+  const size =
+    document.getElementById(
+      "customSize"
+    ).value;
+
+  const material =
+    document.getElementById(
+      "customMaterial"
+    ).value;
+
+  const quantity =
+    document.getElementById(
+      "customQuantity"
+    ).value;
+
+
+  document.getElementById(
+    "summaryType"
+  ).textContent = type;
+
+  document.getElementById(
+    "summaryText"
+  ).textContent =
+    text || "-";
+
+  document.getElementById(
+    "summarySize"
+  ).textContent = size;
+
+  document.getElementById(
+    "summaryMaterial"
+  ).textContent = material;
+
+  document.getElementById(
+    "summaryQuantity"
+  ).textContent = quantity;
+
+}
+
+
+function sendQuotation(event) {
+
+  event.preventDefault();
+
+  const name =
+    document.getElementById(
+      "quoteName"
+    ).value;
+
+  const email =
+    document.getElementById(
+      "quoteEmail"
+    ).value;
+
+  const phone =
+    document.getElementById(
+      "quotePhone"
+    ).value;
+
+  const message =
+    document.getElementById(
+      "quoteMessage"
+    ).value;
+
+
+  const subject =
+    encodeURIComponent(
+      "Quotation Request - Laserworks Ideas"
+    );
+
+
+  const body =
+    encodeURIComponent(
+`Hello Laserworks Ideas,
+
+I would like to request a quotation.
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+Request:
+${message}
+
+Thank you.`
+    );
+
+
+  window.location.href =
+    `mailto:Laserworksideas@gmail.com?subject=${subject}&body=${body}`;
+
+}
+
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (event.key === "Escape") {
+
+      closeLightbox();
+
+      document
+        .querySelectorAll(".dropdown-menu")
+        .forEach(menu => {
+
+          menu.classList.remove("show");
+
+        });
+
+    }
+
+    if (event.key === "ArrowLeft") {
+      previousImage();
+    }
+
+    if (event.key === "ArrowRight") {
+      nextImage();
+    }
+
+  }
+);
+
+
+if (
+  typeof products !== "undefined" &&
+  products.length > 0
+) {
+
+  showProducts(
+    products[0].category
+  );
+
+}
+
+</script>
+
+</body>
+</html>
 ```

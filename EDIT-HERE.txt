@@ -1,0 +1,25 @@
+LASERWORKS IDEAS - EASY EDITING
+
+You only need these two things:
+
+1. PRODUCTS / DETAILS
+Open products.js and change:
+- image = photo filename
+- name = product name
+- description = short description
+- price = price or "Ask for price"
+
+2. PHOTOS
+Put your photos inside the images folder.
+The filename must match the image name in products.js.
+
+Example:
+image: "images/teacher-gift.jpg"
+
+Then the photo file must be named:
+teacher-gift.jpg
+
+IMPORTANT:
+Do not delete index.html or style.css.
+
+After changing files on GitHub, click Commit changes. GitHub Pages will update the website automatically.

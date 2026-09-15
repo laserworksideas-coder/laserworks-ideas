@@ -59,16 +59,9 @@
     <div class="section-head">
       <p class="eyebrow">OUR CREATIONS</p>
       <h2>Made with care</h2>
-      <p>Add your own product photos inside the <code>images</code> folder. The sample cards below are ready to edit.</p>
+      <p>Personalised handmade creations by Laserworks Ideas.</p>
     </div>
-    <div class="product-grid">
-      <article class="product"><div class="product-image"><img src="images/product-1.jpg" alt="Personalised wooden and acrylic creation"><span>YOUR PHOTO</span></div><div class="product-info"><h3>Personalised Creation</h3><p>Wood & acrylic</p><strong>Ask for price</strong></div></article>
-      <article class="product"><div class="product-image"><img src="images/product-2.jpg" alt="Baptism personalised gift"><span>YOUR PHOTO</span></div><div class="product-info"><h3>Baptism Gift</h3><p>Personalised keepsake</p><strong>Ask for price</strong></div></article>
-      <article class="product"><div class="product-image"><img src="images/product-3.jpg" alt="Wedding personalised creation"><span>YOUR PHOTO</span></div><div class="product-info"><h3>Wedding Creation</h3><p>Custom made</p><strong>Ask for price</strong></div></article>
-      <article class="product"><div class="product-image"><img src="images/product-4.jpg" alt="School gift"><span>YOUR PHOTO</span></div><div class="product-info"><h3>School Gift</h3><p>Small & special</p><strong>Ask for price</strong></div></article>
-      <article class="product"><div class="product-image"><img src="images/product-5.jpg" alt="Christmas handmade gift"><span>YOUR PHOTO</span></div><div class="product-info"><h3>Christmas Gift</h3><p>Handmade creation</p><strong>Ask for price</strong></div></article>
-      <article class="product"><div class="product-image"><img src="images/product-6.jpg" alt="Laser cutting and engraving"><span>YOUR PHOTO</span></div><div class="product-info"><h3>Laser Cutting & Engraving</h3><p>Custom projects</p><strong>Request a quote</strong></div></article>
-    </div>
+    <div class="product-grid" id="product-grid"></div>
   </div>
 </section>
 
@@ -93,9 +86,27 @@
 </main>
 
 <footer><div class="wrap"><span>© <span id="year"></span> Laserworks Ideas</span><span>Limassol, Cyprus</span></div></footer>
+<script src="products.js"></script>
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
-document.querySelector(".menu").addEventListener("click",()=>document.querySelector("nav").classList.toggle("open"));
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.querySelector(".menu").addEventListener("click",()=>document.querySelector("nav").classList.toggle("open"));
+
+  const grid = document.getElementById("product-grid");
+  products.forEach(product => {
+    const card = document.createElement("article");
+    card.className = "product";
+    card.innerHTML = `
+      <div class="product-image">
+        <img src="${product.image}" alt="${product.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <span style="display:none">YOUR PHOTO</span>
+      </div>
+      <div class="product-info">
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+        <strong>${product.price}</strong>
+      </div>`;
+    grid.appendChild(card);
+  });
 </script>
 </body>
 </html>

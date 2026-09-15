@@ -23,7 +23,7 @@
       <a href="https://wa.me/35799303580" target="_blank">WHATSUP</a>
     </div>
 
-    <button class="menu-toggle" aria-label="Open menu">
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
       ☰
     </button>
 
@@ -71,160 +71,188 @@
 
 <script>
 
-  /* MOBILE MENU */
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
 
-  const menuToggle = document.querySelector(".menu-toggle");
-  const mainNav = document.querySelector("#mainNav");
+menuToggle.addEventListener("click", () => {
+  mainNav.classList.toggle("mobile-open");
+});
 
-  menuToggle.addEventListener("click", function () {
-    mainNav.classList.toggle("mobile-open");
+document.querySelectorAll(".main-nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("mobile-open");
   });
-
-  document.querySelectorAll(".main-nav a").forEach(link => {
-    link.addEventListener("click", function () {
-      mainNav.classList.remove("mobile-open");
-    });
-  });
+});
 
 
-  /* CATEGORY */
+const params = new URLSearchParams(window.location.search);
+const category = params.get("category");
 
-  const params = new URLSearchParams(window.location.search);
-  const category = params.get("category");
-
-  const title = document.getElementById("categoryTitle");
-  const description = document.getElementById("categoryDescription");
-  const grid = document.getElementById("productGrid");
+const title = document.getElementById("categoryTitle");
+const description = document.getElementById("categoryDescription");
+const grid = document.getElementById("productGrid");
 
 
-  const categoryNames = {
-    "CHRISTENING": "CHRISTENING",
-    "WEDDING": "WEDDINGS",
-    "BIRTHDAY": "BIRTHDAYS",
-    "CORPORATE GIFTS": "CORPORATE",
-    "SCHOOLS": "SCHOOLS",
-    "SEASONAL ITEMS": "SEASONAL",
-    "PERSONALISED GIFTS": "PERSONALISED GIFTS",
-    "INVITATIONS": "INVITATIONS"
-  };
+const categoryNames = {
+  "CHRISTENING": "CHRISTENING",
+  "WEDDING": "WEDDINGS",
+  "BIRTHDAY": "BIRTHDAYS",
+  "CORPORATE GIFTS": "CORPORATE",
+  "SCHOOLS": "SCHOOLS",
+  "SEASONAL ITEMS": "SEASONAL",
+  "PERSONALISED GIFTS": "PERSONALISED GIFTS",
+  "INVITATIONS": "INVITATIONS"
+};
 
 
-  title.textContent = categoryNames[category] || category || "OUR PRODUCTS";
+const descriptions = {
+  "CHRISTENING": "Personalised details and decorations for your special christening.",
+  "WEDDING": "Custom laser cut and engraved details for weddings and celebrations.",
+  "BIRTHDAY": "Personalised decorations, cake toppers and details for birthdays.",
+  "CORPORATE GIFTS": "Custom corporate gifts and personalised business details.",
+  "SCHOOLS": "Creative personalised products for schools and educational events.",
+  "SEASONAL ITEMS": "Creative products for seasonal celebrations and special occasions.",
+  "PERSONALISED GIFTS": "Unique personalised gifts created especially for you.",
+  "INVITATIONS": "Custom invitations designed for your special event."
+};
 
 
-  const descriptions = {
-    "CHRISTENING": "Personalised details and decorations for your special christening.",
-    "WEDDING": "Custom laser cut and engraved details for weddings and celebrations.",
-    "BIRTHDAY": "Personalised decorations, cake toppers and details for birthdays.",
-    "CORPORATE GIFTS": "Custom corporate gifts and personalised business details.",
-    "SCHOOLS": "Creative personalised products for schools and educational events.",
-    "SEASONAL ITEMS": "Creative products for seasonal celebrations and special occasions.",
-    "PERSONALISED GIFTS": "Unique personalised gifts created especially for you.",
-    "INVITATIONS": "Custom invitations designed for your special event."
-  };
+title.textContent = categoryNames[category] || category || "OUR PRODUCTS";
+
+description.textContent =
+  descriptions[category] ||
+  "Explore our personalised laser cut and engraved creations.";
 
 
-  description.textContent =
-    descriptions[category] || "Explore our personalised laser cut and engraved creations.";
+/*
+   FIND PRODUCTS
+*/
+
+let filteredProducts = [];
 
 
-  let filteredProducts = [];
+/* BIRTHDAYS */
 
+if (category === "BIRTHDAY") {
 
-  if (category === "BIRTHDAY") {
+  filteredProducts = products.filter(product => {
 
-    filteredProducts = products.filter(product => {
+    const text = (
+      (product.name || "") + " " +
+      (product.description || "") + " " +
+      (product.subcategory || "") + " " +
+      (product.category || "")
+    ).toLowerCase();
 
-      const text = (
-        (product.name || "") + " " +
-        (product.description || "") + " " +
-        (product.subcategory || "")
-      ).toLowerCase();
-
-      return (
-        text.includes("cake") ||
-        text.includes("birthday") ||
-        text.includes("topper")
-      );
-
-    });
-
-  } else if (category === "SCHOOLS") {
-
-    filteredProducts = products.filter(product => {
-
-      const text = (
-        (product.name || "") + " " +
-        (product.description || "") + " " +
-        (product.subcategory || "")
-      ).toLowerCase();
-
-      return (
-        text.includes("school") ||
-        text.includes("pencil") ||
-        text.includes("educational") ||
-        text.includes("bookmark")
-      );
-
-    });
-
-  } else {
-
-    filteredProducts = products.filter(product =>
-      product.category === category
+    return (
+      text.includes("cake") ||
+      text.includes("birthday") ||
+      text.includes("topper")
     );
 
-  }
+  });
+
+}
 
 
-  if (filteredProducts.length === 0) {
+/* SCHOOLS */
 
-    grid.innerHTML = `
-      <div class="no-products">
-        <p>More products coming soon.</p>
-      </div>
-    `;
+else if (category === "SCHOOLS") {
 
-  } else {
+  filteredProducts = products.filter(product => {
 
-    filteredProducts.forEach(product => {
+    const text = (
+      (product.name || "") + " " +
+      (product.description || "") + " " +
+      (product.subcategory || "") + " " +
+      (product.category || "")
+    ).toLowerCase();
 
-      const card = document.createElement("div");
-      card.className = "product-card";
+    return (
+      text.includes("school") ||
+      text.includes("pencil") ||
+      text.includes("educational") ||
+      text.includes("bookmark")
+    );
 
-      card.innerHTML = `
+  });
+
+}
+
+
+/* NORMAL CATEGORIES */
+
+else {
+
+  filteredProducts = products.filter(product => {
+
+    const productCategory =
+      String(product.category || "").trim().toUpperCase();
+
+    return productCategory === String(category || "").trim().toUpperCase();
+
+  });
+
+}
+
+
+/*
+   SHOW PRODUCTS
+*/
+
+if (!filteredProducts.length) {
+
+  grid.innerHTML = `
+    <div class="no-products">
+      <p>More products coming soon.</p>
+    </div>
+  `;
+
+} else {
+
+  filteredProducts.forEach(product => {
+
+    const card = document.createElement("div");
+
+    card.className = "product-card";
+
+    card.innerHTML = `
+
+      ${
+        product.image
+          ? `<img src="${product.image}" alt="${product.name || ""}">`
+          : ""
+      }
+
+      <div class="product-info">
 
         ${
-          product.image
-            ? `<img src="${product.image}" alt="${product.name || ""}">`
+          product.name
+            ? `<h2>${product.name}</h2>`
             : ""
         }
 
-        <div class="product-info">
+        ${
+          product.description
+            ? `<p>${product.description}</p>`
+            : ""
+        }
 
-          <h2>${product.name || ""}</h2>
+        ${
+          product.price
+            ? `<span class="product-price">${product.price}</span>`
+            : ""
+        }
 
-          ${
-            product.description
-              ? `<p>${product.description}</p>`
-              : ""
-          }
+      </div>
 
-          ${
-            product.price
-              ? `<span class="product-price">${product.price}</span>`
-              : ""
-          }
+    `;
 
-        </div>
+    grid.appendChild(card);
 
-      `;
+  });
 
-      grid.appendChild(card);
-
-    });
-
-  }
+}
 
 </script>
 

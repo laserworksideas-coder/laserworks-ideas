@@ -11,6 +11,7 @@ const categories = [
   "INVITATIONS"
 ];
 
+
 const products = [
 
   // =========================
@@ -23,7 +24,9 @@ const products = [
     name: "Baptism Hangers",
     description: "Personalised hanger for a special christening.",
     price: "Ask for quotation",
-    images: ["product-10.jpg"]
+    images: [
+      "product-10.jpg"
+    ]
   },
 
   {
@@ -32,7 +35,9 @@ const products = [
     name: "Wish Book",
     description: "Personalised wish book for beautiful memories.",
     price: "Ask for quotation",
-    images: ["product-11.jpg"]
+    images: [
+      "product-11.jpg"
+    ]
   },
 
   {
@@ -41,7 +46,9 @@ const products = [
     name: "Baptism Dream Catcher Set",
     description: "Personalised christening accessories and decorations.",
     price: "Ask for quotation",
-    images: ["product-4.jpg"]
+    images: [
+      "product-4.jpg"
+    ]
   },
 
   {
@@ -50,7 +57,9 @@ const products = [
     name: "Wishes Frame",
     description: "Beautiful personalised frame for wishes.",
     price: "Ask for quotation",
-    images: ["product-9.jpg"]
+    images: [
+      "product-9.jpg"
+    ]
   },
 
 
@@ -64,7 +73,9 @@ const products = [
     name: "Groom & Bride Hanger",
     description: "Personalised hanger for the groom and bride.",
     price: "Ask for quotation",
-    images: ["product-1.jpg"]
+    images: [
+      "product-1.jpg"
+    ]
   },
 
   {
@@ -73,7 +84,9 @@ const products = [
     name: "Wedding Signs",
     description: "Personalised signs for weddings and special occasions.",
     price: "Ask for quotation",
-    images: ["product-15.jpg"]
+    images: [
+      "product-15.jpg"
+    ]
   },
 
   {
@@ -82,7 +95,9 @@ const products = [
     name: "Wedding Favour Boxes",
     description: "Personalised boxes for weddings and special events.",
     price: "Ask for quotation",
-    images: ["product-16.jpg"]
+    images: [
+      "product-16.jpg"
+    ]
   },
 
 
@@ -110,7 +125,9 @@ const products = [
     name: "Mother's Day Photo Holder",
     description: "A beautiful personalised photo holder.",
     price: "Ask for quotation",
-    images: ["product-2.jpg"]
+    images: [
+      "product-2.jpg"
+    ]
   },
 
   {
@@ -119,7 +136,9 @@ const products = [
     name: "Mother's Day Decorative Frame",
     description: "Personalised decorative frame.",
     price: "Ask for quotation",
-    images: ["product-3.jpg"]
+    images: [
+      "product-3.jpg"
+    ]
   },
 
   {
@@ -128,7 +147,9 @@ const products = [
     name: "Personalised Name Decoration",
     description: "Beautiful decoration personalised with a name.",
     price: "Ask for quotation",
-    images: ["product-6.jpg"]
+    images: [
+      "product-6.jpg"
+    ]
   },
 
   {
@@ -137,7 +158,9 @@ const products = [
     name: "Personalised Keychain",
     description: "Cute handmade personalised keychain.",
     price: "Ask for quotation",
-    images: ["product-7.jpg"]
+    images: [
+      "product-7.jpg"
+    ]
   },
 
   {
@@ -146,7 +169,9 @@ const products = [
     name: "Personalised Keychain",
     description: "Handmade keychain personalised for you.",
     price: "Ask for quotation",
-    images: ["product-8.jpg"]
+    images: [
+      "product-8.jpg"
+    ]
   },
 
   {
@@ -155,7 +180,9 @@ const products = [
     name: "Acrylic Song Frame",
     description: "Personalised acrylic frame featuring your favourite song.",
     price: "Ask for quotation",
-    images: ["product-12.jpg"]
+    images: [
+      "product-12.jpg"
+    ]
   },
 
 
@@ -169,7 +196,9 @@ const products = [
     name: "Tea Box",
     description: "Beautiful handmade tea box, perfect for gifting.",
     price: "Ask for quotation",
-    images: ["product-13.jpg"]
+    images: [
+      "product-13.jpg"
+    ]
   },
 
   {
@@ -178,7 +207,9 @@ const products = [
     name: "Wine Box",
     description: "Elegant personalised wine box.",
     price: "Ask for quotation",
-    images: ["product-14.jpg"]
+    images: [
+      "product-14.jpg"
+    ]
   },
 
   {
@@ -187,7 +218,9 @@ const products = [
     name: "Choice Boxes",
     description: "Unique personalised boxes for special occasions.",
     price: "Ask for quotation",
-    images: ["product-5.jpg"]
+    images: [
+      "product-5.jpg"
+    ]
   },
 
 
@@ -201,7 +234,9 @@ const products = [
     name: "Corporate Gift Boxes",
     description: "Customised gift boxes for businesses.",
     price: "Ask for quotation",
-    images: ["product-17.jpg"]
+    images: [
+      "product-17.jpg"
+    ]
   },
 
 
@@ -215,7 +250,9 @@ const products = [
     name: "Customised Cut Outs",
     description: "Custom-made laser cut-outs designed to your needs.",
     price: "Ask for quotation",
-    images: ["product-18.jpg"]
+    images: [
+      "product-18.jpg"
+    ]
   },
 
   {
@@ -224,7 +261,9 @@ const products = [
     name: "Customised Cut Outs",
     description: "Personalised laser cut-outs for decorations.",
     price: "Ask for quotation",
-    images: ["product-19.jpg"]
+    images: [
+      "product-19.jpg"
+    ]
   },
 
   {
@@ -233,7 +272,9 @@ const products = [
     name: "Customised Cut Outs",
     description: "Unique custom-made cut-outs.",
     price: "Ask for quotation",
-    images: ["product-20.jpg"]
+    images: [
+      "product-20.jpg"
+    ]
   },
 
 

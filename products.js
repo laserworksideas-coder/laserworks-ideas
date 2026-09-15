@@ -1,3 +1,4 @@
+```javascript
 const categories = [
   "CHRISTENING",
   "WEDDING",
@@ -24,9 +25,7 @@ const products = [
     name: "Baptism Hangers",
     description: "Personalised hanger for a special christening.",
     price: "Ask for quotation",
-    images: [
-      "product-10.jpg"
-    ]
+    images: ["product-10.jpg"]
   },
 
   {
@@ -35,9 +34,7 @@ const products = [
     name: "Wish Book",
     description: "Personalised wish book for beautiful memories.",
     price: "Ask for quotation",
-    images: [
-      "product-11.jpg"
-    ]
+    images: ["product-11.jpg"]
   },
 
   {
@@ -46,9 +43,7 @@ const products = [
     name: "Baptism Dream Catcher Set",
     description: "Personalised christening accessories and decorations.",
     price: "Ask for quotation",
-    images: [
-      "product-4.jpg"
-    ]
+    images: ["product-4.jpg"]
   },
 
   {
@@ -57,9 +52,7 @@ const products = [
     name: "Wishes Frame",
     description: "Beautiful personalised frame for wishes.",
     price: "Ask for quotation",
-    images: [
-      "product-9.jpg"
-    ]
+    images: ["product-9.jpg"]
   },
 
 
@@ -73,9 +66,7 @@ const products = [
     name: "Groom & Bride Hanger",
     description: "Personalised hanger for the groom and bride.",
     price: "Ask for quotation",
-    images: [
-      "product-1.jpg"
-    ]
+    images: ["product-1.jpg"]
   },
 
   {
@@ -84,9 +75,7 @@ const products = [
     name: "Wedding Signs",
     description: "Personalised signs for weddings and special occasions.",
     price: "Ask for quotation",
-    images: [
-      "product-15.jpg"
-    ]
+    images: ["product-15.jpg"]
   },
 
   {
@@ -95,9 +84,7 @@ const products = [
     name: "Wedding Favour Boxes",
     description: "Personalised boxes for weddings and special events.",
     price: "Ask for quotation",
-    images: [
-      "product-16.jpg"
-    ]
+    images: ["product-16.jpg"]
   },
 
 
@@ -125,9 +112,7 @@ const products = [
     name: "Mother's Day Photo Holder",
     description: "A beautiful personalised photo holder.",
     price: "Ask for quotation",
-    images: [
-      "product-2.jpg"
-    ]
+    images: ["product-2.jpg"]
   },
 
   {
@@ -136,9 +121,7 @@ const products = [
     name: "Mother's Day Decorative Frame",
     description: "Personalised decorative frame.",
     price: "Ask for quotation",
-    images: [
-      "product-3.jpg"
-    ]
+    images: ["product-3.jpg"]
   },
 
   {
@@ -147,9 +130,7 @@ const products = [
     name: "Personalised Name Decoration",
     description: "Beautiful decoration personalised with a name.",
     price: "Ask for quotation",
-    images: [
-      "product-6.jpg"
-    ]
+    images: ["product-6.jpg"]
   },
 
   {
@@ -158,9 +139,7 @@ const products = [
     name: "Personalised Keychain",
     description: "Cute handmade personalised keychain.",
     price: "Ask for quotation",
-    images: [
-      "product-7.jpg"
-    ]
+    images: ["product-7.jpg"]
   },
 
   {
@@ -169,9 +148,7 @@ const products = [
     name: "Personalised Keychain",
     description: "Handmade keychain personalised for you.",
     price: "Ask for quotation",
-    images: [
-      "product-8.jpg"
-    ]
+    images: ["product-8.jpg"]
   },
 
   {
@@ -180,9 +157,161 @@ const products = [
     name: "Acrylic Song Frame",
     description: "Personalised acrylic frame featuring your favourite song.",
     price: "Ask for quotation",
-    images: [
-      "product-12.jpg"
-    ]
+    images: ["product-12.jpg"]
+  },
+
+  // New
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Keychains",
+    name: "Personalised Keyrings",
+    description: "Personalised keyrings in different designs.",
+    price: "Ask for quotation",
+    images: ["product-25.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Keychains",
+    name: "Personalised Keyrings",
+    description: "Custom keyrings made for gifts and special occasions.",
+    price: "Ask for quotation",
+    images: ["product-28.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Keychains",
+    name: "Personalised Keyrings",
+    description: "Custom-made personalised keyring.",
+    price: "Ask for quotation",
+    images: ["product-29.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Keychains",
+    name: "Personalised Keyrings",
+    description: "Unique personalised keyring design.",
+    price: "Ask for quotation",
+    images: ["product-30.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Keychains",
+    name: "Personalised Keyrings",
+    description: "Handmade personalised keyring.",
+    price: "Ask for quotation",
+    images: ["product-31.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Keychains",
+    name: "Personalised Keyrings",
+    description: "Custom personalised keyring.",
+    price: "Ask for quotation",
+    images: ["product-32.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Koumparas",
+    name: "Personalised Koumparas",
+    description: "Personalised money box for special occasions.",
+    price: "Ask for quotation",
+    images: ["product-27.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Newborn Gifts",
+    name: "Newborn Gift",
+    description: "Personalised creation for a newborn baby.",
+    price: "Ask for quotation",
+    images: ["product-29.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Newborn Gifts",
+    name: "Newborn Gift",
+    description: "Beautiful personalised newborn gift.",
+    price: "Ask for quotation",
+    images: ["product-30.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Newborn Gifts",
+    name: "Newborn Gift",
+    description: "Custom-made gift for a newborn.",
+    price: "Ask for quotation",
+    images: ["product-31.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Pencil Cases",
+    name: "Personalised Pencil Case",
+    description: "Personalised pencil case for school and everyday use.",
+    price: "Ask for quotation",
+    images: ["product-33.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Magnets",
+    name: "Personalised Magnets",
+    description: "Personalised magnets for gifts and special occasions.",
+    price: "Ask for quotation",
+    images: ["product-34.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Door Hangers",
+    name: "Personalised Door Hanger",
+    description: "Custom-made personalised door hanger.",
+    price: "Ask for quotation",
+    images: ["product-35.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Keychains",
+    name: "Personalised Keyrings",
+    description: "Custom-made personalised keyrings.",
+    price: "Ask for quotation",
+    images: ["product-37.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Photo Frames",
+    name: "Personalised Photo Frame",
+    description: "Personalised photo frame for a special memory.",
+    price: "Ask for quotation",
+    images: ["product-38.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Educational",
+    name: "Educational Creation",
+    description: "Personalised educational creation for children.",
+    price: "Ask for quotation",
+    images: ["product-39.jpg"]
+  },
+
+  {
+    category: "PERSONALISED GIFTS",
+    subcategory: "Newborn Gifts",
+    name: "Newborn Gift",
+    description: "Personalised gift for a newborn baby.",
+    price: "Ask for quotation",
+    images: ["product-40.jpg"]
   },
 
 
@@ -196,9 +325,7 @@ const products = [
     name: "Tea Box",
     description: "Beautiful handmade tea box, perfect for gifting.",
     price: "Ask for quotation",
-    images: [
-      "product-13.jpg"
-    ]
+    images: ["product-13.jpg"]
   },
 
   {
@@ -207,9 +334,7 @@ const products = [
     name: "Wine Box",
     description: "Elegant personalised wine box.",
     price: "Ask for quotation",
-    images: [
-      "product-14.jpg"
-    ]
+    images: ["product-14.jpg"]
   },
 
   {
@@ -218,9 +343,25 @@ const products = [
     name: "Choice Boxes",
     description: "Unique personalised boxes for special occasions.",
     price: "Ask for quotation",
-    images: [
-      "product-5.jpg"
-    ]
+    images: ["product-5.jpg"]
+  },
+
+  {
+    category: "BOXES",
+    subcategory: "Gift Boxes",
+    name: "Personalised Gift Box",
+    description: "Personalised box created for gifting and special occasions.",
+    price: "Ask for quotation",
+    images: ["product-21.jpg"]
+  },
+
+  {
+    category: "BOXES",
+    subcategory: "Gift Boxes",
+    name: "Personalised Gift Box",
+    description: "Custom-made box for a unique gift.",
+    price: "Ask for quotation",
+    images: ["product-41.jpg"]
   },
 
 
@@ -234,9 +375,7 @@ const products = [
     name: "Corporate Gift Boxes",
     description: "Customised gift boxes for businesses.",
     price: "Ask for quotation",
-    images: [
-      "product-17.jpg"
-    ]
+    images: ["product-17.jpg"]
   },
 
 
@@ -250,9 +389,7 @@ const products = [
     name: "Customised Cut Outs",
     description: "Custom-made laser cut-outs designed to your needs.",
     price: "Ask for quotation",
-    images: [
-      "product-18.jpg"
-    ]
+    images: ["product-18.jpg"]
   },
 
   {
@@ -261,9 +398,7 @@ const products = [
     name: "Customised Cut Outs",
     description: "Personalised laser cut-outs for decorations.",
     price: "Ask for quotation",
-    images: [
-      "product-19.jpg"
-    ]
+    images: ["product-19.jpg"]
   },
 
   {
@@ -272,9 +407,7 @@ const products = [
     name: "Customised Cut Outs",
     description: "Unique custom-made cut-outs.",
     price: "Ask for quotation",
-    images: [
-      "product-20.jpg"
-    ]
+    images: ["product-20.jpg"]
   },
 
 
@@ -291,6 +424,24 @@ const products = [
     images: []
   },
 
+  {
+    category: "DECOR",
+    subcategory: "Cake Toppers",
+    name: "Personalised Cake Topper",
+    description: "Custom cake topper for birthdays, weddings and special occasions.",
+    price: "Ask for quotation",
+    images: ["product-26.jpg"]
+  },
+
+  {
+    category: "DECOR",
+    subcategory: "Foamboard",
+    name: "Custom Foamboard",
+    description: "Custom-designed foamboard creation for events and displays.",
+    price: "Ask for quotation",
+    images: ["product-22.jpg"]
+  },
+
 
   // =========================
   // OTHER GIFTS
@@ -303,6 +454,24 @@ const products = [
     description: "Unique handmade gift for every occasion.",
     price: "Ask for quotation",
     images: []
+  },
+
+  {
+    category: "OTHER GIFTS",
+    subcategory: "Clothing",
+    name: "Personalised Clothing",
+    description: "Customised clothing created for special occasions, businesses and gifts.",
+    price: "Ask for quotation",
+    images: ["product-23.jpg"]
+  },
+
+  {
+    category: "OTHER GIFTS",
+    subcategory: "Clothing",
+    name: "Personalised Clothing",
+    description: "Custom printed clothing for individuals, events and businesses.",
+    price: "Ask for quotation",
+    images: ["product-24.jpg"]
   },
 
 
@@ -320,3 +489,6 @@ const products = [
   }
 
 ];
+```
+
+**Σημείωση:** Έβαλα τα `product-25` και `product-28` ως keyrings και τα `29–31` ως newborn, επειδή μου τα έγραψες με επικάλυψη (`25–32 keyrings` και `29–31 newborns`). Άρα αυτά τα 3 τα έχω προσωρινά ως **Newborn**, όχι διπλά. Αν οι φωτογραφίες 29–31 είναι τελικά keyrings, το αλλάζουμε αμέσως.

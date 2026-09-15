@@ -11,132 +11,281 @@
 
 <body>
 
+<!-- =====================================================
+     HEADER / MENU
+     ===================================================== -->
+
 <header>
   <div class="container header-inner">
 
-    <a href="#" class="logo">
-      Laserworks Ideas
-    </a>
+    <a href="#" class="logo">LASERWORKS IDEAS</a>
 
-    <button class="menu" id="menu">
-      ☰
-    </button>
+    <button class="menu" onclick="toggleMenu()">☰</button>
 
-    <nav id="nav">
-      <a href="#categories">Categories</a>
-      <a href="#names">Names & Monograms</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+    <nav id="mainNav">
+
+      <div class="nav-dropdown">
+        <button class="nav-drop-button" onclick="toggleDropdown(event, 'christeningMenu')">
+          CHRISTENING ▾
+        </button>
+
+        <div class="dropdown-menu" id="christeningMenu">
+          <button onclick="selectCategory('CHRISTENING', 'Hangers')">
+            Hangers
+          </button>
+
+          <button onclick="selectCategory('CHRISTENING', 'Wish Books')">
+            Wish Books
+          </button>
+
+          <button onclick="selectCategory('CHRISTENING', 'Christening Accessories')">
+            Christening Accessories
+          </button>
+
+          <button onclick="selectCategory('CHRISTENING', 'Frames')">
+            Frames
+          </button>
+        </div>
+      </div>
+
+
+      <div class="nav-dropdown">
+        <button class="nav-drop-button" onclick="toggleDropdown(event, 'weddingMenu')">
+          WEDDING ▾
+        </button>
+
+        <div class="dropdown-menu" id="weddingMenu">
+
+          <button onclick="selectCategory('WEDDING', 'Hangers')">
+            Hangers
+          </button>
+
+          <button onclick="selectCategory('WEDDING', 'Wedding Signs')">
+            Wedding Signs
+          </button>
+
+          <button onclick="selectCategory('WEDDING', 'Wedding Favours')">
+            Wedding Favours
+          </button>
+
+        </div>
+      </div>
+
+
+      <div class="nav-dropdown">
+        <button class="nav-drop-button" onclick="toggleDropdown(event, 'seasonalMenu')">
+          SEASONAL ITEMS ▾
+        </button>
+
+        <div class="dropdown-menu" id="seasonalMenu">
+
+          <button onclick="selectCategory('SEASONAL ITEMS', 'Seasonal Gifts')">
+            Seasonal Gifts
+          </button>
+
+        </div>
+      </div>
+
+
+      <div class="nav-dropdown">
+        <button class="nav-drop-button" onclick="toggleDropdown(event, 'personalisedMenu')">
+          PERSONALISED GIFTS ▾
+        </button>
+
+        <div class="dropdown-menu" id="personalisedMenu">
+
+          <button onclick="selectCategory('PERSONALISED GIFTS', 'Photo Gifts')">
+            Photo Gifts
+          </button>
+
+          <button onclick="selectCategory('PERSONALISED GIFTS', 'Frames')">
+            Frames
+          </button>
+
+          <button onclick="selectCategory('PERSONALISED GIFTS', 'Name Decorations')">
+            Name Decorations
+          </button>
+
+          <button onclick="selectCategory('PERSONALISED GIFTS', 'Keychains')">
+            Keychains
+          </button>
+
+          <button onclick="selectCategory('PERSONALISED GIFTS', 'Acrylic Frames')">
+            Acrylic Frames
+          </button>
+
+        </div>
+      </div>
+
+
+      <div class="nav-dropdown">
+        <button class="nav-drop-button" onclick="toggleDropdown(event, 'boxesMenu')">
+          BOXES ▾
+        </button>
+
+        <div class="dropdown-menu" id="boxesMenu">
+
+          <button onclick="selectCategory('BOXES', 'Tea Boxes')">
+            Tea Boxes
+          </button>
+
+          <button onclick="selectCategory('BOXES', 'Wine Boxes')">
+            Wine Boxes
+          </button>
+
+          <button onclick="selectCategory('BOXES', 'Choice Boxes')">
+            Choice Boxes
+          </button>
+
+        </div>
+      </div>
+
+
+      <div class="nav-dropdown">
+        <button class="nav-drop-button" onclick="toggleDropdown(event, 'corporateMenu')">
+          CORPORATE GIFTS ▾
+        </button>
+
+        <div class="dropdown-menu" id="corporateMenu">
+
+          <button onclick="selectCategory('CORPORATE GIFTS', 'Gift Boxes')">
+            Gift Boxes
+          </button>
+
+        </div>
+      </div>
+
+
+      <div class="nav-dropdown">
+        <button class="nav-drop-button" onclick="toggleDropdown(event, 'cutoutsMenu')">
+          CUSTOMISED CUT OUTS ▾
+        </button>
+
+        <div class="dropdown-menu" id="cutoutsMenu">
+
+          <button onclick="selectCategory('CUSTOMISED CUT OUTS', 'Laser Cut Outs')">
+            Laser Cut Outs
+          </button>
+
+        </div>
+      </div>
+
+
+      <div class="nav-dropdown">
+        <button class="nav-drop-button" onclick="toggleDropdown(event, 'decorMenu')">
+          DECOR ▾
+        </button>
+
+        <div class="dropdown-menu" id="decorMenu">
+
+          <button onclick="selectCategory('DECOR', 'Decorations')">
+            Decorations
+          </button>
+
+        </div>
+      </div>
+
+
+      <div class="nav-dropdown">
+        <button class="nav-drop-button" onclick="toggleDropdown(event, 'otherMenu')">
+          OTHER GIFTS ▾
+        </button>
+
+        <div class="dropdown-menu" id="otherMenu">
+
+          <button onclick="selectCategory('OTHER GIFTS', 'Gift Ideas')">
+            Gift Ideas
+          </button>
+
+        </div>
+      </div>
+
+
+      <div class="nav-dropdown">
+        <button class="nav-drop-button" onclick="toggleDropdown(event, 'invitationsMenu')">
+          INVITATIONS ▾
+        </button>
+
+        <div class="dropdown-menu" id="invitationsMenu">
+
+          <button onclick="selectCategory('INVITATIONS', 'Invitations')">
+            Invitations
+          </button>
+
+        </div>
+      </div>
+
+
+      <a href="#names">NAMES & MONOGRAMS</a>
+
+      <a href="#about">ABOUT</a>
+
+      <a href="#contact">CONTACT</a>
+
     </nav>
 
   </div>
 </header>
 
 
-<!-- HERO -->
+<!-- =====================================================
+     HERO
+     ===================================================== -->
 
 <section class="hero">
 
-  <div class="container">
+  <h1>HANDMADE CREATIONS</h1>
 
-    <h1>HANDMADE CREATIONS</h1>
+  <p>
+    Wooden & acrylic personalised creations made with love.
+  </p>
 
-    <p>
-      Wooden & Acrylic Personalised Creations
-    </p>
-
-    <a href="#categories" class="button">
-      Explore Collections
-    </a>
-
-  </div>
+  <a href="#products" class="button">
+    EXPLORE COLLECTION
+  </a>
 
 </section>
 
 
-<!-- CATEGORIES -->
+<!-- =====================================================
+     PRODUCTS
+     ===================================================== -->
 
-<section class="section" id="categories">
+<section class="section products-section" id="products">
 
   <div class="container">
 
     <div class="section-title">
 
-      <h2>CATEGORIES</h2>
+      <h2 id="productsTitle">
+        OUR COLLECTION
+      </h2>
 
-      <p>
-        Explore our handmade creations
+      <p id="productsSubtitle">
+        Choose a category to explore our creations.
       </p>
 
     </div>
 
-    <div id="category-buttons" class="category-buttons"></div>
 
-    <div id="subcategory-buttons" class="subcategory-buttons"></div>
+    <!-- This stays hidden.
+         Categories are now in the TOP MENU. -->
 
-  </div>
+    <div id="categoryButtons" style="display:none;"></div>
 
-</section>
+    <div id="subcategoryButtons" style="display:none;"></div>
 
 
-<!-- PRODUCTS / GALLERY -->
-
-<section class="section products-section">
-
-  <div class="container">
-
-    <div class="section-title">
-
-      <h2 id="products-title">
-        PRODUCTS
-      </h2>
-
-    </div>
-
-    <div
-      id="product-grid"
-      class="product-grid">
-    </div>
+    <div class="product-grid" id="productGrid"></div>
 
   </div>
 
 </section>
 
 
-<!-- IMAGE LIGHTBOX -->
-
-<div id="lightbox" class="lightbox">
-
-  <button class="lightbox-close" id="lightbox-close">
-    ×
-  </button>
-
-  <button class="lightbox-prev" id="lightbox-prev">
-    ‹
-  </button>
-
-  <div class="lightbox-content">
-
-    <img
-      id="lightbox-image"
-      src=""
-      alt="">
-
-    <div
-      id="lightbox-counter"
-      class="lightbox-counter">
-    </div>
-
-  </div>
-
-  <button class="lightbox-next" id="lightbox-next">
-    ›
-  </button>
-
-</div>
-
-
-<!-- NAMES & MONOGRAMS -->
+<!-- =====================================================
+     NAMES • MONOGRAMS • NUMBERS
+     ===================================================== -->
 
 <section class="section names-section" id="names">
 
@@ -147,7 +296,7 @@
       <h2>NAMES • MONOGRAMS • NUMBERS</h2>
 
       <p>
-        Create your personalised name, monogram or number
+        Create your own personalised wooden or acrylic design.
       </p>
 
     </div>
@@ -157,11 +306,11 @@
 
       <div class="custom-field">
 
-        <label>
-          WHAT WOULD YOU LIKE?
+        <label for="customType">
+          TYPE
         </label>
 
-        <select id="custom-type">
+        <select id="customType" onchange="updateSummary()">
 
           <option value="Name">
             Name
@@ -186,41 +335,52 @@
 
       <div class="custom-field">
 
-        <label>
-          YOUR TEXT
+        <label for="customText">
+          TEXT
         </label>
 
         <input
           type="text"
-          id="custom-text"
-          placeholder="Write your name / word">
+          id="customText"
+          placeholder="Write your name, word or number"
+          oninput="updateSummary()"
+        >
 
       </div>
 
 
       <div class="custom-field">
 
-        <label>
-          SIZE (2CM – 80CM)
+        <label for="customSize">
+          SIZE
         </label>
 
-        <input
-          type="number"
-          id="custom-size"
-          min="2"
-          max="80"
-          placeholder="Example: 30">
+        <select id="customSize" onchange="updateSummary()">
+
+          <option value="2 cm">2 cm</option>
+          <option value="5 cm">5 cm</option>
+          <option value="10 cm">10 cm</option>
+          <option value="15 cm">15 cm</option>
+          <option value="20 cm">20 cm</option>
+          <option value="30 cm">30 cm</option>
+          <option value="40 cm">40 cm</option>
+          <option value="50 cm">50 cm</option>
+          <option value="60 cm">60 cm</option>
+          <option value="70 cm">70 cm</option>
+          <option value="80 cm">80 cm</option>
+
+        </select>
 
       </div>
 
 
       <div class="custom-field">
 
-        <label>
+        <label for="customMaterial">
           MATERIAL
         </label>
 
-        <select id="custom-material">
+        <select id="customMaterial" onchange="updateSummary()">
 
           <option value="Wood">
             Wood
@@ -261,15 +421,17 @@
 
       <div class="custom-field">
 
-        <label>
+        <label for="customQuantity">
           QUANTITY
         </label>
 
         <input
           type="number"
-          id="custom-quantity"
+          id="customQuantity"
+          value="1"
           min="1"
-          value="1">
+          onchange="updateSummary()"
+        >
 
       </div>
 
@@ -277,32 +439,32 @@
       <div class="custom-summary">
 
         <h3>
-          YOUR SELECTION
+          YOUR REQUEST
         </h3>
 
         <p>
-          <strong>Type:</strong>
-          <span id="summary-type">Name</span>
+          Type:
+          <strong id="summaryType">Name</strong>
         </p>
 
         <p>
-          <strong>Text:</strong>
-          <span id="summary-text">-</span>
+          Text:
+          <strong id="summaryText">-</strong>
         </p>
 
         <p>
-          <strong>Size:</strong>
-          <span id="summary-size">-</span>
+          Size:
+          <strong id="summarySize">2 cm</strong>
         </p>
 
         <p>
-          <strong>Material:</strong>
-          <span id="summary-material">Wood</span>
+          Material:
+          <strong id="summaryMaterial">Wood</strong>
         </p>
 
         <p>
-          <strong>Quantity:</strong>
-          <span id="summary-quantity">1</span>
+          Quantity:
+          <strong id="summaryQuantity">1</strong>
         </p>
 
         <div class="quotation-price">
@@ -318,7 +480,9 @@
 </section>
 
 
-<!-- ABOUT -->
+<!-- =====================================================
+     ABOUT
+     ===================================================== -->
 
 <section class="section about-section" id="about">
 
@@ -326,17 +490,17 @@
 
     <div class="section-title">
 
-      <h2>ABOUT US</h2>
+      <h2>ABOUT</h2>
 
     </div>
 
     <p>
       Laserworks Ideas creates handmade wooden and acrylic
-      personalised creations for every special occasion.
+      personalised gifts, decorations and special creations.
     </p>
 
     <p>
-      Each creation is carefully designed and made with love.
+      Every piece is carefully designed and made especially for you.
     </p>
 
   </div>
@@ -344,7 +508,9 @@
 </section>
 
 
-<!-- CONTACT -->
+<!-- =====================================================
+     CONTACT
+     ===================================================== -->
 
 <section class="section contact-section" id="contact">
 
@@ -355,19 +521,24 @@
       <h2>CONTACT</h2>
 
       <p>
-        Contact us for your personalised creation
+        Contact us for your personalised creation.
       </p>
 
     </div>
 
+
     <div class="contact-buttons">
 
-      <a href="tel:+35799303580">
-        CALL
+      <a href="https://wa.me/35799303580" target="_blank">
+        WHATSAPP
       </a>
 
-      <a href="https://wa.me/35799303580">
-        WHATSAPP
+      <a href="viber://chat?number=%2B35799303580">
+        VIBER
+      </a>
+
+      <a href="https://www.instagram.com/laserworks_ideas/" target="_blank">
+        INSTAGRAM
       </a>
 
     </div>
@@ -377,121 +548,262 @@
 </section>
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
 
 <footer>
 
-  © 2026 Laserworks Ideas
+  © 2026 LASERWORKS IDEAS — Handmade Wooden & Acrylic Creations
 
 </footer>
 
+
+<!-- =====================================================
+     LIGHTBOX
+     ===================================================== -->
+
+<div class="lightbox" id="lightbox">
+
+  <button class="lightbox-close" onclick="closeLightbox()">
+    ×
+  </button>
+
+  <button class="lightbox-prev" onclick="previousImage()">
+    ‹
+  </button>
+
+  <div class="lightbox-content">
+
+    <img
+      id="lightbox-image"
+      src=""
+      alt=""
+    >
+
+    <div
+      class="lightbox-counter"
+      id="lightboxCounter"
+    ></div>
+
+  </div>
+
+  <button class="lightbox-next" onclick="nextImage()">
+    ›
+  </button>
+
+</div>
+
+
+<!-- =====================================================
+     PRODUCTS DATA
+     ===================================================== -->
 
 <script src="products.js"></script>
 
 
 <script>
 
-const categoryButtons =
-  document.getElementById("category-buttons");
+/* =====================================================
+   MENU
+   ===================================================== */
 
-const subcategoryButtons =
-  document.getElementById("subcategory-buttons");
+function toggleMenu() {
 
-const productGrid =
-  document.getElementById("product-grid");
+  const nav = document.getElementById("mainNav");
 
-const productsTitle =
-  document.getElementById("products-title");
+  nav.classList.toggle("open");
+
+}
 
 
 /* =====================================================
-   PRODUCT GALLERY
+   DROPDOWN MENU
+   ===================================================== */
+
+function toggleDropdown(event, menuId) {
+
+  event.stopPropagation();
+
+  const clickedMenu = document.getElementById(menuId);
+
+  document.querySelectorAll(".dropdown-menu").forEach(menu => {
+
+    if (menu !== clickedMenu) {
+      menu.classList.remove("show");
+    }
+
+  });
+
+  clickedMenu.classList.toggle("show");
+
+}
+
+
+/* Close dropdown when clicking elsewhere */
+
+document.addEventListener("click", function() {
+
+  document.querySelectorAll(".dropdown-menu").forEach(menu => {
+    menu.classList.remove("show");
+  });
+
+});
+
+
+/* =====================================================
+   SELECT CATEGORY
+   ===================================================== */
+
+function selectCategory(category, subcategory) {
+
+  showProducts(category, subcategory);
+
+  document.querySelectorAll(".dropdown-menu").forEach(menu => {
+    menu.classList.remove("show");
+  });
+
+  document.getElementById("products").scrollIntoView({
+    behavior: "smooth"
+  });
+
+}
+
+
+/* =====================================================
+   PRODUCTS
    ===================================================== */
 
 let currentImages = [];
-
 let currentImageIndex = 0;
 
 
 function showProducts(category, subcategory = null) {
 
-  productGrid.innerHTML = "";
+  const grid = document.getElementById("productGrid");
 
+  const title = document.getElementById("productsTitle");
 
-  let filteredProducts =
-    products.filter(product =>
-      product.category === category
-    );
+  const subtitle = document.getElementById("productsSubtitle");
+
+  grid.innerHTML = "";
+
+  let filteredProducts = products.filter(product => {
+
+    if (product.category !== category) {
+      return false;
+    }
+
+    if (subcategory && product.subcategory !== subcategory) {
+      return false;
+    }
+
+    return true;
+
+  });
 
 
   if (subcategory) {
 
-    filteredProducts =
-      filteredProducts.filter(product =>
-        product.subcategory === subcategory
-      );
+    title.textContent = subcategory.toUpperCase();
+
+    subtitle.textContent =
+      category.toUpperCase();
+
+  } else {
+
+    title.textContent = category.toUpperCase();
+
+    subtitle.textContent =
+      "Explore our handmade creations.";
 
   }
 
 
-  productsTitle.textContent =
-    subcategory || category;
+  if (filteredProducts.length === 0) {
+
+    grid.innerHTML = `
+      <div style="
+        grid-column: 1 / -1;
+        text-align:center;
+        padding:60px 20px;
+        color:#777;
+      ">
+        No products available yet.
+      </div>
+    `;
+
+    return;
+  }
 
 
   filteredProducts.forEach(product => {
 
-    const card =
-      document.createElement("div");
+    const card = document.createElement("div");
 
     card.className = "product";
-
-
-    const images =
-      product.images || [];
 
 
     let galleryHTML = "";
 
 
-    if (images.length > 0) {
+    if (product.images && product.images.length > 0) {
 
-      galleryHTML = `
+      const firstImage = product.images[0];
+
+
+      galleryHTML += `
 
         <div class="product-gallery">
 
-          <div class="main-product-image">
+          <div
+            class="main-product-image"
+            onclick='openLightbox(${JSON.stringify(product.images)}, 0)'
+          >
 
             <img
-              src="${images[0]}"
+              class="gallery-main-image"
+              src="${firstImage}"
               alt="${product.name}"
-              class="gallery-main-image">
+            >
 
           </div>
 
-          ${
-            images.length > 1
-            ?
-            `<div class="gallery-thumbnails">
+      `;
 
-              ${
-                images.map((image, index) => `
 
-                  <img
-                    src="${image}"
-                    alt="${product.name}"
-                    class="gallery-thumbnail"
-                    data-index="${index}">
+      if (product.images.length > 1) {
 
-                `).join("")
-              }
+        galleryHTML += `
+          <div class="gallery-thumbnails">
+        `;
 
-            </div>`
-            :
-            ""
-          }
 
+        product.images.forEach((image, index) => {
+
+          galleryHTML += `
+
+            <img
+              class="gallery-thumbnail"
+              src="${image}"
+              alt="${product.name}"
+              onclick='changeProductImage(this, ${JSON.stringify(product.images)}, ${index})'
+            >
+
+          `;
+
+        });
+
+
+        galleryHTML += `
+          </div>
+        `;
+
+      }
+
+
+      galleryHTML += `
         </div>
-
       `;
 
     } else {
@@ -501,7 +813,7 @@ function showProducts(category, subcategory = null) {
         <div class="product-image">
 
           <div class="no-image">
-            PHOTO COMING SOON
+            Photo coming soon
           </div>
 
         </div>
@@ -534,45 +846,7 @@ function showProducts(category, subcategory = null) {
     `;
 
 
-    productGrid.appendChild(card);
-
-
-    const mainImage =
-      card.querySelector(".gallery-main-image");
-
-
-    if (mainImage) {
-
-      mainImage.addEventListener("click", () => {
-
-        openLightbox(images, 0);
-
-      });
-
-
-      const thumbnails =
-        card.querySelectorAll(".gallery-thumbnail");
-
-
-      thumbnails.forEach(thumbnail => {
-
-        thumbnail.addEventListener("click", () => {
-
-          const index =
-            Number(thumbnail.dataset.index);
-
-
-          mainImage.src =
-            images[index];
-
-
-          openLightbox(images, index);
-
-        });
-
-      });
-
-    }
+    grid.appendChild(card);
 
   });
 
@@ -580,18 +854,30 @@ function showProducts(category, subcategory = null) {
 
 
 /* =====================================================
-   LIGHTBOX
+   CHANGE PRODUCT IMAGE
    ===================================================== */
 
-const lightbox =
-  document.getElementById("lightbox");
+function changeProductImage(element, images, index) {
 
-const lightboxImage =
-  document.getElementById("lightbox-image");
+  const gallery = element.closest(".product-gallery");
 
-const lightboxCounter =
-  document.getElementById("lightbox-counter");
+  const mainImage =
+    gallery.querySelector(".gallery-main-image");
 
+  mainImage.src = images[index];
+
+  mainImage.onclick = function() {
+
+    openLightbox(images, index);
+
+  };
+
+}
+
+
+/* =====================================================
+   LIGHTBOX
+   ===================================================== */
 
 function openLightbox(images, index) {
 
@@ -601,23 +887,25 @@ function openLightbox(images, index) {
 
   updateLightbox();
 
-  lightbox.classList.add("open");
+  document
+    .getElementById("lightbox")
+    .classList.add("open");
 
 }
 
 
 function updateLightbox() {
 
-  if (!currentImages.length) {
-    return;
-  }
+  const image =
+    document.getElementById("lightbox-image");
+
+  const counter =
+    document.getElementById("lightboxCounter");
 
 
-  lightboxImage.src =
-    currentImages[currentImageIndex];
+  image.src = currentImages[currentImageIndex];
 
-
-  lightboxCounter.textContent =
+  counter.textContent =
     `${currentImageIndex + 1} / ${currentImages.length}`;
 
 }
@@ -625,326 +913,120 @@ function updateLightbox() {
 
 function closeLightbox() {
 
-  lightbox.classList.remove("open");
+  document
+    .getElementById("lightbox")
+    .classList.remove("open");
 
 }
 
 
-document
-  .getElementById("lightbox-close")
-  .addEventListener(
-    "click",
-    closeLightbox
-  );
+function previousImage() {
 
+  if (currentImages.length === 0) return;
 
-document
-  .getElementById("lightbox-prev")
-  .addEventListener(
-    "click",
-    () => {
+  currentImageIndex--;
 
-      if (!currentImages.length) {
-        return;
-      }
-
-      currentImageIndex--;
-
-      if (currentImageIndex < 0) {
-
-        currentImageIndex =
-          currentImages.length - 1;
-
-      }
-
-      updateLightbox();
-
-    }
-  );
-
-
-document
-  .getElementById("lightbox-next")
-  .addEventListener(
-    "click",
-    () => {
-
-      if (!currentImages.length) {
-        return;
-      }
-
-      currentImageIndex++;
-
-      if (
-        currentImageIndex >=
-        currentImages.length
-      ) {
-
-        currentImageIndex = 0;
-
-      }
-
-      updateLightbox();
-
-    }
-  );
-
-
-lightbox.addEventListener("click", (event) => {
-
-  if (event.target === lightbox) {
-
-    closeLightbox();
-
+  if (currentImageIndex < 0) {
+    currentImageIndex =
+      currentImages.length - 1;
   }
 
-});
-
-
-document.addEventListener("keydown", (event) => {
-
-  if (!lightbox.classList.contains("open")) {
-    return;
-  }
-
-
-  if (event.key === "Escape") {
-
-    closeLightbox();
-
-  }
-
-
-  if (event.key === "ArrowLeft") {
-
-    document
-      .getElementById("lightbox-prev")
-      .click();
-
-  }
-
-
-  if (event.key === "ArrowRight") {
-
-    document
-      .getElementById("lightbox-next")
-      .click();
-
-  }
-
-});
-
-
-/* =====================================================
-   SUBCATEGORIES
-   ===================================================== */
-
-function showSubcategories(category) {
-
-  subcategoryButtons.innerHTML = "";
-
-
-  const subcategories =
-    [...new Set(
-
-      products
-        .filter(product =>
-          product.category === category
-        )
-        .map(product =>
-          product.subcategory
-        )
-
-    )];
-
-
-  subcategories.forEach(subcategory => {
-
-    const button =
-      document.createElement("button");
-
-
-    button.className =
-      "subcategory-button";
-
-
-    button.textContent =
-      subcategory;
-
-
-    button.onclick = () => {
-
-      document
-        .querySelectorAll(".subcategory-button")
-        .forEach(btn =>
-          btn.classList.remove("active")
-        );
-
-
-      button.classList.add("active");
-
-
-      showProducts(
-        category,
-        subcategory
-      );
-
-    };
-
-
-    subcategoryButtons.appendChild(button);
-
-  });
+  updateLightbox();
 
 }
 
 
-/* =====================================================
-   CATEGORIES
-   ===================================================== */
+function nextImage() {
 
-categories.forEach((category, index) => {
+  if (currentImages.length === 0) return;
 
-  const button =
-    document.createElement("button");
+  currentImageIndex++;
 
-
-  button.className =
-    "category-button";
-
-
-  button.textContent =
-    category;
-
-
-  button.onclick = () => {
-
-    document
-      .querySelectorAll(".category-button")
-      .forEach(btn =>
-        btn.classList.remove("active")
-      );
-
-
-    button.classList.add("active");
-
-
-    showSubcategories(category);
-
-    showProducts(category);
-
-  };
-
-
-  categoryButtons.appendChild(button);
-
-
-  if (index === 0) {
-
-    button.classList.add("active");
-
-    showSubcategories(category);
-
-    showProducts(category);
-
+  if (currentImageIndex >= currentImages.length) {
+    currentImageIndex = 0;
   }
 
-});
+  updateLightbox();
 
-
-/* =====================================================
-   MOBILE MENU
-   ===================================================== */
-
-const menu =
-  document.getElementById("menu");
-
-const nav =
-  document.getElementById("nav");
-
-
-menu.addEventListener("click", () => {
-
-  nav.classList.toggle("open");
-
-});
+}
 
 
 /* =====================================================
    CUSTOMISER
    ===================================================== */
 
-const customType =
-  document.getElementById("custom-type");
-
-const customText =
-  document.getElementById("custom-text");
-
-const customSize =
-  document.getElementById("custom-size");
-
-const customMaterial =
-  document.getElementById("custom-material");
-
-const customQuantity =
-  document.getElementById("custom-quantity");
-
-
 function updateSummary() {
 
-  document.getElementById("summary-type")
-    .textContent =
-    customType.value;
+  const type =
+    document.getElementById("customType").value;
+
+  const text =
+    document.getElementById("customText").value;
+
+  const size =
+    document.getElementById("customSize").value;
+
+  const material =
+    document.getElementById("customMaterial").value;
+
+  const quantity =
+    document.getElementById("customQuantity").value;
 
 
-  document.getElementById("summary-text")
-    .textContent =
-    customText.value || "-";
+  document.getElementById("summaryType").textContent =
+    type;
 
+  document.getElementById("summaryText").textContent =
+    text || "-";
 
-  document.getElementById("summary-size")
-    .textContent =
-    customSize.value
-      ? customSize.value + " cm"
-      : "-";
+  document.getElementById("summarySize").textContent =
+    size;
 
+  document.getElementById("summaryMaterial").textContent =
+    material;
 
-  document.getElementById("summary-material")
-    .textContent =
-    customMaterial.value;
-
-
-  document.getElementById("summary-quantity")
-    .textContent =
-    customQuantity.value;
+  document.getElementById("summaryQuantity").textContent =
+    quantity;
 
 }
 
 
-customType.addEventListener(
-  "input",
-  updateSummary
-);
+/* =====================================================
+   ESC KEY
+   ===================================================== */
 
-customText.addEventListener(
-  "input",
-  updateSummary
-);
+document.addEventListener("keydown", function(event) {
 
-customSize.addEventListener(
-  "input",
-  updateSummary
-);
+  if (event.key === "Escape") {
 
-customMaterial.addEventListener(
-  "input",
-  updateSummary
-);
+    closeLightbox();
 
-customQuantity.addEventListener(
-  "input",
-  updateSummary
-);
+    document.querySelectorAll(".dropdown-menu").forEach(menu => {
+      menu.classList.remove("show");
+    });
+
+  }
+
+  if (event.key === "ArrowLeft") {
+    previousImage();
+  }
+
+  if (event.key === "ArrowRight") {
+    nextImage();
+  }
+
+});
+
+
+/* =====================================================
+   STARTING CATEGORY
+   ===================================================== */
+
+if (typeof products !== "undefined" && products.length > 0) {
+
+  showProducts(products[0].category);
+
+}
 
 </script>
 

@@ -1,4 +1,3 @@
-```css
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,12 +11,25 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #fff;
-  color: #111;
-  font-style: normal !important;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.6;
+  font-style: normal;
 }
 
 body * {
-  font-style: normal !important;
+  font-style: normal;
+}
+
+a {
+  color: #000;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }
 
 .container {
@@ -26,132 +38,104 @@ body * {
 }
 
 /* =========================
-   TOP HEADER
-   ========================= */
+   HEADER
+========================= */
 
 .top-row {
   background: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #000;
 }
 
 .top-row-inner {
-  min-height: 72px;
+  min-height: 92px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 30px;
 }
 
 .logo {
-  color: #111;
+  color: #000;
   text-decoration: none;
   font-size: 24px;
+  line-height: 1;
   font-weight: 800;
   letter-spacing: 2px;
   white-space: nowrap;
 }
 
-.top-links {
+.header-contact {
   display: flex;
   align-items: center;
-  gap: 30px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  text-align: right;
 }
 
-.top-links a {
-  color: #111;
-  text-decoration: none;
-  font-size: 12px;
+.header-contact-title {
+  color: #d00000;
   font-weight: 800;
   letter-spacing: 1px;
 }
 
-.top-links a:hover {
+.header-contact a {
+  color: #000;
+  text-decoration: none;
+}
+
+.header-contact a:hover {
   color: #d00000;
 }
 
 .menu {
   display: none;
   border: 0;
-  background: transparent;
-  color: #111;
+  background: #fff;
+  color: #000;
   font-size: 28px;
   cursor: pointer;
 }
 
 /* =========================
-   EMAIL / WHATSAPP / VIBER
-   ========================= */
+   NAVIGATION
+========================= */
 
-.contact-links-row {
-  background: #fff;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.contact-links-inner {
-  min-height: 42px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 25px;
-}
-
-.contact-links-inner a {
-  color: #555;
-  text-decoration: none;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-}
-
-.contact-links-inner a:hover {
-  color: #d00000;
-}
-
-/* =========================
-   CATEGORY MENU
-   ========================= */
-
-.header-menu {
-  background: #111;
-}
-
-#mainNav {
+.main-nav {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  width: 100%;
+  background: #000;
 }
 
 .nav-dropdown,
-#mainNav > a {
+.main-nav > a {
   min-width: 0;
+  position: relative;
 }
 
-.nav-drop-button,
-#mainNav > a {
+.nav-dropdown > button,
+.main-nav > a {
   width: 100%;
-  min-height: 50px;
+  min-height: 52px;
   padding: 10px 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 0;
-  background: #111;
+  background: #000;
   color: #fff;
   text-decoration: none;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
   text-align: center;
   cursor: pointer;
-  white-space: normal;
 }
 
-.nav-drop-button:hover,
-#mainNav > a:hover {
+.nav-dropdown > button:hover,
+.main-nav > a:hover {
   background: #d00000;
-}
-
-.nav-dropdown {
-  position: relative;
 }
 
 .dropdown-menu {
@@ -159,10 +143,9 @@ body * {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 220px;
+  width: 230px;
   background: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid #000;
   z-index: 3000;
 }
 
@@ -170,107 +153,118 @@ body * {
   display: block;
 }
 
-.dropdown-menu button {
-  width: 100%;
+.dropdown-menu a {
   display: block;
-  padding: 13px 15px;
-  border: 0;
-  border-bottom: 1px solid #eee;
+  padding: 12px 15px;
+  border-bottom: 1px solid #000;
   background: #fff;
-  color: #111;
-  text-align: left;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.dropdown-menu button:hover {
-  background: #f5f5f5;
-  color: #d00000;
-}
-
-/* =========================
-   HERO
-   ========================= */
-
-.hero {
-  min-height: 430px;
-  padding: 80px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: #fafafa;
-}
-
-.hero h1 {
-  max-width: 1000px;
-  font-size: clamp(32px, 5vw, 58px);
-  line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: 2px;
-  margin-bottom: 18px;
-}
-
-.hero p {
-  max-width: 650px;
-  color: #666;
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-.button {
-  display: inline-block;
-  padding: 14px 26px;
-  background: #d00000;
-  color: #fff;
+  color: #000;
   text-decoration: none;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  font-size: 14px;
 }
 
-.button:hover {
-  background: #111;
+.dropdown-menu a:last-child {
+  border-bottom: 0;
+}
+
+.dropdown-menu a:hover {
+  background: #000;
+  color: #fff;
 }
 
 /* =========================
-   SECTIONS
-   ========================= */
+   GENERAL SECTIONS
+========================= */
 
 .section {
-  padding: 70px 0;
+  padding: 80px 0;
 }
 
-.products-section {
-  background: #f7f7f7;
-}
-
-.section-title {
+.section-heading {
+  margin-bottom: 42px;
   text-align: center;
-  margin-bottom: 38px;
 }
 
-.section-title h2 {
+.section-heading h2 {
   margin-bottom: 10px;
-  color: #111;
+  color: #000;
   font-size: 30px;
+  line-height: 1.2;
   font-weight: 800;
   letter-spacing: 1px;
 }
 
-.section-title p {
-  color: #777;
+.section-heading p {
+  color: #000;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.6;
   font-weight: 400;
 }
 
 /* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 470px;
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #fff;
+  border-bottom: 1px solid #000;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero h1 {
+  max-width: 1000px;
+  margin-bottom: 18px;
+  color: #000;
+  font-size: clamp(34px, 5vw, 60px);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  max-width: 650px;
+  margin-bottom: 30px;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.hero-button,
+.custom-button {
+  display: inline-block;
+  padding: 13px 24px;
+  background: #d00000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+.hero-button:hover,
+.custom-button:hover {
+  background: #000;
+}
+
+/* =========================
    PRODUCTS
-   ========================= */
+========================= */
+
+.products-section {
+  background: #fff;
+}
 
 .product-grid {
   display: grid;
@@ -280,17 +274,9 @@ body * {
 
 .product {
   background: #fff;
-  border: 1px solid #e2e2e2;
+  border: 1px solid #000;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-.product:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-/* ΤΕΤΡΑΓΩΝΗ ΦΩΤΟΓΡΑΦΙΑ */
 
 .product-gallery {
   width: 100%;
@@ -300,7 +286,7 @@ body * {
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #f1f1f1;
+  background: #fff;
   cursor: pointer;
 }
 
@@ -309,11 +295,6 @@ body * {
   height: 100%;
   display: block;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.main-product-image:hover .gallery-main-image {
-  transform: scale(1.03);
 }
 
 .gallery-thumbnails {
@@ -322,6 +303,7 @@ body * {
   padding: 8px;
   overflow-x: auto;
   background: #fff;
+  border-top: 1px solid #000;
 }
 
 .gallery-thumbnail {
@@ -329,7 +311,7 @@ body * {
   height: 55px;
   min-width: 55px;
   object-fit: cover;
-  border: 1px solid #ddd;
+  border: 1px solid #000;
   cursor: pointer;
 }
 
@@ -338,36 +320,35 @@ body * {
 }
 
 .product-info {
-  padding: 17px;
+  padding: 18px;
 }
 
 .product-info h3 {
   margin-bottom: 8px;
-  color: #111;
-  font-size: 16px;
-  font-weight: 800;
+  color: #000;
+  font-size: 17px;
   line-height: 1.3;
+  font-weight: 800;
 }
 
 .product-info p {
   margin-bottom: 13px;
-  color: #666;
-  font-size: 12px;
-  line-height: 1.5;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.6;
   font-weight: 400;
 }
 
 .product-info strong {
   color: #d00000;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 800;
-  letter-spacing: 0.7px;
 }
 
 .product-image {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #f2f2f2;
+  background: #fff;
 }
 
 .no-image {
@@ -376,16 +357,17 @@ body * {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #999;
-  font-size: 12px;
+  color: #000;
+  font-size: 14px;
 }
 
 /* =========================
-   NAMES CUSTOMISER
-   ========================= */
+   CUSTOMISER
+========================= */
 
-.names-section {
+.customiser-section {
   background: #fff;
+  border-top: 1px solid #000;
 }
 
 .customiser {
@@ -402,134 +384,159 @@ body * {
   gap: 8px;
 }
 
-.custom-field label {
-  color: #111;
-  font-size: 10px;
+.custom-field label,
+.form-field label {
+  color: #000;
+  font-size: 14px;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: .5px;
 }
 
 .custom-field input,
 .custom-field select {
   width: 100%;
-  height: 46px;
+  height: 48px;
   padding: 0 13px;
-  border: 1px solid #ccc;
+  border: 1px solid #000;
+  border-radius: 0;
   background: #fff;
-  color: #111;
-  font-family: inherit;
-  font-size: 13px;
+  color: #000;
   outline: none;
 }
 
 .custom-field input:focus,
 .custom-field select:focus {
-  border-color: #111;
+  border-color: #d00000;
 }
 
 .custom-summary {
   grid-column: 1 / -1;
   margin-top: 5px;
-  padding: 24px;
-  background: #111;
+  padding: 25px;
+  background: #000;
   color: #fff;
 }
 
 .custom-summary h3 {
   margin-bottom: 15px;
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.2;
   font-weight: 800;
-  letter-spacing: 1px;
 }
 
 .custom-summary p {
   margin-bottom: 7px;
-  color: #ccc;
-  font-size: 13px;
-  font-weight: 400;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .custom-summary strong {
   color: #fff;
-  font-weight: 700;
+  font-weight: 800;
 }
 
-.quotation-price {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 11px 16px;
-  background: #d00000;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.8px;
+.custom-button {
+  margin-top: 15px;
 }
 
 /* =========================
    ABOUT
-   ========================= */
+========================= */
 
 .about-section {
-  background: #f7f7f7;
+  background: #fff;
+  border-top: 1px solid #000;
 }
 
-.about-section .container > p {
-  max-width: 850px;
-  margin: 0 auto 12px;
-  color: #666;
-  text-align: center;
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-content p {
+  margin-bottom: 16px;
+  color: #000;
   font-size: 14px;
   line-height: 1.7;
   font-weight: 400;
 }
 
+.about-highlight {
+  margin-top: 25px;
+}
+
+.about-highlight strong {
+  color: #d00000;
+  font-weight: 800;
+}
+
 /* =========================
-   CONTACT US
-   ========================= */
+   CONTACT
+========================= */
 
 .contact-section {
   background: #fff;
+  border-top: 1px solid #000;
+}
+
+.contact-map {
+  margin-bottom: 45px;
+}
+
+.map-container {
+  width: 100%;
+  border: 1px solid #000;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 380px;
+  border: 0;
 }
 
 .contact-layout {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 45px;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 60px;
   max-width: 1100px;
-  margin: 0 auto 45px;
-}
-
-.contact-info {
-  padding: 5px 0;
+  margin: 0 auto;
 }
 
 .contact-info h3,
 .quotation-form h3 {
-  margin-bottom: 22px;
-  color: #111;
-  font-size: 18px;
+  margin-bottom: 25px;
+  color: #000;
+  font-size: 20px;
+  line-height: 1.2;
   font-weight: 800;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
 }
 
-.contact-info p {
-  margin-bottom: 20px;
-  color: #666;
-  font-size: 14px;
-  line-height: 1.6;
-  font-weight: 400;
+.contact-item {
+  margin-bottom: 22px;
 }
 
 .contact-info strong {
-  color: #111;
-  font-size: 10px;
+  display: block;
+  margin-bottom: 5px;
+  color: #d00000;
+  font-size: 14px;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: .5px;
+}
+
+.contact-info p {
+  color: #000;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .contact-info a {
-  color: #555;
+  color: #000;
   text-decoration: none;
 }
 
@@ -537,73 +544,62 @@ body * {
   color: #d00000;
 }
 
-.quotation-form {
-  width: 100%;
-}
-
 .quotation-form form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
 }
 
 .quotation-form input,
 .quotation-form textarea {
   width: 100%;
-  padding: 13px 14px;
-  border: 1px solid #ccc;
+  padding: 12px 14px;
+  border: 1px solid #000;
+  border-radius: 0;
   background: #fff;
-  color: #111;
-  font-family: inherit;
-  font-size: 13px;
-  resize: vertical;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.5;
   outline: none;
+  resize: vertical;
 }
 
 .quotation-form input {
-  height: 45px;
+  height: 48px;
 }
 
 .quotation-form input:focus,
 .quotation-form textarea:focus {
-  border-color: #111;
+  border-color: #d00000;
 }
 
 .quotation-form button {
   width: 100%;
   padding: 14px;
   border: 0;
+  border-radius: 0;
   background: #d00000;
   color: #fff;
-  font-family: inherit;
-  font-size: 11px;
+  font-size: 14px;
+  line-height: 1.2;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: .5px;
   cursor: pointer;
 }
 
 .quotation-form button:hover {
-  background: #111;
-}
-
-/* MAP */
-
-.map-container {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  border: 1px solid #ddd;
-  overflow: hidden;
-}
-
-.map-container iframe {
-  display: block;
-  width: 100%;
+  background: #000;
 }
 
 /* =========================
    LIGHTBOX
-   ========================= */
+========================= */
 
 .lightbox {
   position: fixed;
@@ -612,21 +608,12 @@ body * {
   align-items: center;
   justify-content: center;
   padding: 25px;
-  background: rgba(0, 0, 0, 0.93);
+  background: #000;
   z-index: 5000;
 }
 
 .lightbox.open {
   display: flex;
-}
-
-.lightbox-content {
-  max-width: 85vw;
-  max-height: 85vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .lightbox img {
@@ -673,56 +660,54 @@ body * {
   color: #d00000;
 }
 
-.lightbox-counter {
-  margin-top: 10px;
-  color: #fff;
-  font-size: 12px;
-}
-
 /* =========================
    FOOTER
-   ========================= */
+========================= */
 
-footer {
-  padding: 25px 20px;
-  background: #111;
-  color: #aaa;
+.site-footer {
+  padding: 28px 20px;
+  background: #000;
+  color: #fff;
   text-align: center;
-  font-size: 10px;
-  font-weight: 400;
+  font-size: 14px;
+}
+
+.site-footer p + p {
+  margin-top: 5px;
 }
 
 /* =========================
    TABLET
-   ========================= */
+========================= */
 
 @media (max-width: 1100px) {
 
   .product-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  #mainNav {
-    grid-template-columns: repeat(6, 1fr);
+  .main-nav {
+    grid-template-columns: repeat(5, 1fr);
   }
 
-  .nav-drop-button,
-  #mainNav > a {
-    font-size: 9px;
-    padding-left: 5px;
-    padding-right: 5px;
+  .nav-dropdown > button,
+  .main-nav > a {
+    font-size: 11px;
   }
 
+  .header-contact {
+    gap: 6px 12px;
+  }
 }
 
 /* =========================
    MOBILE
-   ========================= */
+========================= */
 
 @media (max-width: 800px) {
 
   .top-row-inner {
-    min-height: 65px;
+    min-height: 72px;
   }
 
   .logo {
@@ -730,7 +715,7 @@ footer {
     letter-spacing: 1.3px;
   }
 
-  .top-links {
+  .header-contact {
     display: none;
   }
 
@@ -738,45 +723,40 @@ footer {
     display: block;
   }
 
-  .contact-links-inner {
-    min-height: 40px;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  #mainNav {
+  .main-nav {
     display: none;
     grid-template-columns: 1fr;
   }
 
-  #mainNav.open {
+  .main-nav.open {
     display: grid;
   }
 
-  .nav-drop-button,
-  #mainNav > a {
-    min-height: 44px;
+  .nav-dropdown,
+  .main-nav > a {
+    width: 100%;
+  }
+
+  .nav-dropdown > button,
+  .main-nav > a {
+    min-height: 48px;
     padding: 12px 15px;
     justify-content: space-between;
     text-align: left;
-    font-size: 10px;
-    border-bottom: 1px solid #333;
-  }
-
-  .nav-dropdown {
-    width: 100%;
+    font-size: 14px;
+    border-bottom: 1px solid #fff;
   }
 
   .dropdown-menu {
     position: static;
     width: 100%;
-    box-shadow: none;
     border: 0;
   }
 
-  .dropdown-menu button {
-    padding-left: 30px;
-    background: #f5f5f5;
+  .dropdown-menu a {
+    padding: 12px 30px;
+    background: #fff;
+    border-bottom: 1px solid #000;
   }
 
   .product-grid {
@@ -784,41 +764,21 @@ footer {
     gap: 14px;
   }
 
-  .product-info {
-    padding: 12px;
-  }
-
-  .product-info h3 {
-    font-size: 13px;
-  }
-
-  .product-info p {
-    font-size: 11px;
-  }
-
-  .product-info strong {
-    font-size: 9px;
-  }
-
   .section {
-    padding: 50px 0;
+    padding: 55px 0;
   }
 
-  .section-title h2 {
-    font-size: 23px;
+  .section-heading h2 {
+    font-size: 24px;
   }
 
   .hero {
-    min-height: 350px;
+    min-height: 380px;
     padding: 60px 18px;
   }
 
   .hero h1 {
-    font-size: 29px;
-  }
-
-  .hero p {
-    font-size: 14px;
+    font-size: 32px;
   }
 
   .customiser {
@@ -831,18 +791,17 @@ footer {
 
   .contact-layout {
     grid-template-columns: 1fr;
-    gap: 35px;
+    gap: 45px;
   }
 
   .map-container iframe {
     height: 300px;
   }
-
 }
 
 /* =========================
    SMALL PHONES
-   ========================= */
+========================= */
 
 @media (max-width: 480px) {
 
@@ -854,40 +813,24 @@ footer {
     font-size: 16px;
   }
 
-  .contact-links-inner {
-    gap: 14px;
-  }
-
-  .contact-links-inner a {
-    font-size: 9px;
-  }
-
   .product-grid {
     gap: 10px;
   }
 
   .product-info {
-    padding: 10px;
+    padding: 12px;
   }
 
   .product-info h3 {
-    font-size: 12px;
-  }
-
-  .product-info p {
-    font-size: 10px;
+    font-size: 16px;
   }
 
   .hero h1 {
-    font-size: 25px;
+    font-size: 27px;
   }
 
-  .hero p {
-    font-size: 13px;
-  }
-
-  .section-title h2 {
-    font-size: 21px;
+  .section-heading h2 {
+    font-size: 22px;
   }
 
   .lightbox img {
@@ -902,6 +845,4 @@ footer {
   .lightbox-next {
     right: 7px;
   }
-
 }
-```

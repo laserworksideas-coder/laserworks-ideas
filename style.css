@@ -1,26 +1,8 @@
-/* =====================================================
-   LASERWORKS IDEAS — STYLE.CSS
-   ===================================================== */
-
-:root {
-  --black: #000000;
-  --white: #ffffff;
-  --red: #d60000;
-  --light: #f7f7f7;
-  --border: #dddddd;
-
-  --main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-/* =====================================================
-   RESET
-   ===================================================== */
-
+```css
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-style: normal !important;
 }
 
 html {
@@ -28,435 +10,307 @@ html {
 }
 
 body {
-  font-family: var(--main-font);
-  font-style: normal !important;
-  font-weight: 300;
-  background: var(--white);
-  color: var(--black);
-  line-height: 1.5;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-button,
-input,
-select,
-textarea,
-label,
-span,
-div,
-nav {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #111111;
   font-style: normal !important;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body * {
+  font-style: normal !important;
 }
-
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-}
-
-/* =====================================================
-   CONTAINER
-   ===================================================== */
 
 .container {
-  width: 92%;
-  max-width: 1400px;
+  width: min(1400px, 92%);
   margin: 0 auto;
 }
 
-/* =====================================================
+/* =========================
    HEADER
-   ===================================================== */
+   ========================= */
 
 header {
-  background: var(--white);
-  border-bottom: 1px solid #eeeeee;
+  background: #ffffff;
+  border-bottom: 1px solid #dddddd;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-/* =====================================================
-   TOP HEADER
-   ===================================================== */
-
 .header-top {
-  min-height: 82px;
+  min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
 }
 
-/* LOGO */
-
 .logo {
-  font-size: 25px;
+  text-decoration: none;
+  color: #111111;
+  font-size: 24px;
   font-weight: 800;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   white-space: nowrap;
 }
-
-/* TOP RIGHT LINKS */
 
 .header-contact {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 28px;
-  margin-left: auto;
+  gap: 25px;
 }
 
 .header-contact a {
+  color: #111111;
+  text-decoration: none;
   font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 1.2px;
-  white-space: nowrap;
-  transition: color 0.2s ease;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .header-contact a:hover {
-  color: var(--red);
+  color: #d00000;
 }
-
-/* =====================================================
-   MENU BUTTON
-   ===================================================== */
 
 .menu {
   display: none;
-  border: 0;
+  border: none;
   background: transparent;
-  font-size: 27px;
+  font-size: 28px;
   cursor: pointer;
 }
 
-/* =====================================================
-   NAVIGATION ROW
-   ===================================================== */
+/* =========================
+   NAVIGATION
+   ========================= */
 
 .header-menu {
-  width: 100%;
-  background: var(--black);
+  background: #111111;
 }
 
 .header-menu .container {
-  width: 96%;
-}
-
-nav#mainNav {
-  min-height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-}
-
-/* =====================================================
-   NAV ITEMS
-   ===================================================== */
-
-nav#mainNav > a,
-nav#mainNav > .dropdown > button,
-nav#mainNav > button,
-nav#mainNav > div > a {
-  min-height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0 17px;
-
-  color: var(--white);
-  background: transparent;
-  border: 0;
-
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-
-  white-space: nowrap;
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-nav#mainNav > a:hover,
-nav#mainNav > .dropdown > button:hover,
-nav#mainNav > button:hover,
-nav#mainNav > div > a:hover {
-  background: var(--red);
-  color: var(--white);
-}
-
-/* =====================================================
-   DROPDOWNS
-   ===================================================== */
-
-.dropdown {
   position: relative;
+}
+
+#mainNav {
   display: flex;
   align-items: stretch;
-  height: 56px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.dropdown > button {
-  height: 56px;
-}
-
-.dropdown > button::after {
-  content: "⌄";
+#mainNav > a,
+.nav-drop-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  text-decoration: none;
   font-size: 11px;
-  margin-left: 7px;
-  position: relative;
-  top: -1px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
-/* =====================================================
-   DROPDOWN CONTENT
-   ===================================================== */
+#mainNav > a:hover,
+.nav-drop-button:hover {
+  background: #d00000;
+}
 
-.dropdown-content {
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
   display: none;
-
   position: absolute;
-  top: 56px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  min-width: 220px;
-  max-width: 300px;
-
-  background: var(--white);
+  top: 100%;
+  left: 0;
+  min-width: 210px;
+  background: #ffffff;
   border: 1px solid #dddddd;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   z-index: 2000;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown-menu.show {
   display: block;
 }
 
-.dropdown-content a {
+.dropdown-menu button {
   display: block;
-
-  padding: 12px 17px;
-
-  color: var(--black);
-  background: var(--white);
-
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-
+  width: 100%;
+  padding: 13px 16px;
+  border: none;
   border-bottom: 1px solid #eeeeee;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-.dropdown-content a:last-child {
-  border-bottom: 0;
-}
-
-.dropdown-content a:hover {
-  background: var(--red);
-  color: var(--white);
-}
-
-/* =====================================================
-   NAMES & MONOGRAMS
-   SPECIAL MENU ITEM
-   ===================================================== */
-
-nav#mainNav .names-menu,
-nav#mainNav > a[href="#customiser"] {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 56px;
-  min-height: 56px;
-
-  padding-left: 17px;
-  padding-right: 17px;
-
-  margin: 0;
-
+  background: #ffffff;
+  color: #111111;
+  text-align: left;
   font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  line-height: 1;
-
-  white-space: nowrap;
-  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-/* =====================================================
+.dropdown-menu button:hover {
+  background: #f3f3f3;
+  color: #d00000;
+}
+
+/* =========================
    HERO
-   ===================================================== */
+   ========================= */
 
 .hero {
-  background: var(--black);
-  color: var(--white);
-  min-height: 420px;
-
+  min-height: 430px;
+  padding: 80px 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-
   text-align: center;
-  padding: 80px 20px;
-}
-
-.hero-content {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.93),
+      rgba(255,255,255,0.93)
+    );
 }
 
 .hero h1 {
-  font-size: clamp(34px, 5vw, 68px);
+  font-size: clamp(32px, 5vw, 58px);
+  line-height: 1.1;
   font-weight: 800;
   letter-spacing: 2px;
-  line-height: 1.05;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .hero p {
-  font-size: 15px;
-  font-weight: 300;
-  letter-spacing: 1.5px;
-  line-height: 1.8;
-  color: #eeeeee;
+  max-width: 650px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #666666;
+  margin-bottom: 30px;
 }
 
-/* =====================================================
-   SECTIONS
-   ===================================================== */
+.button {
+  display: inline-block;
+  padding: 14px 26px;
+  background: #d00000;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
 
-section {
-  padding: 75px 0;
+.button:hover {
+  background: #111111;
+}
+
+/* =========================
+   SECTIONS
+   ========================= */
+
+.section {
+  padding: 70px 0;
+}
+
+.products-section {
+  background: #f7f7f7;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
 }
 
 .section-title h2 {
   font-size: 30px;
   font-weight: 800;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .section-title p {
-  margin-top: 10px;
-  font-size: 14px;
-  font-weight: 300;
-  color: #666666;
+  color: #777777;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
-/* =====================================================
-   CATEGORY TITLE
-   ===================================================== */
-
-.category-title {
-  margin: 55px 0 25px;
-}
-
-.category-title h2,
-.category-title h3 {
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* =====================================================
-   PRODUCT GRID
-   ===================================================== */
+/* =========================
+   PRODUCTS
+   ========================= */
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 35px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
 }
 
-/* =====================================================
-   PRODUCT CARD
-   ===================================================== */
-
-.product-card {
-  background: var(--white);
-  border: 1px solid #eeeeee;
+.product {
+  background: #ffffff;
+  border: 1px solid #e3e3e3;
   overflow: hidden;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+.product:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* =====================================================
-   PRODUCT IMAGE
-   ===================================================== */
+/* ΤΕΤΡΑΓΩΝΕΣ ΦΩΤΟΓΡΑΦΙΕΣ */
+.product-gallery {
+  width: 100%;
+}
 
-.product-image {
+.main-product-image {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #f5f5f5;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  background: #f2f2f2;
   overflow: hidden;
+  cursor: pointer;
 }
 
-.product-image img {
+.gallery-main-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-
-  cursor: pointer;
-
   transition: transform 0.3s ease;
 }
 
-.product-card:hover .product-image img {
-  transform: scale(1.02);
+.main-product-image:hover .gallery-main-image {
+  transform: scale(1.03);
 }
 
-/* =====================================================
-   PRODUCT INFO
-   ===================================================== */
+.gallery-thumbnails {
+  display: flex;
+  gap: 7px;
+  padding: 8px;
+  overflow-x: auto;
+  background: #ffffff;
+}
+
+.gallery-thumbnail {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid #dddddd;
+}
+
+.gallery-thumbnail:hover {
+  border-color: #d00000;
+}
 
 .product-info {
-  padding: 22px;
+  padding: 18px;
 }
 
 .product-info h3 {
@@ -467,557 +321,124 @@ section {
 }
 
 .product-info p {
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.7;
   color: #666666;
-  margin-bottom: 15px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 14px;
 }
 
-.product-price {
+.product-info strong {
+  display: block;
+  color: #d00000;
   font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--red);
+  font-weight: 800;
+  letter-spacing: 0.8px;
 }
 
-/* =====================================================
-   THUMBNAILS
-   ===================================================== */
-
-.thumbnails {
+.no-image {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
   display: flex;
-  gap: 8px;
-  padding: 10px 15px 15px;
-  overflow-x: auto;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  font-size: 13px;
 }
 
-.thumbnails img {
-  width: 65px;
-  height: 65px;
-  object-fit: cover;
-  border: 1px solid #dddddd;
-  cursor: pointer;
-}
-
-.thumbnails img:hover {
-  border-color: var(--red);
-}
-
-/* =====================================================
+/* =========================
    CUSTOMISER
-   ===================================================== */
+   ========================= */
+
+.names-section {
+  background: #ffffff;
+}
 
 .customiser {
-  background: var(--light);
-}
-
-.customiser-box {
   max-width: 1000px;
   margin: 0 auto;
-
-  background: var(--white);
-  border: 1px solid #e2e2e2;
-
-  padding: 35px;
-}
-
-.customiser-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
-.form-group {
+.custom-field {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
-.form-group.full {
-  grid-column: 1 / -1;
+.custom-field label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-.form-group label {
-  margin-bottom: 7px;
-
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
+.custom-field input,
+.custom-field select {
   width: 100%;
-
-  padding: 12px 13px;
-
+  height: 46px;
+  padding: 0 13px;
   border: 1px solid #cccccc;
-  background: var(--white);
-
+  background: #ffffff;
+  color: #111111;
+  font-family: inherit;
   font-size: 14px;
-  font-weight: 300;
-
   outline: none;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--red);
+.custom-field input:focus,
+.custom-field select:focus {
+  border-color: #111111;
 }
 
-.form-group textarea {
-  min-height: 110px;
-  resize: vertical;
+.custom-summary {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+  padding: 25px;
+  background: #111111;
+  color: #ffffff;
 }
 
-/* =====================================================
-   BUTTONS
-   ===================================================== */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 13px 25px;
-
-  border: 1px solid var(--black);
-
-  background: var(--black);
-  color: var(--white);
-
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.btn:hover {
-  background: var(--red);
-  border-color: var(--red);
-}
-
-.btn-red {
-  background: var(--red);
-  border-color: var(--red);
-}
-
-.btn-red:hover {
-  background: var(--black);
-  border-color: var(--black);
-}
-
-/* =====================================================
-   LIGHTBOX
-   ===================================================== */
-
-.lightbox {
-  display: none;
-
-  position: fixed;
-  inset: 0;
-
-  background: rgba(0, 0, 0, 0.92);
-
-  z-index: 5000;
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 30px;
-}
-
-.lightbox.active {
-  display: flex;
-}
-
-.lightbox img {
-  max-width: 92vw;
-  max-height: 88vh;
-
-  object-fit: contain;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-
-  color: var(--white);
-
-  font-size: 38px;
-  font-weight: 300;
-
-  cursor: pointer;
-}
-
-/* =====================================================
-   ABOUT
-   ===================================================== */
-
-.about-content {
-  max-width: 900px;
-  margin: 0 auto;
-
-  text-align: center;
-}
-
-.about-content p {
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.9;
-  color: #555555;
-  margin-bottom: 18px;
-}
-
-/* =====================================================
-   CONTACT
-   ===================================================== */
-
-.contact {
-  background: var(--black);
-  color: var(--white);
-}
-
-.contact .section-title p {
-  color: #bbbbbb;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.contact-item {
-  text-align: center;
-  padding: 25px 15px;
-  border: 1px solid #333333;
-}
-
-.contact-item h3 {
-  font-size: 12px;
-  font-weight: 700;
+.custom-summary h3 {
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 15px;
   letter-spacing: 1px;
-  margin-bottom: 10px;
 }
 
-.contact-item p,
-.contact-item a {
-  font-size: 13px;
-  font-weight: 300;
+.custom-summary p {
+  margin-bottom: 8px;
+  font-size: 14px;
   color: #dddddd;
-  word-break: break-word;
 }
 
-.contact-item a:hover {
-  color: var(--red);
+.custom-summary strong {
+  color: #ffffff;
+  font-weight: 700;
 }
 
-/* =====================================================
-   FOOTER
-   ===================================================== */
-
-footer {
-  background: #000000;
-  color: #aaaaaa;
-
-  border-top: 1px solid #222222;
-
-  padding: 25px 0;
-
-  text-align: center;
+.quotation-price {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 11px 16px;
+  background: #d00000;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
 }
 
-footer p {
-  font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 0.5px;
+/* =========================
+   ABOUT
+   ========================= */
+
+.about-section {
+  background: #f7f7f7;
 }
 
-/* =====================================================
-   MOBILE
-   ===================================================== */
-
-@media (max-width: 1100px) {
-
-  nav#mainNav > a,
-  nav#mainNav > .dropdown > button {
-    padding-left: 11px;
-    padding-right: 11px;
-    font-size: 11px;
-  }
-
-  nav#mainNav .names-menu,
-  nav#mainNav > a[href="#customiser"] {
-    padding-left: 11px;
-    padding-right: 11px;
-    font-size: 11px;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .contact-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* =====================================================
-   TABLET / SMALL
-   ===================================================== */
-
-@media (max-width: 850px) {
-
-  .header-top {
-    min-height: 70px;
-  }
-
-  .logo {
-    font-size: 21px;
-  }
-
-  .header-contact {
-    gap: 15px;
-  }
-
-  .header-contact a {
-    font-size: 10px;
-  }
-
-  .header-menu {
-    display: block;
-  }
-
-  nav#mainNav {
-    flex-wrap: wrap;
-    min-height: auto;
-    padding: 5px 0;
-  }
-
-  nav#mainNav > a,
-  nav#mainNav > .dropdown,
-  nav#mainNav > .dropdown > button {
-    min-height: 45px;
-    height: 45px;
-  }
-
-  .dropdown {
-    height: 45px;
-  }
-
-  .dropdown > button {
-    height: 45px;
-  }
-
-  .dropdown-content {
-    top: 45px;
-  }
-
-  nav#mainNav .names-menu,
-  nav#mainNav > a[href="#customiser"] {
-    height: 45px;
-    min-height: 45px;
-  }
-
-  .customiser-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .form-group.full {
-    grid-column: auto;
-  }
-}
-
-/* =====================================================
-   MOBILE
-   ===================================================== */
-
-@media (max-width: 650px) {
-
-  .container {
-    width: 94%;
-  }
-
-  .header-top {
-    min-height: 65px;
-  }
-
-  .logo {
-    font-size: 18px;
-    letter-spacing: 1px;
-  }
-
-  .header-contact {
-    display: none;
-  }
-
-  .menu {
-    display: block;
-  }
-
-  .header-menu {
-    display: none;
-  }
-
-  .header-menu.active {
-    display: block;
-  }
-
-  nav#mainNav {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    padding: 0;
-  }
-
-  nav#mainNav > a,
-  nav#mainNav > .dropdown,
-  nav#mainNav > .dropdown > button,
-  nav#mainNav .names-menu,
-  nav#mainNav > a[href="#customiser"] {
-    width: 100%;
-    min-height: 48px;
-    height: 48px;
-
-    justify-content: space-between;
-
-    padding: 0 18px;
-
-    border-bottom: 1px solid #222222;
-
-    text-align: left;
-  }
-
-  .dropdown {
-    display: block;
-    height: auto;
-  }
-
-  .dropdown > button {
-    width: 100%;
-  }
-
-  .dropdown-content {
-    position: static;
-
-    transform: none;
-
-    width: 100%;
-    max-width: none;
-    min-width: 0;
-
-    border: 0;
-    box-shadow: none;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: none;
-  }
-
-  .dropdown.active .dropdown-content {
-    display: block;
-  }
-
-  .dropdown-content a {
-    padding-left: 30px;
-    background: #111111;
-    color: var(--white);
-    border-bottom: 1px solid #222222;
-  }
-
-  .dropdown-content a:hover {
-    background: var(--red);
-  }
-
-  .hero {
-    min-height: 350px;
-    padding: 65px 20px;
-  }
-
-  .hero h1 {
-    font-size: 34px;
-  }
-
-  .hero p {
-    font-size: 13px;
-  }
-
-  section {
-    padding: 55px 0;
-  }
-
-  .section-title h2 {
-    font-size: 25px;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .customiser-box {
-    padding: 22px;
-  }
-}
-
-/* =====================================================
-   VERY SMALL SCREENS
-   ===================================================== */
-
-@media (max-width: 400px) {
-
-  .logo {
-    font-size: 16px;
-  }
-
-  .hero h1 {
-    font-size: 29px;
-  }
-
-  .product-info {
-    padding: 18px;
-  }
-}
-
-/* =====================================================
-   FORCE NO ITALIC — FINAL
-   ===================================================== */
-
-body,
-body *,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-button,
-input,
-select,
-textarea,
-label,
-span {
-  font-style: normal !important;
-}
+.about-section .container > p {
+  max-width: 850px;
+  margin: 0 auto 12px;
+  tex
+```

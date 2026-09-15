@@ -279,26 +279,96 @@ nav a:hover {
   box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
 }
 
-.product-image {
+
+/* =====================================================
+   PRODUCT IMAGE
+   ===================================================== */
+
+.product-gallery {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  background: #eeeeee;
+  background: var(--white);
+}
+
+.main-product-image {
+  width: 100%;
+  height: 360px;
+  background: #f2f2f2;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   overflow: hidden;
+  cursor: pointer;
 }
 
-.product-image img {
+.gallery-main-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+
+  /* IMPORTANT:
+     SHOW THE WHOLE PHOTO
+     WITHOUT CROPPING
+  */
+
+  object-fit: contain;
+
   display: block;
-  transition: transform .4s ease;
+
+  transition: transform .3s ease;
 }
 
-.product:hover .product-image img {
-  transform: scale(1.04);
+.main-product-image:hover .gallery-main-image {
+  transform: scale(1.02);
+}
+
+
+/* =====================================================
+   GALLERY THUMBNAILS
+   ===================================================== */
+
+.gallery-thumbnails {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+
+  overflow-x: auto;
+  background: var(--white);
+}
+
+.gallery-thumbnail {
+  width: 65px;
+  height: 65px;
+
+  object-fit: contain;
+
+  background: #f2f2f2;
+
+  border: 1px solid var(--border);
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+.gallery-thumbnail:hover {
+  border-color: var(--red);
+}
+
+
+/* =====================================================
+   NO IMAGE
+   ===================================================== */
+
+.product-image {
+  width: 100%;
+  height: 360px;
+
+  background: #f2f2f2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .no-image {
@@ -308,6 +378,11 @@ nav a:hover {
   color: #999999;
   text-transform: uppercase;
 }
+
+
+/* =====================================================
+   PRODUCT INFO
+   ===================================================== */
 
 .product-info {
   padding: 22px 20px 25px;
@@ -338,6 +413,102 @@ nav a:hover {
   font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  color: var(--red);
+}
+
+
+/* =====================================================
+   LIGHTBOX
+   ===================================================== */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, .92);
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+
+  padding: 40px;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 90vh;
+
+  text-align: center;
+}
+
+#lightbox-image {
+  max-width: 90vw;
+  max-height: 82vh;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  display: block;
+  margin: auto;
+}
+
+.lightbox-counter {
+  margin-top: 12px;
+
+  color: var(--white);
+
+  font-family: var(--text-font);
+  font-size: 13px;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: fixed;
+
+  border: 0;
+  background: none;
+
+  color: var(--white);
+
+  cursor: pointer;
+
+  z-index: 10000;
+}
+
+.lightbox-close {
+  top: 20px;
+  right: 30px;
+
+  font-size: 45px;
+}
+
+.lightbox-prev {
+  left: 25px;
+  top: 50%;
+
+  font-size: 60px;
+}
+
+.lightbox-next {
+  right: 25px;
+  top: 50%;
+
+  font-size: 60px;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
   color: var(--red);
 }
 
@@ -556,6 +727,14 @@ footer {
     gap: 18px;
   }
 
+  .main-product-image {
+    height: 300px;
+  }
+
+  .product-image {
+    height: 300px;
+  }
+
   .product-info {
     padding: 17px 12px 20px;
   }
@@ -586,8 +765,30 @@ footer {
     width: 100%;
   }
 
+  .main-product-image {
+    height: 340px;
+  }
+
+  .product-image {
+    height: 340px;
+  }
+
   .custom-summary {
     padding: 20px;
+  }
+
+  .lightbox {
+    padding: 15px;
+  }
+
+  .lightbox-prev {
+    left: 8px;
+    font-size: 45px;
+  }
+
+  .lightbox-next {
+    right: 8px;
+    font-size: 45px;
   }
 
 }

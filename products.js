@@ -1,7 +1,7 @@
 const products = [
 
   {
-    category: "BAPTISM",
+    category: "CHRISTENING",
     subcategory: "Hangers",
     name: "Baptism Hangers",
     description: "Personalised hanger for a special baptism.",
@@ -10,7 +10,7 @@ const products = [
   },
 
   {
-    category: "BAPTISM",
+    category: "CHRISTENING",
     subcategory: "Wish Books",
     name: "Wish Book",
     description: "Personalised wish book for beautiful memories.",
@@ -19,7 +19,7 @@ const products = [
   },
 
   {
-    category: "BAPTISM",
+    category: "CHRISTENING",
     subcategory: "Baptism Accessories",
     name: "Baptism Dream Catcher Set",
     description: "Personalised baptism accessories and decorations.",
@@ -28,7 +28,7 @@ const products = [
   },
 
   {
-    category: "BAPTISM",
+    category: "CHRISTENING",
     subcategory: "Frames",
     name: "Wishes Frame",
     description: "Beautiful personalised frame for wishes.",

@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,287 +12,175 @@
 
 <body>
 
-<!-- =====================================================
-     HEADER / MENU
-     ===================================================== -->
-
 <header>
 
-  <!-- TOP ROW: LOGO + CONTACT DETAILS -->
-  <div class="container header-top">
+  <!-- TOP ROW -->
+  <div class="top-row">
+    <div class="container top-row-inner">
 
-    <a href="#" class="logo">LASERWORKS IDEAS</a>
+      <a href="#" class="logo">LASERWORKS IDEAS</a>
 
-    <div class="header-contact">
+      <div class="top-links">
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </div>
 
-      <a href="mailto:Laserworksideas@gmail.com">
-        EMAIL
-      </a>
-
-      <a href="https://wa.me/35799303580" target="_blank">
-        WHATSAPP
-      </a>
-
-      <a href="viber://chat?number=%2B35799303580">
-        VIBER
-      </a>
+      <button class="menu" onclick="toggleMenu()">☰</button>
 
     </div>
-
-    <button class="menu" onclick="toggleMenu()">☰</button>
-
   </div>
 
+  <!-- CONTACT LINKS ROW -->
+  <div class="contact-links-row">
+    <div class="container contact-links-inner">
+      <a href="mailto:Laserworksideas@gmail.com">EMAIL</a>
+      <a href="https://wa.me/35799303580" target="_blank">WHATSAPP</a>
+      <a href="viber://chat?number=%2B35799303580">VIBER</a>
+    </div>
+  </div>
 
-  <!-- MENU ROW -->
+  <!-- CATEGORY MENU -->
   <div class="header-menu">
-
     <div class="container">
 
       <nav id="mainNav">
 
         <div class="nav-dropdown">
-
           <button class="nav-drop-button" onclick="toggleDropdown(event, 'christeningMenu')">
             CHRISTENING ▾
           </button>
 
           <div class="dropdown-menu" id="christeningMenu">
-
-            <button onclick="selectCategory('CHRISTENING', 'Hangers')">
-              Hangers
-            </button>
-
-            <button onclick="selectCategory('CHRISTENING', 'Wish Books')">
-              Wish Books
-            </button>
-
-            <button onclick="selectCategory('CHRISTENING', 'Christening Accessories')">
-              Christening Accessories
-            </button>
-
-            <button onclick="selectCategory('CHRISTENING', 'Frames')">
-              Frames
-            </button>
-
+            <button onclick="selectCategory('CHRISTENING', 'Hangers')">Hangers</button>
+            <button onclick="selectCategory('CHRISTENING', 'Wish Books')">Wish Books</button>
+            <button onclick="selectCategory('CHRISTENING', 'Christening Accessories')">Christening Accessories</button>
+            <button onclick="selectCategory('CHRISTENING', 'Frames')">Frames</button>
           </div>
-
         </div>
 
 
         <div class="nav-dropdown">
-
           <button class="nav-drop-button" onclick="toggleDropdown(event, 'weddingMenu')">
             WEDDING ▾
           </button>
 
           <div class="dropdown-menu" id="weddingMenu">
-
-            <button onclick="selectCategory('WEDDING', 'Hangers')">
-              Hangers
-            </button>
-
-            <button onclick="selectCategory('WEDDING', 'Wedding Signs')">
-              Wedding Signs
-            </button>
-
-            <button onclick="selectCategory('WEDDING', 'Wedding Favours')">
-              Wedding Favours
-            </button>
-
+            <button onclick="selectCategory('WEDDING', 'Hangers')">Hangers</button>
+            <button onclick="selectCategory('WEDDING', 'Wedding Signs')">Wedding Signs</button>
+            <button onclick="selectCategory('WEDDING', 'Wedding Favours')">Wedding Favours</button>
           </div>
-
         </div>
 
 
         <div class="nav-dropdown">
-
           <button class="nav-drop-button" onclick="toggleDropdown(event, 'seasonalMenu')">
             SEASONAL ITEMS ▾
           </button>
 
           <div class="dropdown-menu" id="seasonalMenu">
-
-            <button onclick="selectCategory('SEASONAL ITEMS', 'Seasonal Gifts')">
-              Seasonal Gifts
-            </button>
-
+            <button onclick="selectCategory('SEASONAL ITEMS', 'Seasonal Gifts')">Seasonal Gifts</button>
           </div>
-
         </div>
 
 
         <div class="nav-dropdown">
-
           <button class="nav-drop-button" onclick="toggleDropdown(event, 'personalisedMenu')">
             PERSONALISED GIFTS ▾
           </button>
 
           <div class="dropdown-menu" id="personalisedMenu">
-
-            <button onclick="selectCategory('PERSONALISED GIFTS', 'Photo Gifts')">
-              Photo Gifts
-            </button>
-
-            <button onclick="selectCategory('PERSONALISED GIFTS', 'Frames')">
-              Frames
-            </button>
-
-            <button onclick="selectCategory('PERSONALISED GIFTS', 'Name Decorations')">
-              Name Decorations
-            </button>
-
-            <button onclick="selectCategory('PERSONALISED GIFTS', 'Keychains')">
-              Keychains
-            </button>
-
-            <button onclick="selectCategory('PERSONALISED GIFTS', 'Acrylic Frames')">
-              Acrylic Frames
-            </button>
-
+            <button onclick="selectCategory('PERSONALISED GIFTS', 'Photo Gifts')">Photo Gifts</button>
+            <button onclick="selectCategory('PERSONALISED GIFTS', 'Frames')">Frames</button>
+            <button onclick="selectCategory('PERSONALISED GIFTS', 'Name Decorations')">Name Decorations</button>
+            <button onclick="selectCategory('PERSONALISED GIFTS', 'Keychains')">Keychains</button>
+            <button onclick="selectCategory('PERSONALISED GIFTS', 'Acrylic Frames')">Acrylic Frames</button>
           </div>
-
         </div>
 
 
         <div class="nav-dropdown">
-
           <button class="nav-drop-button" onclick="toggleDropdown(event, 'boxesMenu')">
             BOXES ▾
           </button>
 
           <div class="dropdown-menu" id="boxesMenu">
-
-            <button onclick="selectCategory('BOXES', 'Tea Boxes')">
-              Tea Boxes
-            </button>
-
-            <button onclick="selectCategory('BOXES', 'Wine Boxes')">
-              Wine Boxes
-            </button>
-
-            <button onclick="selectCategory('BOXES', 'Choice Boxes')">
-              Choice Boxes
-            </button>
-
+            <button onclick="selectCategory('BOXES', 'Tea Boxes')">Tea Boxes</button>
+            <button onclick="selectCategory('BOXES', 'Wine Boxes')">Wine Boxes</button>
+            <button onclick="selectCategory('BOXES', 'Choice Boxes')">Choice Boxes</button>
           </div>
-
         </div>
 
 
         <div class="nav-dropdown">
-
           <button class="nav-drop-button" onclick="toggleDropdown(event, 'corporateMenu')">
             CORPORATE GIFTS ▾
           </button>
 
           <div class="dropdown-menu" id="corporateMenu">
-
-            <button onclick="selectCategory('CORPORATE GIFTS', 'Gift Boxes')">
-              Gift Boxes
-            </button>
-
+            <button onclick="selectCategory('CORPORATE GIFTS', 'Gift Boxes')">Gift Boxes</button>
           </div>
-
         </div>
 
 
         <div class="nav-dropdown">
-
           <button class="nav-drop-button" onclick="toggleDropdown(event, 'cutoutsMenu')">
             CUSTOMISED CUT OUTS ▾
           </button>
 
           <div class="dropdown-menu" id="cutoutsMenu">
-
-            <button onclick="selectCategory('CUSTOMISED CUT OUTS', 'Laser Cut Outs')">
-              Laser Cut Outs
-            </button>
-
+            <button onclick="selectCategory('CUSTOMISED CUT OUTS', 'Laser Cut Outs')">Laser Cut Outs</button>
           </div>
-
         </div>
 
 
         <div class="nav-dropdown">
-
           <button class="nav-drop-button" onclick="toggleDropdown(event, 'decorMenu')">
             DECOR ▾
           </button>
 
           <div class="dropdown-menu" id="decorMenu">
-
-            <button onclick="selectCategory('DECOR', 'Decorations')">
-              Decorations
-            </button>
-
+            <button onclick="selectCategory('DECOR', 'Decorations')">Decorations</button>
           </div>
-
         </div>
 
 
         <div class="nav-dropdown">
-
           <button class="nav-drop-button" onclick="toggleDropdown(event, 'otherMenu')">
             OTHER GIFTS ▾
           </button>
 
           <div class="dropdown-menu" id="otherMenu">
-
-            <button onclick="selectCategory('OTHER GIFTS', 'Gift Ideas')">
-              Gift Ideas
-            </button>
-
+            <button onclick="selectCategory('OTHER GIFTS', 'Gift Ideas')">Gift Ideas</button>
           </div>
-
         </div>
 
 
         <div class="nav-dropdown">
-
           <button class="nav-drop-button" onclick="toggleDropdown(event, 'invitationsMenu')">
             INVITATIONS ▾
           </button>
 
           <div class="dropdown-menu" id="invitationsMenu">
-
-            <button onclick="selectCategory('INVITATIONS', 'Invitations')">
-              Invitations
-            </button>
-
+            <button onclick="selectCategory('INVITATIONS', 'Invitations')">Invitations</button>
           </div>
-
         </div>
 
 
-        <a href="#names">
-          NAMES & MONOGRAMS
-        </a>
-
-        <a href="#about">
-          ABOUT
-        </a>
-
-        <a href="#contact">
-          CONTACT
-        </a>
+        <a href="#names" class="names-link">NAMES • MONOGRAMS</a>
 
       </nav>
 
     </div>
-
   </div>
 
 </header>
 
 
-<!-- =====================================================
-     HERO
-     ===================================================== -->
+<!-- HERO -->
 
 <section class="hero">
 
-  <h1>HANDMADE CREATIONS</h1>
+  <h1>LASER CUT • ENGRAVING • DESIGN</h1>
 
   <p>
     Wooden & acrylic personalised creations made with love.
@@ -304,24 +193,17 @@
 </section>
 
 
-<!-- =====================================================
-     PRODUCTS
-     ===================================================== -->
+<!-- PRODUCTS -->
 
 <section class="section products-section" id="products">
 
   <div class="container">
 
     <div class="section-title">
-
-      <h2 id="productsTitle">
-        OUR COLLECTION
-      </h2>
-
+      <h2 id="productsTitle">OUR COLLECTION</h2>
       <p id="productsSubtitle">
         Choose a category to explore our creations.
       </p>
-
     </div>
 
     <div id="categoryButtons" style="display:none;"></div>
@@ -335,9 +217,7 @@
 </section>
 
 
-<!-- =====================================================
-     NAMES • MONOGRAMS • NUMBERS
-     ===================================================== -->
+<!-- NAMES -->
 
 <section class="section names-section" id="names">
 
@@ -358,27 +238,17 @@
 
       <div class="custom-field">
 
-        <label for="customType">
-          TYPE
-        </label>
+        <label for="customType">TYPE</label>
 
         <select id="customType" onchange="updateSummary()">
 
-          <option value="Name">
-            Name
-          </option>
+          <option value="Name">Name</option>
 
-          <option value="Monogram">
-            Monogram
-          </option>
+          <option value="Monogram">Monogram</option>
 
-          <option value="Number">
-            Number
-          </option>
+          <option value="Number">Number</option>
 
-          <option value="Word / Phrase">
-            Word / Phrase
-          </option>
+          <option value="Word / Phrase">Word / Phrase</option>
 
         </select>
 
@@ -387,9 +257,7 @@
 
       <div class="custom-field">
 
-        <label for="customText">
-          TEXT
-        </label>
+        <label for="customText">TEXT</label>
 
         <input
           type="text"
@@ -403,9 +271,7 @@
 
       <div class="custom-field">
 
-        <label for="customSize">
-          SIZE
-        </label>
+        <label for="customSize">SIZE</label>
 
         <select id="customSize" onchange="updateSummary()">
 
@@ -428,43 +294,18 @@
 
       <div class="custom-field">
 
-        <label for="customMaterial">
-          MATERIAL
-        </label>
+        <label for="customMaterial">MATERIAL</label>
 
         <select id="customMaterial" onchange="updateSummary()">
 
-          <option value="Wood">
-            Wood
-          </option>
-
-          <option value="MDF 3mm">
-            MDF 3mm
-          </option>
-
-          <option value="MDF 4mm">
-            MDF 4mm
-          </option>
-
-          <option value="MDF 6mm">
-            MDF 6mm
-          </option>
-
-          <option value="Acrylic Gold">
-            Acrylic Gold
-          </option>
-
-          <option value="Acrylic Silver">
-            Acrylic Silver
-          </option>
-
-          <option value="Acrylic Rose Gold">
-            Acrylic Rose Gold
-          </option>
-
-          <option value="Acrylic Other Colour">
-            Acrylic Other Colour
-          </option>
+          <option value="Wood">Wood</option>
+          <option value="MDF 3mm">MDF 3mm</option>
+          <option value="MDF 4mm">MDF 4mm</option>
+          <option value="MDF 6mm">MDF 6mm</option>
+          <option value="Acrylic Gold">Acrylic Gold</option>
+          <option value="Acrylic Silver">Acrylic Silver</option>
+          <option value="Acrylic Rose Gold">Acrylic Rose Gold</option>
+          <option value="Acrylic Other Colour">Acrylic Other Colour</option>
 
         </select>
 
@@ -473,9 +314,7 @@
 
       <div class="custom-field">
 
-        <label for="customQuantity">
-          QUANTITY
-        </label>
+        <label for="customQuantity">QUANTITY</label>
 
         <input
           type="number"
@@ -490,9 +329,7 @@
 
       <div class="custom-summary">
 
-        <h3>
-          YOUR REQUEST
-        </h3>
+        <h3>YOUR REQUEST</h3>
 
         <p>
           Type:
@@ -532,23 +369,19 @@
 </section>
 
 
-<!-- =====================================================
-     ABOUT
-     ===================================================== -->
+<!-- ABOUT -->
 
 <section class="section about-section" id="about">
 
   <div class="container">
 
     <div class="section-title">
-
       <h2>ABOUT</h2>
-
     </div>
 
     <p>
-      Laserworks Ideas creates handmade wooden and acrylic
-      personalised gifts, decorations and special creations.
+      Laserworks Ideas creates handmade wooden and acrylic personalised gifts,
+      decorations and special creations.
     </p>
 
     <p>
@@ -560,9 +393,7 @@
 </section>
 
 
-<!-- =====================================================
-     CONTACT
-     ===================================================== -->
+<!-- CONTACT -->
 
 <section class="section contact-section" id="contact">
 
@@ -570,521 +401,59 @@
 
     <div class="section-title">
 
-      <h2>CONTACT</h2>
+      <h2>CONTACT US</h2>
 
       <p>
-        Contact us for your personalised creation.
+        Contact us for your personalised creation or request a quotation.
       </p>
 
     </div>
 
 
-    <div class="contact-buttons">
+    <div class="contact-layout">
 
-      <a href="mailto:Laserworksideas@gmail.com">
-        EMAIL
-      </a>
 
-      <a href="https://wa.me/35799303580" target="_blank">
-        WHATSAPP
-      </a>
+      <!-- CONTACT DETAILS -->
 
-      <a href="viber://chat?number=%2B35799303580">
-        VIBER
-      </a>
+      <div class="contact-info">
 
-      <a href="https://www.instagram.com/laserworks_ideas/" target="_blank">
-        INSTAGRAM
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
-
-<footer>
-
-  © 2026 LASERWORKS IDEAS — Handmade Wooden & Acrylic Creations
-
-</footer>
-
-
-<!-- =====================================================
-     LIGHTBOX
-     ===================================================== -->
-
-<div class="lightbox" id="lightbox">
-
-  <button class="lightbox-close" onclick="closeLightbox()">
-    ×
-  </button>
-
-  <button class="lightbox-prev" onclick="previousImage()">
-    ‹
-  </button>
-
-  <div class="lightbox-content">
-
-    <img
-      id="lightbox-image"
-      src=""
-      alt=""
-    >
-
-    <div
-      class="lightbox-counter"
-      id="lightboxCounter"
-    ></div>
-
-  </div>
-
-  <button class="lightbox-next" onclick="nextImage()">
-    ›
-  </button>
-
-</div>
-
-
-<!-- =====================================================
-     PRODUCTS DATA
-     ===================================================== -->
-
-<script src="products.js"></script>
-
-
-<script>
-
-/* =====================================================
-   MENU
-   ===================================================== */
-
-function toggleMenu() {
-
-  const nav = document.getElementById("mainNav");
-
-  nav.classList.toggle("open");
-
-}
-
-
-/* =====================================================
-   DROPDOWN MENU
-   ===================================================== */
-
-function toggleDropdown(event, menuId) {
-
-  event.stopPropagation();
-
-  const clickedMenu = document.getElementById(menuId);
-
-  document.querySelectorAll(".dropdown-menu").forEach(menu => {
-
-    if (menu !== clickedMenu) {
-      menu.classList.remove("show");
-    }
-
-  });
-
-  clickedMenu.classList.toggle("show");
-
-}
-
-
-/* Close dropdown when clicking elsewhere */
-
-document.addEventListener("click", function() {
-
-  document.querySelectorAll(".dropdown-menu").forEach(menu => {
-    menu.classList.remove("show");
-  });
-
-});
-
-
-/* =====================================================
-   SELECT CATEGORY
-   ===================================================== */
-
-function selectCategory(category, subcategory) {
-
-  showProducts(category, subcategory);
-
-  document.querySelectorAll(".dropdown-menu").forEach(menu => {
-    menu.classList.remove("show");
-  });
-
-  document.getElementById("products").scrollIntoView({
-    behavior: "smooth"
-  });
-
-}
-
-
-/* =====================================================
-   PRODUCTS
-   ===================================================== */
-
-let currentImages = [];
-let currentImageIndex = 0;
-
-
-function showProducts(category, subcategory = null) {
-
-  const grid = document.getElementById("productGrid");
-
-  const title = document.getElementById("productsTitle");
-
-  const subtitle = document.getElementById("productsSubtitle");
-
-  grid.innerHTML = "";
-
-  let filteredProducts = products.filter(product => {
-
-    if (product.category !== category) {
-      return false;
-    }
-
-    if (subcategory && product.subcategory !== subcategory) {
-      return false;
-    }
-
-    return true;
-
-  });
-
-
-  if (subcategory) {
-
-    title.textContent = subcategory.toUpperCase();
-
-    subtitle.textContent =
-      category.toUpperCase();
-
-  } else {
-
-    title.textContent = category.toUpperCase();
-
-    subtitle.textContent =
-      "Explore our handmade creations.";
-
-  }
-
-
-  if (filteredProducts.length === 0) {
-
-    grid.innerHTML = `
-      <div style="
-        grid-column: 1 / -1;
-        text-align:center;
-        padding:60px 20px;
-        color:#777;
-      ">
-        No products available yet.
-      </div>
-    `;
-
-    return;
-  }
-
-
-  filteredProducts.forEach(product => {
-
-    const card = document.createElement("div");
-
-    card.className = "product";
-
-
-    let galleryHTML = "";
-
-
-    if (product.images && product.images.length > 0) {
-
-      const firstImage = product.images[0];
-
-
-      galleryHTML += `
-
-        <div class="product-gallery">
-
-          <div
-            class="main-product-image"
-            onclick='openLightbox(${JSON.stringify(product.images)}, 0)'
-          >
-
-            <img
-              class="gallery-main-image"
-              src="${firstImage}"
-              alt="${product.name}"
-            >
-
-          </div>
-
-      `;
-
-
-      if (product.images.length > 1) {
-
-        galleryHTML += `
-          <div class="gallery-thumbnails">
-        `;
-
-
-        product.images.forEach((image, index) => {
-
-          galleryHTML += `
-
-            <img
-              class="gallery-thumbnail"
-              src="${image}"
-              alt="${product.name}"
-              onclick='changeProductImage(this, ${JSON.stringify(product.images)}, ${index})'
-            >
-
-          `;
-
-        });
-
-
-        galleryHTML += `
-          </div>
-        `;
-
-      }
-
-
-      galleryHTML += `
-        </div>
-      `;
-
-    } else {
-
-      galleryHTML = `
-
-        <div class="product-image">
-
-          <div class="no-image">
-            Photo coming soon
-          </div>
-
-        </div>
-
-      `;
-
-    }
-
-
-    card.innerHTML = `
-
-      ${galleryHTML}
-
-      <div class="product-info">
-
-        <h3>
-          ${product.name}
-        </h3>
+        <h3>LASERWORKS IDEAS</h3>
 
         <p>
-          ${product.description}
+          <strong>ADDRESS</strong><br>
+          33a Despoinas Pattichi<br>
+          Limassol 3071, Cyprus
         </p>
 
-        <strong>
-          ASK FOR QUOTATION
-        </strong>
+        <p>
+          <strong>EMAIL</strong><br>
+          <a href="mailto:Laserworksideas@gmail.com">
+            Laserworksideas@gmail.com
+          </a>
+        </p>
+
+        <p>
+          <strong>WHATSAPP</strong><br>
+          <a href="https://wa.me/35799303580" target="_blank">
+            +357 99 303580
+          </a>
+        </p>
+
+        <p>
+          <strong>VIBER</strong><br>
+          <a href="viber://chat?number=%2B35799303580">
+            +357 99 303580
+          </a>
+        </p>
 
       </div>
 
-    `;
 
+      <!-- QUOTATION FORM -->
 
-    grid.appendChild(card);
+      <div class="quotation-form">
 
-  });
+        <h3>SEND A QUOTATION</h3>
 
-}
-
-
-/* =====================================================
-   CHANGE PRODUCT IMAGE
-   ===================================================== */
-
-function changeProductImage(element, images, index) {
-
-  const gallery = element.closest(".product-gallery");
-
-  const mainImage =
-    gallery.querySelector(".gallery-main-image");
-
-  mainImage.src = images[index];
-
-  mainImage.onclick = function() {
-
-    openLightbox(images, index);
-
-  };
-
-}
-
-
-/* =====================================================
-   LIGHTBOX
-   ===================================================== */
-
-function openLightbox(images, index) {
-
-  currentImages = images;
-
-  currentImageIndex = index;
-
-  updateLightbox();
-
-  document
-    .getElementById("lightbox")
-    .classList.add("open");
-
-}
-
-
-function updateLightbox() {
-
-  const image =
-    document.getElementById("lightbox-image");
-
-  const counter =
-    document.getElementById("lightboxCounter");
-
-
-  image.src = currentImages[currentImageIndex];
-
-  counter.textContent =
-    `${currentImageIndex + 1} / ${currentImages.length}`;
-
-}
-
-
-function closeLightbox() {
-
-  document
-    .getElementById("lightbox")
-    .classList.remove("open");
-
-}
-
-
-function previousImage() {
-
-  if (currentImages.length === 0) return;
-
-  currentImageIndex--;
-
-  if (currentImageIndex < 0) {
-    currentImageIndex =
-      currentImages.length - 1;
-  }
-
-  updateLightbox();
-
-}
-
-
-function nextImage() {
-
-  if (currentImages.length === 0) return;
-
-  currentImageIndex++;
-
-  if (currentImageIndex >= currentImages.length) {
-    currentImageIndex = 0;
-  }
-
-  updateLightbox();
-
-}
-
-
-/* =====================================================
-   CUSTOMISER
-   ===================================================== */
-
-function updateSummary() {
-
-  const type =
-    document.getElementById("customType").value;
-
-  const text =
-    document.getElementById("customText").value;
-
-  const size =
-    document.getElementById("customSize").value;
-
-  const material =
-    document.getElementById("customMaterial").value;
-
-  const quantity =
-    document.getElementById("customQuantity").value;
-
-
-  document.getElementById("summaryType").textContent =
-    type;
-
-  document.getElementById("summaryText").textContent =
-    text || "-";
-
-  document.getElementById("summarySize").textContent =
-    size;
-
-  document.getElementById("summaryMaterial").textContent =
-    material;
-
-  document.getElementById("summaryQuantity").textContent =
-    quantity;
-
-}
-
-
-/* =====================================================
-   ESC KEY
-   ===================================================== */
-
-document.addEventListener("keydown", function(event) {
-
-  if (event.key === "Escape") {
-
-    closeLightbox();
-
-    document.querySelectorAll(".dropdown-menu").forEach(menu => {
-      menu.classList.remove("show");
-    });
-
-  }
-
-  if (event.key === "ArrowLeft") {
-    previousImage();
-  }
-
-  if (event.key === "ArrowRight") {
-    nextImage();
-  }
-
-});
-
-
-/* =====================================================
-   STARTING CATEGORY
-   ===================================================== */
-
-if (typeof products !== "undefined" && products.length > 0) {
-
-  showProducts(products[0].category);
-
-}
-
-</script>
-
-</body>
-</html>
+        <fo
+```

@@ -1,112 +1,93 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Laserworks Ideas | Laser Cutting & Engraving Cyprus</title>
+  <title>Laserworks Ideas | Laser Cutting & Engraving Limassol Cyprus</title>
 
-  <meta
-    name="description"
-    content="Laserworks Ideas is a creative laser cutting studio in Limassol, Cyprus, specialising in custom laser cut MDF, wood and acrylic products, laser engraving, personalised gifts and custom designs."
-  >
+  <meta name="description" content="Laserworks Ideas is a creative laser cutting and engraving studio in Limassol, Cyprus. Personalised gifts, christening, wedding, birthday, corporate and custom laser cut products.">
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
 
-<header class="site-header">
-
-  <div class="top-row">
-    <div class="container top-row-inner">
+    <div class="header-top">
 
       <a href="index.html" class="logo">
         LASERWORKS IDEAS
       </a>
 
-      <div class="top-links">
-        <a href="#about">ABOUT US</a>
-        <a href="#contact">CONTACT US</a>
+      <div class="contact-top">
+        <span class="contact-title">CONTACT US</span>
+
+        <a href="mailto:Laserworksideas@gmail.com">
+          EMAIL
+        </a>
+
+        <a href="viber://chat?number=%2B35799303580">
+          VIBER
+        </a>
+
+        <a href="https://wa.me/35799303580" target="_blank">
+          WHATSUP
+        </a>
       </div>
 
-      <button class="menu" onclick="toggleMenu()">
-        ☰
-      </button>
+    </div>
+
+    <nav class="main-nav">
+
+      <a href="index.html">HOME</a>
+
+      <a href="#categories">CATEGORIES</a>
+
+      <a href="#gallery">GALLERY</a>
+
+      <a href="#about">ABOUT US</a>
+
+      <a href="#contact">CONTACT</a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        LASER CUTTING<br>
+        LASER ENGRAVING<br>
+        DESIGN<br>
+        PERSONALISED GIFTS
+      </h1>
+
+      <p>
+        Custom creations made with precision, creativity and attention to detail.
+      </p>
+
+      <a href="#categories" class="hero-button">
+        EXPLORE OUR CATEGORIES
+      </a>
 
     </div>
-  </div>
 
-  <div class="contact-links-row">
-    <div class="container contact-links-inner">
-
-      <a href="mailto:Laserworksideas@gmail.com">
-        EMAIL
-      </a>
-
-      <a
-        href="https://wa.me/35799303580"
-        target="_blank"
-      >
-        WHATSAPP
-      </a>
-
-      <a href="viber://chat?number=%2B35799303580">
-        VIBER
-      </a>
-
-    </div>
-  </div>
-
-  <nav id="mainNav" class="main-nav">
-
-    <a href="#categories">CATEGORIES</a>
-    <a href="#gallery">GALLERY</a>
-    <a href="#about">ABOUT US</a>
-    <a href="#contact">CONTACT US</a>
-
-  </nav>
-
-</header>
+  </section>
 
 
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-  <div class="container hero-content">
-
-    <h1>
-      LASER CUTTING<br>
-      LASER ENGRAVING<br>
-      DESIGN<br>
-      PERSONALISED GIFTS
-    </h1>
-
-    <p>
-      Custom creations made with precision, creativity and attention to detail.
-    </p>
-
-    <a href="#categories" class="hero-button">
-      EXPLORE OUR CATEGORIES
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- ================= CATEGORIES ================= -->
-
-<section id="categories" class="categories-section">
-
-  <div class="container">
+  <!-- ================= CATEGORIES ================= -->
+  <section id="categories" class="section categories-section">
 
     <div class="section-heading">
       <h2>CATEGORIES</h2>
+      <div class="red-line"></div>
     </div>
 
     <div class="category-grid">
@@ -141,7 +122,7 @@
         <h3>SEASONAL</h3>
       </a>
 
-      <a href="category.html?category=PERSONALISED%20GIFTS" class="category-card">
+      <a href="category.html?category=PERSONALISED GIFTS" class="category-card">
         <img src="product-2.jpg" alt="Personalised Gifts">
         <h3>PERSONALISED GIFTS</h3>
       </a>
@@ -153,60 +134,83 @@
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- ================= GALLERY ================= -->
-
-<section id="gallery" class="gallery-section">
-
-  <div class="container">
+  <!-- ================= GALLERY ================= -->
+  <section id="gallery" class="section gallery-section">
 
     <div class="section-heading">
       <h2>GALLERY</h2>
+      <div class="red-line"></div>
     </div>
 
-    <div class="small-gallery">
+    <div class="gallery-wrapper">
 
-      <button
-        class="gallery-arrow"
-        onclick="previousGalleryImage()"
-        aria-label="Previous image"
-      >
-        ‹
+      <button class="gallery-arrow gallery-prev" aria-label="Previous">
+        &#10094;
       </button>
 
-      <img
-        id="galleryImage"
-        src="product-1.jpg"
-        alt="Laserworks Ideas gallery"
-      >
+      <div class="gallery-track" id="galleryTrack">
 
-      <button
-        class="gallery-arrow"
-        onclick="nextGalleryImage()"
-        aria-label="Next image"
-      >
-        ›
+        <img src="product-1.jpg" alt="Laserworks Ideas product">
+        <img src="product-2.jpg" alt="Laserworks Ideas product">
+        <img src="product-3.jpg" alt="Laserworks Ideas product">
+        <img src="product-4.jpg" alt="Laserworks Ideas product">
+        <img src="product-5.jpg" alt="Laserworks Ideas product">
+        <img src="product-6.jpg" alt="Laserworks Ideas product">
+        <img src="product-7.jpg" alt="Laserworks Ideas product">
+        <img src="product-8.jpg" alt="Laserworks Ideas product">
+        <img src="product-9.jpg" alt="Laserworks Ideas product">
+        <img src="product-10.jpg" alt="Laserworks Ideas product">
+        <img src="product-11.jpg" alt="Laserworks Ideas product">
+        <img src="product-12.jpg" alt="Laserworks Ideas product">
+        <img src="product-13.jpg" alt="Laserworks Ideas product">
+        <img src="product-14.jpg" alt="Laserworks Ideas product">
+        <img src="product-15.jpg" alt="Laserworks Ideas product">
+        <img src="product-16.jpg" alt="Laserworks Ideas product">
+        <img src="product-17.jpg" alt="Laserworks Ideas product">
+        <img src="product-18.jpg" alt="Laserworks Ideas product">
+        <img src="product-19.jpg" alt="Laserworks Ideas product">
+        <img src="product-20.jpg" alt="Laserworks Ideas product">
+        <img src="product-21.jpg" alt="Laserworks Ideas product">
+        <img src="product-22.jpg" alt="Laserworks Ideas product">
+        <img src="product-23.jpg" alt="Laserworks Ideas product">
+        <img src="product-24.jpg" alt="Laserworks Ideas product">
+        <img src="product-25.jpg" alt="Laserworks Ideas product">
+        <img src="product-26.jpg" alt="Laserworks Ideas product">
+        <img src="product-27.jpg" alt="Laserworks Ideas product">
+        <img src="product-28.jpg" alt="Laserworks Ideas product">
+        <img src="product-29.jpg" alt="Laserworks Ideas product">
+        <img src="product-30.jpg" alt="Laserworks Ideas product">
+        <img src="product-31.jpg" alt="Laserworks Ideas product">
+        <img src="product-32.jpg" alt="Laserworks Ideas product">
+        <img src="product-33.jpg" alt="Laserworks Ideas product">
+        <img src="product-34.jpg" alt="Laserworks Ideas product">
+        <img src="product-35.jpg" alt="Laserworks Ideas product">
+        <img src="product-37.jpg" alt="Laserworks Ideas product">
+        <img src="product-38.jpg" alt="Laserworks Ideas product">
+        <img src="product-39.jpg" alt="Laserworks Ideas product">
+        <img src="product-40.jpg" alt="Laserworks Ideas product">
+        <img src="product-41.jpg" alt="Laserworks Ideas product">
+
+      </div>
+
+      <button class="gallery-arrow gallery-next" aria-label="Next">
+        &#10095;
       </button>
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- ================= ABOUT US ================= -->
-
-<section id="about" class="about-section">
-
-  <div class="container">
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="section about-section">
 
     <div class="section-heading">
       <h2>ABOUT US</h2>
+      <div class="red-line"></div>
     </div>
 
     <div class="about-content">
@@ -214,292 +218,247 @@
       <p>
         Laserworks Ideas is a creative laser cutting studio in Limassol, Cyprus,
         specialising in custom laser cut MDF, wood and acrylic products.
+        We also offer laser engraving and laser craft, creating personalised
+        gifts, names, signs, decorations and custom designs for christenings,
+        birthdays, weddings, schools and events.
       </p>
 
       <p>
-        We also offer laser engraving and laser craft, creating personalised gifts,
-        names, signs, decorations and custom designs for christenings, birthdays,
-        weddings, schools and events.
+        Our services include personalised clothing printing, custom event
+        decorations and unique gift details such as balloons, soaps, candy
+        and cake decorations.
       </p>
 
       <p>
-        Our services include personalised clothing printing, custom event decorations
-        and unique gift details such as balloons, soaps, candy and cake decorations.
-      </p>
-
-      <p>
-        We also create custom corporate gifts and work with event planners and businesses.
-      </p>
-
-      <p>
-        We deliver throughout Cyprus.
+        We also create custom corporate gifts and work with event planners
+        and businesses. We deliver throughout Cyprus.
       </p>
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="contact-section">
-
-  <div class="container">
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="section contact-section">
 
     <div class="section-heading">
-      <h2>CONTACT US</h2>
+      <h2>CONTACT</h2>
+      <div class="red-line"></div>
     </div>
 
-    <div class="contact-layout">
+    <div class="contact-grid">
 
-      <div class="contact-info">
+      <div class="map-container">
 
-        <h3>LASERWORKS IDEAS</h3>
-
-        <div class="contact-item">
-          <strong>ADDRESS</strong>
-          <p>
-            33A Despoinas Pattichi<br>
-            Limassol 3071<br>
-            Cyprus
-          </p>
-        </div>
-
-        <div class="contact-item">
-          <strong>EMAIL</strong>
-          <p>
-            <a href="mailto:Laserworksideas@gmail.com">
-              Laserworksideas@gmail.com
-            </a>
-          </p>
-        </div>
-
-        <div class="contact-item">
-          <strong>WHATSAPP / VIBER</strong>
-          <p>
-            +357 99 303580
-          </p>
-        </div>
-
-        <div class="contact-item">
-          <strong>LANDLINE</strong>
-          <p>
-            +357 25 322025
-          </p>
-        </div>
-
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps?q=33a+Despoinas+Pattichi,+Limassol,+Cyprus&output=embed"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
-        </div>
+        <iframe
+          src="https://www.google.com/maps?q=33A+Despoinas+Pattichi,+Limassol,+Cyprus&output=embed"
+          loading="lazy">
+        </iframe>
 
       </div>
 
 
-      <div class="quotation-form">
+      <div class="contact-details">
 
-        <h3>SEND US A MESSAGE</h3>
+        <h2>SEND US A MESSAGE</h2>
 
-        <form onsubmit="sendQuotation(event)">
+        <form action="mailto:Laserworksideas@gmail.com" method="post" enctype="text/plain">
 
-          <div class="form-field">
-            <label for="name">NAME</label>
-            <input type="text" id="name" required>
-          </div>
+          <input
+            type="text"
+            name="Name"
+            placeholder="NAME"
+            required
+          >
 
-          <div class="form-field">
-            <label for="email">EMAIL</label>
-            <input type="email" id="email" required>
-          </div>
+          <input
+            type="email"
+            name="Email"
+            placeholder="EMAIL"
+            required
+          >
 
-          <div class="form-field">
-            <label for="phone">PHONE</label>
-            <input type="text" id="phone">
-          </div>
+          <input
+            type="text"
+            name="Phone"
+            placeholder="PHONE"
+          >
 
-          <div class="form-field">
-            <label for="message">MESSAGE</label>
-            <textarea id="message" rows="7" required></textarea>
-          </div>
+          <textarea
+            name="Message"
+            placeholder="MESSAGE"
+            rows="6"
+            required
+          ></textarea>
 
-          <button type="submit" class="quotation-button">
-            SEND A QUOTATION
+          <button type="submit">
+            SEND MESSAGE
           </button>
 
         </form>
 
+
+        <div class="contact-info">
+
+          <h2>CONTACT DETAILS</h2>
+
+          <p>
+            <strong>ADDRESS</strong><br>
+            33A Despoinas Pattichi<br>
+            Limassol, Cyprus
+          </p>
+
+          <p>
+            <strong>EMAIL</strong><br>
+            <a href="mailto:Laserworksideas@gmail.com">
+              Laserworksideas@gmail.com
+            </a>
+          </p>
+
+          <p>
+            <strong>WHATSUP / VIBER</strong><br>
+            <a href="tel:+35799303580">
+              +357 99 303580
+            </a>
+          </p>
+
+          <p>
+            <strong>LANDLINE</strong><br>
+            <a href="tel:+35725322025">
+              +357 25 322025
+            </a>
+          </p>
+
+        </div>
+
       </div>
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- ================= FOOTER ================= -->
-
-<footer class="site-footer">
-
-  <div class="container">
-
-    <p>© 2026 LASERWORKS IDEAS</p>
+  <!-- ================= FOOTER ================= -->
+  <footer>
 
     <p>
-      LASER CUT • ENGRAVING • DESIGN
+      © 2026 LASERWORKS IDEAS · LIMASSOL, CYPRUS
     </p>
 
-  </div>
-
-</footer>
+  </footer>
 
 
-<!-- ================= JAVASCRIPT ================= -->
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
 
-<script src="products.js"></script>
+    const galleryTrack = document.getElementById("galleryTrack");
+    const galleryImages = galleryTrack.querySelectorAll("img");
 
-<script>
+    const prevButton = document.querySelector(".gallery-prev");
+    const nextButton = document.querySelector(".gallery-next");
 
-function toggleMenu() {
-  document
-    .getElementById("mainNav")
-    .classList.toggle("open");
-}
+    let galleryIndex = 0;
 
+    function getVisibleImages() {
 
-/* ================= GALLERY ================= */
+      if (window.innerWidth <= 600) {
+        return 1;
+      }
 
-const galleryImages = [
-  "product-1.jpg",
-  "product-2.jpg",
-  "product-3.jpg",
-  "product-4.jpg",
-  "product-5.jpg",
-  "product-6.jpg",
-  "product-7.jpg",
-  "product-8.jpg",
-  "product-9.jpg",
-  "product-10.jpg",
-  "product-11.jpg",
-  "product-12.jpg",
-  "product-13.jpg",
-  "product-14.jpg",
-  "product-15.jpg",
-  "product-16.jpg",
-  "product-17.jpg",
-  "product-18.jpg",
-  "product-19.jpg",
-  "product-20.jpg",
-  "product-21.jpg",
-  "product-22.jpg",
-  "product-23.jpg",
-  "product-24.jpg",
-  "product-25.jpg",
-  "product-26.jpg",
-  "product-27.jpg",
-  "product-28.jpg",
-  "product-29.jpg",
-  "product-30.jpg",
-  "product-31.jpg",
-  "product-32.jpg",
-  "product-33.jpg",
-  "product-34.jpg",
-  "product-35.jpg",
-  "product-37.jpg",
-  "product-38.jpg",
-  "product-39.jpg",
-  "product-40.jpg",
-  "product-41.jpg"
-];
+      if (window.innerWidth <= 900) {
+        return 2;
+      }
 
-let galleryIndex = 0;
+      return 3;
+    }
 
-function updateGallery() {
+    function updateGallery() {
 
-  document.getElementById("galleryImage").src =
-    galleryImages[galleryIndex];
+      const visible = getVisibleImages();
 
-}
+      const maxIndex = Math.max(
+        0,
+        galleryImages.length - visible
+      );
 
-function nextGalleryImage() {
+      if (galleryIndex > maxIndex) {
+        galleryIndex = 0;
+      }
 
-  galleryIndex++;
+      if (galleryIndex < 0) {
+        galleryIndex = maxIndex;
+      }
 
-  if (galleryIndex >= galleryImages.length) {
-    galleryIndex = 0;
-  }
+      const imageWidth =
+        galleryImages[0].getBoundingClientRect().width;
 
-  updateGallery();
+      const gap = 18;
 
-}
+      galleryTrack.style.transform =
+        `translateX(-${galleryIndex * (imageWidth + gap)}px)`;
+    }
 
-function previousGalleryImage() {
+    nextButton.addEventListener("click", function () {
 
-  galleryIndex--;
+      const visible = getVisibleImages();
 
-  if (galleryIndex < 0) {
-    galleryIndex = galleryImages.length - 1;
-  }
+      const maxIndex =
+        galleryImages.length - visible;
 
-  updateGallery();
+      galleryIndex++;
 
-}
+      if (galleryIndex > maxIndex) {
+        galleryIndex = 0;
+      }
+
+      updateGallery();
+
+    });
 
 
-/* AUTO GALLERY */
+    prevButton.addEventListener("click", function () {
 
-setInterval(function() {
-  nextGalleryImage();
-}, 5000);
+      const visible = getVisibleImages();
+
+      const maxIndex =
+        galleryImages.length - visible;
+
+      galleryIndex--;
+
+      if (galleryIndex < 0) {
+        galleryIndex = maxIndex;
+      }
+
+      updateGallery();
+
+    });
 
 
-/* ================= CONTACT ================= */
+    window.addEventListener("resize", updateGallery);
 
-function sendQuotation(event) {
 
-  event.preventDefault();
+    setInterval(function () {
 
-  const name =
-    document.getElementById("name").value;
+      const visible = getVisibleImages();
 
-  const email =
-    document.getElementById("email").value;
+      const maxIndex =
+        galleryImages.length - visible;
 
-  const phone =
-    document.getElementById("phone").value;
+      galleryIndex++;
 
-  const message =
-    document.getElementById("message").value;
+      if (galleryIndex > maxIndex) {
+        galleryIndex = 0;
+      }
 
-  const subject = encodeURIComponent(
-    "Quotation Request - Laserworks Ideas"
-  );
+      updateGallery();
 
-  const body = encodeURIComponent(
-`Hello Laserworks Ideas,
+    }, 5000);
 
-I would like to request a quotation.
 
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
+    window.addEventListener("load", updateGallery);
 
-Request:
-${message}`
-  );
-
-  window.location.href =
-    `mailto:Laserworksideas@gmail.com?subject=${subject}&body=${body}`;
-
-}
-
-</script>
+  </script>
 
 </body>
 </html>
-```

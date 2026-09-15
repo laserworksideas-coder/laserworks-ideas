@@ -1,0 +1,517 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Laserworks Ideas | Products</title>
+
+  <meta
+    name="description"
+    content="Explore Laserworks Ideas personalised laser cut, engraving and custom products in Cyprus."
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    .category-page {
+      padding: 60px 0;
+      min-height: 70vh;
+    }
+
+    .category-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .category-title h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .back-link:hover {
+      color: #d00000;
+    }
+
+    .category-products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .category-product {
+      border: 1px solid #ddd;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .category-product-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #f5f5f5;
+    }
+
+    .category-product-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .category-product-info {
+      padding: 15px;
+    }
+
+    .category-product-info h3 {
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+
+    .category-product-info p {
+      margin: 0 0 8px;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #666;
+    }
+
+    .category-product-info strong {
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .no-products {
+      text-align: center;
+      padding: 50px 20px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+
+      .category-products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+
+      .category-title h1 {
+        font-size: 24px;
+      }
+
+    }
+
+    @media (max-width: 480px) {
+
+      .category-products {
+        gap: 10px;
+      }
+
+      .category-product-info {
+        padding: 10px;
+      }
+
+      .category-product-info h3 {
+        font-size: 12px;
+      }
+
+      .category-product-info p {
+        font-size: 10px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+  <div class="top-row">
+
+    <div class="container top-row-inner">
+
+      <a href="index.html" class="logo">
+        LASERWORKS IDEAS
+      </a>
+
+      <div class="top-links">
+
+        <a href="index.html#categories">
+          CATEGORIES
+        </a>
+
+        <a href="index.html#contact">
+          CONTACT US
+        </a>
+
+      </div>
+
+      <button
+        class="menu"
+        onclick="toggleMenu()"
+      >
+        ☰
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="contact-links-row">
+
+    <div class="container contact-links-inner">
+
+      <a href="mailto:Laserworksideas@gmail.com">
+        EMAIL
+      </a>
+
+      <a
+        href="https://wa.me/35799303580"
+        target="_blank"
+      >
+        WHATSAPP
+      </a>
+
+      <a href="viber://chat?number=%2B35799303580">
+        VIBER
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <nav id="mainNav" class="main-nav">
+
+    <a href="index.html#categories">
+      CATEGORIES
+    </a>
+
+    <a href="index.html#gallery">
+      GALLERY
+    </a>
+
+    <a href="index.html#about">
+      ABOUT US
+    </a>
+
+    <a href="index.html#contact">
+      CONTACT US
+    </a>
+
+  </nav>
+
+</header>
+
+
+<section class="category-page">
+
+  <div class="container">
+
+    <a
+      href="index.html#categories"
+      class="back-link"
+    >
+      ← BACK TO CATEGORIES
+    </a>
+
+
+    <div class="category-title">
+
+      <h1 id="categoryTitle">
+        PRODUCTS
+      </h1>
+
+    </div>
+
+
+    <div
+      id="categoryProducts"
+      class="category-products"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<footer class="site-footer">
+
+  <div class="container">
+
+    <p>© 2026 LASERWORKS IDEAS</p>
+
+    <p>
+      LASER CUT • ENGRAVING • DESIGN
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script src="products.js"></script>
+
+
+<script>
+
+function toggleMenu() {
+
+  document
+    .getElementById("mainNav")
+    .classList.toggle("open");
+
+}
+
+
+/* ================= CATEGORY ================= */
+
+const params =
+  new URLSearchParams(window.location.search);
+
+const requestedCategory =
+  params.get("category") || "PERSONALISED GIFTS";
+
+
+/*
+  Website category
+  -> existing products.js category
+*/
+
+const categoryMap = {
+
+  "CHRISTENING": "CHRISTENING",
+
+  "WEDDINGS": "WEDDING",
+
+  "CORPORATE": "CORPORATE GIFTS",
+
+  "SEASONAL": "SEASONAL ITEMS",
+
+  "PERSONALISED GIFTS": "PERSONALISED GIFTS",
+
+  "INVITATIONS": "INVITATIONS"
+
+};
+
+
+const titleMap = {
+
+  "CHRISTENING": "CHRISTENING",
+
+  "WEDDINGS": "WEDDINGS",
+
+  "BIRTHDAYS": "BIRTHDAYS",
+
+  "CORPORATE": "CORPORATE",
+
+  "SCHOOLS": "SCHOOLS",
+
+  "SEASONAL": "SEASONAL",
+
+  "PERSONALISED GIFTS": "PERSONALISED GIFTS",
+
+  "INVITATIONS": "INVITATIONS"
+
+};
+
+
+/* ================= PRODUCTS ================= */
+
+function getProductsForCategory(category) {
+
+  /*
+    Existing categories from products.js
+  */
+
+  if (categoryMap[category]) {
+
+    return products.filter(function(product) {
+
+      return product.category === categoryMap[category];
+
+    });
+
+  }
+
+
+  /*
+    BIRTHDAYS
+
+    Uses the birthday-related products
+    already present in products.js.
+  */
+
+  if (category === "BIRTHDAYS") {
+
+    return products.filter(function(product) {
+
+      return (
+
+        product.name
+          .toLowerCase()
+          .includes("cake topper")
+
+        ||
+
+        product.name
+          .toLowerCase()
+          .includes("cut out")
+
+      );
+
+    });
+
+  }
+
+
+  /*
+    SCHOOLS
+
+    Uses the school-related products
+    already present in products.js.
+  */
+
+  if (category === "SCHOOLS") {
+
+    return products.filter(function(product) {
+
+      return (
+
+        product.subcategory === "Pencil Cases"
+
+        ||
+
+        product.subcategory === "Educational"
+
+      );
+
+    });
+
+  }
+
+
+  return [];
+
+}
+
+
+/* ================= DISPLAY ================= */
+
+function displayProducts() {
+
+  const title =
+    titleMap[requestedCategory] ||
+    requestedCategory;
+
+  document.getElementById(
+    "categoryTitle"
+  ).textContent = title;
+
+
+  const container =
+    document.getElementById(
+      "categoryProducts"
+    );
+
+
+  const categoryProducts =
+    getProductsForCategory(
+      requestedCategory
+    );
+
+
+  if (!categoryProducts.length) {
+
+    container.innerHTML = `
+      <div class="no-products">
+        Products for this category
+        will be added soon.
+      </div>
+    `;
+
+    return;
+
+  }
+
+
+  categoryProducts.forEach(function(product) {
+
+    const image =
+      product.images &&
+      product.images.length
+        ? product.images[0]
+        : "";
+
+
+    const imageHTML = image
+      ? `<img src="${image}" alt="${product.name}">`
+      : "";
+
+
+    container.innerHTML += `
+
+      <article class="category-product">
+
+        <div class="category-product-image">
+
+          ${imageHTML}
+
+        </div>
+
+        <div class="category-product-info">
+
+          <h3>
+            ${product.name}
+          </h3>
+
+          <p>
+            ${product.description}
+          </p>
+
+          <strong>
+            ${product.price}
+          </strong>
+
+        </div>
+
+      </article>
+
+    `;
+
+  });
+
+}
+
+
+displayProducts();
+
+</script>
+
+
+</body>
+
+</html>
+```

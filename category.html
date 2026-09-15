@@ -1,388 +1,233 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Laserworks Ideas | Products</title>
-
-  <meta name="description" content="Explore Laserworks Ideas personalised laser cut and engraved products in Limassol, Cyprus.">
-
+  <title>Laserworks Ideas</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
+<header class="site-header">
 
-    <div class="header-top">
+  <div class="header-top">
 
-      <a href="index.html" class="logo">
-        LASERWORKS IDEAS
+    <a href="index.html" class="logo">LASERWORKS IDEAS</a>
+
+    <div class="contact-top">
+      <span class="contact-title">CONTACT US</span>
+      <a href="mailto:Laserworksideas@gmail.com">EMAIL</a>
+      <a href="viber://chat?number=%2B35799303580">VIBER</a>
+      <a href="https://wa.me/35799303580" target="_blank">WHATSUP</a>
+    </div>
+
+    <button class="menu-toggle" aria-label="Open menu">
+      ☰
+    </button>
+
+  </div>
+
+  <nav class="main-nav" id="mainNav">
+    <a href="index.html">HOME</a>
+    <a href="index.html#categories">CATEGORIES</a>
+    <a href="index.html#gallery">GALLERY</a>
+    <a href="index.html#about">ABOUT US</a>
+    <a href="index.html#contact">CONTACT</a>
+  </nav>
+
+</header>
+
+
+<main>
+
+  <section class="category-page">
+
+    <div class="category-heading">
+      <h1 id="categoryTitle">CATEGORY</h1>
+      <p id="categoryDescription"></p>
+    </div>
+
+    <div id="productGrid" class="product-grid"></div>
+
+    <div class="back-home">
+      <a href="index.html#categories" class="red-button">
+        BACK TO CATEGORIES
       </a>
+    </div>
 
-      <div class="contact-top">
+  </section>
 
-        <span class="contact-title">CONTACT US</span>
+</main>
 
-        <a href="mailto:Laserworksideas@gmail.com">
-          EMAIL
-        </a>
 
-        <a href="viber://chat?number=%2B35799303580">
-          VIBER
-        </a>
+<footer>
+  <p>© 2026 LASERWORKS IDEAS — LIMASSOL, CYPRUS</p>
+</footer>
 
-        <a href="https://wa.me/35799303580" target="_blank">
-          WHATSUP
-        </a>
 
+<script src="products.js"></script>
+
+<script>
+
+  /* MOBILE MENU */
+
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mainNav = document.querySelector("#mainNav");
+
+  menuToggle.addEventListener("click", function () {
+    mainNav.classList.toggle("mobile-open");
+  });
+
+  document.querySelectorAll(".main-nav a").forEach(link => {
+    link.addEventListener("click", function () {
+      mainNav.classList.remove("mobile-open");
+    });
+  });
+
+
+  /* CATEGORY */
+
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category");
+
+  const title = document.getElementById("categoryTitle");
+  const description = document.getElementById("categoryDescription");
+  const grid = document.getElementById("productGrid");
+
+
+  const categoryNames = {
+    "CHRISTENING": "CHRISTENING",
+    "WEDDING": "WEDDINGS",
+    "BIRTHDAY": "BIRTHDAYS",
+    "CORPORATE GIFTS": "CORPORATE",
+    "SCHOOLS": "SCHOOLS",
+    "SEASONAL ITEMS": "SEASONAL",
+    "PERSONALISED GIFTS": "PERSONALISED GIFTS",
+    "INVITATIONS": "INVITATIONS"
+  };
+
+
+  title.textContent = categoryNames[category] || category || "OUR PRODUCTS";
+
+
+  const descriptions = {
+    "CHRISTENING": "Personalised details and decorations for your special christening.",
+    "WEDDING": "Custom laser cut and engraved details for weddings and celebrations.",
+    "BIRTHDAY": "Personalised decorations, cake toppers and details for birthdays.",
+    "CORPORATE GIFTS": "Custom corporate gifts and personalised business details.",
+    "SCHOOLS": "Creative personalised products for schools and educational events.",
+    "SEASONAL ITEMS": "Creative products for seasonal celebrations and special occasions.",
+    "PERSONALISED GIFTS": "Unique personalised gifts created especially for you.",
+    "INVITATIONS": "Custom invitations designed for your special event."
+  };
+
+
+  description.textContent =
+    descriptions[category] || "Explore our personalised laser cut and engraved creations.";
+
+
+  let filteredProducts = [];
+
+
+  if (category === "BIRTHDAY") {
+
+    filteredProducts = products.filter(product => {
+
+      const text = (
+        (product.name || "") + " " +
+        (product.description || "") + " " +
+        (product.subcategory || "")
+      ).toLowerCase();
+
+      return (
+        text.includes("cake") ||
+        text.includes("birthday") ||
+        text.includes("topper")
+      );
+
+    });
+
+  } else if (category === "SCHOOLS") {
+
+    filteredProducts = products.filter(product => {
+
+      const text = (
+        (product.name || "") + " " +
+        (product.description || "") + " " +
+        (product.subcategory || "")
+      ).toLowerCase();
+
+      return (
+        text.includes("school") ||
+        text.includes("pencil") ||
+        text.includes("educational") ||
+        text.includes("bookmark")
+      );
+
+    });
+
+  } else {
+
+    filteredProducts = products.filter(product =>
+      product.category === category
+    );
+
+  }
+
+
+  if (filteredProducts.length === 0) {
+
+    grid.innerHTML = `
+      <div class="no-products">
+        <p>More products coming soon.</p>
       </div>
+    `;
 
-    </div>
+  } else {
 
+    filteredProducts.forEach(product => {
 
-    <nav class="main-nav">
-
-      <a href="index.html">HOME</a>
-
-      <a href="index.html#categories">CATEGORIES</a>
-
-      <a href="index.html#gallery">GALLERY</a>
-
-      <a href="index.html#about">ABOUT US</a>
-
-      <a href="index.html#contact">CONTACT</a>
-
-    </nav>
-
-  </header>
-
-
-  <!-- CATEGORY -->
-  <main class="section category-page">
-
-    <div class="section-heading">
-
-      <h1 id="categoryTitle">PRODUCTS</h1>
-
-      <div class="red-line"></div>
-
-    </div>
-
-
-    <a href="index.html#categories" class="back-button">
-      ← BACK TO CATEGORIES
-    </a>
-
-
-    <div id="productsContainer" class="category-products"></div>
-
-  </main>
-
-
-  <!-- FOOTER -->
-  <footer>
-
-    <p>
-      © 2026 LASERWORKS IDEAS · LIMASSOL, CYPRUS
-    </p>
-
-  </footer>
-
-
-  <script src="products.js"></script>
-
-  <script>
-
-    const params = new URLSearchParams(window.location.search);
-
-    const selectedCategory = params.get("category") || "";
-
-
-    const categoryTitle = document.getElementById("categoryTitle");
-
-    const productsContainer =
-      document.getElementById("productsContainer");
-
-
-    /*
-      The website uses the new customer-facing category names,
-      while products.js contains some of the older internal names.
-    */
-
-    const categoryMap = {
-
-      "CHRISTENING": [
-        "CHRISTENING"
-      ],
-
-      "WEDDINGS": [
-        "WEDDING"
-      ],
-
-      "CORPORATE": [
-        "CORPORATE GIFTS"
-      ],
-
-      "SEASONAL": [
-        "SEASONAL ITEMS"
-      ],
-
-      "PERSONALISED GIFTS": [
-        "PERSONALISED GIFTS"
-      ],
-
-      "INVITATIONS": [
-        "INVITATIONS"
-      ]
-
-    };
-
-
-    function getProductsForCategory(category) {
-
-      if (!Array.isArray(products)) {
-        return [];
-      }
-
-
-      /* CHRISTENING */
-      if (category === "CHRISTENING") {
-
-        return products.filter(product =>
-          String(product.category || "").toUpperCase() === "CHRISTENING"
-        );
-
-      }
-
-
-      /* WEDDINGS */
-      if (category === "WEDDINGS") {
-
-        return products.filter(product =>
-          String(product.category || "").toUpperCase() === "WEDDING"
-        );
-
-      }
-
-
-      /* CORPORATE */
-      if (category === "CORPORATE") {
-
-        return products.filter(product =>
-          String(product.category || "").toUpperCase() === "CORPORATE GIFTS"
-        );
-
-      }
-
-
-      /* SEASONAL */
-      if (category === "SEASONAL") {
-
-        return products.filter(product =>
-          String(product.category || "").toUpperCase() === "SEASONAL ITEMS"
-        );
-
-      }
-
-
-      /* PERSONALISED GIFTS */
-      if (category === "PERSONALISED GIFTS") {
-
-        return products.filter(product =>
-          String(product.category || "").toUpperCase() === "PERSONALISED GIFTS"
-        );
-
-      }
-
-
-      /* INVITATIONS */
-      if (category === "INVITATIONS") {
-
-        return products.filter(product =>
-          String(product.category || "").toUpperCase() === "INVITATIONS"
-        );
-
-      }
-
-
-      /*
-        BIRTHDAYS:
-        Products related to birthday/cake decorations
-        from the existing product list.
-      */
-
-      if (category === "BIRTHDAYS") {
-
-        return products.filter(product => {
-
-          const text = (
-            String(product.name || "") + " " +
-            String(product.description || "") + " " +
-            String(product.subcategory || "")
-          ).toLowerCase();
-
-          return (
-            text.includes("cake") ||
-            text.includes("birthday") ||
-            text.includes("topper")
-          );
-
-        });
-
-      }
-
-
-      /*
-        SCHOOLS:
-        Products from the existing list that are
-        associated with school / educational items.
-      */
-
-      if (category === "SCHOOLS") {
-
-        return products.filter(product => {
-
-          const text = (
-            String(product.name || "") + " " +
-            String(product.description || "") + " " +
-            String(product.subcategory || "")
-          ).toLowerCase();
-
-          return (
-            text.includes("school") ||
-            text.includes("pencil") ||
-            text.includes("educational") ||
-            text.includes("bookmark")
-          );
-
-        });
-
-      }
-
-
-      return [];
-
-    }
-
-
-    function createProductCard(product) {
-
-      const card = document.createElement("article");
-
+      const card = document.createElement("div");
       card.className = "product-card";
 
+      card.innerHTML = `
 
-      if (product.image) {
+        ${
+          product.image
+            ? `<img src="${product.image}" alt="${product.name || ""}">`
+            : ""
+        }
 
-        const image = document.createElement("img");
+        <div class="product-info">
 
-        image.src = product.image;
+          <h2>${product.name || ""}</h2>
 
-        image.alt = product.name || "Laserworks Ideas product";
+          ${
+            product.description
+              ? `<p>${product.description}</p>`
+              : ""
+          }
 
-        card.appendChild(image);
+          ${
+            product.price
+              ? `<span class="product-price">${product.price}</span>`
+              : ""
+          }
 
-      }
+        </div>
 
+      `;
 
-      const content = document.createElement("div");
+      grid.appendChild(card);
 
-      content.className = "product-card-content";
+    });
 
+  }
 
-      const title = document.createElement("h3");
-
-      title.textContent =
-        product.name || "Personalised Product";
-
-      content.appendChild(title);
-
-
-      if (product.description) {
-
-        const description =
-          document.createElement("p");
-
-        description.textContent =
-          product.description;
-
-        content.appendChild(description);
-
-      }
-
-
-      if (product.price) {
-
-        const price =
-          document.createElement("p");
-
-        price.className = "product-price";
-
-        price.textContent =
-          product.price;
-
-        content.appendChild(price);
-
-      }
-
-
-      card.appendChild(content);
-
-      return card;
-
-    }
-
-
-    function renderCategory() {
-
-      const displayTitle =
-        selectedCategory || "PRODUCTS";
-
-      categoryTitle.textContent =
-        displayTitle;
-
-
-      const categoryProducts =
-        getProductsForCategory(selectedCategory);
-
-
-      productsContainer.innerHTML = "";
-
-
-      if (categoryProducts.length === 0) {
-
-        productsContainer.innerHTML = `
-          <p style="
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 50px 20px;
-          ">
-            Products coming soon.
-          </p>
-        `;
-
-        return;
-
-      }
-
-
-      categoryProducts.forEach(product => {
-
-        productsContainer.appendChild(
-          createProductCard(product)
-        );
-
-      });
-
-    }
-
-
-    renderCategory();
-
-  </script>
+</script>
 
 </body>
 </html>
+```

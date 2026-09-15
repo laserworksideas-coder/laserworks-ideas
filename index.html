@@ -81,5 +81,961 @@
           <a href="#" onclick="selectCategory('WEDDING','All')">ALL</a>
           <a href="#" onclick="selectCategory('WEDDING','Wedding Decorations')">DECORATIONS</a>
           <a href="#" onclick="selectCategory('WEDDING','Wedding Gifts')">GIFTS</a>
-          <a href="#" onclick="selectCategory('
+          <a href="#" onclick="selectCategory('WEDDING','Wedding Details')">DETAILS</a>
+        </div>
+      </div>
+
+
+      <!-- SEASONAL ITEMS -->
+      <div class="nav-dropdown">
+        <button onclick="toggleDropdown(event, 'seasonalMenu')">
+          SEASONAL ITEMS
+        </button>
+
+        <div id="seasonalMenu" class="dropdown-menu">
+          <a href="#" onclick="selectCategory('SEASONAL ITEMS','All')">ALL</a>
+          <a href="#" onclick="selectCategory('SEASONAL ITEMS','Christmas')">CHRISTMAS</a>
+          <a href="#" onclick="selectCategory('SEASONAL ITEMS','Valentine')">VALENTINE</a>
+          <a href="#" onclick="selectCategory('SEASONAL ITEMS','Easter')">EASTER</a>
+          <a href="#" onclick="selectCategory('SEASONAL ITEMS','Other')">OTHER</a>
+        </div>
+      </div>
+
+
+      <!-- PERSONALISED GIFTS -->
+      <div class="nav-dropdown">
+        <button onclick="toggleDropdown(event, 'personalisedMenu')">
+          PERSONALISED GIFTS
+        </button>
+
+        <div id="personalisedMenu" class="dropdown-menu">
+          <a href="#" onclick="selectCategory('PERSONALISED GIFTS','All')">ALL</a>
+          <a href="#" onclick="selectCategory('PERSONALISED GIFTS','Children')">CHILDREN</a>
+          <a href="#" onclick="selectCategory('PERSONALISED GIFTS','Adults')">ADULTS</a>
+          <a href="#" onclick="selectCategory('PERSONALISED GIFTS','Teachers')">TEACHERS</a>
+        </div>
+      </div>
+
+
+      <!-- BOXES -->
+      <div class="nav-dropdown">
+        <button onclick="toggleDropdown(event, 'boxesMenu')">
+          BOXES
+        </button>
+
+        <div id="boxesMenu" class="dropdown-menu">
+          <a href="#" onclick="selectCategory('BOXES','All')">ALL</a>
+          <a href="#" onclick="selectCategory('BOXES','Gift Boxes')">GIFT BOXES</a>
+          <a href="#" onclick="selectCategory('BOXES','Wedding Boxes')">WEDDING</a>
+          <a href="#" onclick="selectCategory('BOXES','Corporate Boxes')">CORPORATE</a>
+        </div>
+      </div>
+
+
+      <!-- CORPORATE GIFTS -->
+      <div class="nav-dropdown">
+        <button onclick="toggleDropdown(event, 'corporateMenu')">
+          CORPORATE GIFTS
+        </button>
+
+        <div id="corporateMenu" class="dropdown-menu">
+          <a href="#" onclick="selectCategory('CORPORATE GIFTS','All')">ALL</a>
+          <a href="#" onclick="selectCategory('CORPORATE GIFTS','Corporate Gifts')">GIFTS</a>
+          <a href="#" onclick="selectCategory('CORPORATE GIFTS','Corporate Awards')">AWARDS</a>
+          <a href="#" onclick="selectCategory('CORPORATE GIFTS','Corporate Accessories')">ACCESSORIES</a>
+        </div>
+      </div>
+
+
+      <!-- CUSTOMISED CUT OUTS -->
+      <div class="nav-dropdown">
+        <button onclick="toggleDropdown(event, 'cutoutsMenu')">
+          CUSTOMISED CUT OUTS
+        </button>
+
+        <div id="cutoutsMenu" class="dropdown-menu">
+          <a href="#" onclick="selectCategory('CUSTOMISED CUT OUTS','All')">ALL</a>
+          <a href="#" onclick="selectCategory('CUSTOMISED CUT OUTS','Names')">NAMES</a>
+          <a href="#" onclick="selectCategory('CUSTOMISED CUT OUTS','Numbers')">NUMBERS</a>
+          <a href="#" onclick="selectCategory('CUSTOMISED CUT OUTS','Shapes')">SHAPES</a>
+        </div>
+      </div>
+
+
+      <!-- DECOR -->
+      <div class="nav-dropdown">
+        <button onclick="toggleDropdown(event, 'decorMenu')">
+          DECOR
+        </button>
+
+        <div id="decorMenu" class="dropdown-menu">
+          <a href="#" onclick="selectCategory('DECOR','All')">ALL</a>
+          <a href="#" onclick="selectCategory('DECOR','Home Decor')">HOME</a>
+          <a href="#" onclick="selectCategory('DECOR','Event Decor')">EVENTS</a>
+          <a href="#" onclick="selectCategory('DECOR','Wall Decor')">WALL DECOR</a>
+        </div>
+      </div>
+
+
+      <!-- OTHER GIFTS -->
+      <div class="nav-dropdown">
+        <button onclick="toggleDropdown(event, 'otherMenu')">
+          OTHER GIFTS
+        </button>
+
+        <div id="otherMenu" class="dropdown-menu">
+          <a href="#" onclick="selectCategory('OTHER GIFTS','All')">ALL</a>
+          <a href="#" onclick="selectCategory('OTHER GIFTS','Gifts')">GIFTS</a>
+          <a href="#" onclick="selectCategory('OTHER GIFTS','Accessories')">ACCESSORIES</a>
+        </div>
+      </div>
+
+
+      <!-- INVITATIONS -->
+      <div class="nav-dropdown">
+        <button onclick="toggleDropdown(event, 'invitationsMenu')">
+          INVITATIONS
+        </button>
+
+        <div id="invitationsMenu" class="dropdown-menu">
+          <a href="#" onclick="selectCategory('INVITATIONS','All')">ALL</a>
+          <a href="#" onclick="selectCategory('INVITATIONS','Christening')">CHRISTENING</a>
+          <a href="#" onclick="selectCategory('INVITATIONS','Wedding')">WEDDING</a>
+          <a href="#" onclick="selectCategory('INVITATIONS','Birthday')">BIRTHDAY</a>
+          <a href="#" onclick="selectCategory('INVITATIONS','Other')">OTHER</a>
+        </div>
+      </div>
+
+
+      <!-- NAMES -->
+      <a href="#customiser" class="nav-customiser">
+        NAMES • MONOGRAMS
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="container hero-content">
+
+      <h1>LASER CUT • ENGRAVING • DESIGN</h1>
+
+      <p>
+        Custom creations made with precision, creativity and attention to detail.
+      </p>
+
+      <a href="#products" class="hero-button">
+        VIEW OUR CREATIONS
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCTS -->
+  <section id="products" class="products-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>OUR CREATIONS</h2>
+        <p>Explore our handmade and personalised creations.</p>
+      </div>
+
+      <div id="productGrid" class="product-grid"></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CUSTOMISER -->
+  <section id="customiser" class="customiser-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>NAMES • MONOGRAMS • NUMBERS</h2>
+
+        <p>
+          Create your own personalised cut-out.
+        </p>
+      </div>
+
+
+      <div class="customiser">
+
+        <div class="custom-field">
+
+          <label for="customType">
+            TYPE
+          </label>
+
+          <select id="customType" onchange="updateSummary()">
+            <option value="Name">Name</option>
+            <option value="Monogram">Monogram</option>
+            <option value="Number">Number</option>
+            <option value="Word">Word</option>
+            <option value="Phrase">Phrase</option>
+          </select>
+
+        </div>
+
+
+        <div class="custom-field">
+
+          <label for="customText">
+            TEXT
+          </label>
+
+          <input
+            type="text"
+            id="customText"
+            placeholder="Enter your text"
+            oninput="updateSummary()"
+          >
+
+        </div>
+
+
+        <div class="custom-field">
+
+          <label for="customSize">
+            SIZE (CM)
+          </label>
+
+          <input
+            type="number"
+            id="customSize"
+            min="2"
+            max="80"
+            value="10"
+            oninput="updateSummary()"
+          >
+
+        </div>
+
+
+        <div class="custom-field">
+
+          <label for="customMaterial">
+            MATERIAL
+          </label>
+
+          <select id="customMaterial" onchange="updateSummary()">
+
+            <option value="Wood">Wood</option>
+
+            <option value="MDF 3mm">
+              MDF 3mm
+            </option>
+
+            <option value="MDF 4mm">
+              MDF 4mm
+            </option>
+
+            <option value="MDF 6mm">
+              MDF 6mm
+            </option>
+
+            <option value="Acrylic Gold">
+              Acrylic Gold
+            </option>
+
+            <option value="Acrylic Silver">
+              Acrylic Silver
+            </option>
+
+            <option value="Acrylic Rose Gold">
+              Acrylic Rose Gold
+            </option>
+
+            <option value="Acrylic Other Colour">
+              Acrylic Other Colour
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="custom-field">
+
+          <label for="customQuantity">
+            QUANTITY
+          </label>
+
+          <input
+            type="number"
+            id="customQuantity"
+            min="1"
+            value="1"
+            oninput="updateSummary()"
+          >
+
+        </div>
+
+
+        <div class="custom-summary">
+
+          <h3>YOUR REQUEST</h3>
+
+          <div id="customSummaryText">
+            Please enter your details.
+          </div>
+
+          <a
+            href="#contact"
+            class="custom-button"
+            onclick="prepareQuotation()"
+          >
+            REQUEST A QUOTATION
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>ABOUT LASERWORKS IDEAS</h2>
+      </div>
+
+
+      <div class="about-content">
+
+        <p>
+          Laserworks Ideas is a creative laser cutting and engraving studio based in
+          Limassol, Cyprus, specialising in custom-made MDF, wood and acrylic creations.
+        </p>
+
+        <p>
+          We combine precision, creativity and attention to detail to create personalised
+          gifts, names, signs, decorations and unique custom designs for christenings,
+          birthdays, weddings, schools, events and special occasions.
+        </p>
+
+        <p>
+          Alongside laser cutting and engraving, we offer personalised clothing printing,
+          custom event decorations and a wide range of unique gift details, including
+          balloons, soaps, candy and cake decorations.
+        </p>
+
+        <p>
+          We also create bespoke corporate gifts and collaborate with event planners,
+          businesses and professionals to bring their ideas to life.
+        </p>
+
+        <p>
+          Whether you are looking for a personalised gift, a custom decoration or a
+          complete creative solution for your event, we are here to turn your idea into
+          something special.
+        </p>
+
+        <p class="about-highlight">
+          <strong>
+            Based in Limassol • Delivering throughout Cyprus
+          </strong>
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <h2>CONTACT US</h2>
+
+        <p>
+          Have an idea? Contact us and request your quotation.
+        </p>
+
+      </div>
+
+
+      <div class="contact-layout">
+
+
+        <!-- CONTACT INFORMATION -->
+        <div class="contact-info">
+
+          <h3>LASERWORKS IDEAS</h3>
+
+          <div class="contact-item">
+
+            <strong>ADDRESS</strong>
+
+            <p>
+              33a Despoinas Pattichi<br>
+              Limassol 3071<br>
+              Cyprus
+            </p>
+
+          </div>
+
+
+          <div class="contact-item">
+
+            <strong>EMAIL</strong>
+
+            <p>
+              <a href="mailto:Laserworksideas@gmail.com">
+                Laserworksideas@gmail.com
+              </a>
+            </p>
+
+          </div>
+
+
+          <div class="contact-item">
+
+            <strong>WHATSAPP</strong>
+
+            <p>
+              <a
+                href="https://wa.me/35799303580"
+                target="_blank"
+              >
+                +357 99 303580
+              </a>
+            </p>
+
+          </div>
+
+
+          <div class="contact-item">
+
+            <strong>VIBER</strong>
+
+            <p>
+              <a href="viber://chat?number=%2B35799303580">
+                +357 99 303580
+              </a>
+            </p>
+
+          </div>
+
+
+          <!-- MAP -->
+          <div class="map-container">
+
+            <iframe
+              src="https://www.google.com/maps?q=33a+Despoinas+Pattichi,+Limassol,+Cyprus&output=embed"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+
+          </div>
+
+        </div>
+
+
+        <!-- QUOTATION FORM -->
+        <div class="quotation-form">
+
+          <h3>SEND A QUOTATION</h3>
+
+          <form onsubmit="sendQuotation(event)">
+
+            <div class="form-field">
+
+              <label for="name">
+                NAME
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label for="email">
+                EMAIL
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label for="phone">
+                PHONE
+              </label>
+
+              <input
+                type="text"
+                id="phone"
+              >
+
+            </div>
+
+
+            <div class="form-field">
+
+              <label for="message">
+                MESSAGE
+              </label>
+
+              <textarea
+                id="message"
+                rows="7"
+                required
+              ></textarea>
+
+            </div>
+
+
+            <button type="submit" class="quotation-button">
+              SEND A QUOTATION
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="container">
+
+      <p>
+        © 2026 LASERWORKS IDEAS
+      </p>
+
+      <p>
+        LASER CUT • ENGRAVING • DESIGN
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+
+    <button
+      class="lightbox-close"
+      onclick="closeLightbox()"
+    >
+      ×
+    </button>
+
+    <button
+      class="lightbox-prev"
+      onclick="previousImage()"
+    >
+      ‹
+    </button>
+
+    <img
+      id="lightboxImage"
+      src=""
+      alt=""
+    >
+
+    <button
+      class="lightbox-next"
+      onclick="nextImage()"
+    >
+      ›
+    </button>
+
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="products.js"></script>
+
+  <script>
+
+    /* MOBILE MENU */
+
+    function toggleMenu() {
+
+      const nav = document.getElementById("mainNav");
+
+      nav.classList.toggle("open");
+
+    }
+
+
+    /* DROPDOWN MENU */
+
+    function toggleDropdown(event, menuId) {
+
+      event.preventDefault();
+
+      const menu = document.getElementById(menuId);
+
+      document
+        .querySelectorAll(".dropdown-menu")
+        .forEach(item => {
+
+          if (item.id !== menuId) {
+            item.classList.remove("show");
+          }
+
+        });
+
+      menu.classList.toggle("show");
+
+    }
+
+
+    /* CATEGORY */
+
+    function selectCategory(category, subcategory) {
+
+      event.preventDefault();
+
+      document
+        .querySelectorAll(".dropdown-menu")
+        .forEach(menu => {
+          menu.classList.remove("show");
+        });
+
+      if (typeof showProducts === "function") {
+        showProducts(category, subcategory);
+      }
+
+      document
+        .getElementById("products")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+
+    /* PRODUCT IMAGE */
+
+    let currentProductImages = [];
+
+    let currentImageIndex = 0;
+
+
+    function changeProductImage(productIndex, imageIndex) {
+
+      const product = products[productIndex];
+
+      if (!product || !product.images) return;
+
+      const mainImage =
+        document.getElementById(
+          "main-image-" + productIndex
+        );
+
+      if (!mainImage) return;
+
+      mainImage.src =
+        product.images[imageIndex];
+
+    }
+
+
+    /* LIGHTBOX */
+
+    function openLightbox(images, index) {
+
+      currentProductImages = images;
+
+      currentImageIndex = index;
+
+      updateLightbox();
+
+      document
+        .getElementById("lightbox")
+        .classList.add("open");
+
+    }
+
+
+    function updateLightbox() {
+
+      const image =
+        document.getElementById("lightboxImage");
+
+      if (!currentProductImages.length) return;
+
+      image.src =
+        currentProductImages[currentImageIndex];
+
+    }
+
+
+    function closeLightbox() {
+
+      document
+        .getElementById("lightbox")
+        .classList.remove("open");
+
+    }
+
+
+    function previousImage() {
+
+      if (!currentProductImages.length) return;
+
+      currentImageIndex--;
+
+      if (currentImageIndex < 0) {
+        currentImageIndex =
+          currentProductImages.length - 1;
+      }
+
+      updateLightbox();
+
+    }
+
+
+    function nextImage() {
+
+      if (!currentProductImages.length) return;
+
+      currentImageIndex++;
+
+      if (
+        currentImageIndex >=
+        currentProductImages.length
+      ) {
+        currentImageIndex = 0;
+      }
+
+      updateLightbox();
+
+    }
+
+
+    /* CUSTOMISER */
+
+    function updateSummary() {
+
+      const type =
+        document.getElementById("customType").value;
+
+      const text =
+        document.getElementById("customText").value;
+
+      const size =
+        document.getElementById("customSize").value;
+
+      const material =
+        document.getElementById("customMaterial").value;
+
+      const quantity =
+        document.getElementById("customQuantity").value;
+
+
+      const summary =
+        document.getElementById("customSummaryText");
+
+
+      if (!text) {
+
+        summary.innerHTML =
+          "Please enter your details.";
+
+        return;
+
+      }
+
+
+      summary.innerHTML = `
+        <p><strong>Type:</strong> ${type}</p>
+        <p><strong>Text:</strong> ${text}</p>
+        <p><strong>Size:</strong> ${size} cm</p>
+        <p><strong>Material:</strong> ${material}</p>
+        <p><strong>Quantity:</strong> ${quantity}</p>
+      `;
+
+    }
+
+
+    function prepareQuotation() {
+
+      const type =
+        document.getElementById("customType").value;
+
+      const text =
+        document.getElementById("customText").value;
+
+      const size =
+        document.getElementById("customSize").value;
+
+      const material =
+        document.getElementById("customMaterial").value;
+
+      const quantity =
+        document.getElementById("customQuantity").value;
+
+
+      const message =
+        document.getElementById("message");
+
+
+      if (message) {
+
+        message.value =
+`CUSTOM CUT-OUT QUOTATION
+
+Type: ${type}
+Text: ${text}
+Size: ${size} cm
+Material: ${material}
+Quantity: ${quantity}`;
+
+      }
+
+    }
+
+
+    /* SEND QUOTATION */
+
+    function sendQuotation(event) {
+
+      event.preventDefault();
+
+
+      const name =
+        document.getElementById("name").value;
+
+      const email =
+        document.getElementById("email").value;
+
+      const phone =
+        document.getElementById("phone").value;
+
+      const message =
+        document.getElementById("message").value;
+
+
+      const subject =
+        encodeURIComponent(
+          "Quotation Request - Laserworks Ideas"
+        );
+
+
+      const body =
+        encodeURIComponent(
+`Hello Laserworks Ideas,
+
+I would like to request a quotation.
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+Request:
+${message}
+
+Thank you.`
+        );
+
+
+      window.location.href =
+        `mailto:Laserworksideas@gmail.com?subject=${subject}&body=${body}`;
+
+    }
+
+
+    /* CLOSE LIGHTBOX WITH ESCAPE */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (event.key === "Escape") {
+          closeLightbox();
+        }
+
+        if (event.key === "ArrowLeft") {
+          previousImage();
+        }
+
+        if (event.key === "ArrowRight") {
+          nextImage();
+        }
+
+      }
+    );
+
+
+    /* CLOSE DROPDOWNS WHEN CLICKING OUTSIDE */
+
+    document.addEventListener(
+      "click",
+      function(event) {
+
+        if (
+          !event.target.closest(".nav-dropdown")
+        ) {
+
+          document
+            .querySelectorAll(".dropdown-menu")
+            .forEach(menu => {
+              menu.classList.remove("show");
+            });
+
+        }
+
+      }
+    );
+
+
+    /* INITIAL PRODUCTS */
+
+    if (
+      typeof products !== "undefined" &&
+      products.length
+    ) {
+
+      showProducts(products[0].category);
+
+    }
+
+  </script>
+
+</body>
+</html>
 ```

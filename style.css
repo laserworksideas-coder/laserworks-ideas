@@ -222,6 +222,7 @@ a {
 
 .gallery-section {
   overflow: hidden;
+  background: #eeeeee;
 }
 
 .gallery-slider {

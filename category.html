@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +19,7 @@
       <span class="contact-title">CONTACT US</span>
       <a href="mailto:Laserworksideas@gmail.com">EMAIL</a>
       <a href="viber://chat?number=%2B35799303580">VIBER</a>
-      <a href="https://wa.me/35799303580" target="_blank">WHATSUP</a>
+      <a href="https://wa.me/35799303580" target="_blank">WHATSAPP</a>
     </div>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
@@ -34,6 +33,7 @@
     <a href="index.html#categories">CATEGORIES</a>
     <a href="index.html#gallery">GALLERY</a>
     <a href="index.html#about">ABOUT US</a>
+    <a href="index.html#ask-price">ASK FOR A PRICE</a>
     <a href="index.html#contact">CONTACT</a>
   </nav>
 
@@ -49,7 +49,16 @@
       <p id="categoryDescription"></p>
     </div>
 
+
+    <!-- SUBCATEGORIES -->
+
+    <div id="subcategoryGrid" class="subcategory-grid"></div>
+
+
+    <!-- PRODUCTS -->
+
     <div id="productGrid" class="product-grid"></div>
+
 
     <div class="back-home">
       <a href="index.html#categories" class="red-button">
@@ -71,7 +80,9 @@
 
 <script>
 
-/* MOBILE MENU */
+/* =========================
+   MOBILE MENU
+========================= */
 
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
@@ -87,125 +98,255 @@ document.querySelectorAll(".main-nav a").forEach(link => {
 });
 
 
-/* CATEGORY */
+/* =========================
+   URL PARAMETERS
+========================= */
 
 const params = new URLSearchParams(window.location.search);
+
 const category = params.get("category");
+const selectedSubcategory = params.get("subcategory");
+
+
+/* =========================
+   ELEMENTS
+========================= */
 
 const title = document.getElementById("categoryTitle");
 const description = document.getElementById("categoryDescription");
-const grid = document.getElementById("productGrid");
 
+const subcategoryGrid =
+  document.getElementById("subcategoryGrid");
+
+const productGrid =
+  document.getElementById("productGrid");
+
+
+/* =========================
+   CATEGORY NAMES
+========================= */
 
 const categoryNames = {
+
   "CHRISTENING": "CHRISTENING",
-  "WEDDING": "WEDDINGS",
-  "BIRTHDAY": "BIRTHDAYS",
-  "CORPORATE GIFTS": "CORPORATE",
-  "SCHOOLS": "SCHOOLS",
-  "SEASONAL ITEMS": "SEASONAL",
+
+  "WEDDING": "WEDDING",
+
+  "BIRTHDAY": "BIRTHDAY",
+
+  "EDUCATIONAL": "EDUCATIONAL",
+
+  "SEASONAL": "SEASONAL",
+
+  "CORPORATE": "CORPORATE",
+
   "PERSONALISED GIFTS": "PERSONALISED GIFTS",
-  "INVITATIONS": "INVITATIONS"
+
+  "ENGRAVING MUGS": "ENGRAVING MUGS",
+
+  "FOAMBOARDS": "FOAMBOARDS",
+
+  "INVITATIONS": "INVITATIONS",
+
+  "CLOTHING": "CLOTHING",
+
+  "BALLOONS AND CANDY CAKES": "BALLOONS AND CANDY CAKES"
+
 };
 
+
+/* =========================
+   DESCRIPTIONS
+========================= */
 
 const descriptions = {
-  "CHRISTENING": "Personalised details and decorations for your special christening.",
-  "WEDDING": "Custom laser cut and engraved details for weddings and celebrations.",
-  "BIRTHDAY": "Personalised decorations, cake toppers and details for birthdays.",
-  "CORPORATE GIFTS": "Custom corporate gifts and personalised business details.",
-  "SCHOOLS": "Creative personalised products for schools and educational events.",
-  "SEASONAL ITEMS": "Creative products for seasonal celebrations and special occasions.",
-  "PERSONALISED GIFTS": "Unique personalised gifts created especially for you.",
-  "INVITATIONS": "Custom invitations designed for your special event."
+
+  "CHRISTENING":
+    "Personalised details and decorations for your special christening.",
+
+  "WEDDING":
+    "Custom laser cut and engraved details for weddings and celebrations.",
+
+  "BIRTHDAY":
+    "Personalised decorations and creations for birthdays.",
+
+  "EDUCATIONAL":
+    "Creative personalised products for schools and educational occasions.",
+
+  "SEASONAL":
+    "Creative personalised products for every special season.",
+
+  "CORPORATE":
+    "Custom corporate gifts and personalised products for businesses.",
+
+  "PERSONALISED GIFTS":
+    "Unique personalised gifts created especially for you.",
+
+  "ENGRAVING MUGS":
+    "Personalised engraved mugs for every occasion.",
+
+  "FOAMBOARDS":
+    "Custom printed and personalised foamboards.",
+
+  "INVITATIONS":
+    "Custom invitations designed for your special event.",
+
+  "CLOTHING":
+    "Personalised clothing printing and custom designs.",
+
+  "BALLOONS AND CANDY CAKES":
+    "Personalised balloons and creative candy cakes for special occasions."
+
 };
 
 
+/* =========================
+   SET TITLE
+========================= */
+
 title.textContent =
-  categoryNames[category] || category || "OUR PRODUCTS";
+  categoryNames[category] ||
+  category ||
+  "OUR PRODUCTS";
+
 
 description.textContent =
   descriptions[category] ||
-  "Explore our personalised laser cut and engraved creations.";
+  "Explore our personalised creations.";
 
 
-/*
-  FILTER PRODUCTS
-*/
+/* =========================
+   SUBCATEGORY DATA
+========================= */
 
-let filteredProducts = [];
+const categorySubcategories = {
+
+  "EDUCATIONAL": [
+    "BACK TO SCHOOL",
+    "END OF SCHOOL",
+    "SEASONAL"
+  ],
+
+  "SEASONAL": [
+    "CHRISTMAS",
+    "EASTER",
+    "VALENTINE'S",
+    "MOTHER'S DAY",
+    "FATHER'S DAY"
+  ],
+
+  "PERSONALISED GIFTS": [
+    "TEACHERS",
+    "SCHOOLS",
+    "OTHERS"
+  ]
+
+};
 
 
-/* BIRTHDAYS */
+/* =========================
+   SHOW SUBCATEGORIES
+========================= */
 
-if (category === "BIRTHDAY") {
+const availableSubcategories =
+  categorySubcategories[category] || [];
 
-  filteredProducts = products.filter(product => {
 
-    const text = (
-      (product.name || "") + " " +
-      (product.description || "") + " " +
-      (product.subcategory || "") + " " +
-      (product.category || "")
-    ).toLowerCase();
+if (
+  availableSubcategories.length > 0 &&
+  !selectedSubcategory
+) {
 
-    return (
-      text.includes("cake") ||
-      text.includes("birthday") ||
-      text.includes("topper")
-    );
+  subcategoryGrid.innerHTML = "";
+
+  availableSubcategories.forEach(subcategory => {
+
+    const card = document.createElement("a");
+
+    card.className = "subcategory-card";
+
+    card.href =
+      "category.html?category=" +
+      encodeURIComponent(category) +
+      "&subcategory=" +
+      encodeURIComponent(subcategory);
+
+    card.innerHTML = `
+      <div class="subcategory-title">
+        ${subcategory}
+      </div>
+    `;
+
+    subcategoryGrid.appendChild(card);
 
   });
 
 }
 
 
-/* SCHOOLS */
+/* =========================
+   FILTER PRODUCTS
+========================= */
 
-else if (category === "SCHOOLS") {
+let filteredProducts = products.filter(product => {
 
-  filteredProducts = products.filter(product => {
+  const productCategory =
+    String(product.category || "")
+      .trim()
+      .toUpperCase();
 
-    const text = (
-      (product.name || "") + " " +
-      (product.description || "") + " " +
-      (product.subcategory || "") + " " +
-      (product.category || "")
-    ).toLowerCase();
+  const currentCategory =
+    String(category || "")
+      .trim()
+      .toUpperCase();
 
-    return (
-      text.includes("school") ||
-      text.includes("pencil") ||
-      text.includes("educational") ||
-      text.includes("bookmark")
-    );
+  return productCategory === currentCategory;
 
-  });
+});
+
+
+/* =========================
+   SUBCATEGORY FILTER
+========================= */
+
+if (selectedSubcategory) {
+
+  filteredProducts =
+    filteredProducts.filter(product => {
+
+      return String(product.subcategory || "")
+        .trim()
+        .toUpperCase() ===
+        String(selectedSubcategory || "")
+        .trim()
+        .toUpperCase();
+
+    });
 
 }
 
 
-/* ALL OTHER CATEGORIES */
+/* =========================
+   SHOW SELECTED SUBCATEGORY
+========================= */
 
-else {
+if (selectedSubcategory) {
 
-  filteredProducts = products.filter(product => {
+  title.textContent = selectedSubcategory;
 
-    return String(product.category || "").trim().toUpperCase() ===
-           String(category || "").trim().toUpperCase();
-
-  });
+  description.textContent =
+    "Explore our personalised creations.";
 
 }
 
 
-/*
-  DISPLAY PRODUCTS
-*/
+/* =========================
+   DISPLAY PRODUCTS
+========================= */
 
 if (filteredProducts.length === 0) {
 
-  grid.innerHTML = `
+  productGrid.innerHTML = `
     <div class="no-products">
       <p>More products coming soon.</p>
     </div>
@@ -215,17 +356,38 @@ if (filteredProducts.length === 0) {
 
   filteredProducts.forEach(product => {
 
-    const card = document.createElement("div");
+    const card =
+      document.createElement("div");
 
     card.className = "product-card";
 
+
+    /* PRODUCT IMAGES */
+
+    let imageHTML = "";
+
+    if (
+      product.images &&
+      product.images.length > 0
+    ) {
+
+      imageHTML = `
+        <div class="product-images">
+          ${product.images.map(image => `
+            <img
+              src="${image}"
+              alt="${product.name || "Laserworks Ideas"}"
+            >
+          `).join("")}
+        </div>
+      `;
+
+    }
+
+
     card.innerHTML = `
 
-      ${
-        product.image
-          ? `<img src="${product.image}" alt="${product.name || ""}">`
-          : ""
-      }
+      ${imageHTML}
 
       <div class="product-info">
 
@@ -241,17 +403,15 @@ if (filteredProducts.length === 0) {
             : ""
         }
 
-        ${
-          product.price
-            ? `<span class="product-price">${product.price}</span>`
-            : ""
-        }
+        <span class="product-price">
+          ASK FOR QUOTATION
+        </span>
 
       </div>
 
     `;
 
-    grid.appendChild(card);
+    productGrid.appendChild(card);
 
   });
 
@@ -261,4 +421,3 @@ if (filteredProducts.length === 0) {
 
 </body>
 </html>
-```

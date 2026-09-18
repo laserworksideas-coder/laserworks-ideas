@@ -8,9 +8,10 @@ html {
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #111;
   background: #fff;
+  font-weight: 300;
 }
 
 a {
@@ -45,7 +46,7 @@ a {
   text-align: right;
   font-size: 13px;
   line-height: 1.8;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 
@@ -64,7 +65,7 @@ a {
   color: #fff;
   padding: 17px 22px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.5px;
   transition: 0.2s;
 }
@@ -89,9 +90,9 @@ a {
 .hero h1 {
   margin: 0;
   color: #fff;
-  font-size: 42px;
+  font-size: 40px;
   line-height: 1.25;
-  font-weight: 800;
+  font-weight: 400;
   letter-spacing: 1px;
 }
 
@@ -105,8 +106,8 @@ section {
 section h2 {
   margin: 0 0 35px;
   text-align: center;
-  font-size: 32px;
-  font-weight: 800;
+  font-size: 30px;
+  font-weight: 400;
 }
 
 
@@ -133,8 +134,8 @@ section h2 {
   padding: 20px;
   background: #000;
   color: #fff;
-  font-size: 16px;
-  font-weight: 800;
+  font-size: 15px;
+  font-weight: 400;
   letter-spacing: 0.5px;
   transition: 0.2s;
 }
@@ -159,8 +160,8 @@ section h2 {
 .category-header h1 {
   margin: 0;
   text-align: center;
-  font-size: 42px;
-  font-weight: 800;
+  font-size: 38px;
+  font-weight: 400;
   letter-spacing: 1px;
 }
 
@@ -185,7 +186,7 @@ section h2 {
 .category-photo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -214,6 +215,7 @@ section h2 {
   margin-bottom: 11px;
   font-size: 17px;
   line-height: 1.5;
+  font-weight: 300;
 }
 
 
@@ -230,8 +232,8 @@ section h2 {
   padding: 16px 32px;
   background: #d71920;
   color: #fff;
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 12px;
+  font-weight: 500;
   letter-spacing: 0.5px;
   transition: 0.2s;
 }
@@ -267,8 +269,8 @@ section h2 {
   background: #000;
   color: #fff;
   padding: 13px 25px;
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .view-gallery-button:hover {
@@ -286,9 +288,9 @@ section h2 {
 
 .gallery-page h1 {
   text-align: center;
-  font-size: 38px;
+  font-size: 36px;
   margin: 0 0 45px;
-  font-weight: 800;
+  font-weight: 400;
 }
 
 
@@ -307,8 +309,8 @@ section h2 {
   background: #000;
   color: #fff;
   text-align: left;
-  font-size: 22px;
-  font-weight: 800;
+  font-size: 21px;
+  font-weight: 400;
   letter-spacing: 0.5px;
 }
 
@@ -329,7 +331,7 @@ section h2 {
 .full-gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -350,15 +352,15 @@ section h2 {
 }
 
 .about-content h3 {
-  font-size: 20px;
+  font-size: 19px;
   margin-bottom: 25px;
-  font-weight: 800;
+  font-weight: 500;
 }
 
 .about-content p {
   font-size: 16px;
   line-height: 1.8;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 
@@ -382,8 +384,8 @@ section h2 {
 
 #quotationForm label {
   margin-top: 12px;
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 11px;
+  font-weight: 500;
   letter-spacing: 0.5px;
 }
 
@@ -396,6 +398,7 @@ section h2 {
   background: #fff;
   font-family: inherit;
   font-size: 14px;
+  font-weight: 300;
 }
 
 #quotationForm textarea {
@@ -409,8 +412,8 @@ section h2 {
   border: none;
   background: #000;
   color: #fff;
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 13px;
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -429,6 +432,7 @@ section h2 {
 .contact-section p {
   line-height: 1.8;
   margin: 25px 0;
+  font-weight: 300;
 }
 
 
@@ -439,7 +443,8 @@ section h2 {
   color: #fff;
   text-align: center;
   padding: 25px 20px;
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 300;
 }
 
 

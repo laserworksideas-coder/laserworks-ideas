@@ -114,10 +114,25 @@ document.getElementById("categoryTitle").textContent = category || "CATEGORY";
 const offers = subcategories[category] || [];
 const offerList = document.getElementById("offerList");
 offers.forEach(item => { const li = document.createElement("li"); li.textContent = item; offerList.appendChild(li); });
-const categoryIndex = categories.indexOf(category); const start = Math.max(0, categoryIndex * 3);
+const categoryIndex = categories.indexOf(category);
+const allPhotos = [
+  "product-1.jpg","product-2.jpg","product-3.jpg","product-4.jpg","product-5.jpg",
+  "product-6.jpg","product-7.jpg","product-8.jpg","product-9.jpg","product-10.jpg",
+  "product-11.jpg","product-12.jpg","product-13.jpg","product-14.jpg","product-15.jpg",
+  "product-16.jpg","product-17.jpg","product-18.jpg","product-19.jpg","product-20.jpg",
+  "product-21.jpg","product-22.jpg","product-23.jpg","product-24.jpg","product-25.jpg",
+  "product-26.jpg","product-27.jpg","product-28.jpg","product-29.jpg","product-30.jpg",
+  "product-31.jpg","product-32.jpg","product-33.jpg","product-34.jpg","product-35.jpg",
+  "product-37.jpg","product-38.jpg","product-39.jpg","product-40.jpg","product-41.jpg"
+];
+const start = Math.max(0, categoryIndex * 3);
 document.querySelectorAll(".category-photo img").forEach((photo, index) => {
-  if (categoryIndex >= 0 && start + index < 40) { photo.src = "product-" + (start + index + 1) + ".jpg"; photo.alt = category; }
-  else { photo.parentElement.style.display = "none"; }
+  if (categoryIndex >= 0 && start + index < allPhotos.length) {
+    photo.src = allPhotos[start + index];
+    photo.alt = category;
+  } else {
+    photo.parentElement.style.display = "none";
+  }
 });
 </script>
 

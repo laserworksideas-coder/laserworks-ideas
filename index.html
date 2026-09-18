@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260918d">
+  <link rel="stylesheet" href="style.css?v=20260918h">
 
 </head>
 
@@ -349,7 +349,7 @@ function maxSliderIndex() {
 function showSlide(index) {
   sliderIndex = Math.max(0, Math.min(index, maxSliderIndex()));
   const count = visibleSlides();
-  sliderTrack.style.transform = "translateX(-" + (sliderIndex * (100 / count)) + "%)";
+  sliderTrack.style.transform = "translateX(-" + (sliderIndex * (100 / sliderPhotos.length)) + "%)";
 }
 
 document.querySelector(".home-slider-arrow.prev").addEventListener("click", () => showSlide(sliderIndex - 1));

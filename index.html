@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260918">
+  <link rel="stylesheet" href="style.css?v=20260918b">
 
 </head>
 
@@ -96,22 +96,24 @@
 
 
 
-<!-- ================= GALLERY PREVIEW ================= -->
+<!-- ================= GALLERY SLIDER ================= -->
 
-<section class="gallery-section">
+<section class="home-slider-section">
 
   <div class="section-title">
-
-    <h2>GALLERY</h2>
-
-    <a href="gallery.html" class="view-gallery-button">
-      VIEW ALL
-    </a>
-
+    <h2>OUR WORK</h2>
+    <a href="gallery.html" class="view-gallery-button">VIEW ALL</a>
   </div>
 
-</section>
+  <div class="home-slider">
+    <button class="home-slider-arrow prev" type="button" aria-label="Previous">&#10094;</button>
+    <div class="home-slider-track" id="homeSliderTrack"></div>
+    <button class="home-slider-arrow next" type="button" aria-label="Next">&#10095;</button>
+  </div>
 
+  <div class="slider-controls" id="sliderDots"></div>
+
+</section>
 
 
 <!-- ================= ABOUT US ================= -->
@@ -311,6 +313,15 @@
 
 
 
+<div class="map-container">
+    <iframe
+      src="https://www.google.com/maps?q=33A%20Despoinas%20Pattichi%2C%20Limassol%203071%2C%20Cyprus&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Laserworks Ideas location map">
+    </iframe>
+  </div>
+
 <!-- ================= FOOTER ================= -->
 
 <footer class="site-footer">
@@ -327,6 +338,46 @@
 
 
 <script>
+
+
+/* ================= HOME SLIDER ================= */
+const sliderPhotos = [
+  "product-1.jpg","product-2.jpg","product-3.jpg","product-4.jpg",
+  "product-5.jpg","product-6.jpg","product-7.jpg","product-8.jpg"
+];
+const sliderTrack = document.getElementById("homeSliderTrack");
+const sliderDots = document.getElementById("sliderDots");
+let sliderIndex = 0;
+
+sliderPhotos.forEach((photo, i) => {
+  const slide = document.createElement("div");
+  slide.className = "home-slide";
+  const img = document.createElement("img");
+  img.src = photo;
+  img.alt = "Laserworks Ideas";
+  img.loading = i === 0 ? "eager" : "lazy";
+  slide.appendChild(img);
+  sliderTrack.appendChild(slide);
+
+  const dot = document.createElement("button");
+  dot.className = "slider-dot" + (i === 0 ? " active" : "");
+  dot.type = "button";
+  dot.setAttribute("aria-label", "View photo " + (i + 1));
+  dot.addEventListener("click", () => showSlide(i));
+  sliderDots.appendChild(dot);
+});
+
+function showSlide(index) {
+  sliderIndex = (index + sliderPhotos.length) % sliderPhotos.length;
+  sliderTrack.style.transform = "translateX(-" + (sliderIndex * 100) + "%)";
+  document.querySelectorAll(".slider-dot").forEach((dot, i) => {
+    dot.classList.toggle("active", i === sliderIndex);
+  });
+}
+document.querySelector(".home-slider-arrow.prev").addEventListener("click", () => showSlide(sliderIndex - 1));
+document.querySelector(".home-slider-arrow.next").addEventListener("click", () => showSlide(sliderIndex + 1));
+
+setInterval(() => showSlide(sliderIndex + 1), 4500);
 
 /* ================= CATEGORIES ================= */
 

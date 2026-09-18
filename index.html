@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260918i">
+<link rel="stylesheet" href="style.css?v=20260918k">
 </head>
 <body>
 <header class="site-header">
@@ -34,7 +34,7 @@
 <section class="hero"><div class="hero-content"><h1>LASER CUTTING - LASER ENGRAVING<br>DESIGN - PERSONALISED GIFTS</h1></div></section>
 
 <section id="categories" class="categories-section">
-  <h2>CATEGORIES</h2>
+  <h2>CATEGORIES<span class="red-dot">.</span></h2>
   <div id="categoryGrid" class="category-grid"></div>
 </section>
 
@@ -117,8 +117,8 @@ function showSlide(index){
   else sliderIndex=index;
   const slide=sliderTrack.querySelector(".home-slide");
   if(!slide)return;
-  const step=slide.getBoundingClientRect().width;
-  sliderTrack.style.transform="translateX(-"+(sliderIndex*step)+"px)";
+  const step=sliderTrack.parentElement.getBoundingClientRect().width / visibleSlides();
+  sliderTrack.style.transform="translate3d(-"+(sliderIndex*step)+"px,0,0)";
 }
 
 document.querySelector(".home-slider-arrow.prev").addEventListener("click",()=>showSlide(sliderIndex-1));

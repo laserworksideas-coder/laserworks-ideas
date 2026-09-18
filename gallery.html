@@ -1,243 +1,216 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
   <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
->
-
-  <title>
-    Gallery | Laserworks Ideas
-  </title>
+  <title>Gallery | Laserworks Ideas</title>
 
   <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
+
+
+<!-- ================= HEADER ================= -->
 
 <header class="site-header">
 
   <div class="header-top">
 
-```
-<a
-  href="index.html"
-  class="logo"
->
-  LASERWORKS IDEAS
-</a>
+    <div class="logo-area">
+
+      <a href="index.html">
+
+        <img src="logo.png" alt="Laserworks Ideas">
+
+      </a>
+
+    </div>
 
 
-<div class="contact-top">
+    <div class="contact-top">
 
-  <span class="contact-title">
-    CONTACT US
-  </span>
+      <div>Laserworksideas@gmail.com</div>
 
-  <a href="mailto:Laserworksideas@gmail.com">
-    EMAIL
-  </a>
+      <div>WhatsApp / Viber: +357 99 303580</div>
 
-  <a href="viber://chat?number=%2B35799303580">
-    VIBER
-  </a>
-
-  <a
-    href="https://wa.me/35799303580"
-    target="_blank"
-  >
-    WHATSAPP
-  </a>
-
-</div>
-
-
-<button
-  class="menu-toggle"
-  id="menuToggle"
-  aria-label="Open menu"
->
-  ☰
-</button>
-```
+    </div>
 
   </div>
 
-  <nav
-    class="main-nav"
-    id="mainNav"
-  >
 
-```
-<a href="index.html">
-  HOME
-</a>
+  <nav class="main-menu">
 
-<a href="index.html#categories">
-  CATEGORIES
-</a>
+    <a href="index.html">HOME</a>
 
-<a href="gallery.html">
-  GALLERY
-</a>
+    <a href="index.html#categories">CATEGORIES</a>
 
-<a href="index.html#about">
-  ABOUT US
-</a>
+    <a href="gallery.html">GALLERY</a>
 
-<a href="index.html#ask-price">
-  ASK FOR A PRICE
-</a>
+    <a href="index.html#about">ABOUT US</a>
 
-<a href="index.html#contact">
-  CONTACT
-</a>
-```
+    <a href="index.html#ask-price">ASK FOR A PRICE</a>
+
+    <a href="index.html#contact">CONTACT</a>
 
   </nav>
 
 </header>
 
-<main>
-
-  <section class="gallery-page">
-
-```
-<div class="section-heading">
-
-  <h1>
-    GALLERY
-  </h1>
-
-  <p>
-    A selection of our work.
-  </p>
-
-</div>
 
 
-<div
-  class="full-gallery"
-  id="fullGallery"
-></div>
-```
+<!-- ================= GALLERY ================= -->
+
+<main class="gallery-page">
+
+
+  <section class="gallery-intro">
+
+    <h1>GALLERY</h1>
+
+    <p>
+      A selection of our work.
+    </p>
 
   </section>
 
+
+
+  <div id="galleryCategories"></div>
+
+
 </main>
 
-<footer>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="site-footer">
 
   <p>
-    © 2026 LASERWORKS IDEAS — LIMASSOL, CYPRUS
+    © 2026 Laserworks Ideas. All rights reserved.
   </p>
 
 </footer>
 
+
+
+<script src="products.js"></script>
+
+
 <script>
 
-/* MOBILE MENU */
 
-const menuToggle =
-  document.getElementById("menuToggle");
-
-const mainNav =
-  document.getElementById("mainNav");
+const galleryCategories =
+  document.getElementById("galleryCategories");
 
 
-menuToggle.addEventListener(
-  "click",
-  function () {
+/*
+=========================================================
+GALLERY PHOTOS
 
-    mainNav.classList.toggle(
-      "mobile-open"
-    );
+Add your real photos here later.
 
-  }
-);
+Example:
 
-
-document
-  .querySelectorAll(".main-nav a")
-  .forEach(link => {
-
-    link.addEventListener(
-      "click",
-      function () {
-
-        mainNav.classList.remove(
-          "mobile-open"
-        );
-
-      }
-    );
-
-  });
-
-
-
-/* FULL GALLERY */
-
-const fullGallery =
-  document.getElementById("fullGallery");
-
-
-const galleryImages = [
-
+"CHRISTENING": [
   "product-1.jpg",
-  "product-2.jpg",
-  "product-3.jpg",
-  "product-4.jpg",
-  "product-5.jpg",
-  "product-6.jpg",
-  "product-7.jpg",
-  "product-8.jpg",
-  "product-9.jpg",
-  "product-10.jpg",
-  "product-11.jpg",
-  "product-12.jpg",
-  "product-13.jpg",
-  "product-14.jpg",
-  "product-15.jpg",
-  "product-16.jpg",
-  "product-17.jpg",
-  "product-18.jpg",
-  "product-19.jpg",
-  "product-20.jpg",
-  "product-21.jpg",
-  "product-22.jpg",
-  "product-23.jpg",
-  "product-24.jpg",
-  "product-25.jpg",
-  "product-26.jpg",
-  "product-27.jpg",
-  "product-28.jpg",
-  "product-29.jpg",
-  "product-30.jpg",
-  "product-31.jpg",
-  "product-32.jpg",
-  "product-33.jpg",
-  "product-34.jpg",
-  "product-35.jpg",
-  "product-36.jpg",
-  "product-37.jpg",
-  "product-38.jpg",
-  "product-39.jpg",
-  "product-40.jpg",
-  "product-41.jpg"
+  "product-2.jpg"
+]
 
-];
+For now all categories are empty.
+=========================================================
+*/
 
 
-galleryImages.forEach(
-  function (image) {
+const galleryImages = {
+
+
+  "CHRISTENING": [],
+
+
+  "WEDDING": [],
+
+
+  "SEASONAL": [],
+
+
+  "BIRTHDAY & PARTIES": [],
+
+
+  "PERSONALISED GIFTS": [],
+
+
+  "SCHOOL & TEACHER GIFTS": [],
+
+
+  "CORPORATE GIFTS": [],
+
+
+  "LASER ENGRAVING": [],
+
+
+  "INVITATIONS": [],
+
+
+  "DESIGN": [],
+
+
+  "BALLOONS & CANDY CAKES": [],
+
+
+  "CLOTHING & TOWELS": []
+
+};
+
+
+
+/*
+=========================================================
+CREATE GALLERY
+=========================================================
+*/
+
+
+categories.forEach(category => {
+
+
+  const section =
+    document.createElement("section");
+
+  section.className =
+    "gallery-category";
+
+
+  const title =
+    document.createElement("h2");
+
+  title.textContent =
+    category;
+
+
+  section.appendChild(title);
+
+
+  const grid =
+    document.createElement("div");
+
+  grid.className =
+    "full-gallery";
+
+
+  const photos =
+    galleryImages[category] || [];
+
+
+  photos.forEach(image => {
+
 
     const item =
       document.createElement("div");
@@ -253,19 +226,29 @@ galleryImages.forEach(
       image;
 
     img.alt =
-      "Laserworks Ideas";
+      category;
 
 
     item.appendChild(img);
 
-    fullGallery.appendChild(item);
+    grid.appendChild(item);
 
-  }
-);
+
+  });
+
+
+  section.appendChild(grid);
+
+
+  galleryCategories.appendChild(section);
+
+
+});
+
 
 </script>
+
 
 </body>
 
 </html>
-

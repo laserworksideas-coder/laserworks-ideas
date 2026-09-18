@@ -107,11 +107,11 @@
 
   <div class="home-slider">
     <button class="home-slider-arrow prev" type="button" aria-label="Previous">&#10094;</button>
-    <div class="home-slider-track" id="homeSliderTrack"></div>
+    <div class="home-slider-window">
+      <div class="home-slider-track" id="homeSliderTrack"></div>
+    </div>
     <button class="home-slider-arrow next" type="button" aria-label="Next">&#10095;</button>
   </div>
-
-  <div class="slider-controls" id="sliderDots"></div>
 
 </section>
 
@@ -323,7 +323,6 @@ const sliderPhotos = [
   "product-5.jpg","product-6.jpg","product-7.jpg","product-8.jpg"
 ];
 const sliderTrack = document.getElementById("homeSliderTrack");
-const sliderDots = document.getElementById("sliderDots");
 let sliderIndex = 0;
 
 sliderPhotos.forEach((photo, i) => {
@@ -332,29 +331,33 @@ sliderPhotos.forEach((photo, i) => {
   const img = document.createElement("img");
   img.src = photo;
   img.alt = "Laserworks Ideas";
-  img.loading = i === 0 ? "eager" : "lazy";
+  img.loading = i < 3 ? "eager" : "lazy";
   slide.appendChild(img);
   sliderTrack.appendChild(slide);
-
-  const dot = document.createElement("button");
-  dot.className = "slider-dot" + (i === 0 ? " active" : "");
-  dot.type = "button";
-  dot.setAttribute("aria-label", "View photo " + (i + 1));
-  dot.addEventListener("click", () => showSlide(i));
-  sliderDots.appendChild(dot);
 });
 
-function showSlide(index) {
-  sliderIndex = (index + sliderPhotos.length) % sliderPhotos.length;
-  sliderTrack.style.transform = "translateX(-" + (sliderIndex * 100) + "%)";
-  document.querySelectorAll(".slider-dot").forEach((dot, i) => {
-    dot.classList.toggle("active", i === sliderIndex);
-  });
+function visibleSlides() {
+  return window.innerWidth <= 800 ? 2 : 3;
 }
+
+function maxSliderIndex() {
+  return Math.max(0, sliderPhotos.length - visibleSlides());
+}
+
+function showSlide(index) {
+  sliderIndex = Math.max(0, Math.min(index, maxSliderIndex()));
+  const count = visibleSlides();
+  sliderTrack.style.transform = "translateX(-" + (sliderIndex * (100 / count)) + "%)";
+}
+
 document.querySelector(".home-slider-arrow.prev").addEventListener("click", () => showSlide(sliderIndex - 1));
 document.querySelector(".home-slider-arrow.next").addEventListener("click", () => showSlide(sliderIndex + 1));
 
-setInterval(() => showSlide(sliderIndex + 1), 4500);
+setInterval(() => {
+  showSlide(sliderIndex >= maxSliderIndex() ? 0 : sliderIndex + 1);
+}, 4500);
+
+window.addEventListener("resize", () => showSlide(Math.min(sliderIndex, maxSliderIndex())));
 
 /* ================= CATEGORIES ================= */
 

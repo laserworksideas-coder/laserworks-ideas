@@ -6,6 +6,9 @@
 
   <title>Laserworks Ideas</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -24,6 +27,7 @@
     <div class="contact-top">
       <div>Laserworksideas@gmail.com</div>
       <div>WhatsApp / Viber: +357 99 303580</div>
+      <a class="header-message-button" href="mailto:Laserworksideas@gmail.com?subject=Laserworks%20Ideas%20-%20Message">SEND A MESSAGE</a>
     </div>
 
   </div>
@@ -104,64 +108,17 @@
 <script src="products.js"></script>
 
 <script>
-
 const params = new URLSearchParams(window.location.search);
-
 const category = params.get("category");
-
-const title = document.getElementById("categoryTitle");
-
-const offerList = document.getElementById("offerList");
-
-
-/* CATEGORY TITLE */
-
-title.textContent = category || "CATEGORY";
-
-
-/* WHAT WE OFFER */
-
+document.getElementById("categoryTitle").textContent = category || "CATEGORY";
 const offers = subcategories[category] || [];
-
-
-offers.forEach(item => {
-
-  const li = document.createElement("li");
-
-  li.textContent = item;
-
-  offerList.appendChild(li);
-
+const offerList = document.getElementById("offerList");
+offers.forEach(item => { const li = document.createElement("li"); li.textContent = item; offerList.appendChild(li); });
+const categoryIndex = categories.indexOf(category); const start = Math.max(0, categoryIndex * 3);
+document.querySelectorAll(".category-photo img").forEach((photo, index) => {
+  if (categoryIndex >= 0 && start + index < 40) { photo.src = "product-" + (start + index + 1) + ".jpg"; photo.alt = category; }
+  else { photo.parentElement.style.display = "none"; }
 });
-
-
-/* FEATURED PHOTOS */
-
-const photos = featuredProducts[category] || [];
-
-
-const photoElements = [
-  document.getElementById("photo1"),
-  document.getElementById("photo2"),
-  document.getElementById("photo3")
-];
-
-
-photoElements.forEach((photo, index) => {
-
-  if (photos[index]) {
-
-    photo.src = photos[index];
-    photo.alt = category;
-
-  } else {
-
-    photo.parentElement.style.display = "none";
-
-  }
-
-});
-
 </script>
 
 </body>

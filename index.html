@@ -1,42 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Laserworks Ideas</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260918h">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laserworks Ideas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20260918i">
 </head>
-
-
 <body>
-
-
-<!-- ================= HEADER ================= -->
-
 <header class="site-header">
-
   <div class="header-top">
-
-    <div class="logo-area">
-
-      <a href="index.html">
-
-        <img src="LOGO.png" alt="Laserworks Ideas">
-
-      </a>
-
-    </div>
-
-
+    <div class="logo-area"><a href="index.html"><img src="LOGO.png" alt="Laserworks Ideas"></a></div>
     <div class="contact-top">
       <div class="contact-email">Laserworksideas@gmail.com</div>
       <div class="contact-actions">
@@ -44,246 +20,60 @@
         <a class="header-message-button" href="mailto:Laserworksideas@gmail.com?subject=Laserworks%20Ideas%20-%20Message">SEND A MESSAGE</a>
       </div>
     </div>
-
   </div>
-
-
   <nav class="main-menu">
-
     <a href="index.html">HOME</a>
-
     <a href="#categories">CATEGORIES</a>
-
     <a href="gallery.html">GALLERY</a>
-
     <a href="#about">ABOUT US</a>
-
     <a href="#ask-price">ASK FOR A PRICE</a>
-
     <a href="#contact">CONTACT</a>
-
   </nav>
-
 </header>
 
-
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-  <div class="hero-content">
-
-    <h1>
-      LASER CUTTING - LASER ENGRAVING
-      <br>
-      DESIGN - PERSONALISED GIFTS
-    </h1>
-
-  </div>
-
-</section>
-
-
-
-<!-- ================= CATEGORIES ================= -->
+<section class="hero"><div class="hero-content"><h1>LASER CUTTING - LASER ENGRAVING<br>DESIGN - PERSONALISED GIFTS</h1></div></section>
 
 <section id="categories" class="categories-section">
-
   <h2>CATEGORIES</h2>
-
   <div id="categoryGrid" class="category-grid"></div>
-
 </section>
 
-
-
-<!-- ================= GALLERY SLIDER ================= -->
-
 <section class="home-slider-section">
-
   <div class="section-title">
     <h2>OUR WORK<span class="red-dot">.</span></h2>
     <a href="gallery.html" class="view-gallery-button">VIEW ALL</a>
   </div>
-
   <div class="home-slider">
     <button class="home-slider-arrow prev" type="button" aria-label="Previous">&#10094;</button>
-    <div class="home-slider-window">
-      <div class="home-slider-track" id="homeSliderTrack"></div>
-    </div>
+    <div class="home-slider-window"><div class="home-slider-track" id="homeSliderTrack"></div></div>
     <button class="home-slider-arrow next" type="button" aria-label="Next">&#10095;</button>
   </div>
-
 </section>
-
-
-<!-- ================= ABOUT US ================= -->
 
 <section id="about" class="about-section">
-
   <div class="about-content">
-
     <h2>ABOUT US<span class="red-dot">.</span></h2>
-
     <h3>EST. 2013</h3>
-
-    <p>
-      Laserworks Ideas is a creative laser cutting studio in Limassol, Cyprus,
-      specialising in custom laser cut MDF, wood and acrylic products.
-      We also offer laser engraving and laser craft, creating personalised gifts,
-      names, signs, decorations and custom designs for christenings, birthdays,
-      weddings, schools and events.
-    </p>
-
-    <p>
-      Our services include personalised clothing printing, custom event
-      decorations and unique gift details such as balloons, soaps, candy
-      and cake decorations.
-    </p>
-
-    <p>
-      We also create custom corporate gifts and work with event planners
-      and businesses. We deliver throughout Cyprus.
-    </p>
-
+    <p>Laserworks Ideas is a creative laser cutting studio in Limassol, Cyprus, specialising in custom laser cut MDF, wood and acrylic products. We also offer laser engraving and laser craft, creating personalised gifts, names, signs, decorations and custom designs for christenings, birthdays, weddings, schools and events.</p>
+    <p>Our services include personalised clothing printing, custom event decorations and unique gift details such as balloons, soaps, candy and cake decorations.</p>
+    <p>We also create custom corporate gifts and work with event planners and businesses. We deliver throughout Cyprus.</p>
   </div>
-
 </section>
-
-
-
-<!-- ================= ASK FOR A PRICE ================= -->
 
 <section id="ask-price" class="ask-price-section">
-
   <h2 class="price-title">ASK FOR A PRICE</h2>
-
   <form id="quotationForm">
-
-    <label>TYPE</label>
-
-    <select id="type" required>
-
-      <option value="">Select</option>
-
-      <option>NAME</option>
-
-      <option>MONOGRAM</option>
-
-      <option>NUMBER</option>
-
-      <option>WORD</option>
-
-      <option>PHRASE</option>
-
-      <option>OTHER</option>
-
-    </select>
-
-
-    <label>TEXT</label>
-
-    <input
-      type="text"
-      id="text"
-      placeholder="Enter your text"
-    >
-
-
-    <label>SIZE</label>
-
-    <select id="size">
-
-      <option value="">Select size</option>
-
-      <option>2 cm</option>
-      <option>5 cm</option>
-      <option>10 cm</option>
-      <option>15 cm</option>
-      <option>20 cm</option>
-      <option>30 cm</option>
-      <option>40 cm</option>
-      <option>50 cm</option>
-      <option>60 cm</option>
-      <option>70 cm</option>
-      <option>80 cm</option>
-
-    </select>
-
-
-    <label>MATERIAL</label>
-
-    <select id="material">
-
-      <option value="">Select material</option>
-
-      <option>WOOD</option>
-
-      <option>MDF 3mm</option>
-
-      <option>MDF 4mm</option>
-
-      <option>MDF 6mm</option>
-
-      <option>ACRYLIC GOLD</option>
-
-      <option>ACRYLIC SILVER</option>
-
-      <option>ACRYLIC ROSE GOLD</option>
-
-      <option>ACRYLIC OTHER COLOUR</option>
-
-    </select>
-
-
-    <label>QUANTITY</label>
-
-    <input
-      type="number"
-      id="quantity"
-      min="1"
-      value="1"
-    >
-
-
-    <label>ADDITIONAL INFORMATION</label>
-
-    <textarea
-      id="additional"
-      placeholder="Anything else we should know?"
-    ></textarea>
-
-
-    <label>NAME</label>
-
-    <input
-      type="text"
-      id="customerName"
-      required
-    >
-
-
-    <label>EMAIL</label>
-
-    <input
-      type="email"
-      id="customerEmail"
-      required
-    >
-
-
-    <button type="submit">
-      SEND QUOTATION
-    </button>
-
+    <label>TYPE</label><select id="type" required><option value="">Select</option><option>NAME</option><option>MONOGRAM</option><option>NUMBER</option><option>WORD</option><option>PHRASE</option><option>OTHER</option></select>
+    <label>TEXT</label><input type="text" id="text" placeholder="Enter your text">
+    <label>SIZE</label><select id="size"><option value="">Select size</option><option>2 cm</option><option>5 cm</option><option>10 cm</option><option>15 cm</option><option>20 cm</option><option>30 cm</option><option>40 cm</option><option>50 cm</option><option>60 cm</option><option>70 cm</option><option>80 cm</option></select>
+    <label>MATERIAL</label><select id="material"><option value="">Select material</option><option>WOOD</option><option>MDF 3mm</option><option>MDF 4mm</option><option>MDF 6mm</option><option>ACRYLIC GOLD</option><option>ACRYLIC SILVER</option><option>ACRYLIC ROSE GOLD</option><option>ACRYLIC OTHER COLOUR</option></select>
+    <label>QUANTITY</label><input type="number" id="quantity" min="1" value="1">
+    <label>ADDITIONAL INFORMATION</label><textarea id="additional" placeholder="Anything else we should know?"></textarea>
+    <label>NAME</label><input type="text" id="customerName" required>
+    <label>EMAIL</label><input type="email" id="customerEmail" required>
+    <button type="submit">SEND QUOTATION</button>
   </form>
-
 </section>
-
-
-
-<!-- ================= CONTACT ================= -->
 
 <section id="contact" class="contact-section">
   <div class="contact-layout">
@@ -294,142 +84,70 @@
       <p><strong>WHATSAPP / VIBER</strong><br>+357 99 303580</p>
       <p><strong>PHONE</strong><br>+357 25 322025</p>
     </div>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps?q=33A%20Despoinas%20Pattichi%2C%20Limassol%203071%2C%20Cyprus&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Laserworks Ideas location map"></iframe>
-    </div>
+    <div class="map-container"><iframe src="https://www.google.com/maps?q=33A%20Despoinas%20Pattichi%2C%20Limassol%203071%2C%20Cyprus&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Laserworks Ideas location map"></iframe></div>
   </div>
 </section>
 
-
-<!-- ================= FOOTER ================= -->
-
-<footer class="site-footer">
-
-  <p>
-    © 2026 Laserworks Ideas. All rights reserved.
-  </p>
-
-</footer>
-
-
+<footer class="site-footer"><p>© 2026 Laserworks Ideas. All rights reserved.</p></footer>
 
 <script src="products.js"></script>
-
-
 <script>
+const sliderPhotos=["product-1.jpg","product-2.jpg","product-3.jpg","product-4.jpg","product-5.jpg","product-6.jpg","product-7.jpg","product-8.jpg"];
+const sliderTrack=document.getElementById("homeSliderTrack");
+let sliderIndex=0;
 
-
-/* ================= HOME SLIDER ================= */
-const sliderPhotos = [
-  "product-1.jpg","product-2.jpg","product-3.jpg","product-4.jpg",
-  "product-5.jpg","product-6.jpg","product-7.jpg","product-8.jpg"
-];
-const sliderTrack = document.getElementById("homeSliderTrack");
-let sliderIndex = 0;
-
-sliderPhotos.forEach((photo, i) => {
-  const slide = document.createElement("div");
-  slide.className = "home-slide";
-  const img = document.createElement("img");
-  img.src = photo;
-  img.alt = "Laserworks Ideas";
-  img.loading = i < 3 ? "eager" : "lazy";
+sliderPhotos.forEach((photo,i)=>{
+  const slide=document.createElement("div");
+  slide.className="home-slide";
+  const img=document.createElement("img");
+  img.src=photo;
+  img.alt="Laserworks Ideas";
+  img.loading=i<3?"eager":"lazy";
   slide.appendChild(img);
   sliderTrack.appendChild(slide);
 });
 
-function visibleSlides() {
-  return window.innerWidth <= 800 ? 2 : 3;
+function visibleSlides(){return window.innerWidth<=800?2:3;}
+function maxSliderIndex(){return Math.max(0,sliderPhotos.length-visibleSlides());}
+
+function showSlide(index){
+  const max=maxSliderIndex();
+  if(index<0) sliderIndex=max;
+  else if(index>max) sliderIndex=0;
+  else sliderIndex=index;
+  const slide=sliderTrack.querySelector(".home-slide");
+  if(!slide)return;
+  const step=slide.getBoundingClientRect().width;
+  sliderTrack.style.transform="translateX(-"+(sliderIndex*step)+"px)";
 }
 
-function maxSliderIndex() {
-  return Math.max(0, sliderPhotos.length - visibleSlides());
-}
+document.querySelector(".home-slider-arrow.prev").addEventListener("click",()=>showSlide(sliderIndex-1));
+document.querySelector(".home-slider-arrow.next").addEventListener("click",()=>showSlide(sliderIndex+1));
+setInterval(()=>showSlide(sliderIndex+1),4500);
+window.addEventListener("resize",()=>showSlide(sliderIndex));
 
-function showSlide(index) {
-  sliderIndex = Math.max(0, Math.min(index, maxSliderIndex()));
-  const count = visibleSlides();
-  sliderTrack.style.transform = "translateX(-" + (sliderIndex * (100 / sliderPhotos.length)) + "%)";
-}
-
-document.querySelector(".home-slider-arrow.prev").addEventListener("click", () => showSlide(sliderIndex - 1));
-document.querySelector(".home-slider-arrow.next").addEventListener("click", () => showSlide(sliderIndex + 1));
-
-setInterval(() => {
-  showSlide(sliderIndex >= maxSliderIndex() ? 0 : sliderIndex + 1);
-}, 4500);
-
-window.addEventListener("resize", () => showSlide(Math.min(sliderIndex, maxSliderIndex())));
-
-/* ================= CATEGORIES ================= */
-
-const categoryGrid =
-  document.getElementById("categoryGrid");
-
-
-categories.forEach(category => {
-
-  const card =
-    document.createElement("a");
-
-  card.className =
-    "category-card";
-
-  card.href =
-    "category.html?category=" +
-    encodeURIComponent(category);
-
-  card.textContent =
-    category;
-
+const categoryGrid=document.getElementById("categoryGrid");
+categories.forEach(category=>{
+  const card=document.createElement("a");
+  card.className="category-card";
+  card.href="category.html?category="+encodeURIComponent(category);
+  card.textContent=category;
   categoryGrid.appendChild(card);
-
 });
 
-
-
-/* ================= QUOTATION ================= */
-
-const quotationForm =
-  document.getElementById("quotationForm");
-
-
-quotationForm.addEventListener("submit", function(event) {
-
+const quotationForm=document.getElementById("quotationForm");
+quotationForm.addEventListener("submit",function(event){
   event.preventDefault();
-
-
-  const type =
-    document.getElementById("type").value;
-
-  const text =
-    document.getElementById("text").value;
-
-  const size =
-    document.getElementById("size").value;
-
-  const material =
-    document.getElementById("material").value;
-
-  const quantity =
-    document.getElementById("quantity").value;
-
-  const additional =
-    document.getElementById("additional").value;
-
-  const customerName =
-    document.getElementById("customerName").value;
-
-  const customerEmail =
-    document.getElementById("customerEmail").value;
-
-
-  const subject =
-    "Laserworks Ideas - Quotation Request";
-
-
-  const body =
-`TYPE: ${type}
+  const type=document.getElementById("type").value;
+  const text=document.getElementById("text").value;
+  const size=document.getElementById("size").value;
+  const material=document.getElementById("material").value;
+  const quantity=document.getElementById("quantity").value;
+  const additional=document.getElementById("additional").value;
+  const customerName=document.getElementById("customerName").value;
+  const customerEmail=document.getElementById("customerEmail").value;
+  const subject="Laserworks Ideas - Quotation Request";
+  const body=`TYPE: ${type}
 
 TEXT: ${text}
 
@@ -445,20 +163,9 @@ ${additional}
 NAME: ${customerName}
 
 EMAIL: ${customerEmail}`;
-
-
-  window.location.href =
-    "mailto:Laserworksideas@gmail.com" +
-    "?subject=" +
-    encodeURIComponent(subject) +
-    "&body=" +
-    encodeURIComponent(body);
-
+  window.location.href="mailto:Laserworksideas@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
 });
-
+showSlide(0);
 </script>
-
-
 </body>
-
 </html>

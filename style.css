@@ -1,585 +1,68 @@
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #111;
-  background: #fff;
-  font-weight: 300;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-
-/* ================= HEADER ================= */
-
-.site-header {
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-}
-
-.header-top {
-  min-height: 120px;
-  padding: 20px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.logo-area img {
-  max-width: 260px;
-  max-height: 90px;
-  object-fit: contain;
-}
-
-.contact-top {
-  text-align: right;
-  font-size: 12px;
-  line-height: 1.7;
-  font-weight: 300;
-}
-.header-message-button {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 8px 14px;
-  background: #000;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: .4px;
-}
-.header-message-button:hover { background: #d71920; }
-
-
-/* ================= MENU ================= */
-
-.main-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0;
-  background: #000;
-}
-
-.main-menu a {
-  color: #fff;
-  padding: 17px 22px;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: 0.2s;
-}
-
-.main-menu a:hover {
-  background: #d71920;
-}
-
-
-/* ================= HERO ================= */
-
-.hero {
-  min-height: 430px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: #111;
-  padding: 50px 20px;
-}
-
-.hero h1 {
-  margin: 0;
-  color: #fff;
-  font-size: 38px;
-  line-height: 1.25;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-
-
-/* ================= GENERAL SECTIONS ================= */
-
-section {
-  padding: 70px 5%;
-}
-
-section h2 {
-  margin: 0 0 35px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: 400;
-}
-
-
-/* ================= CATEGORIES ================= */
-
-.categories-section {
-  background: #fff;
-}
-
-.category-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.category-card {
-  min-height: 95px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  background: #000;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  transition: 0.2s;
-}
-
-.category-card:hover {
-  background: #d71920;
-  transform: translateY(-2px);
-}
-
-
-/* ================= CATEGORY PAGE ================= */
-
-.category-page {
-  background: #fff;
-  min-height: 70vh;
-}
-
-.category-header {
-  padding-bottom: 30px;
-}
-
-.category-header h1 {
-  margin: 0;
-  text-align: center;
-  font-size: 38px;
-  font-weight: 400;
-  letter-spacing: 1px;
-}
-
-
-/* 3 PHOTOS */
-
-.category-photos {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 10px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.category-photo {
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background: #eee;
-}
-
-.category-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-
-/* ================= WHAT WE OFFER ================= */
-
-.what-we-offer {
-  max-width: 900px;
-  margin: 0 auto;
-  padding-top: 55px;
-  padding-bottom: 40px;
-}
-
-.what-we-offer h2 {
-  text-align: left;
-  font-size: 26px;
-  margin-bottom: 20px;
-}
-
-.what-we-offer ul {
-  margin: 0;
-  padding-left: 25px;
-}
-
-.what-we-offer li {
-  margin-bottom: 11px;
-  font-size: 17px;
-  line-height: 1.5;
-  font-weight: 300;
-}
-
-
-/* ================= QUOTATION BUTTON ================= */
-
-.category-quotation {
-  text-align: center;
-  padding-top: 20px;
-  padding-bottom: 75px;
-}
-
-.quotation-button {
-  display: inline-block;
-  padding: 16px 32px;
-  background: #d71920;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: 0.2s;
-}
-
-.quotation-button:hover {
-  background: #000;
-}
-
-
-/* ================= GALLERY ================= */
-
-.gallery-section {
-  background: #eeeeee;
-  overflow: hidden;
-}
-
-.section-title {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.section-title h2 {
-  margin: 0;
-  text-align: left;
-}
-
-.view-gallery-button {
-  display: inline-block;
-  background: #000;
-  color: #fff;
-  padding: 13px 25px;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.view-gallery-button:hover {
-  background: #d71920;
-}
-
-
-/* ================= FULL GALLERY ================= */
-
-.gallery-page {
-  background: #eeeeee;
-  min-height: 70vh;
-  padding: 60px 5%;
-}
-
-.gallery-page h1 {
-  text-align: center;
-  font-size: 36px;
-  margin: 0 0 45px;
-  font-weight: 400;
-}
-
-
-/* ================= GALLERY CATEGORIES ================= */
-
-.gallery-category {
-  max-width: 1200px;
-  margin: 0 auto 60px;
-  padding: 0;
-}
-
-.gallery-category h2 {
-  display: inline-block;
-  margin: 0 0 25px;
-  padding: 12px 22px;
-  background: #000;
-  color: #fff;
-  text-align: left;
-  font-size: 21px;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-}
-
-.full-gallery {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.full-gallery-item {
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background: #ddd;
-}
-
-.full-gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-
-/* ================= ABOUT ================= */
-
-.about-section {
-  background: #fff;
-}
-
-.about-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.about-content h2 {
-  text-align: left;
-}
-
-.about-content h3 {
-  font-size: 19px;
-  margin-bottom: 25px;
-  font-weight: 500;
-}
-
-.about-content p {
-  font-size: 16px;
-  line-height: 1.8;
-  font-weight: 300;
-}
-
-
-/* ================= ASK PRICE ================= */
-
-#ask-price {
-  background: #eeeeee;
-}
-
-.ask-price-section {
-  max-width: 100%;
-}
-
-#quotationForm {
-  max-width: 700px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-#quotationForm label {
-  margin-top: 12px;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
-
-#quotationForm input,
-#quotationForm select,
-#quotationForm textarea {
-  width: 100%;
-  padding: 13px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 300;
-}
-
-#quotationForm textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-#quotationForm button {
-  margin-top: 20px;
-  padding: 16px;
-  border: none;
-  background: #000;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-#quotationForm button:hover {
-  background: #d71920;
-}
-
-
-/* ================= CONTACT ================= */
-
-.contact-section {
-  background: #fff;
-  text-align: center;
-}
-
-.contact-section p {
-  line-height: 1.8;
-  margin: 25px 0;
-  font-weight: 300;
-}
-
-
-/* ================= FOOTER ================= */
-
-.site-footer {
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding: 25px 20px;
-  font-size: 11px;
-  font-weight: 300;
-}
-
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 900px) {
-
-  .category-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .full-gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .category-photos {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .hero h1 {
-    font-size: 32px;
-  }
-
-}
-
-
-@media (max-width: 600px) {
-
-  .header-top {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .contact-top {
-    text-align: center;
-  }
-
-  .logo-area img {
-    max-width: 220px;
-  }
-
-  .main-menu a {
-    padding: 13px 10px;
-    font-size: 11px;
-  }
-
-  .hero {
-    min-height: 330px;
-  }
-
-  .hero h1 {
-    font-size: 24px;
-  }
-
-  section {
-    padding: 50px 20px;
-  }
-
-  section h2 {
-    font-size: 27px;
-  }
-
-  .category-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .category-card {
-    min-height: 80px;
-    padding: 12px 8px;
-    font-size: 13px;
-  }
-
-  .category-header h1 {
-    font-size: 30px;
-  }
-
-  .category-photos {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .what-we-offer {
-    padding-top: 40px;
-  }
-
-  .what-we-offer h2 {
-    font-size: 23px;
-  }
-
-  .what-we-offer li {
-    font-size: 15px;
-  }
-
-  .section-title {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .full-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .gallery-page {
-    padding: 45px 20px;
-  }
-
-  .gallery-page h1 {
-    font-size: 30px;
-    margin-bottom: 35px;
-  }
-
-  .gallery-category {
-    margin-bottom: 45px;
-  }
-
-  .gallery-category h2 {
-    font-size: 18px;
-    padding: 10px 15px;
-    margin-bottom: 15px;
-  }
-
-}
-
-body, input, select, textarea, button { font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; }
-.hero h1, section h2, .category-header h1, .gallery-page h1 { font-weight: 300; }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;font-weight:300;color:#171717;background:#fff}
+a{text-decoration:none;color:inherit}
+.site-header{background:#fff;border-bottom:1px solid #e5e5e5}
+.header-top{min-height:105px;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.logo-area img{max-width:230px;max-height:75px;object-fit:contain}
+.contact-top{text-align:right;font-size:11px;line-height:1.8;font-weight:300;color:#333}
+.header-message-button{display:inline-block;margin-top:7px;padding:7px 13px;background:#111;color:#fff;font-size:10px;font-weight:400;letter-spacing:1px}
+.header-message-button:hover{background:#d71920}
+.main-menu{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;background:#111}
+.main-menu a{color:#fff;padding:14px 20px;font-size:11px;font-weight:300;letter-spacing:1.2px;transition:.2s}
+.main-menu a:hover{background:#d71920}
+.hero{min-height:390px;display:flex;align-items:center;justify-content:center;text-align:center;background:#111;padding:50px 20px}
+.hero h1{margin:0;color:#fff;font-size:38px;line-height:1.35;font-weight:300;letter-spacing:2px}
+section{padding:65px 5%}
+section h2{margin:0 0 32px;text-align:center;font-size:27px;font-weight:300;letter-spacing:2px}
+.categories-section{background:#fff}
+.category-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#ddd}
+.category-card{min-height:92px;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;background:#fff;color:#111;font-size:12px;font-weight:300;letter-spacing:1.1px;transition:.2s;border:1px solid #eee}
+.category-card:hover{background:#111;color:#fff}
+.category-page{background:#fff;min-height:70vh}
+.category-header{padding-bottom:25px}
+.category-header h1{margin:0;text-align:center;font-size:34px;font-weight:300;letter-spacing:2px}
+.category-photos{max-width:1180px;margin:0 auto;padding-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.category-photo{aspect-ratio:1/1;overflow:hidden;background:#f6f6f6}
+.category-photo img{width:100%;height:100%;object-fit:contain;display:block}
+.what-we-offer{max-width:850px;margin:0 auto;padding-top:50px;padding-bottom:30px}
+.what-we-offer h2{text-align:left;font-size:22px;margin-bottom:18px}
+.what-we-offer ul{margin:0;padding-left:22px}
+.what-we-offer li{margin-bottom:9px;font-size:15px;line-height:1.55;font-weight:300}
+.category-quotation{text-align:center;padding-top:18px;padding-bottom:65px}
+.quotation-button{display:inline-block;padding:14px 28px;background:#111;color:#fff;font-size:10px;font-weight:300;letter-spacing:1.3px;transition:.2s}
+.quotation-button:hover{background:#d71920}
+.gallery-section{background:#f5f5f5}
+.section-title{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.section-title h2{margin:0;text-align:left}
+.view-gallery-button{display:inline-block;background:#111;color:#fff;padding:12px 22px;font-size:10px;font-weight:300;letter-spacing:1px}
+.view-gallery-button:hover{background:#d71920}
+.gallery-page{background:#f5f5f5;min-height:70vh;padding:58px 5% 75px}
+.gallery-intro{text-align:center;padding:0 0 38px}
+.gallery-page h1{font-size:34px;margin:0 0 10px;font-weight:300;letter-spacing:2px}
+.gallery-intro p{margin:0;font-size:13px;font-weight:300;color:#777;letter-spacing:.4px}
+.gallery-category{max-width:1180px;margin:0 auto 55px;padding:0}
+.gallery-category h2{display:block;margin:0 0 18px;padding:0 0 10px;background:transparent;color:#111;border-bottom:1px solid #ccc;text-align:left;font-size:18px;font-weight:300;letter-spacing:1.8px}
+.full-gallery{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.full-gallery-item{aspect-ratio:1/1;overflow:hidden;background:#fff}
+.full-gallery-item img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .25s}
+.full-gallery-item:hover img{transform:scale(1.025)}
+.about-section{background:#fff}
+.about-content{max-width:850px;margin:0 auto}
+.about-content h2{text-align:left}
+.about-content h3{font-size:16px;margin-bottom:22px;font-weight:300;letter-spacing:2px}
+.about-content p{font-size:15px;line-height:1.9;font-weight:300}
+#ask-price{background:#f5f5f5}
+#quotationForm{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:9px}
+#quotationForm label{margin-top:10px;font-size:10px;font-weight:400;letter-spacing:1.1px}
+#quotationForm input,#quotationForm select,#quotationForm textarea{width:100%;padding:12px;border:1px solid #d5d5d5;background:#fff;font-family:inherit;font-size:13px;font-weight:300}
+#quotationForm textarea{min-height:110px;resize:vertical}
+#quotationForm button{margin-top:18px;padding:15px;border:none;background:#111;color:#fff;font-size:11px;font-weight:300;letter-spacing:1.2px;cursor:pointer}
+#quotationForm button:hover{background:#d71920}
+.contact-section{background:#fff;text-align:center}
+.contact-section p{line-height:1.8;margin:22px 0;font-weight:300;font-size:14px}
+.map-link{display:inline-block;margin-top:6px;font-size:11px;font-weight:400;letter-spacing:1px;border-bottom:1px solid #111;padding-bottom:2px}
+.map-link:hover{color:#d71920;border-color:#d71920}
+.site-footer{background:#111;color:#fff;text-align:center;padding:22px 20px;font-size:10px;font-weight:300;letter-spacing:.5px}
+@media(max-width:900px){.category-grid{grid-template-columns:repeat(2,1fr)}.full-gallery{grid-template-columns:repeat(3,1fr)}.hero h1{font-size:32px}}
+@media(max-width:600px){.header-top{flex-direction:column;text-align:center}.contact-top{text-align:center}.logo-area img{max-width:210px}.main-menu a{padding:12px 9px;font-size:10px}.hero{min-height:300px}.hero h1{font-size:23px;letter-spacing:1px}section{padding:48px 20px}section h2{font-size:24px}.category-grid{grid-template-columns:repeat(2,1fr);gap:1px}.category-card{min-height:78px;padding:11px 7px;font-size:11px}.category-header h1{font-size:28px}.category-photos{grid-template-columns:1fr;gap:12px}.what-we-offer{padding-top:35px}.what-we-offer h2{font-size:21px}.what-we-offer li{font-size:14px}.section-title{flex-direction:column;align-items:flex-start}.full-gallery{grid-template-columns:repeat(2,1fr);gap:9px}.gallery-page{padding:42px 20px 60px}.gallery-page h1{font-size:28px}.gallery-category{margin-bottom:40px}.gallery-category h2{font-size:16px}}

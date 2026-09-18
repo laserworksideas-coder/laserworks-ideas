@@ -1,54 +1,244 @@
 const categories = [
   "CHRISTENING",
   "WEDDING",
-  "BIRTHDAY",
-  "EDUCATIONAL",
   "SEASONAL",
-  "CORPORATE",
+  "BIRTHDAY & PARTIES",
   "PERSONALISED GIFTS",
-  "ENGRAVING MUGS",
-  "FOAMBOARDS",
+  "SCHOOL & TEACHER GIFTS",
+  "CORPORATE GIFTS",
+  "HOME & DECOR",
+  "LASER ENGRAVING",
   "INVITATIONS",
-  "CLOTHING",
-  "BALLOONS AND CANDY CAKES"
+  "BALLOONS & CANDY CAKES",
+  "CLOTHING & TOWELS"
 ];
-
 
 const subcategories = {
 
-  "EDUCATIONAL": [
-    "BACK TO SCHOOL",
-    "END OF SCHOOL",
-    "SEASONAL"
+  "CHRISTENING": [
+    "HANGERS",
+    "WISH BOOKS",
+    "WISH FRAMES",
+    "BAPTISM BOXES",
+    "BAPTISM DECORATIONS",
+    "BAPTISM ACCESSORIES",
+    "CANDLES & CANDLE DECORATION",
+    "PERSONALISED CHRISTENING GIFTS"
+  ],
+
+  "WEDDING": [
+    "BRIDE & GROOM HANGERS",
+    "WEDDING SIGNS",
+    "WEDDING BOXES",
+    "WEDDING FAVOURS",
+    "WEDDING DECORATIONS",
+    "WEDDING GUEST BOOKS",
+    "WEDDING GIFTS"
   ],
 
   "SEASONAL": [
     "CHRISTMAS",
     "EASTER",
-    "VALENTINE'S",
+    "VALENTINE'S DAY",
     "MOTHER'S DAY",
-    "FATHER'S DAY"
+    "FATHER'S DAY",
+    "HALLOWEEN",
+    "OTHER SEASONAL"
+  ],
+
+  "BIRTHDAY & PARTIES": [
+    "BIRTHDAY DECORATIONS",
+    "NAME & AGE SIGNS",
+    "CAKE TOPPERS",
+    "PARTY FAVOURS",
+    "BIRTHDAY BOXES",
+    "PHOTO FRAMES",
+    "PERSONALISED BIRTHDAY GIFTS"
   ],
 
   "PERSONALISED GIFTS": [
-    "TEACHERS",
-    "SCHOOLS",
-    "OTHERS"
-  ]
+    "NAMES & MONOGRAMS",
+    "KEYCHAINS",
+    "PHOTO FRAMES",
+    "ACRYLIC FRAMES",
+    "GIFT BOXES",
+    "HOME DECOR GIFTS",
+    "OTHER PERSONALISED GIFTS"
+  ],
 
+  "SCHOOL & TEACHER GIFTS": [
+    "TEACHER GIFTS",
+    "SCHOOL GIFTS",
+    "BACK TO SCHOOL",
+    "END OF SCHOOL",
+    "CLASS GIFTS",
+    "SCHOOL EVENT GIFTS"
+  ],
+
+  "CORPORATE GIFTS": [
+    "CORPORATE BOXES",
+    "CORPORATE GIFTS",
+    "ENGRAVED PRODUCTS",
+    "COMPANY LOGO GIFTS",
+    "BUSINESS SIGNS",
+    "EVENT & PROMOTIONAL GIFTS"
+  ],
+
+  "HOME & DECOR": [
+    "WALL DECOR",
+    "NAME SIGNS",
+    "DOOR SIGNS",
+    "PHOTO FRAMES",
+    "HOME ACCESSORIES",
+    "TABLE DECORATION",
+    "CUSTOM DECORATIONS"
+  ],
+
+  "LASER ENGRAVING": [
+    "WOOD ENGRAVING",
+    "ACRYLIC ENGRAVING",
+    "GLASS ENGRAVING",
+    "METAL ENGRAVING",
+    "MUGS",
+    "FLASKS & GIFTS",
+    "CUSTOM ENGRAVING"
+  ],
+
+  "INVITATIONS": [
+    "CHRISTENING INVITATIONS",
+    "WEDDING INVITATIONS",
+    "BIRTHDAY INVITATIONS",
+    "PARTY INVITATIONS",
+    "SCHOOL INVITATIONS",
+    "CUSTOM INVITATIONS"
+  ],
+
+  "BALLOONS & CANDY CAKES": [
+    "BUBBLE BALLOONS",
+    "BALLOON GIFTS",
+    "BALLOON BOXES",
+    "CANDY CAKES",
+    "CANDY BOUQUETS",
+    "PERSONALISED BALLOON GIFTS"
+  ],
+
+  "CLOTHING & TOWELS": [
+    "T-SHIRTS",
+    "HOODIES",
+    "BABY CLOTHING",
+    "PERSONALISED CLOTHING",
+    "TOWELS",
+    "BABY TOWELS",
+    "EMBROIDERED TOWELS",
+    "CUSTOM CLOTHING & TEXTILES"
+  ]
 };
 
 
-const products = [
+/* =========================================================
+   FEATURED PRODUCTS
+   Only 4 photos will appear on the category preview.
+   We can change the photos later without changing anything else.
+   ========================================================= */
 
-  /* =========================
-     CHRISTENING
-  ========================= */
+const featuredProducts = {
+
+  "CHRISTENING": [
+    "product-4.jpg",
+    "product-9.jpg",
+    "product-10.jpg",
+    "product-11.jpg"
+  ],
+
+  "WEDDING": [
+    "product-1.jpg",
+    "product-15.jpg",
+    "product-16.jpg",
+    "product-17.jpg"
+  ],
+
+  "SEASONAL": [
+    "product-2.jpg",
+    "product-3.jpg",
+    "product-18.jpg",
+    "product-19.jpg"
+  ],
+
+  "BIRTHDAY & PARTIES": [
+    "product-20.jpg",
+    "product-21.jpg",
+    "product-22.jpg",
+    "product-23.jpg"
+  ],
+
+  "PERSONALISED GIFTS": [
+    "product-6.jpg",
+    "product-7.jpg",
+    "product-8.jpg",
+    "product-12.jpg"
+  ],
+
+  "SCHOOL & TEACHER GIFTS": [
+    "product-24.jpg",
+    "product-25.jpg",
+    "product-26.jpg",
+    "product-27.jpg"
+  ],
+
+  "CORPORATE GIFTS": [
+    "product-17.jpg",
+    "product-28.jpg",
+    "product-29.jpg",
+    "product-30.jpg"
+  ],
+
+  "HOME & DECOR": [
+    "product-31.jpg",
+    "product-32.jpg",
+    "product-33.jpg",
+    "product-34.jpg"
+  ],
+
+  "LASER ENGRAVING": [
+    "product-35.jpg",
+    "product-36.jpg",
+    "product-37.jpg",
+    "product-38.jpg"
+  ],
+
+  "INVITATIONS": [
+    "product-39.jpg",
+    "product-40.jpg",
+    "product-41.jpg",
+    "product-42.jpg"
+  ],
+
+  "BALLOONS & CANDY CAKES": [
+    "product-43.jpg",
+    "product-44.jpg",
+    "product-45.jpg",
+    "product-46.jpg"
+  ],
+
+  "CLOTHING & TOWELS": [
+    "product-47.jpg",
+    "product-48.jpg",
+    "product-49.jpg",
+    "product-50.jpg"
+  ]
+};
+
+
+/* =========================================================
+   ALL PRODUCTS
+   ========================================================= */
+
+const products = [
 
   {
     category: "CHRISTENING",
-    subcategory: "Hangers",
-    name: "Baptism Hangers",
+    subcategory: "HANGERS",
+    name: "Christening Hanger",
     description: "Personalised hanger for a special christening.",
     price: "ASK FOR QUOTATION",
     images: ["product-10.jpg"]
@@ -56,7 +246,7 @@ const products = [
 
   {
     category: "CHRISTENING",
-    subcategory: "Wish Books",
+    subcategory: "WISH BOOKS",
     name: "Wish Book",
     description: "Personalised wish book for beautiful memories.",
     price: "ASK FOR QUOTATION",
@@ -65,8 +255,8 @@ const products = [
 
   {
     category: "CHRISTENING",
-    subcategory: "Baptism Accessories",
-    name: "Baptism Dream Catcher Set",
+    subcategory: "BAPTISM ACCESSORIES",
+    name: "Christening Accessories",
     description: "Personalised christening accessories and decorations.",
     price: "ASK FOR QUOTATION",
     images: ["product-4.jpg"]
@@ -74,7 +264,7 @@ const products = [
 
   {
     category: "CHRISTENING",
-    subcategory: "Frames",
+    subcategory: "WISH FRAMES",
     name: "Wishes Frame",
     description: "Beautiful personalised frame for wishes.",
     price: "ASK FOR QUOTATION",
@@ -82,13 +272,9 @@ const products = [
   },
 
 
-  /* =========================
-     WEDDING
-  ========================= */
-
   {
     category: "WEDDING",
-    subcategory: "Hangers",
+    subcategory: "BRIDE & GROOM HANGERS",
     name: "Groom & Bride Hanger",
     description: "Personalised hanger for the groom and bride.",
     price: "ASK FOR QUOTATION",
@@ -97,7 +283,7 @@ const products = [
 
   {
     category: "WEDDING",
-    subcategory: "Wedding Signs",
+    subcategory: "WEDDING SIGNS",
     name: "Wedding Signs",
     description: "Personalised signs for weddings and special occasions.",
     price: "ASK FOR QUOTATION",
@@ -106,7 +292,7 @@ const products = [
 
   {
     category: "WEDDING",
-    subcategory: "Wedding Favours",
+    subcategory: "WEDDING FAVOURS",
     name: "Wedding Favour Boxes",
     description: "Personalised boxes for weddings and special events.",
     price: "ASK FOR QUOTATION",
@@ -114,168 +300,27 @@ const products = [
   },
 
 
-  /* =========================
-     BIRTHDAY
-  ========================= */
-
-  {
-    category: "BIRTHDAY",
-    subcategory: "Birthday",
-    name: "Birthday Creation",
-    description: "Personalised handmade creation for birthdays.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-26.jpg"]
-  },
-
-
-  /* =========================
-     EDUCATIONAL
-  ========================= */
-
-  {
-    category: "EDUCATIONAL",
-    subcategory: "BACK TO SCHOOL",
-    name: "Back to School",
-    description: "Personalised creations for the new school year.",
-    price: "ASK FOR QUOTATION",
-    images: []
-  },
-
-  {
-    category: "EDUCATIONAL",
-    subcategory: "END OF SCHOOL",
-    name: "End of School",
-    description: "Personalised gifts and creations for the end of school.",
-    price: "ASK FOR QUOTATION",
-    images: []
-  },
-
-  {
-    category: "EDUCATIONAL",
-    subcategory: "SEASONAL",
-    name: "Educational Seasonal",
-    description: "Creative personalised products for school celebrations.",
-    price: "ASK FOR QUOTATION",
-    images: []
-  },
-
-
-  /* =========================
-     SEASONAL
-  ========================= */
-
-  {
-    category: "SEASONAL",
-    subcategory: "CHRISTMAS",
-    name: "Christmas",
-    description: "Personalised Christmas creations and gifts.",
-    price: "ASK FOR QUOTATION",
-    images: []
-  },
-
-  {
-    category: "SEASONAL",
-    subcategory: "EASTER",
-    name: "Easter",
-    description: "Personalised Easter creations and gifts.",
-    price: "ASK FOR QUOTATION",
-    images: []
-  },
-
-  {
-    category: "SEASONAL",
-    subcategory: "VALENTINE'S",
-    name: "Valentine's",
-    description: "Personalised gifts and creations for Valentine's Day.",
-    price: "ASK FOR QUOTATION",
-    images: []
-  },
-
-  {
-    category: "SEASONAL",
-    subcategory: "MOTHER'S DAY",
-    name: "Mother's Day",
-    description: "Personalised gifts and creations for Mother's Day.",
-    price: "ASK FOR QUOTATION",
-    images: []
-  },
-
-  {
-    category: "SEASONAL",
-    subcategory: "FATHER'S DAY",
-    name: "Father's Day",
-    description: "Personalised gifts and creations for Father's Day.",
-    price: "ASK FOR QUOTATION",
-    images: []
-  },
-
-
-  /* =========================
-     CORPORATE
-  ========================= */
-
-  {
-    category: "CORPORATE",
-    subcategory: "Corporate Gifts",
-    name: "Corporate Gift Boxes",
-    description: "Customised gifts and products for businesses.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-17.jpg"]
-  },
-
-
-  /* =========================
-     PERSONALISED GIFTS
-  ========================= */
-
   {
     category: "PERSONALISED GIFTS",
-    subcategory: "TEACHERS",
-    name: "Teacher Gift",
-    description: "Personalised gifts created especially for teachers.",
-    price: "ASK FOR QUOTATION",
-    images: []
-  },
-
-  {
-    category: "PERSONALISED GIFTS",
-    subcategory: "SCHOOLS",
-    name: "School Gift",
-    description: "Personalised gifts and creations for schools.",
-    price: "ASK FOR QUOTATION",
-    images: []
-  },
-
-  {
-    category: "PERSONALISED GIFTS",
-    subcategory: "OTHERS",
-    name: "Personalised Gift",
-    description: "Unique handmade personalised gift.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-6.jpg"]
-  },
-
-  {
-    category: "PERSONALISED GIFTS",
-    subcategory: "OTHERS",
+    subcategory: "KEYCHAINS",
     name: "Personalised Keychain",
-    description: "Cute handmade personalised keychain.",
+    description: "Handmade personalised keychain.",
     price: "ASK FOR QUOTATION",
     images: ["product-7.jpg"]
   },
 
   {
     category: "PERSONALISED GIFTS",
-    subcategory: "OTHERS",
+    subcategory: "KEYCHAINS",
     name: "Personalised Keychain",
-    description: "Handmade keychain personalised for you.",
+    description: "Cute handmade personalised keychain.",
     price: "ASK FOR QUOTATION",
     images: ["product-8.jpg"]
   },
 
   {
     category: "PERSONALISED GIFTS",
-    subcategory: "OTHERS",
+    subcategory: "ACRYLIC FRAMES",
     name: "Acrylic Song Frame",
     description: "Personalised acrylic frame featuring your favourite song.",
     price: "ASK FOR QUOTATION",
@@ -284,99 +329,21 @@ const products = [
 
   {
     category: "PERSONALISED GIFTS",
-    subcategory: "OTHERS",
-    name: "Mother's Day Photo Holder",
-    description: "A beautiful personalised photo holder.",
+    subcategory: "PHOTO FRAMES",
+    name: "Personalised Frame",
+    description: "Beautiful personalised decorative frame.",
     price: "ASK FOR QUOTATION",
-    images: ["product-2.jpg"]
-  },
-
-  {
-    category: "PERSONALISED GIFTS",
-    subcategory: "OTHERS",
-    name: "Mother's Day Decorative Frame",
-    description: "Personalised decorative frame.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-3.jpg"]
+    images: ["product-6.jpg"]
   },
 
 
-  /* =========================
-     ENGRAVING MUGS
-  ========================= */
-
   {
-    category: "ENGRAVING MUGS",
-    subcategory: "Mugs",
-    name: "Engraved Mugs",
-    description: "Personalised engraved mugs.",
+    category: "CORPORATE GIFTS",
+    subcategory: "CORPORATE BOXES",
+    name: "Corporate Gift Box",
+    description: "Customised gifts and products for businesses.",
     price: "ASK FOR QUOTATION",
-    images: []
-  },
-
-
-  /* =========================
-     FOAMBOARDS
-  ========================= */
-
-  {
-    category: "FOAMBOARDS",
-    subcategory: "Foamboards",
-    name: "Custom Foamboards",
-    description: "Custom printed and personalised foamboards.",
-    price: "ASK FOR QUOTATION",
-    images: []
-  },
-
-
-  /* =========================
-     INVITATIONS
-  ========================= */
-
-  {
-    category: "INVITATIONS",
-    subcategory: "Invitations",
-    name: "Personalised Invitations",
-    description: "Custom-designed invitations for your special occasion.",
-    price: "ASK FOR QUOTATION",
-    images: []
-  },
-
-
-  /* =========================
-     CLOTHING
-  ========================= */
-
-  {
-    category: "CLOTHING",
-    subcategory: "Personalised Clothing",
-    name: "Personalised Clothing",
-    description: "Custom personalised clothing printing.",
-    price: "ASK FOR QUOTATION",
-    images: []
-  },
-
-
-  /* =========================
-     BALLOONS AND CANDY CAKES
-  ========================= */
-
-  {
-    category: "BALLOONS AND CANDY CAKES",
-    subcategory: "Balloons",
-    name: "Personalised Balloons",
-    description: "Beautiful personalised balloons for special occasions.",
-    price: "ASK FOR QUOTATION",
-    images: []
-  },
-
-  {
-    category: "BALLOONS AND CANDY CAKES",
-    subcategory: "Candy Cakes",
-    name: "Candy Cakes",
-    description: "Creative candy cakes and personalised gifts.",
-    price: "ASK FOR QUOTATION",
-    images: []
+    images: ["product-17.jpg"]
   }
 
 ];

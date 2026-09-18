@@ -4,165 +4,165 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Laserworks Ideas - Category</title>
+  <title>Laserworks Ideas</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
+<header class="site-header">
 
-    <div class="header-top">
+  <div class="header-top">
 
-      <div class="logo-area">
-        <a href="index.html">
-          <img src="logo.png" alt="Laserworks Ideas">
-        </a>
-      </div>
-
-      <div class="contact-top">
-        <div>Laserworksideas@gmail.com</div>
-        <div>WhatsApp / Viber: +357 99 303580</div>
-      </div>
-
+    <div class="logo-area">
+      <a href="index.html">
+        <img src="logo.png" alt="Laserworks Ideas">
+      </a>
     </div>
 
+    <div class="contact-top">
+      <div>Laserworksideas@gmail.com</div>
+      <div>WhatsApp / Viber: +357 99 303580</div>
+    </div>
 
-    <!-- MENU -->
-    <nav class="main-menu">
+  </div>
 
-      <a href="index.html">HOME</a>
+  <nav class="main-menu">
+    <a href="index.html">HOME</a>
+    <a href="index.html#categories">CATEGORIES</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="index.html#about">ABOUT US</a>
+    <a href="index.html#ask-price">ASK FOR A PRICE</a>
+    <a href="index.html#contact">CONTACT</a>
+  </nav>
 
-      <div class="menu-dropdown">
-        <a href="index.html#categories">CATEGORIES</a>
-      </div>
-
-      <a href="gallery.html">GALLERY</a>
-
-      <a href="index.html#about">ABOUT US</a>
-
-      <a href="index.html#ask-price">ASK FOR A PRICE</a>
-
-      <a href="index.html#contact">CONTACT</a>
-
-    </nav>
-
-  </header>
+</header>
 
 
-  <!-- CATEGORY PAGE -->
-  <main class="category-page">
+<main class="category-page">
 
-    <section class="category-header">
+  <section class="category-header">
 
-      <h1 id="categoryTitle"></h1>
+    <h1 id="categoryTitle"></h1>
 
-      <p id="categoryDescription">
-        Discover our personalised handmade creations.
-      </p>
-
-    </section>
+  </section>
 
 
-    <!-- SUBCATEGORIES -->
-    <section class="subcategory-section">
+  <!-- 3 FEATURED PHOTOS -->
 
-      <div
-        id="subcategoryGrid"
-        class="subcategory-grid">
-      </div>
+  <section class="category-photos">
 
-    </section>
+    <div class="category-photo">
+      <img id="photo1" src="" alt="">
+    </div>
 
-  </main>
+    <div class="category-photo">
+      <img id="photo2" src="" alt="">
+    </div>
 
+    <div class="category-photo">
+      <img id="photo3" src="" alt="">
+    </div>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-
-    <p>
-      © 2026 Laserworks Ideas. All rights reserved.
-    </p>
-
-  </footer>
+  </section>
 
 
-  <script src="products.js"></script>
+  <!-- WHAT WE OFFER -->
 
-  <script>
+  <section class="what-we-offer">
 
-    const params = new URLSearchParams(window.location.search);
+    <h2>WHAT WE OFFER</h2>
 
-    const category = params.get("category");
+    <ul id="offerList"></ul>
 
-    const title = document.getElementById("categoryTitle");
-
-    const description = document.getElementById("categoryDescription");
-
-    const grid = document.getElementById("subcategoryGrid");
+  </section>
 
 
-    /* CATEGORY TITLE */
+  <!-- QUOTATION -->
 
-    if (category) {
+  <section class="category-quotation">
 
-      title.textContent = category;
+    <a href="index.html#ask-price" class="quotation-button">
+      ASK FOR A QUOTATION
+    </a>
 
-      description.textContent =
-        "Explore our " + category.toLowerCase() + " creations.";
+  </section>
 
-    } else {
-
-      title.textContent = "CATEGORIES";
-
-      description.textContent =
-        "Explore our personalised handmade creations.";
-
-    }
+</main>
 
 
-    /* SUBCATEGORIES */
+<footer class="site-footer">
 
-    const list = subcategories[category] || [];
+  <p>
+    © 2026 Laserworks Ideas. All rights reserved.
+  </p>
+
+</footer>
 
 
-    if (list.length === 0) {
+<script src="products.js"></script>
 
-      grid.innerHTML = `
-        <p class="no-subcategories">
-          Products coming soon.
-        </p>
-      `;
+<script>
 
-    } else {
+const params = new URLSearchParams(window.location.search);
 
-      list.forEach(subcategory => {
+const category = params.get("category");
 
-        const card = document.createElement("a");
+const title = document.getElementById("categoryTitle");
 
-        card.className = "subcategory-card";
+const offerList = document.getElementById("offerList");
 
-        card.href =
-          "category.html?category=" +
-          encodeURIComponent(category) +
-          "&subcategory=" +
-          encodeURIComponent(subcategory);
 
-        card.innerHTML = `
-          <div class="subcategory-title">
-            ${subcategory}
-          </div>
-        `;
+/* CATEGORY TITLE */
 
-        grid.appendChild(card);
+title.textContent = category || "CATEGORY";
 
-      });
 
-    }
+/* WHAT WE OFFER */
 
-  </script>
+const offers = subcategories[category] || [];
+
+
+offers.forEach(item => {
+
+  const li = document.createElement("li");
+
+  li.textContent = item;
+
+  offerList.appendChild(li);
+
+});
+
+
+/* FEATURED PHOTOS */
+
+const photos = featuredProducts[category] || [];
+
+
+const photoElements = [
+  document.getElementById("photo1"),
+  document.getElementById("photo2"),
+  document.getElementById("photo3")
+];
+
+
+photoElements.forEach((photo, index) => {
+
+  if (photos[index]) {
+
+    photo.src = photos[index];
+    photo.alt = category;
+
+  } else {
+
+    photo.parentElement.style.display = "none";
+
+  }
+
+});
+
+</script>
 
 </body>
 </html>

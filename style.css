@@ -44,10 +44,21 @@ a {
 
 .contact-top {
   text-align: right;
-  font-size: 13px;
-  line-height: 1.8;
+  font-size: 12px;
+  line-height: 1.7;
   font-weight: 300;
 }
+.header-message-button {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 14px;
+  background: #000;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .4px;
+}
+.header-message-button:hover { background: #d71920; }
 
 
 /* ================= MENU ================= */
@@ -90,9 +101,9 @@ a {
 .hero h1 {
   margin: 0;
   color: #fff;
-  font-size: 40px;
+  font-size: 38px;
   line-height: 1.25;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 1px;
 }
 
@@ -569,3 +580,6 @@ section h2 {
   }
 
 }
+
+body, input, select, textarea, button { font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; }
+.hero h1, section h2, .category-header h1, .gallery-page h1 { font-weight: 300; }

@@ -11,7 +11,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=20260918e">
 
 </head>
@@ -30,7 +30,7 @@
 
       <a href="index.html">
 
-        <img src="logo.png" alt="Laserworks Ideas">
+        <img src="LOGO.png" alt="Laserworks Ideas">
 
       </a>
 
@@ -85,16 +85,6 @@
 
 
 
-<!-- GALLERY SLIDER -->
-<section class="gallery-slider-section">
-  <div class="gallery-slider">
-    <button class="gallery-slider-arrow gallery-prev" type="button" aria-label="Previous">&#10094;</button>
-    <div class="gallery-slider-track" id="gallerySliderTrack"></div>
-    <button class="gallery-slider-arrow gallery-next" type="button" aria-label="Next">&#10095;</button>
-  </div>
-  <div class="gallery-slider-dots" id="gallerySliderDots"></div>
-</section>
-
   <div id="galleryCategories"></div>
 
 
@@ -141,22 +131,7 @@ categories.forEach((category, categoryIndex) => {
   section.appendChild(grid); galleryCategories.appendChild(section);
 });
 
-const gallerySliderPhotos = ["product-1.jpg","product-2.jpg","product-3.jpg","product-4.jpg","product-5.jpg","product-6.jpg","product-7.jpg","product-8.jpg"];
-const gallerySliderTrack=document.getElementById("gallerySliderTrack");
-const gallerySliderDots=document.getElementById("gallerySliderDots");
-let gallerySliderIndex=0;
-gallerySliderPhotos.forEach((photo,i)=>{
- const slide=document.createElement("div"); slide.className="gallery-slider-slide";
- const img=document.createElement("img"); img.src=photo; img.alt="Laserworks Ideas gallery"; img.loading=i===0?"eager":"lazy"; slide.appendChild(img); gallerySliderTrack.appendChild(slide);
- const dot=document.createElement("button"); dot.className="gallery-slider-dot"+(i===0?" active":""); dot.type="button"; dot.addEventListener("click",()=>showGallerySlide(i)); gallerySliderDots.appendChild(dot);
-});
-function showGallerySlide(index){gallerySliderIndex=(index+gallerySliderPhotos.length)%gallerySliderPhotos.length; gallerySliderTrack.style.transform="translateX(-"+(gallerySliderIndex*100)+"%)"; document.querySelectorAll(".gallery-slider-dot").forEach((d,i)=>d.classList.toggle("active",i===gallerySliderIndex));}
-document.querySelector(".gallery-prev").addEventListener("click",()=>showGallerySlide(gallerySliderIndex-1));
-document.querySelector(".gallery-next").addEventListener("click",()=>showGallerySlide(gallerySliderIndex+1));
-setInterval(()=>showGallerySlide(gallerySliderIndex+1),4500);
 </script>
 
 
 </body>
-
-</html>

@@ -13,6 +13,7 @@ const categories = [
   "CLOTHING & TOWELS"
 ];
 
+
 const subcategories = {
 
   "CHRISTENING": [
@@ -132,218 +133,53 @@ const subcategories = {
     "EMBROIDERED TOWELS",
     "CUSTOM CLOTHING & TEXTILES"
   ]
+
 };
 
 
-/* =========================================================
-   FEATURED PRODUCTS
-   Only 4 photos will appear on the category preview.
-   We can change the photos later without changing anything else.
-   ========================================================= */
+/*
+=========================================================
+4 FEATURED PHOTOS PER CATEGORY
+
+IMPORTANT:
+We are leaving these EMPTY for now.
+We will add your real product photos later.
+=========================================================
+*/
 
 const featuredProducts = {
 
-  "CHRISTENING": [
-    "product-4.jpg",
-    "product-9.jpg",
-    "product-10.jpg",
-    "product-11.jpg"
-  ],
+  "CHRISTENING": [],
 
-  "WEDDING": [
-    "product-1.jpg",
-    "product-15.jpg",
-    "product-16.jpg",
-    "product-17.jpg"
-  ],
+  "WEDDING": [],
 
-  "SEASONAL": [
-    "product-2.jpg",
-    "product-3.jpg",
-    "product-18.jpg",
-    "product-19.jpg"
-  ],
+  "SEASONAL": [],
 
-  "BIRTHDAY & PARTIES": [
-    "product-20.jpg",
-    "product-21.jpg",
-    "product-22.jpg",
-    "product-23.jpg"
-  ],
+  "BIRTHDAY & PARTIES": [],
 
-  "PERSONALISED GIFTS": [
-    "product-6.jpg",
-    "product-7.jpg",
-    "product-8.jpg",
-    "product-12.jpg"
-  ],
+  "PERSONALISED GIFTS": [],
 
-  "SCHOOL & TEACHER GIFTS": [
-    "product-24.jpg",
-    "product-25.jpg",
-    "product-26.jpg",
-    "product-27.jpg"
-  ],
+  "SCHOOL & TEACHER GIFTS": [],
 
-  "CORPORATE GIFTS": [
-    "product-17.jpg",
-    "product-28.jpg",
-    "product-29.jpg",
-    "product-30.jpg"
-  ],
+  "CORPORATE GIFTS": [],
 
-  "HOME & DECOR": [
-    "product-31.jpg",
-    "product-32.jpg",
-    "product-33.jpg",
-    "product-34.jpg"
-  ],
+  "HOME & DECOR": [],
 
-  "LASER ENGRAVING": [
-    "product-35.jpg",
-    "product-36.jpg",
-    "product-37.jpg",
-    "product-38.jpg"
-  ],
+  "LASER ENGRAVING": [],
 
-  "INVITATIONS": [
-    "product-39.jpg",
-    "product-40.jpg",
-    "product-41.jpg",
-    "product-42.jpg"
-  ],
+  "INVITATIONS": [],
 
-  "BALLOONS & CANDY CAKES": [
-    "product-43.jpg",
-    "product-44.jpg",
-    "product-45.jpg",
-    "product-46.jpg"
-  ],
+  "BALLOONS & CANDY CAKES": [],
 
-  "CLOTHING & TOWELS": [
-    "product-47.jpg",
-    "product-48.jpg",
-    "product-49.jpg",
-    "product-50.jpg"
-  ]
+  "CLOTHING & TOWELS": []
+
 };
 
 
-/* =========================================================
-   ALL PRODUCTS
-   ========================================================= */
+/*
+=========================================================
+PRODUCTS
+=========================================================
+*/
 
-const products = [
-
-  {
-    category: "CHRISTENING",
-    subcategory: "HANGERS",
-    name: "Christening Hanger",
-    description: "Personalised hanger for a special christening.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-10.jpg"]
-  },
-
-  {
-    category: "CHRISTENING",
-    subcategory: "WISH BOOKS",
-    name: "Wish Book",
-    description: "Personalised wish book for beautiful memories.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-11.jpg"]
-  },
-
-  {
-    category: "CHRISTENING",
-    subcategory: "BAPTISM ACCESSORIES",
-    name: "Christening Accessories",
-    description: "Personalised christening accessories and decorations.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-4.jpg"]
-  },
-
-  {
-    category: "CHRISTENING",
-    subcategory: "WISH FRAMES",
-    name: "Wishes Frame",
-    description: "Beautiful personalised frame for wishes.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-9.jpg"]
-  },
-
-
-  {
-    category: "WEDDING",
-    subcategory: "BRIDE & GROOM HANGERS",
-    name: "Groom & Bride Hanger",
-    description: "Personalised hanger for the groom and bride.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-1.jpg"]
-  },
-
-  {
-    category: "WEDDING",
-    subcategory: "WEDDING SIGNS",
-    name: "Wedding Signs",
-    description: "Personalised signs for weddings and special occasions.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-15.jpg"]
-  },
-
-  {
-    category: "WEDDING",
-    subcategory: "WEDDING FAVOURS",
-    name: "Wedding Favour Boxes",
-    description: "Personalised boxes for weddings and special events.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-16.jpg"]
-  },
-
-
-  {
-    category: "PERSONALISED GIFTS",
-    subcategory: "KEYCHAINS",
-    name: "Personalised Keychain",
-    description: "Handmade personalised keychain.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-7.jpg"]
-  },
-
-  {
-    category: "PERSONALISED GIFTS",
-    subcategory: "KEYCHAINS",
-    name: "Personalised Keychain",
-    description: "Cute handmade personalised keychain.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-8.jpg"]
-  },
-
-  {
-    category: "PERSONALISED GIFTS",
-    subcategory: "ACRYLIC FRAMES",
-    name: "Acrylic Song Frame",
-    description: "Personalised acrylic frame featuring your favourite song.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-12.jpg"]
-  },
-
-  {
-    category: "PERSONALISED GIFTS",
-    subcategory: "PHOTO FRAMES",
-    name: "Personalised Frame",
-    description: "Beautiful personalised decorative frame.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-6.jpg"]
-  },
-
-
-  {
-    category: "CORPORATE GIFTS",
-    subcategory: "CORPORATE BOXES",
-    name: "Corporate Gift Box",
-    description: "Customised gifts and products for businesses.",
-    price: "ASK FOR QUOTATION",
-    images: ["product-17.jpg"]
-  }
-
-];
+const products = [];

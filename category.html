@@ -3,421 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laserworks Ideas</title>
+
+  <title>Laserworks Ideas - Category</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="site-header">
+  <!-- HEADER -->
+  <header class="site-header">
 
-  <div class="header-top">
+    <div class="header-top">
 
-    <a href="index.html" class="logo">LASERWORKS IDEAS</a>
+      <div class="logo-area">
+        <a href="index.html">
+          <img src="logo.png" alt="Laserworks Ideas">
+        </a>
+      </div>
 
-    <div class="contact-top">
-      <span class="contact-title">CONTACT US</span>
-      <a href="mailto:Laserworksideas@gmail.com">EMAIL</a>
-      <a href="viber://chat?number=%2B35799303580">VIBER</a>
-      <a href="https://wa.me/35799303580" target="_blank">WHATSAPP</a>
+      <div class="contact-top">
+        <div>Laserworksideas@gmail.com</div>
+        <div>WhatsApp / Viber: +357 99 303580</div>
+      </div>
+
     </div>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-      ☰
-    </button>
 
-  </div>
+    <!-- MENU -->
+    <nav class="main-menu">
 
-  <nav class="main-nav" id="mainNav">
-    <a href="index.html">HOME</a>
-    <a href="index.html#categories">CATEGORIES</a>
-    <a href="index.html#gallery">GALLERY</a>
-    <a href="index.html#about">ABOUT US</a>
-    <a href="index.html#ask-price">ASK FOR A PRICE</a>
-    <a href="index.html#contact">CONTACT</a>
-  </nav>
+      <a href="index.html">HOME</a>
 
-</header>
+      <div class="menu-dropdown">
+        <a href="index.html#categories">CATEGORIES</a>
+      </div>
+
+      <a href="gallery.html">GALLERY</a>
+
+      <a href="index.html#about">ABOUT US</a>
+
+      <a href="index.html#ask-price">ASK FOR A PRICE</a>
+
+      <a href="index.html#contact">CONTACT</a>
+
+    </nav>
+
+  </header>
 
 
-<main>
+  <!-- CATEGORY PAGE -->
+  <main class="category-page">
 
-  <section class="category-page">
+    <section class="category-header">
 
-    <div class="category-heading">
-      <h1 id="categoryTitle">CATEGORY</h1>
-      <p id="categoryDescription"></p>
-    </div>
+      <h1 id="categoryTitle"></h1>
+
+      <p id="categoryDescription">
+        Discover our personalised handmade creations.
+      </p>
+
+    </section>
 
 
     <!-- SUBCATEGORIES -->
-
-    <div id="subcategoryGrid" class="subcategory-grid"></div>
-
-
-    <!-- PRODUCTS -->
-
-    <div id="productGrid" class="product-grid"></div>
-
-
-    <div class="back-home">
-      <a href="index.html#categories" class="red-button">
-        BACK TO CATEGORIES
-      </a>
-    </div>
-
-  </section>
-
-</main>
-
-
-<footer>
-  <p>© 2026 LASERWORKS IDEAS — LIMASSOL, CYPRUS</p>
-</footer>
-
-
-<script src="products.js"></script>
-
-<script>
-
-/* =========================
-   MOBILE MENU
-========================= */
-
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
-
-menuToggle.addEventListener("click", function () {
-  mainNav.classList.toggle("mobile-open");
-});
-
-document.querySelectorAll(".main-nav a").forEach(link => {
-  link.addEventListener("click", function () {
-    mainNav.classList.remove("mobile-open");
-  });
-});
-
-
-/* =========================
-   URL PARAMETERS
-========================= */
-
-const params = new URLSearchParams(window.location.search);
-
-const category = params.get("category");
-const selectedSubcategory = params.get("subcategory");
-
-
-/* =========================
-   ELEMENTS
-========================= */
-
-const title = document.getElementById("categoryTitle");
-const description = document.getElementById("categoryDescription");
-
-const subcategoryGrid =
-  document.getElementById("subcategoryGrid");
-
-const productGrid =
-  document.getElementById("productGrid");
-
-
-/* =========================
-   CATEGORY NAMES
-========================= */
-
-const categoryNames = {
-
-  "CHRISTENING": "CHRISTENING",
-
-  "WEDDING": "WEDDING",
-
-  "BIRTHDAY": "BIRTHDAY",
-
-  "EDUCATIONAL": "EDUCATIONAL",
-
-  "SEASONAL": "SEASONAL",
-
-  "CORPORATE": "CORPORATE",
-
-  "PERSONALISED GIFTS": "PERSONALISED GIFTS",
-
-  "ENGRAVING MUGS": "ENGRAVING MUGS",
-
-  "FOAMBOARDS": "FOAMBOARDS",
-
-  "INVITATIONS": "INVITATIONS",
-
-  "CLOTHING": "CLOTHING",
-
-  "BALLOONS AND CANDY CAKES": "BALLOONS AND CANDY CAKES"
-
-};
-
-
-/* =========================
-   DESCRIPTIONS
-========================= */
-
-const descriptions = {
-
-  "CHRISTENING":
-    "Personalised details and decorations for your special christening.",
-
-  "WEDDING":
-    "Custom laser cut and engraved details for weddings and celebrations.",
-
-  "BIRTHDAY":
-    "Personalised decorations and creations for birthdays.",
-
-  "EDUCATIONAL":
-    "Creative personalised products for schools and educational occasions.",
-
-  "SEASONAL":
-    "Creative personalised products for every special season.",
-
-  "CORPORATE":
-    "Custom corporate gifts and personalised products for businesses.",
-
-  "PERSONALISED GIFTS":
-    "Unique personalised gifts created especially for you.",
-
-  "ENGRAVING MUGS":
-    "Personalised engraved mugs for every occasion.",
-
-  "FOAMBOARDS":
-    "Custom printed and personalised foamboards.",
-
-  "INVITATIONS":
-    "Custom invitations designed for your special event.",
-
-  "CLOTHING":
-    "Personalised clothing printing and custom designs.",
-
-  "BALLOONS AND CANDY CAKES":
-    "Personalised balloons and creative candy cakes for special occasions."
-
-};
-
-
-/* =========================
-   SET TITLE
-========================= */
-
-title.textContent =
-  categoryNames[category] ||
-  category ||
-  "OUR PRODUCTS";
-
-
-description.textContent =
-  descriptions[category] ||
-  "Explore our personalised creations.";
-
-
-/* =========================
-   SUBCATEGORY DATA
-========================= */
-
-const categorySubcategories = {
-
-  "EDUCATIONAL": [
-    "BACK TO SCHOOL",
-    "END OF SCHOOL",
-    "SEASONAL"
-  ],
-
-  "SEASONAL": [
-    "CHRISTMAS",
-    "EASTER",
-    "VALENTINE'S",
-    "MOTHER'S DAY",
-    "FATHER'S DAY"
-  ],
-
-  "PERSONALISED GIFTS": [
-    "TEACHERS",
-    "SCHOOLS",
-    "OTHERS"
-  ]
-
-};
-
-
-/* =========================
-   SHOW SUBCATEGORIES
-========================= */
-
-const availableSubcategories =
-  categorySubcategories[category] || [];
-
-
-if (
-  availableSubcategories.length > 0 &&
-  !selectedSubcategory
-) {
-
-  subcategoryGrid.innerHTML = "";
-
-  availableSubcategories.forEach(subcategory => {
-
-    const card = document.createElement("a");
-
-    card.className = "subcategory-card";
-
-    card.href =
-      "category.html?category=" +
-      encodeURIComponent(category) +
-      "&subcategory=" +
-      encodeURIComponent(subcategory);
-
-    card.innerHTML = `
-      <div class="subcategory-title">
-        ${subcategory}
+    <section class="subcategory-section">
+
+      <div
+        id="subcategoryGrid"
+        class="subcategory-grid">
       </div>
-    `;
 
-    subcategoryGrid.appendChild(card);
+    </section>
 
-  });
-
-}
+  </main>
 
 
-/* =========================
-   FILTER PRODUCTS
-========================= */
+  <!-- FOOTER -->
+  <footer class="site-footer">
 
-let filteredProducts = products.filter(product => {
+    <p>
+      © 2026 Laserworks Ideas. All rights reserved.
+    </p>
 
-  const productCategory =
-    String(product.category || "")
-      .trim()
-      .toUpperCase();
-
-  const currentCategory =
-    String(category || "")
-      .trim()
-      .toUpperCase();
-
-  return productCategory === currentCategory;
-
-});
+  </footer>
 
 
-/* =========================
-   SUBCATEGORY FILTER
-========================= */
+  <script src="products.js"></script>
 
-if (selectedSubcategory) {
+  <script>
 
-  filteredProducts =
-    filteredProducts.filter(product => {
+    const params = new URLSearchParams(window.location.search);
 
-      return String(product.subcategory || "")
-        .trim()
-        .toUpperCase() ===
-        String(selectedSubcategory || "")
-        .trim()
-        .toUpperCase();
+    const category = params.get("category");
 
-    });
+    const title = document.getElementById("categoryTitle");
 
-}
+    const description = document.getElementById("categoryDescription");
+
+    const grid = document.getElementById("subcategoryGrid");
 
 
-/* =========================
-   SHOW SELECTED SUBCATEGORY
-========================= */
+    /* CATEGORY TITLE */
 
-if (selectedSubcategory) {
+    if (category) {
 
-  title.textContent = selectedSubcategory;
+      title.textContent = category;
 
-  description.textContent =
-    "Explore our personalised creations.";
+      description.textContent =
+        "Explore our " + category.toLowerCase() + " creations.";
 
-}
+    } else {
 
+      title.textContent = "CATEGORIES";
 
-/* =========================
-   DISPLAY PRODUCTS
-========================= */
-
-if (filteredProducts.length === 0) {
-
-  productGrid.innerHTML = `
-    <div class="no-products">
-      <p>More products coming soon.</p>
-    </div>
-  `;
-
-} else {
-
-  filteredProducts.forEach(product => {
-
-    const card =
-      document.createElement("div");
-
-    card.className = "product-card";
-
-
-    /* PRODUCT IMAGES */
-
-    let imageHTML = "";
-
-    if (
-      product.images &&
-      product.images.length > 0
-    ) {
-
-      imageHTML = `
-        <div class="product-images">
-          ${product.images.map(image => `
-            <img
-              src="${image}"
-              alt="${product.name || "Laserworks Ideas"}"
-            >
-          `).join("")}
-        </div>
-      `;
+      description.textContent =
+        "Explore our personalised handmade creations.";
 
     }
 
 
-    card.innerHTML = `
+    /* SUBCATEGORIES */
 
-      ${imageHTML}
+    const list = subcategories[category] || [];
 
-      <div class="product-info">
 
-        ${
-          product.name
-            ? `<h2>${product.name}</h2>`
-            : ""
-        }
+    if (list.length === 0) {
 
-        ${
-          product.description
-            ? `<p>${product.description}</p>`
-            : ""
-        }
+      grid.innerHTML = `
+        <p class="no-subcategories">
+          Products coming soon.
+        </p>
+      `;
 
-        <span class="product-price">
-          ASK FOR QUOTATION
-        </span>
+    } else {
 
-      </div>
+      list.forEach(subcategory => {
 
-    `;
+        const card = document.createElement("a");
 
-    productGrid.appendChild(card);
+        card.className = "subcategory-card";
 
-  });
+        card.href =
+          "category.html?category=" +
+          encodeURIComponent(category) +
+          "&subcategory=" +
+          encodeURIComponent(subcategory);
 
-}
+        card.innerHTML = `
+          <div class="subcategory-title">
+            ${subcategory}
+          </div>
+        `;
 
-</script>
+        grid.appendChild(card);
+
+      });
+
+    }
+
+  </script>
 
 </body>
 </html>

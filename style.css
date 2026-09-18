@@ -208,3 +208,32 @@ section h2,.category-header h1,.gallery-page h1,.gallery-category h2{font-weight
  .section-title{gap:12px}
  .category-card{min-height:58px !important;font-size:14px !important;border-radius:17px !important}
 }
+
+/* FINAL TYPOGRAPHY + HOMEPAGE SLIDER FIX - 20260918h */
+body,button,input,select,textarea{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif !important;font-weight:300}
+.main-menu a{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif !important;font-size:17px !important;font-weight:400 !important}
+.site-header .contact-top{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif !important;font-weight:300}
+.site-header .contact-top *{font-weight:300}
+.site-header .header-message-button{font-weight:400}
+section h2,.category-header h1,.gallery-page h1,.gallery-category h2{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif !important;font-weight:700 !important}
+.hero h1{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif !important;font-weight:400 !important}
+.category-card{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif !important;font-weight:400 !important}
+.category-grid{gap:8px !important;background:transparent !important}
+.category-card{min-height:58px !important;padding:9px 13px !important;border-radius:17px !important;font-size:15px !important}
+.home-slider{max-width:1240px !important;gap:4px !important;overflow:visible !important}
+.home-slider-window{flex:1 !important;overflow:hidden !important;background:transparent !important}
+.home-slider-track{display:flex !important;gap:0 !important;transform:none;transition:transform .45s ease !important}
+.home-slide{flex:0 0 33.333333% !important;width:33.333333% !important;min-width:33.333333% !important;height:330px !important;padding:0 !important;margin:0 !important;background:#fff !important}
+.home-slide img{width:100% !important;height:100% !important;object-fit:contain !important;display:block !important}
+.home-slider-arrow{position:relative !important;top:auto !important;left:auto !important;right:auto !important;transform:none !important;flex:0 0 40px !important;width:40px !important;height:40px !important;background:#d71920 !important;color:#fff !important;border-radius:0 !important}
+.home-slider-arrow:hover{background:#111 !important}
+.section-title{justify-content:center !important;position:relative !important}
+.section-title h2{text-align:center !important;margin:0 !important}
+.section-title .view-gallery-button{position:absolute !important;right:0 !important}
+.about-content h2,.contact-details h2{text-align:left !important}
+@media(max-width:800px){
+ .main-menu a{font-size:14px !important;padding:12px 8px !important}
+ .category-card{font-size:14px !important;min-height:55px !important}
+ .home-slide{flex-basis:50% !important;width:50% !important;min-width:50% !important;height:260px !important}
+ .home-slider-arrow{flex-basis:36px !important;width:36px !important;height:36px !important}
+}

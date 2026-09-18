@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260918k">
+<link rel="stylesheet" href="style.css?v=20260918l">
 </head>
 <body>
 <header class="site-header">
@@ -117,8 +117,9 @@ function showSlide(index){
   else sliderIndex=index;
   const slide=sliderTrack.querySelector(".home-slide");
   if(!slide)return;
-  const step=sliderTrack.parentElement.getBoundingClientRect().width / visibleSlides();
-  sliderTrack.style.transform="translate3d(-"+(sliderIndex*step)+"px,0,0)";
+  const step=sliderTrack.parentElement.clientWidth / visibleSlides();
+  sliderTrack.style.transform="translate3d(-"+Math.round(sliderIndex*step)+"px,0,0)";
+  sliderTrack.style.transition="transform .5s ease";
 }
 
 document.querySelector(".home-slider-arrow.prev").addEventListener("click",()=>showSlide(sliderIndex-1));
@@ -165,7 +166,7 @@ NAME: ${customerName}
 EMAIL: ${customerEmail}`;
   window.location.href="mailto:Laserworksideas@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
 });
-showSlide(0);
+requestAnimationFrame(()=>showSlide(0));
 </script>
 </body>
 </html>

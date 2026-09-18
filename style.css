@@ -266,3 +266,15 @@ section h2,.category-header h1,.gallery-page h1,.gallery-category h2{font-family
 .home-slider-window,.home-slider-track,.home-slide{height:200px !important}
 .home-slide img{height:200px !important}
 }
+
+
+/* FINAL CORRECTION - 20260918k */
+.categories-section>h2{font-weight:700 !important}
+.categories-section>h2 .red-dot{color:#d71920 !important}
+.category-card{font-weight:600 !important;font-size:16px !important;min-height:44px !important;padding:7px 14px !important;border-radius:999px !important}
+.home-slider{overflow:visible !important}
+.home-slider-window{overflow:hidden !important;position:relative !important}
+.home-slider-track{display:flex !important;will-change:transform !important;transition:transform .45s ease !important}
+.home-slide{flex:0 0 33.333333% !important;min-width:33.333333% !important}
+.home-slider-arrow{display:flex !important;align-items:center !important;justify-content:center !important;cursor:pointer !important}
+@media(max-width:800px){.category-card{font-weight:600 !important;font-size:14px !important;min-height:42px !important}.home-slide{flex-basis:50% !important;min-width:50% !important}}

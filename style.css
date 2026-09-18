@@ -56,6 +56,7 @@ a {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 0;
   background: #000;
 }
 
@@ -83,10 +84,6 @@ a {
   text-align: center;
   background: #111;
   padding: 50px 20px;
-}
-
-.hero-content {
-  max-width: 1000px;
 }
 
 .hero h1 {
@@ -168,7 +165,7 @@ section h2 {
 }
 
 
-/* ================= CATEGORY PHOTOS ================= */
+/* ================= 3 PHOTOS ================= */
 
 .category-photos {
   max-width: 1200px;
@@ -279,7 +276,7 @@ section h2 {
 }
 
 
-/* ================= FULL GALLERY PAGE ================= */
+/* ================= FULL GALLERY ================= */
 
 .gallery-page {
   background: #eeeeee;
@@ -301,10 +298,11 @@ section h2 {
 .gallery-intro p {
   margin: 0;
   font-size: 16px;
+  font-weight: 400;
 }
 
 
-/* ================= GALLERY CATEGORIES ================= */
+/* ================= GALLERY CATEGORY ================= */
 
 .gallery-category {
   max-width: 1200px;
@@ -455,7 +453,7 @@ section h2 {
 }
 
 
-/* ================= MOBILE ================= */
+/* ================= TABLET ================= */
 
 @media (max-width: 900px) {
 
@@ -478,6 +476,8 @@ section h2 {
 }
 
 
+/* ================= MOBILE ================= */
+
 @media (max-width: 600px) {
 
   .header-top {
@@ -491,10 +491,6 @@ section h2 {
 
   .logo-area img {
     max-width: 220px;
-  }
-
-  .main-menu {
-    flex-direction: row;
   }
 
   .main-menu a {

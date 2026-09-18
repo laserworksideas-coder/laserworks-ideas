@@ -9,6 +9,9 @@
 
   <title>Gallery | Laserworks Ideas</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -35,11 +38,9 @@
 
 
     <div class="contact-top">
-
       <div>Laserworksideas@gmail.com</div>
-
       <div>WhatsApp / Viber: +357 99 303580</div>
-
+      <a class="header-message-button" href="mailto:Laserworksideas@gmail.com?subject=Laserworks%20Ideas%20-%20Message">SEND A MESSAGE</a>
     </div>
 
   </div>
@@ -105,147 +106,19 @@
 
 
 <script>
-
-
-const galleryCategories =
-  document.getElementById("galleryCategories");
-
-
-/*
-=========================================================
-GALLERY PHOTOS
-
-Add your real photos here later.
-
-Example:
-
-"CHRISTENING": [
-  "product-1.jpg",
-  "product-2.jpg"
-]
-
-For now all categories are empty.
-=========================================================
-*/
-
-
-const galleryImages = {
-
-
-  "CHRISTENING": [],
-
-
-  "WEDDING": [],
-
-
-  "SEASONAL": [],
-
-
-  "BIRTHDAY & PARTIES": [],
-
-
-  "PERSONALISED GIFTS": [],
-
-
-  "SCHOOL & TEACHER GIFTS": [],
-
-
-  "CORPORATE GIFTS": [],
-
-
-  "LASER ENGRAVING": [],
-
-
-  "INVITATIONS": [],
-
-
-  "DESIGN": [],
-
-
-  "BALLOONS & CANDY CAKES": [],
-
-
-  "CLOTHING & TOWELS": []
-
-};
-
-
-
-/*
-=========================================================
-CREATE GALLERY
-=========================================================
-*/
-
-
-categories.forEach(category => {
-
-
-  const section =
-    document.createElement("section");
-
-  section.className =
-    "gallery-category";
-
-
-  const title =
-    document.createElement("h2");
-
-  title.textContent =
-    category;
-
-
-  section.appendChild(title);
-
-
-  const grid =
-    document.createElement("div");
-
-  grid.className =
-    "full-gallery";
-
-
-  const photos =
-    galleryImages[category] || [];
-
-
-  photos.forEach(image => {
-
-
-    const item =
-      document.createElement("div");
-
-    item.className =
-      "full-gallery-item";
-
-
-    const img =
-      document.createElement("img");
-
-    img.src =
-      image;
-
-    img.alt =
-      category;
-
-
-    item.appendChild(img);
-
-    grid.appendChild(item);
-
-
+const galleryCategories = document.getElementById("galleryCategories");
+const allPhotos = Array.from({length: 40}, (_, i) => "product-" + (i + 1) + ".jpg");
+categories.forEach((category, categoryIndex) => {
+  const section = document.createElement("section"); section.className = "gallery-category";
+  const title = document.createElement("h2"); title.textContent = category; section.appendChild(title);
+  const grid = document.createElement("div"); grid.className = "full-gallery";
+  const start = categoryIndex * 3; const end = categoryIndex === categories.length - 1 ? allPhotos.length : start + 3;
+  allPhotos.slice(start, end).forEach(image => {
+    const item = document.createElement("div"); item.className = "full-gallery-item";
+    const img = document.createElement("img"); img.src = image; img.alt = category; img.loading = "lazy"; item.appendChild(img); grid.appendChild(item);
   });
-
-
-  section.appendChild(grid);
-
-
-  galleryCategories.appendChild(section);
-
-
+  section.appendChild(grid); galleryCategories.appendChild(section);
 });
-
-
 </script>
 
 

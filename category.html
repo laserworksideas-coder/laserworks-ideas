@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260918k">
+  <link rel="stylesheet" href="style.css?v=20260918l">
 </head>
 
 <body>
@@ -111,24 +111,19 @@
 const params = new URLSearchParams(window.location.search);
 const category = params.get("category");
 document.getElementById("categoryTitle").textContent = category || "CATEGORY";
+
 const offers = subcategories[category] || [];
 const offerList = document.getElementById("offerList");
-offers.forEach(item => { const li = document.createElement("li"); li.textContent = item; offerList.appendChild(li); });
-const categoryIndex = categories.indexOf(category);
-const allPhotos = [
-  "product-1.jpg","product-2.jpg","product-3.jpg","product-4.jpg","product-5.jpg",
-  "product-6.jpg","product-7.jpg","product-8.jpg","product-9.jpg","product-10.jpg",
-  "product-11.jpg","product-12.jpg","product-13.jpg","product-14.jpg","product-15.jpg",
-  "product-16.jpg","product-17.jpg","product-18.jpg","product-19.jpg","product-20.jpg",
-  "product-21.jpg","product-22.jpg","product-23.jpg","product-24.jpg","product-25.jpg",
-  "product-26.jpg","product-27.jpg","product-28.jpg","product-29.jpg","product-30.jpg",
-  "product-31.jpg","product-32.jpg","product-33.jpg","product-34.jpg","product-35.jpg",
-  "product-37.jpg","product-38.jpg","product-39.jpg","product-40.jpg","product-41.jpg"
-];
-const start = Math.max(0, categoryIndex * 3);
+offers.forEach(item => {
+  const li = document.createElement("li");
+  li.textContent = item;
+  offerList.appendChild(li);
+});
+
+const photos = featuredProducts[category] || [];
 document.querySelectorAll(".category-photo img").forEach((photo, index) => {
-  if (categoryIndex >= 0 && start + index < allPhotos.length) {
-    photo.src = allPhotos[start + index];
+  if (photos[index]) {
+    photo.src = photos[index];
     photo.alt = category;
   } else {
     photo.parentElement.style.display = "none";

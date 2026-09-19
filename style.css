@@ -308,3 +308,20 @@ section h2,.category-header h1,.gallery-page h1,.gallery-category h2{font-size:3
  .home-slider-window,.home-slide{height:200px !important}
  .home-slider-arrow{flex-basis:38px !important;width:38px !important;height:38px !important;font-size:24px !important}
 }
+
+/* HOMEPAGE WORK SLIDER - CLEAN 3 PHOTO STRIP */
+.home-slider-section{background:#f5f5f5 !important;padding:32px 3% 38px !important}
+.home-slider{max-width:1280px !important;margin:0 auto !important;display:flex !important;align-items:center !important;gap:8px !important;overflow:visible !important}
+.home-slider-window{flex:1 1 auto !important;height:255px !important;overflow:hidden !important;background:transparent !important;position:relative !important}
+.home-slider-track{display:flex !important;height:255px !important;gap:0 !important;margin:0 !important;padding:0 !important;will-change:transform !important}
+.home-slide{height:255px !important;padding:0 !important;margin:0 !important;background:transparent !important;display:flex !important;align-items:stretch !important;justify-content:center !important;overflow:hidden !important}
+.home-slide img{width:100% !important;height:100% !important;display:block !important;object-fit:cover !important;object-position:center !important}
+.home-slider-arrow{position:relative !important;top:auto !important;left:auto !important;right:auto !important;transform:none !important;z-index:50 !important;pointer-events:auto !important;flex:0 0 42px !important;width:42px !important;height:42px !important;border:0 !important;border-radius:0 !important;background:#d71920 !important;color:#fff !important;display:flex !important;align-items:center !important;justify-content:center !important;cursor:pointer !important}
+.home-slider-arrow:hover{background:#111 !important}
+@media(max-width:800px){
+ .home-slider{gap:5px !important}
+ .home-slider-window,.home-slider-track{height:210px !important}
+ .home-slide{height:210px !important}
+ .home-slide img{height:210px !important}
+ .home-slider-arrow{flex-basis:36px !important;width:36px !important;height:36px !important}
+}

@@ -53,23 +53,9 @@
   </section>
 
 
-  <!-- 3 FEATURED PHOTOS -->
+  <!-- CATEGORY PHOTOS -->
 
-  <section class="category-photos">
-
-    <div class="category-photo">
-      <img id="photo1" src="" alt="">
-    </div>
-
-    <div class="category-photo">
-      <img id="photo2" src="" alt="">
-    </div>
-
-    <div class="category-photo">
-      <img id="photo3" src="" alt="">
-    </div>
-
-  </section>
+  <section class="category-photos" id="categoryPhotos"></section>
 
 
   <!-- WHAT WE OFFER -->
@@ -121,13 +107,16 @@ offers.forEach(item => {
 });
 
 const photos = featuredProducts[category] || [];
-document.querySelectorAll(".category-photo img").forEach((photo, index) => {
-  if (photos[index]) {
-    photo.src = photos[index];
-    photo.alt = category;
-  } else {
-    photo.parentElement.style.display = "none";
-  }
+const photoGrid = document.getElementById("categoryPhotos");
+photos.forEach(image => {
+  const card = document.createElement("div");
+  card.className = "category-photo";
+  const img = document.createElement("img");
+  img.src = image;
+  img.alt = category;
+  img.loading = "lazy";
+  card.appendChild(img);
+  photoGrid.appendChild(card);
 });
 </script>
 

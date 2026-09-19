@@ -278,3 +278,33 @@ section h2,.category-header h1,.gallery-page h1,.gallery-category h2{font-family
 .home-slide{flex:0 0 33.333333% !important;min-width:33.333333% !important}
 .home-slider-arrow{display:flex !important;align-items:center !important;justify-content:center !important;cursor:pointer !important}
 @media(max-width:800px){.category-card{font-weight:600 !important;font-size:14px !important;min-height:42px !important}.home-slide{flex-basis:50% !important;min-width:50% !important}}
+
+/* READABLE TYPE + FINAL SLIDER - 20260919a */
+body{font-size:17px !important;line-height:1.5 !important}
+p,li,label,input,select,textarea,button,.quotation-button,.header-message-button{font-size:16px !important}
+.main-menu a{font-size:16px !important}
+.contact-top{font-size:16px !important}
+section h2,.category-header h1,.gallery-page h1,.gallery-category h2{font-size:30px !important}
+.categories-section>h2{font-size:30px !important}
+.category-card{font-size:17px !important;font-weight:600 !important;min-height:48px !important}
+#ask-price h2.price-title{font-size:32px !important;padding:14px 30px !important;margin-bottom:38px !important}
+.ask-price-section label{font-size:17px !important;font-weight:500 !important}
+.ask-price-section input,.ask-price-section select,.ask-price-section textarea{font-size:17px !important;min-height:46px !important}
+.ask-price-section textarea{min-height:120px !important}
+.ask-price-section button{font-size:18px !important;padding:14px 28px !important}
+.home-slider{max-width:1240px !important;margin:0 auto !important;display:flex !important;align-items:center !important;gap:10px !important}
+.home-slider-window{flex:1 1 auto !important;overflow:hidden !important;height:230px !important}
+.home-slider-track{display:flex !important;height:100% !important;gap:0 !important;will-change:transform !important}
+.home-slide{height:230px !important;padding:0 !important;margin:0 !important;background:#fff !important;display:flex !important;align-items:center !important;justify-content:center !important}
+.home-slide img{width:100% !important;height:100% !important;object-fit:contain !important;display:block !important}
+.home-slider-arrow{z-index:20 !important;pointer-events:auto !important;position:relative !important;display:flex !important;align-items:center !important;justify-content:center !important;flex:0 0 44px !important;width:44px !important;height:44px !important;border:0 !important;background:#d71920 !important;color:#fff !important;font-size:28px !important;cursor:pointer !important}
+@media(max-width:800px){
+ body{font-size:16px !important}
+ section h2,.category-header h1,.gallery-page h1{font-size:26px !important}
+ .categories-section>h2{font-size:26px !important}
+ .category-card{font-size:15px !important}
+ #ask-price h2.price-title{font-size:28px !important}
+ .ask-price-section label,.ask-price-section input,.ask-price-section select,.ask-price-section textarea{font-size:16px !important}
+ .home-slider-window,.home-slide{height:200px !important}
+ .home-slider-arrow{flex-basis:38px !important;width:38px !important;height:38px !important;font-size:24px !important}
+}

@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260919f">
+<link rel="stylesheet" href="style.css?v=20260919g">
 </head>
 <body>
 <header class="site-header">
@@ -31,7 +31,11 @@
   </nav>
 </header>
 
-<section class="hero" style="background-image:linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.58)),url('https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/cutting-plywood.jpg');"><div class="hero-content"><h1>LASER CUTTING - LASER ENGRAVING<br>DESIGN - PERSONALISED GIFTS</h1></div></section>
+<section class="hero">
+  <img class="hero-cover-image" src="https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/cutting-plywood.jpg?v=20260919" alt="Laser cutting and engraving">
+  <div class="hero-cover-overlay"></div>
+  <div class="hero-content"><h1>LASER CUTTING - LASER ENGRAVING<br>DESIGN - PERSONALISED GIFTS</h1></div>
+</section>
 
 <section id="categories" class="categories-section">
   <h2>CATEGORIES<span class="red-dot">.</span></h2>
@@ -45,9 +49,7 @@
   </div>
   <div class="home-slider">
     <button class="home-slider-arrow prev" type="button" aria-label="Previous">&#10094;</button>
-    <div class="home-slider-window">
-      <div class="home-slider-track" id="homeSliderTrack"></div>
-    </div>
+    <div class="home-slider-window"><div class="home-slider-track" id="homeSliderTrack"></div></div>
     <button class="home-slider-arrow next" type="button" aria-label="Next">&#10095;</button>
   </div>
 </section>
@@ -95,102 +97,20 @@
 <script src="products.js"></script>
 <script>
 const sliderPhotos=["product-1.jpg","product-2.jpg","product-3.jpg","product-4.jpg","product-5.jpg","product-6.jpg","product-7.jpg","product-8.jpg","product-9.jpg","product-10.jpg","product-11.jpg","product-12.jpg","product-13.jpg","product-14.jpg","product-15.jpg","product-16.jpg","product-17.jpg","product-18.jpg","product-19.jpg","product-20.jpg","product-21.jpg","product-22.jpg","product-23.jpg","product-24.jpg","product-25.jpg","product-26.jpg","product-27.jpg","product-28.jpg","product-29.jpg","product-30.jpg","product-31.jpg","product-32.jpg","product-33.jpg","product-34.jpg","product-35.jpg","product-37.jpg","product-38.jpg","product-39.jpg","product-40.jpg","product-41.jpg"];
-const sliderTrack=document.getElementById("homeSliderTrack");
-const sliderWindow=document.querySelector(".home-slider-window");
-const prevButton=document.querySelector(".home-slider-arrow.prev");
-const nextButton=document.querySelector(".home-slider-arrow.next");
-let sliderIndex=0;
-let sliderTimer;
-
-sliderPhotos.forEach((photo,i)=>{
-  const slide=document.createElement("div");
-  slide.className="home-slide";
-  const img=document.createElement("img");
-  img.src=photo;
-  img.alt="Laserworks Ideas";
-  img.loading=i<3?"eager":"lazy";
-  slide.appendChild(img);
-  sliderTrack.appendChild(slide);
-});
-
-function visibleSlides(){
-  return window.innerWidth<=800 ? 2 : 3;
-}
-
-function setupSlider(){
-  const visible=visibleSlides();
-  const width=sliderWindow.clientWidth/visible;
-  sliderTrack.style.width=(width*sliderPhotos.length)+"px";
-  sliderTrack.querySelectorAll(".home-slide").forEach(slide=>{
-    slide.style.setProperty("flex","0 0 "+width+"px","important");
-    slide.style.setProperty("width",width+"px","important");
-    slide.style.setProperty("min-width",width+"px","important");
-  });
-  sliderIndex=Math.min(sliderIndex,Math.max(0,sliderPhotos.length-visible));
-  sliderTrack.style.setProperty("transform","translate3d("+(-sliderIndex*width)+"px,0,0)","important");
-}
-
-function showSlide(newIndex){
-  const visible=visibleSlides();
-  const max=Math.max(0,sliderPhotos.length-visible);
-  if(newIndex<0) newIndex=max;
-  if(newIndex>max) newIndex=0;
-  sliderIndex=newIndex;
-  const width=sliderWindow.clientWidth/visible;
-  sliderTrack.style.setProperty("transition","transform .45s ease","important");
-  sliderTrack.style.setProperty("transform","translate3d("+(-sliderIndex*width)+"px,0,0)","important");
-}
-
-function restartSliderTimer(){
-  clearInterval(sliderTimer);
-  sliderTimer=setInterval(()=>showSlide(sliderIndex+1),4500);
-}
-
-prevButton.onclick=()=>{showSlide(sliderIndex-1);restartSliderTimer()};
-nextButton.onclick=()=>{showSlide(sliderIndex+1);restartSliderTimer()};
-window.addEventListener("resize",setupSlider);
-setupSlider();
-restartSliderTimer();
+const sliderTrack=document.getElementById("homeSliderTrack"),sliderWindow=document.querySelector(".home-slider-window"),prevButton=document.querySelector(".home-slider-arrow.prev"),nextButton=document.querySelector(".home-slider-arrow.next");
+let sliderIndex=0,sliderTimer;
+sliderPhotos.forEach((photo,i)=>{const slide=document.createElement("div");slide.className="home-slide";const img=document.createElement("img");img.src=photo;img.alt="Laserworks Ideas";img.loading=i<3?"eager":"lazy";slide.appendChild(img);sliderTrack.appendChild(slide);});
+function visibleSlides(){return window.innerWidth<=800?2:3}
+function setupSlider(){const visible=visibleSlides(),width=sliderWindow.clientWidth/visible;sliderTrack.style.width=(width*sliderPhotos.length)+"px";sliderTrack.querySelectorAll(".home-slide").forEach(slide=>{slide.style.setProperty("flex","0 0 "+width+"px","important");slide.style.setProperty("width",width+"px","important");slide.style.setProperty("min-width",width+"px","important")});sliderIndex=Math.min(sliderIndex,Math.max(0,sliderPhotos.length-visible));sliderTrack.style.setProperty("transform","translate3d("+(-sliderIndex*width)+"px,0,0)","important")}
+function showSlide(newIndex){const visible=visibleSlides(),max=Math.max(0,sliderPhotos.length-visible);if(newIndex<0)newIndex=max;if(newIndex>max)newIndex=0;sliderIndex=newIndex;const width=sliderWindow.clientWidth/visible;sliderTrack.style.setProperty("transition","transform .45s ease","important");sliderTrack.style.setProperty("transform","translate3d("+(-sliderIndex*width)+"px,0,0)","important")}
+function restartSliderTimer(){clearInterval(sliderTimer);sliderTimer=setInterval(()=>showSlide(sliderIndex+1),4500)}
+prevButton.onclick=()=>{showSlide(sliderIndex-1);restartSliderTimer()};nextButton.onclick=()=>{showSlide(sliderIndex+1);restartSliderTimer()};window.addEventListener("resize",setupSlider);setupSlider();restartSliderTimer();
 
 const categoryGrid=document.getElementById("categoryGrid");
-categories.forEach(category=>{
-  const card=document.createElement("a");
-  card.className="category-card";
-  card.href="category.html?category="+encodeURIComponent(category);
-  card.textContent=category;
-  categoryGrid.appendChild(card);
-});
+categories.forEach(category=>{const card=document.createElement("a");card.className="category-card";card.href="category.html?category="+encodeURIComponent(category);card.textContent=category;categoryGrid.appendChild(card);});
 
 const quotationForm=document.getElementById("quotationForm");
-quotationForm.addEventListener("submit",function(event){
-  event.preventDefault();
-  const type=document.getElementById("type").value;
-  const text=document.getElementById("text").value;
-  const size=document.getElementById("size").value;
-  const material=document.getElementById("material").value;
-  const quantity=document.getElementById("quantity").value;
-  const additional=document.getElementById("additional").value;
-  const customerName=document.getElementById("customerName").value;
-  const customerEmail=document.getElementById("customerEmail").value;
-  const subject="Laserworks Ideas - Quotation Request";
-  const body=`TYPE: ${type}
-
-TEXT: ${text}
-
-SIZE: ${size}
-
-MATERIAL: ${material}
-
-QUANTITY: ${quantity}
-
-ADDITIONAL INFORMATION:
-${additional}
-
-NAME: ${customerName}
-
-EMAIL: ${customerEmail}`;
-  window.location.href="mailto:Laserworksideas@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
-});
+quotationForm.addEventListener("submit",function(event){event.preventDefault();const type=document.getElementById("type").value,text=document.getElementById("text").value,size=document.getElementById("size").value,material=document.getElementById("material").value,quantity=document.getElementById("quantity").value,additional=document.getElementById("additional").value,customerName=document.getElementById("customerName").value,customerEmail=document.getElementById("customerEmail").value,subject="Laserworks Ideas - Quotation Request",body=`TYPE: ${type}\n\nTEXT: ${text}\n\nSIZE: ${size}\n\nMATERIAL: ${material}\n\nQUANTITY: ${quantity}\n\nADDITIONAL INFORMATION:\n${additional}\n\nNAME: ${customerName}\n\nEMAIL: ${customerEmail}`;window.location.href="mailto:Laserworksideas@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body)});
 </script>
 </body>
 </html>

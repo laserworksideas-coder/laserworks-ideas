@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260919a">
+  <link rel="stylesheet" href="style.css?v=20260919f">
 </head>
 
 <body>
@@ -53,19 +53,27 @@
   </section>
 
 
-  <!-- CATEGORY PHOTOS -->
+  <!-- CATEGORY INTRO -->
+  <section class="category-intro">
+    <div class="category-offer-column">
+      <h2>WHAT WE OFFER</h2>
+      <ul id="offerList"></ul>
+    </div>
 
-  <section class="category-photos" id="categoryPhotos"></section>
+    <div class="category-main-photo" id="categoryMainPhoto">
+      <!-- Central category photo will be added after you choose it. -->
+    </div>
+  </section>
 
-
-  <!-- WHAT WE OFFER -->
-
-  <section class="what-we-offer">
-
-    <h2>WHAT WE OFFER</h2>
-
-    <ul id="offerList"></ul>
-
+  <!-- CATEGORY SLIDER -->
+  <section class="category-slider-section">
+    <div class="category-slider">
+      <button class="category-slider-arrow prev" type="button" aria-label="Previous">&#10094;</button>
+      <div class="category-slider-window">
+        <div class="category-slider-track" id="categorySliderTrack"></div>
+      </div>
+      <button class="category-slider-arrow next" type="button" aria-label="Next">&#10095;</button>
+    </div>
   </section>
 
 
@@ -91,7 +99,52 @@
 </footer>
 
 
-<script src="products.js"></script>
+<script src="products.js?v=20260919f"></script>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const category = params.get("category");
+document.getElementById("categoryTitle").textContent = category || "CATEGORY";
+
+const offers = subcategories[category] || [];
+const offerList = document.getElementById("offerList");
+offers.forEach(item => {
+  const li = document.createElement("li");
+  li.textContent = item;
+  offerList.appendChild(li);
+});
+
+const photos = featuredProducts[category] || [];
+const photoGrid = document.getElementById("categoryPhotos");
+photos.forEach(image => {
+  const card = document.createElement("div");
+  card.className = "category-photo";
+  const img = document.createElement("img");
+  img.src = image;
+  img.alt = category;
+  img.loading = "lazy";
+  card.appendChild(img);
+  photoGrid.appendChild(card);
+});
+</script>
+
+</body>
+</html><script>
+const params = new URLSearchParams(window.location.search);
+const category = params.get("category");
+document.getElementById("categoryTitle").textContent = category || "CATEGORY";
+
+const offers = subcategories[category] || [];
+const offerList = document.getElementById("offerList");
+offers.forEach(item => {
+  const li = document.createElement("li");
+  li.textContent = item;
+  offerList.appendChild(li);
+});
+
+// Category photos will be added after the user selects the central photo
+// and the photos that belong in this category's slider.
+</script>
 
 <script>
 const params = new URLSearchParams(window.location.search);

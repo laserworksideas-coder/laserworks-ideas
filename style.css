@@ -20,15 +20,27 @@ section h2{margin:0 0 32px;text-align:center;font-size:27px;font-weight:300;lett
 .category-card{min-height:92px;display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;background:#fff;color:#111;font-size:12px;font-weight:300;letter-spacing:1.1px;transition:.2s;border:1px solid #eee}
 .category-card:hover{background:#111;color:#fff}
 .category-page{background:#fff;min-height:70vh}
-.category-header{padding-bottom:25px}
-.category-header h1{margin:0;text-align:center;font-size:34px;font-weight:300;letter-spacing:2px}
-.category-photos{max-width:1180px;margin:0 auto;padding-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.category-photo{aspect-ratio:1/1;overflow:hidden;background:#f6f6f6}
-.category-photo img{width:100%;height:100%;object-fit:contain;display:block}
+.category-header{padding:55px 5% 30px}
+.category-header h1{margin:0;text-align:center;font-size:38px;font-weight:700;letter-spacing:2px}
+.category-intro{max-width:1180px;margin:0 auto;padding:15px 5% 35px;display:grid;grid-template-columns:1fr 1.25fr;gap:55px;align-items:center}
+.category-offer-column h2{text-align:left;font-size:25px;font-weight:700;letter-spacing:1.5px;margin:0 0 22px}
+.category-offer-column ul{margin:0;padding-left:22px}
+.category-offer-column li{margin-bottom:10px;font-size:16px;line-height:1.4;font-weight:300;letter-spacing:.3px}
+.category-main-photo{width:100%;aspect-ratio:4/3;background:#f3f3f3;overflow:hidden}
+.category-main-photo img{width:100%;height:100%;object-fit:contain;display:block}
+.category-slider-section{max-width:1180px;margin:0 auto;padding:10px 5% 60px}
+.category-slider{display:flex;align-items:center;gap:12px}
+.category-slider-window{overflow:hidden;flex:1}
+.category-slider-track{display:flex;gap:14px;transition:transform .3s ease}
+.category-slider-photo{flex:0 0 calc((100% - 28px)/3);aspect-ratio:1/1;background:#f6f6f6;overflow:hidden}
+.category-slider-photo img{width:100%;height:100%;object-fit:contain;display:block}
+.category-slider-arrow{width:42px;height:42px;border:1px solid #ddd;background:#fff;color:#111;font-size:24px;cursor:pointer;flex:0 0 42px}
+.category-slider-arrow:hover{background:#111;color:#fff}
 .what-we-offer{max-width:850px;margin:0 auto;padding-top:50px;padding-bottom:30px}
 .what-we-offer h2{text-align:left;font-size:22px;margin-bottom:18px}
 .what-we-offer ul{margin:0;padding-left:22px}
 .what-we-offer li{margin-bottom:9px;font-size:15px;line-height:1.55;font-weight:300}
+@media(max-width:800px){.category-intro{grid-template-columns:1fr;gap:28px;padding-left:5%;padding-right:5%}.category-main-photo{aspect-ratio:1/1}.category-slider-photo{flex-basis:calc((100% - 14px)/2)}.category-header h1{font-size:30px}}
 .category-quotation{text-align:center;padding-top:18px;padding-bottom:65px}
 .quotation-button{display:inline-block;padding:14px 28px;background:#111;color:#fff;font-size:10px;font-weight:300;letter-spacing:1.3px;transition:.2s}
 .quotation-button:hover{background:#d71920}

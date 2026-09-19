@@ -45,7 +45,9 @@
   </div>
   <div class="home-slider">
     <button class="home-slider-arrow prev" type="button" aria-label="Previous">&#10094;</button>
-    <div class="home-slider-window"><div class="home-slider-track" id="homeSliderTrack"></div></div>
+    <div class="home-slider-window">
+      <div class="home-slider-track" id="homeSliderTrack"></div>
+    </div>
     <button class="home-slider-arrow next" type="button" aria-label="Next">&#10095;</button>
   </div>
 </section>
@@ -91,6 +93,51 @@
 <footer class="site-footer"><p>© 2026 Laserworks Ideas. All rights reserved.</p></footer>
 
 <script src="products.js"></script>
+<script>
+const sliderPhotos=["product-4.jpg","product-1.jpg","product-40.jpg","product-10.jpg","product-11.jpg","product-12.jpg","product-41.jpg","product-5.jpg"];
+const track=document.getElementById("homeSliderTrack");
+const viewport=document.querySelector(".home-slider-window");
+const prev=document.querySelector(".home-slider-arrow.prev");
+const next=document.querySelector(".home-slider-arrow.next");
+let index=0,timer;
+
+sliderPhotos.forEach((photo,i)=>{
+  const slide=document.createElement("div");
+  slide.className="home-slide";
+  const img=document.createElement("img");
+  img.src=photo; img.alt="Laserworks Ideas"; img.loading=i<3?"eager":"lazy";
+  slide.appendChild(img); track.appendChild(slide);
+});
+
+function visible(){return window.innerWidth<=800?2:3}
+function layout(){
+  const n=visible(), w=viewport.clientWidth, sw=w/n;
+  track.style.setProperty("width",(sw*sliderPhotos.length)+"px","important");
+  track.querySelectorAll(".home-slide").forEach(s=>{
+    s.style.setProperty("flex","0 0 "+sw+"px","important");
+    s.style.setProperty("width",sw+"px","important");
+    s.style.setProperty("min-width",sw+"px","important");
+    s.style.setProperty("height","100%","important");
+  });
+  move(false);
+}
+function move(animate=true){
+  const n=visible(), max=sliderPhotos.length-n;
+  if(index<0) index=max;
+  if(index>max) index=0;
+  const sw=viewport.clientWidth/n;
+  track.style.setProperty("transition",animate?"transform .45s ease":"none","important");
+  track.style.setProperty("transform","translate3d("+(-index*sw)+"px,0,0)","important");
+}
+function restart(){
+  clearInterval(timer);
+  timer=setInterval(()=>{index++;move(true)},4500);
+}
+prev.onclick=e=>{e.preventDefault();index--;move(true);restart()};
+next.onclick=e=>{e.preventDefault();index++;move(true);restart()};
+window.addEventListener("resize",layout);
+layout(); restart();
+</script>
 <script>
 const sliderPhotos=["product-4.jpg","product-1.jpg","product-40.jpg","product-10.jpg","product-11.jpg","product-12.jpg","product-41.jpg","product-5.jpg"];
 const sliderTrack=document.getElementById("homeSliderTrack");

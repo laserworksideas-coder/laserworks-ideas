@@ -190,7 +190,7 @@ We will add your real product photos later.
 
 const featuredProducts = {
   "CHRISTENING & NEWBORNS": ["product-4.jpg","product-10.jpg","product-11.jpg","product-9.jpg","product-6.jpg","product-22.jpg","product-40.jpg","product-29.jpg","product-30.jpg","product-31.jpg"],
-  "WEDDING": ["product-1.jpg","product-15.jpg","product-41.jpg","wedding (1).jpg","wedding (2).jpg","wedding (3).jpg"],
+  "WEDDING": ["product-1.jpg","product-15.jpg","product-41.jpg","wedding (1).jpg","wedding (2).jpg","wedding (3).jpg","soaps (5).jpg","soaps (6).jpg","soaps (7).jpg","soaps (8).jpg","soaps (9).jpg","soaps (10).jpg","soaps (11).jpg"],
   "SEASONAL": ["product-5.jpg","product-2.jpg","product-21.jpg","product-3.jpg","product-7.jpg","product-8.jpg","seasonal.jpg"],
   "BIRTHDAY & PARTIES": ["product-16.jpg","product-18.jpg","product-20.jpg","product-22.jpg","product-26.jpg","product-27.jpg","product-32.jpg","product-35.jpg","birthday.jpg","birthday (1).jpg","birthday (21).jpg","birthday (22).jpg","birthday (23).jpg","birthday (24).jpg","birthday (25).jpg","birthday (26).jpg","birthday (27).jpg","birthday (28).jpg","birthday (29).jpg","birthday (30).jpg","birthday (31).jpg","birthday (32).jpg","birthday (33).jpg","birthday (34).jpg","birthday (35).jpg","birthday (36).jpg","birthday (37).jpg","birthday (38).jpg","birthday (39).jpg","birthday (40).jpg","birthday (41).jpg","birthday (42).jpg","birthday (43).jpg","birthday (44).jpg"],
   "PERSONALISED GIFTS": ["product-12.jpg","product-41.jpg","product-6.jpg","product-7.jpg","product-8.jpg","product-19.jpg","product-37.jpg"],
@@ -199,7 +199,7 @@ const featuredProducts = {
   "LASER ENGRAVING": ["engraving.jpg"],
   "INVITATIONS": ["invitation.jpg"],
   "DESIGN": [],
-  "BALLOONS & CANDY CAKES": [],
+  "BALLOONS & CANDY CAKES": ["ballons (3).jpg","ballons (4).jpg","ballons (5).jpg","ballons (6).jpg","ballons (7).jpg","ballons (8).jpg","ballons (9).jpg","ballons (10).jpg"],
   "CLOTHING & TOWELS": ["product-23.jpg","product-24.jpg"]
 };
 

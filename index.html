@@ -121,9 +121,9 @@ function setupSlider(){
   const slideWidth=windowWidth/visible;
   sliderTrack.style.width=(slideWidth*sliderPhotos.length)+"px";
   sliderTrack.querySelectorAll(".home-slide").forEach(slide=>{
-    slide.style.flex="0 0 "+slideWidth+"px";
-    slide.style.width=slideWidth+"px";
-    slide.style.minWidth=slideWidth+"px";
+    slide.style.setProperty("flex","0 0 "+slideWidth+"px","important");
+    slide.style.setProperty("width",slideWidth+"px","important");
+    slide.style.setProperty("min-width",slideWidth+"px","important");
   });
   if(sliderIndex>sliderPhotos.length-visible) sliderIndex=0;
   sliderTrack.style.transition="none";

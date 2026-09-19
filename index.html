@@ -127,7 +127,7 @@ function setupSlider(){
   });
   if(sliderIndex>sliderPhotos.length-visible) sliderIndex=0;
   sliderTrack.style.transition="none";
-  sliderTrack.style.transform="translate3d("+(-sliderIndex*slideWidth)+"px,0,0)";
+  sliderTrack.style.setProperty("transform","translate3d("+(-sliderIndex*slideWidth)+"px,0,0)","important");
   requestAnimationFrame(()=>{ sliderTrack.style.transition="transform .45s ease"; });
 }
 

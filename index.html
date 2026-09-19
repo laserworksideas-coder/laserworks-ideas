@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260919a">
+<link rel="stylesheet" href="style.css?v=20260919b">
 </head>
 <body>
 <header class="site-header">
@@ -94,7 +94,11 @@
 <script>
 const sliderPhotos=["product-4.jpg","product-1.jpg","product-40.jpg","product-10.jpg","product-11.jpg","product-12.jpg","product-41.jpg","product-5.jpg"];
 const sliderTrack=document.getElementById("homeSliderTrack");
+const sliderWindow=document.querySelector(".home-slider-window");
+const prevButton=document.querySelector(".home-slider-arrow.prev");
+const nextButton=document.querySelector(".home-slider-arrow.next");
 let sliderIndex=0;
+let sliderTimer;
 
 sliderPhotos.forEach((photo,i)=>{
   const slide=document.createElement("div");
@@ -107,34 +111,57 @@ sliderPhotos.forEach((photo,i)=>{
   sliderTrack.appendChild(slide);
 });
 
-function visibleSlides(){ return window.innerWidth<=800 ? 2 : 3; }
+function visibleSlides(){
+  return window.innerWidth<=800 ? 2 : 3;
+}
 
 function setupSlider(){
   const visible=visibleSlides();
-  sliderTrack.style.width=(sliderPhotos.length/visible*100)+"%";
+  const windowWidth=sliderWindow.clientWidth;
+  const slideWidth=windowWidth/visible;
+  sliderTrack.style.width=(slideWidth*sliderPhotos.length)+"px";
   sliderTrack.querySelectorAll(".home-slide").forEach(slide=>{
-    slide.style.flex="0 0 "+(100/sliderPhotos.length)+"%";
-    slide.style.minWidth=(100/sliderPhotos.length)+"%";
+    slide.style.flex="0 0 "+slideWidth+"px";
+    slide.style.width=slideWidth+"px";
+    slide.style.minWidth=slideWidth+"px";
   });
-  showSlide(sliderIndex,false);
+  if(sliderIndex>sliderPhotos.length-visible) sliderIndex=0;
+  sliderTrack.style.transition="none";
+  sliderTrack.style.transform="translate3d("+(-sliderIndex*slideWidth)+"px,0,0)";
+  requestAnimationFrame(()=>{ sliderTrack.style.transition="transform .45s ease"; });
 }
 
 function showSlide(index,animate=true){
-  const max=Math.max(0,sliderPhotos.length-visibleSlides());
+  const visible=visibleSlides();
+  const max=Math.max(0,sliderPhotos.length-visible);
   if(index<0) sliderIndex=max;
   else if(index>max) sliderIndex=0;
   else sliderIndex=index;
-  const visible=visibleSlides();
-  const move=(sliderIndex*(100/sliderPhotos.length));
+  const slideWidth=sliderWindow.clientWidth/visible;
   sliderTrack.style.transition=animate?"transform .45s ease":"none";
-  sliderTrack.style.transform="translateX(-"+move+"%)";
+  sliderTrack.style.transform="translate3d("+(-sliderIndex*slideWidth)+"px,0,0)";
 }
 
-document.querySelector(".home-slider-arrow.prev").addEventListener("click",()=>showSlide(sliderIndex-1));
-document.querySelector(".home-slider-arrow.next").addEventListener("click",()=>showSlide(sliderIndex+1));
-let sliderTimer=setInterval(()=>showSlide(sliderIndex+1),4500);
+function restartSliderTimer(){
+  clearInterval(sliderTimer);
+  sliderTimer=setInterval(()=>showSlide(sliderIndex+1),4500);
+}
+
+prevButton.addEventListener("click",function(event){
+  event.preventDefault();
+  showSlide(sliderIndex-1);
+  restartSliderTimer();
+});
+
+nextButton.addEventListener("click",function(event){
+  event.preventDefault();
+  showSlide(sliderIndex+1);
+  restartSliderTimer();
+});
+
 window.addEventListener("resize",setupSlider);
 setupSlider();
+restartSliderTimer();
 
 const categoryGrid=document.getElementById("categoryGrid");
 categories.forEach(category=>{
@@ -175,7 +202,6 @@ NAME: ${customerName}
 EMAIL: ${customerEmail}`;
   window.location.href="mailto:Laserworksideas@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
 });
-requestAnimationFrame(()=>showSlide(0));
 </script>
 </body>
 </html>

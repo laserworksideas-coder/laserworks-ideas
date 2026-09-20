@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260919g">
+<link rel="stylesheet" href="style.css?v=20260920lang">
 </head>
 <body>
 <header class="site-header">
@@ -17,35 +17,35 @@
       <div class="contact-email">Laserworksideas@gmail.com</div>
       <div class="contact-actions">
         <span>WhatsApp / Viber: +357 99 303580</span>
-        <a class="header-message-button" href="mailto:Laserworksideas@gmail.com?subject=Laserworks%20Ideas%20-%20Message">SEND A MESSAGE</a>
+        <a class="header-message-button" href="mailto:Laserworksideas@gmail.com?subject=Laserworks%20Ideas%20-%20Message"><span data-i18n="SEND A MESSAGE">SEND A MESSAGE</span></a>
       </div>
     </div>
   </div>
   <nav class="main-menu">
-    <a href="index.html">HOME</a>
-    <a href="#categories">CATEGORIES</a>
-    <a href="gallery.html">GALLERY</a>
-    <a href="#about">ABOUT US</a>
-    <a href="#ask-price">ASK FOR A PRICE</a>
-    <a href="#contact">CONTACT</a>
+    <a href="index.html" data-i18n="HOME">HOME</a>
+    <a href="#categories" data-i18n="CATEGORIES">CATEGORIES</a>
+    <a href="gallery.html" data-i18n="GALLERY">GALLERY</a>
+    <a href="#about" data-i18n="ABOUT US">ABOUT US</a>
+    <a href="#ask-price" data-i18n="ASK FOR A PRICE">ASK FOR A PRICE</a>
+    <a href="#contact" data-i18n="CONTACT">CONTACT</a>
   </nav>
 </header>
 
 <section class="hero">
   <img class="hero-cover-image" src="https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/cutting-plywood.jpg?v=20260919" alt="Laser cutting and engraving">
   <div class="hero-cover-overlay"></div>
-  <div class="hero-content"><h1>LASER CUTTING - LASER ENGRAVING<br>DESIGN - PERSONALISED GIFTS</h1></div>
+  <div class="hero-content"><h1><span data-i18n="LASER CUTTING - LASER ENGRAVING">LASER CUTTING - LASER ENGRAVING</span><br><span data-i18n="DESIGN - PERSONALISED GIFTS">DESIGN - PERSONALISED GIFTS</span></h1></div>
 </section>
 
 <section id="categories" class="categories-section">
-  <h2>CATEGORIES<span class="red-dot">.</span></h2>
+  <h2 data-i18n="CATEGORIES">CATEGORIES<span class="red-dot">.</span></h2>
   <div id="categoryGrid" class="category-grid"></div>
 </section>
 
 <section class="home-slider-section">
   <div class="section-title">
-    <h2>OUR WORK<span class="red-dot">.</span></h2>
-    <a href="gallery.html" class="view-gallery-button">VIEW ALL</a>
+    <h2 data-i18n="OUR WORK.">OUR WORK<span class="red-dot">.</span></h2>
+    <a href="gallery.html" class="view-gallery-button" data-i18n="VIEW ALL">VIEW ALL</a>
   </div>
   <div class="home-slider">
     <button class="home-slider-arrow prev" type="button" aria-label="Previous">&#10094;</button>
@@ -56,8 +56,8 @@
 
 <section id="about" class="about-section">
   <div class="about-content">
-    <h2>ABOUT US<span class="red-dot">.</span></h2>
-    <h3>EST. 2013</h3>
+    <h2 data-i18n="ABOUT US">ABOUT US<span class="red-dot">.</span></h2>
+    <h3 data-i18n="EST. 2013">EST. 2013</h3>
     <p>Laserworks Ideas is a creative laser cutting studio in Limassol, Cyprus, specialising in custom laser cut MDF, wood and acrylic products. We also offer laser engraving and laser craft, creating personalised gifts, names, signs, decorations and custom designs for christenings, birthdays, weddings, schools and events.</p>
     <p>Our services include personalised clothing printing, custom event decorations and unique gift details such as balloons, soaps, candy and cake decorations.</p>
     <p>We also create custom corporate gifts and work with event planners and businesses. We deliver throughout Cyprus.</p>
@@ -65,28 +65,28 @@
 </section>
 
 <section id="ask-price" class="ask-price-section">
-  <h2 class="price-title">ASK FOR A PRICE</h2>
+  <h2 class="price-title" data-i18n="ASK FOR A PRICE">ASK FOR A PRICE</h2>
   <form id="quotationForm">
-    <label>TYPE</label><select id="type" required><option value="">Select</option><option>NAME</option><option>MONOGRAM</option><option>NUMBER</option><option>WORD</option><option>PHRASE</option><option>OTHER</option></select>
-    <label>TEXT</label><input type="text" id="text" placeholder="Enter your text">
-    <label>SIZE</label><select id="size"><option value="">Select size</option><option>2 cm</option><option>5 cm</option><option>10 cm</option><option>15 cm</option><option>20 cm</option><option>30 cm</option><option>40 cm</option><option>50 cm</option><option>60 cm</option><option>70 cm</option><option>80 cm</option></select>
-    <label>MATERIAL</label><select id="material"><option value="">Select material</option><option>WOOD</option><option>MDF 3mm</option><option>MDF 4mm</option><option>MDF 6mm</option><option>ACRYLIC GOLD</option><option>ACRYLIC SILVER</option><option>ACRYLIC ROSE GOLD</option><option>ACRYLIC OTHER COLOUR</option></select>
-    <label>QUANTITY</label><input type="number" id="quantity" min="1" value="1">
-    <label>ADDITIONAL INFORMATION</label><textarea id="additional" placeholder="Anything else we should know?"></textarea>
-    <label>NAME</label><input type="text" id="customerName" required>
-    <label>EMAIL</label><input type="email" id="customerEmail" required>
-    <button type="submit">SEND QUOTATION</button>
+    <label data-i18n="TYPE">TYPE</label><select id="type" required><option value="">Select</option><option>NAME</option><option>MONOGRAM</option><option>NUMBER</option><option>WORD</option><option>PHRASE</option><option>OTHER</option></select>
+    <label data-i18n="TEXT">TEXT</label><input type="text" id="text" placeholder="Enter your text">
+    <label data-i18n="SIZE">SIZE</label><select id="size"><option value="">Select size</option><option>2 cm</option><option>5 cm</option><option>10 cm</option><option>15 cm</option><option>20 cm</option><option>30 cm</option><option>40 cm</option><option>50 cm</option><option>60 cm</option><option>70 cm</option><option>80 cm</option></select>
+    <label data-i18n="MATERIAL">MATERIAL</label><select id="material"><option value="">Select material</option><option>WOOD</option><option>MDF 3mm</option><option>MDF 4mm</option><option>MDF 6mm</option><option>ACRYLIC GOLD</option><option>ACRYLIC SILVER</option><option>ACRYLIC ROSE GOLD</option><option>ACRYLIC OTHER COLOUR</option></select>
+    <label data-i18n="QUANTITY">QUANTITY</label><input type="number" id="quantity" min="1" value="1">
+    <label data-i18n="ADDITIONAL INFORMATION">ADDITIONAL INFORMATION</label><textarea id="additional" placeholder="Anything else we should know?"></textarea>
+    <label data-i18n="NAME">NAME</label><input type="text" id="customerName" required>
+    <label data-i18n="EMAIL">EMAIL</label><input type="email" id="customerEmail" required>
+    <button type="submit" data-i18n="SEND QUOTATION">SEND QUOTATION</button>
   </form>
 </section>
 
 <section id="contact" class="contact-section">
   <div class="contact-layout">
     <div class="contact-details">
-      <h2>CONTACT US<span class="red-dot">.</span></h2>
-      <p><strong>ADDRESS</strong><br>33A Despoinas Pattichi<br>Limassol 3071, Cyprus<br><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=33A%20Despoinas%20Pattichi%2C%20Limassol%203071%2C%20Cyprus" target="_blank" rel="noopener">VIEW ON GOOGLE MAPS</a></p>
-      <p><strong>EMAIL</strong><br>Laserworksideas@gmail.com</p>
-      <p><strong>WHATSAPP / VIBER</strong><br>+357 99 303580</p>
-      <p><strong>PHONE</strong><br>+357 25 322025</p>
+      <h2 data-i18n="CONTACT US.">CONTACT US<span class="red-dot">.</span></h2>
+      <p><strong data-i18n="ADDRESS">ADDRESS</strong><br>33A Despoinas Pattichi<br>Limassol 3071, Cyprus<br><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=33A%20Despoinas%20Pattichi%2C%20Limassol%203071%2C%20Cyprus" target="_blank" rel="noopener"><span data-i18n="VIEW ON GOOGLE MAPS">VIEW ON GOOGLE MAPS</span></a></p>
+      <p><strong data-i18n="EMAIL">EMAIL</strong><br>Laserworksideas@gmail.com</p>
+      <p><strong data-i18n="WHATSAPP / VIBER">WHATSAPP / VIBER</strong><br>+357 99 303580</p>
+      <p><strong data-i18n="PHONE">PHONE</strong><br>+357 25 322025</p>
     </div>
     <div class="map-container"><iframe src="https://www.google.com/maps?q=33A%20Despoinas%20Pattichi%2C%20Limassol%203071%2C%20Cyprus&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Laserworks Ideas location map"></iframe></div>
   </div>
@@ -94,7 +94,7 @@
 
 <footer class="site-footer"><p>© 2026 Laserworks Ideas. All rights reserved.</p></footer>
 
-<script src="products.js"></script>
+<script src="products.js"></script><script src="language.js?v=20260920a"></script>
 <script>
 const sliderPhotos=["product-1.jpg","product-2.jpg","product-3.jpg","product-4.jpg","product-5.jpg","product-6.jpg","product-7.jpg","product-8.jpg","product-9.jpg","product-10.jpg","product-11.jpg","product-12.jpg","product-13.jpg","product-14.jpg","product-15.jpg","product-16.jpg","product-17.jpg","product-18.jpg","product-19.jpg","product-20.jpg","product-21.jpg","product-22.jpg","product-23.jpg","product-24.jpg","product-25.jpg","product-26.jpg","product-27.jpg","product-28.jpg","product-29.jpg","product-30.jpg","product-31.jpg","product-32.jpg","product-33.jpg","product-34.jpg","product-35.jpg","product-37.jpg","product-38.jpg","product-39.jpg","product-40.jpg","product-41.jpg"];
 const sliderTrack=document.getElementById("homeSliderTrack"),sliderWindow=document.querySelector(".home-slider-window"),prevButton=document.querySelector(".home-slider-arrow.prev"),nextButton=document.querySelector(".home-slider-arrow.next");
@@ -107,10 +107,11 @@ function restartSliderTimer(){clearInterval(sliderTimer);sliderTimer=setInterval
 prevButton.onclick=()=>{showSlide(sliderIndex-1);restartSliderTimer()};nextButton.onclick=()=>{showSlide(sliderIndex+1);restartSliderTimer()};window.addEventListener("resize",setupSlider);setupSlider();restartSliderTimer();
 
 const categoryGrid=document.getElementById("categoryGrid");
-categories.forEach(category=>{const card=document.createElement("a");card.className="category-card";card.href="category.html?category="+encodeURIComponent(category);card.textContent=category;categoryGrid.appendChild(card);});
+categories.forEach(category=>{const card=document.createElement("a");card.className="category-card";card.dataset.category=category;card.href="category.html?category="+encodeURIComponent(category);card.textContent=trCategory(category);categoryGrid.appendChild(card);});
 
 const quotationForm=document.getElementById("quotationForm");
 quotationForm.addEventListener("submit",function(event){event.preventDefault();const type=document.getElementById("type").value,text=document.getElementById("text").value,size=document.getElementById("size").value,material=document.getElementById("material").value,quantity=document.getElementById("quantity").value,additional=document.getElementById("additional").value,customerName=document.getElementById("customerName").value,customerEmail=document.getElementById("customerEmail").value,subject="Laserworks Ideas - Quotation Request",body=`TYPE: ${type}\n\nTEXT: ${text}\n\nSIZE: ${size}\n\nMATERIAL: ${material}\n\nQUANTITY: ${quantity}\n\nADDITIONAL INFORMATION:\n${additional}\n\nNAME: ${customerName}\n\nEMAIL: ${customerEmail}`;window.location.href="mailto:Laserworksideas@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body)});
 </script>
+<script>window.addEventListener("languageChanged",()=>{document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent=tr(el.getAttribute("data-i18n"));});document.querySelectorAll(".category-card").forEach(el=>el.textContent=trCategory(el.dataset.category));});</script>
 </body>
 </html>

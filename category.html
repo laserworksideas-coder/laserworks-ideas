@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Laserworks Ideas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260920lang">
+<link rel="stylesheet" href="style.css?v=20260921folders">
 </head><body>
 <header class="site-header"><div class="header-top"><div class="logo-area"><a href="index.html"><img src="LOGO.png" alt="Laserworks Ideas"></a></div><div class="contact-top"><div>Laserworksideas@gmail.com</div><div class="contact-actions"><span>WhatsApp / Viber: +357 99 303580</span><a class="header-message-button" href="mailto:Laserworksideas@gmail.com?subject=Laserworks%20Ideas%20-%20Message"><span data-i18n="SEND A MESSAGE">SEND A MESSAGE</span></a></div></div></div>
 <nav class="main-menu"><a href="index.html" data-i18n="HOME">HOME</a><a href="index.html#categories" data-i18n="CATEGORIES">CATEGORIES</a><a href="gallery.html" data-i18n="GALLERY">GALLERY</a><a href="index.html#about" data-i18n="ABOUT US">ABOUT US</a><a href="index.html#ask-price" data-i18n="ASK FOR A PRICE">ASK FOR A PRICE</a><a href="index.html#contact" data-i18n="CONTACT">CONTACT</a></nav></header>
@@ -14,13 +13,33 @@
 <section class="category-slider-section"><div class="category-slider"><button class="category-slider-arrow prev" type="button">&#10094;</button><div class="category-slider-window"><div class="category-slider-track" id="categorySliderTrack"></div></div><button class="category-slider-arrow next" type="button">&#10095;</button></div></section>
 <section class="category-quotation"><a href="index.html#ask-price" class="quotation-button" data-i18n="ASK FOR A QUOTATION">ASK FOR A QUOTATION</a></section></main>
 <footer class="site-footer"><p>© 2026 Laserworks Ideas. All rights reserved.</p></footer>
-<script src="products.js"></script><script src="language.js?v=20260920a"></script>
+<script src="products.js"></script><script src="language.js?v=20260921folders"></script>
 <script>
-const params=new URLSearchParams(location.search),category=params.get("category")||"",title=document.getElementById("categoryTitle"),offerList=document.getElementById("offerList"),mainPhoto=document.getElementById("categoryMainPhoto"),track=document.getElementById("categorySliderTrack"),photos=featuredProducts[category]||[];
+const params=new URLSearchParams(location.search),category=params.get("category")||"",title=document.getElementById("categoryTitle"),offerList=document.getElementById("offerList"),mainPhoto=document.getElementById("categoryMainPhoto"),track=document.getElementById("categorySliderTrack");
 title.dataset.categoryName=category;title.textContent=trCategory(category);
 (subcategories[category]||[]).forEach(item=>{const li=document.createElement("li");li.dataset.subcategory=item;li.textContent=trSub(item);offerList.appendChild(li);});
-if(photos.length){const img=document.createElement("img");img.src=mainCategoryPhotos[category]||photos[0];img.alt=category;mainPhoto.appendChild(img);photos.forEach((photo,i)=>{const card=document.createElement("div");card.className="category-slider-photo";const image=document.createElement("img");image.src=photo;image.alt=category;image.loading=i<3?"eager":"lazy";card.appendChild(image);track.appendChild(card);});}
-let catIndex=0;function catVisible(){return innerWidth<=800?2:3}function catSetup(){const v=catVisible(),gap=14,w=(track.parentElement.clientWidth-(v-1)*gap)/v;track.querySelectorAll(".category-slider-photo").forEach(x=>{x.style.flex="0 0 "+w+"px";x.style.minWidth=w+"px"});catIndex=Math.min(catIndex,Math.max(0,photos.length-v));track.style.transform="translate3d("+(-catIndex*(w+gap))+"px,0,0)"}function catMove(d){const v=catVisible(),max=Math.max(0,photos.length-v);catIndex+=d;if(catIndex<0)catIndex=max;if(catIndex>max)catIndex=0;const gap=14,w=(track.parentElement.clientWidth-(v-1)*gap)/v;track.style.transition="transform .3s ease";track.style.transform="translate3d("+(-catIndex*(w+gap))+"px,0,0)"}document.querySelector(".category-slider-arrow.prev").onclick=()=>catMove(-1);document.querySelector(".category-slider-arrow.next").onclick=()=>catMove(1);addEventListener("resize",catSetup);catSetup();
-
+const repoApi="https://api.github.com/repos/laserworksideas-coder/laserworks-ideas/contents/";
+const imageExt=/\.(jpg|jpeg|png|webp|gif)$/i;
+let photos=[];
+async function loadCategoryPhotos(){
+ try{
+  const res=await fetch(repoApi+encodeURIComponent(category)+"?ref=main");
+  const files=await res.json();
+  if(Array.isArray(files)){
+   const seen=new Set();
+   photos=files.filter(f=>f.type==="file"&&imageExt.test(f.name)&&!seen.has(f.sha)&&seen.add(f.sha)).map(f=>({name:f.name,url:f.download_url,sha:f.sha}));
+  }
+ }catch(e){photos=[];}
+ if(!photos.length){
+  photos=(featuredProducts[category]||[]).map(name=>({name,url:name,sha:name}));
+ }
+ const preferred=mainCategoryPhotos[category];
+ const main=photos.find(p=>preferred&&p.name.toLowerCase()===preferred.toLowerCase())||photos[0];
+ if(main){const img=document.createElement("img");img.src=main.url;img.alt=category;mainPhoto.appendChild(img);}
+ photos.forEach((photo,i)=>{const card=document.createElement("div");card.className="category-slider-photo";const image=document.createElement("img");image.src=photo.url;image.alt=category;image.loading=i<3?"eager":"lazy";card.appendChild(image);track.appendChild(card);});
+ catSetup();
+}
+let catIndex=0;function catVisible(){return innerWidth<=800?2:3}function catSetup(){const v=catVisible(),gap=14,w=(track.parentElement.clientWidth-(v-1)*gap)/v;track.querySelectorAll(".category-slider-photo").forEach(x=>{x.style.flex="0 0 "+w+"px";x.style.minWidth=w+"px"});catIndex=Math.min(catIndex,Math.max(0,photos.length-v));track.style.transform="translate3d("+(-catIndex*(w+gap))+"px,0,0)"}function catMove(d){const v=catVisible(),max=Math.max(0,photos.length-v);catIndex+=d;if(catIndex<0)catIndex=max;if(catIndex>max)catIndex=0;const gap=14,w=(track.parentElement.clientWidth-(v-1)*gap)/v;track.style.transition="transform .3s ease";track.style.transform="translate3d("+(-catIndex*(w+gap))+"px,0,0)"}document.querySelector(".category-slider-arrow.prev").onclick=()=>catMove(-1);document.querySelector(".category-slider-arrow.next").onclick=()=>catMove(1);addEventListener("resize",catSetup);
+loadCategoryPhotos();
 addEventListener("languageChanged",()=>{title.textContent=trCategory(category);offerList.querySelectorAll("[data-subcategory]").forEach(li=>li.textContent=trSub(li.dataset.subcategory))});
 </script></body></html>

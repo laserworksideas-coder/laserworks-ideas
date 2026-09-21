@@ -20,7 +20,7 @@ title.dataset.categoryName=category;title.textContent=trCategory(category);
 (subcategories[category]||[]).forEach(item=>{const li=document.createElement("li");li.dataset.subcategory=item;li.textContent=trSub(item);offerList.appendChild(li);});
 const imageExt=/\.(jpg|jpeg|png|webp|gif)$/i;
 let photos=[];
-function rawUrl(name){return "https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/"+encodeURIComponent(category)+"/"+name.split("/").map(encodeURIComponent).join("/");}
+function rawUrl(name){return "https://github.com/laserworksideas-coder/laserworks-ideas/raw/refs/heads/main/"+encodeURIComponent(category)+"/"+name.split("/").map(encodeURIComponent).join("/");}
 function loadCategoryPhotos(){
  photos=(categoryPhotos[category]||[]).map(name=>({name,url:rawUrl(name),sha:name}));
  const preferred=mainCategoryPhotos[category];

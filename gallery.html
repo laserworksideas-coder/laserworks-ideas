@@ -64,7 +64,7 @@ const galleryCategories = document.getElementById("galleryCategories");
 
 categories.forEach(category => {
   const photos = featuredProducts[category] || [];
-  const mainPhoto = photos[0];
+  const mainPhoto = mainCategoryPhotos[category] || photos[0];
 
   const link = document.createElement("a");
   link.className = "gallery-category-tile";

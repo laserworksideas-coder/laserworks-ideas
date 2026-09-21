@@ -109,7 +109,7 @@ async function loadHomePhotos(){const seen=new Set();for(const category of categ
 prevButton.onclick=()=>{showSlide(sliderIndex-1);restartSliderTimer()};nextButton.onclick=()=>{showSlide(sliderIndex+1);restartSliderTimer()};window.addEventListener("resize",setupSlider);loadHomePhotos();
 
 const categoryGrid=document.getElementById("categoryGrid");
-async function loadCategoryCards(){for(const category of categories){const card=document.createElement("a");card.className="category-card";card.dataset.category=category;card.href="category.html?category="+encodeURIComponent(category);card.innerHTML='<span class="category-card-name">'+trCategory(category)+'</span><img class="category-card-image" alt="">';categoryGrid.appendChild(card);try{const res=await fetch(GITHUB_API+encodeURIComponent(category)+"?ref=main");if(!res.ok)continue;const files=await res.json();const img=files.find(f=>f.type==="file"&&/\.(jpg|jpeg|png|webp|gif)$/i.test(f.name));if(img){const image=card.querySelector("img");image.src=img.download_url;image.alt=category;card.classList.add("has-image")}}catch(e){}}}
+function loadCategoryCards(){for(const category of categories){const card=document.createElement("a");card.className="category-card";card.dataset.category=category;card.href="category.html?category="+encodeURIComponent(category);card.innerHTML='<span class="category-card-name">'+trCategory(category)+'</span>';categoryGrid.appendChild(card)}}
 loadCategoryCards();
 
 const quotationForm=document.getElementById("quotationForm");

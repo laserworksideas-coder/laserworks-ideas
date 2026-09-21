@@ -44,7 +44,7 @@ const featuredProducts = {
 };
 
 const mainCategoryPhotos = {
-  "CHRISTENING & NEWBORNS": "",
+  "CHRISTENING & NEWBORNS": "product-4.jpg",
   "NAMES, MONOGRAMS & TOPPERS": "TOPPERS (17).jpg",
   "WEDDING": "wedding (1).jpg",
   "BIRTHDAY & PARTIES": "BIRTHDAY (6).jpg",

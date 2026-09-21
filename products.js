@@ -31,17 +31,17 @@ const subcategories = {
 const featuredProducts = {};
 
 const mainCategoryPhotos = {
+  "WEDDING": "WEDDING (10).jpg",
   "CHRISTENING & NEWBORNS": "CHRISTENING (2).jpg",
-  "NAMES, MONOGRAMS & TOPPERS": "TOPPERS (2).jpg",
-  "WEDDING": "WEDDING (1).jpg",
   "BIRTHDAY & PARTIES": "BIRTHDAY (6).jpg",
-  "SEASONAL": "MOTHERS (10).jpg",
-  "PERSONALISED GIFTS": "PERSONALISED (6).jpg",
+  "SEASONAL": "seasonal.jpg",
   "SCHOOL & TEACHER GIFTS": "SCHOOL (11).jpg",
-  "CORPORATE GIFTS": "CORPORATE (8).jpg",
-  "CUSTOMISED FIGURES, CUT OUTS & LASER ENGRAVING": "",
-  "INVITATIONS & DESIGN": "INVITATION (44).jpg",
-  "BALLOONS, SOAPS & CANDY CAKES": "",
+  "CORPORATE GIFTS": "CORPORATE (10).jpg",
+  "PERSONALISED GIFTS": "",
+  "NAMES, MONOGRAMS & TOPPERS": "TOPPERS (2).jpg",
+  "CUSTOMISED FIGURES, CUT OUTS & LASER ENGRAVING": "engraving.jpg",
+  "INVITATIONS & DESIGN": "invitation.jpg",
+  "BALLOONS, SOAPS & CANDY CAKES": "ballons (10).jpg",
   "CLOTHING & TOWELS": ""
 };
 

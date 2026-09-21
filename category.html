@@ -18,21 +18,11 @@
 const params=new URLSearchParams(location.search),category=params.get("category")||"",title=document.getElementById("categoryTitle"),offerList=document.getElementById("offerList"),mainPhoto=document.getElementById("categoryMainPhoto"),track=document.getElementById("categorySliderTrack");
 title.dataset.categoryName=category;title.textContent=trCategory(category);
 (subcategories[category]||[]).forEach(item=>{const li=document.createElement("li");li.dataset.subcategory=item;li.textContent=trSub(item);offerList.appendChild(li);});
-const repoApi="https://api.github.com/repos/laserworksideas-coder/laserworks-ideas/contents/";
 const imageExt=/\.(jpg|jpeg|png|webp|gif)$/i;
 let photos=[];
-async function loadCategoryPhotos(){
- try{
-  const res=await fetch(repoApi+encodeURIComponent(category)+"?ref=main");
-  const files=await res.json();
-  if(Array.isArray(files)){
-   const seen=new Set();
-   photos=files.filter(f=>f.type==="file"&&imageExt.test(f.name)&&!seen.has(f.sha)&&seen.add(f.sha)).map(f=>({name:f.name,url:f.download_url,sha:f.sha}));
-  }
- }catch(e){photos=[];}
- if(!photos.length){
-  photos=(featuredProducts[category]||[]).map(name=>({name,url:name,sha:name}));
- }
+function rawUrl(name){return "https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/"+encodeURIComponent(category)+"/"+name.split("/").map(encodeURIComponent).join("/");}
+function loadCategoryPhotos(){
+ photos=(categoryPhotos[category]||[]).map(name=>({name,url:rawUrl(name),sha:name}));
  const preferred=mainCategoryPhotos[category];
  const main=photos.find(p=>preferred&&p.name.toLowerCase()===preferred.toLowerCase())||photos[0];
  if(main){const img=document.createElement("img");img.src=main.url;img.alt=category;mainPhoto.appendChild(img);}

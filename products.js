@@ -51,7 +51,7 @@ const mainCategoryPhotos = {
   "SEASONAL": "",
   "PERSONALISED GIFTS": "",
   "SCHOOL & TEACHER GIFTS": "SCHOOL (11).jpg",
-  "CORPORATE GIFTS": "",
+  "CORPORATE GIFTS": "product-17.jpg",
   "LASER ENGRAVING": "",
   "INVITATIONS & DESIGN": "",
   "BALLOONS, SOAPS & CANDY CAKES": "",

@@ -43,4 +43,19 @@ const featuredProducts = {
   "CLOTHING & TOWELS": ["product-23.jpg","product-24.jpg"]
 };
 
+const mainCategoryPhotos = {
+  "CHRISTENING & NEWBORNS": "CHRISTENING (2).jpg",
+  "NAMES, MONOGRAMS & TOPPERS": "TOPPERS (17).jpg",
+  "WEDDING": "WEDDING (1).jpg",
+  "BIRTHDAY & PARTIES": "BIRTHDAY (6).jpg",
+  "SEASONAL": "SEASONAL (10).jpg",
+  "PERSONALISED GIFTS": "PERSONALISED (7).jpg",
+  "SCHOOL & TEACHER GIFTS": "SCHOOL (11).jpg",
+  "CORPORATE GIFTS": "CORPORATE (8).jpg",
+  "LASER ENGRAVING": "",
+  "INVITATIONS & DESIGN": "",
+  "BALLOONS, SOAPS & CANDY CAKES": "SOAP (3).jpg",
+  "CLOTHING & TOWELS": ""
+};
+
 const products = [];

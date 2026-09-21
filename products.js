@@ -47,23 +47,42 @@ const mainCategoryPhotos = {
 
 
 const categoryPhotos = {
-  "BALLOONS, SOAPS & CANDY CAKES": [
-    "ballons (10).jpg",
-    "ballons (11).png",
-    "ballons (3).jpg",
-    "ballons (4).jpg",
-    "ballons (5).jpg",
-    "ballons (6).jpg",
-    "ballons (7).jpg",
-    "ballons (8).jpg",
-    "ballons (9).jpg",
-    "soaps (10).jpg",
-    "soaps (11).jpg",
-    "soaps (5).jpg",
-    "soaps (6).jpg",
-    "soaps (7).jpg",
-    "soaps (8).jpg",
-    "soaps (9).jpg"
+  "WEDDING": [
+    "WEDDING (10).jpg",
+    "WEDDING (2).jpg",
+    "WEDDING (7).jpg",
+    "WEDDING (8).jpg",
+    "WEDDING (9).jpg",
+    "wedding (1).jpg",
+    "wedding (2).jpg",
+    "wedding (3).jpg"
+  ],
+  "CHRISTENING & NEWBORNS": [
+    "CHRISTENING (1).jpg",
+    "CHRISTENING (10).jpg",
+    "CHRISTENING (11).jpg",
+    "CHRISTENING (12).jpg",
+    "CHRISTENING (13).jpg",
+    "CHRISTENING (14).jpg",
+    "CHRISTENING (15).jpg",
+    "CHRISTENING (2).jpg",
+    "CHRISTENING (3).jpg",
+    "CHRISTENING (4).jpg",
+    "CHRISTENING (5).jpg",
+    "CHRISTENING (6).jpg",
+    "CHRISTENING (7).jpg",
+    "CHRISTENING (8).jpg",
+    "CHRISTENING (9).jpg",
+    "NEWBORNS (1).jpg",
+    "NEWBORNS (1).png",
+    "NEWBORNS (2).jpg",
+    "NEWBORNS (3).jpg",
+    "NEWBORNS (4).jpg",
+    "NEWBORNS (5).jpg",
+    "NEWBORNS (6).jpg",
+    "NEWBORNS (7).jpg",
+    "NEWBORNS (8).jpg",
+    "NEWBORNS (9).jpg"
   ],
   "BIRTHDAY & PARTIES": [
     "BIRTHDAY (2).jpg",
@@ -102,32 +121,17 @@ const categoryPhotos = {
     "birthday (44).jpg",
     "birthday.jpg"
   ],
-  "CHRISTENING & NEWBORNS": [
-    "CHRISTENING (1).jpg",
-    "CHRISTENING (10).jpg",
-    "CHRISTENING (11).jpg",
-    "CHRISTENING (12).jpg",
-    "CHRISTENING (13).jpg",
-    "CHRISTENING (14).jpg",
-    "CHRISTENING (15).jpg",
-    "CHRISTENING (2).jpg",
-    "CHRISTENING (3).jpg",
-    "CHRISTENING (4).jpg",
-    "CHRISTENING (5).jpg",
-    "CHRISTENING (6).jpg",
-    "CHRISTENING (7).jpg",
-    "CHRISTENING (8).jpg",
-    "CHRISTENING (9).jpg",
-    "NEWBORNS (1).jpg",
-    "NEWBORNS (1).png",
-    "NEWBORNS (2).jpg",
-    "NEWBORNS (3).jpg",
-    "NEWBORNS (4).jpg",
-    "NEWBORNS (5).jpg",
-    "NEWBORNS (6).jpg",
-    "NEWBORNS (7).jpg",
-    "NEWBORNS (8).jpg",
-    "NEWBORNS (9).jpg"
+  "SEASONAL": [
+    "seasonal.jpg"
+  ],
+  "SCHOOL & TEACHER GIFTS": [
+    "SCHOOL (11).jpg",
+    "SCHOOL (13).jpg",
+    "SCHOOL (5).jpg",
+    "SCHOOL (9).jpg",
+    "school (1).jpg",
+    "school (2).jpg",
+    "school (3).jpg"
   ],
   "CORPORATE GIFTS": [
     "CORPORATE (10).jpg",
@@ -137,12 +141,7 @@ const categoryPhotos = {
     "CORPORATE (5).jpg",
     "CORPORATE (6).jpg"
   ],
-  "INVITATIONS & DESIGN": [
-    "invitation.jpg"
-  ],
-  "LASER ENGRAVING": [
-    "engraving.jpg"
-  ],
+  "PERSONALISED GIFTS": [],
   "NAMES, MONOGRAMS & TOPPERS": [
     "TOPPERS (1).jpg",
     "TOPPERS (10).jpg",
@@ -161,28 +160,31 @@ const categoryPhotos = {
     "TOPPERS (8).jpg",
     "TOPPERS (9).jpg"
   ],
-  "SCHOOL & TEACHER GIFTS": [
-    "SCHOOL (11).jpg",
-    "SCHOOL (13).jpg",
-    "SCHOOL (5).jpg",
-    "SCHOOL (9).jpg",
-    "school (1).jpg",
-    "school (2).jpg",
-    "school (3).jpg"
+  "CUSTOMISED FIGURES, CUT OUTS & LASER ENGRAVING": [
+    "engraving.jpg"
   ],
-  "SEASONAL": [
-    "seasonal.jpg"
+  "INVITATIONS & DESIGN": [
+    "invitation.jpg"
   ],
-  "WEDDING": [
-    "WEDDING (10).jpg",
-    "WEDDING (2).jpg",
-    "WEDDING (7).jpg",
-    "WEDDING (8).jpg",
-    "WEDDING (9).jpg",
-    "wedding (1).jpg",
-    "wedding (2).jpg",
-    "wedding (3).jpg"
-  ]
-};
+  "BALLOONS, SOAPS & CANDY CAKES": [
+    "ballons (10).jpg",
+    "ballons (11).png",
+    "ballons (3).jpg",
+    "ballons (4).jpg",
+    "ballons (5).jpg",
+    "ballons (6).jpg",
+    "ballons (7).jpg",
+    "ballons (8).jpg",
+    "ballons (9).jpg",
+    "soaps (10).jpg",
+    "soaps (11).jpg",
+    "soaps (5).jpg",
+    "soaps (6).jpg",
+    "soaps (7).jpg",
+    "soaps (8).jpg",
+    "soaps (9).jpg"
+  ],
+  "CLOTHING & TOWELS": []
+}
 
 const products = [];

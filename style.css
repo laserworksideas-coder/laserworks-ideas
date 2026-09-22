@@ -31,14 +31,14 @@ section h2{margin:0 0 32px;text-align:center;font-size:30px;font-weight:700;lett
 .category-offer-column h2{text-align:left;font-size:25px;font-weight:700;letter-spacing:1.5px;margin:0 0 22px}
 .category-offer-column ul{margin:0;padding-left:22px}
 .category-offer-column li{margin-bottom:10px;font-size:16px;line-height:1.4;font-weight:300}
-.category-main-photo{width:100%;aspect-ratio:4/3;background:#f3f3f3;overflow:hidden}
-.category-main-photo img{width:100%;height:100%;object-fit:contain;display:block}
+.category-main-photo{width:100%;aspect-ratio:4/3;background:#fff;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.category-main-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .category-slider-section{max-width:1180px;margin:0 auto;padding:10px 5% 60px}
 .category-slider{display:flex;align-items:center;gap:12px}
 .category-slider-window{overflow:hidden;flex:1}
 .category-slider-track{display:flex;gap:14px;transition:transform .3s ease}
-.category-slider-photo{flex:0 0 calc((100% - 28px)/3);aspect-ratio:1/1;background:#f6f6f6;overflow:hidden}
-.category-slider-photo img{width:100%;height:100%;object-fit:contain;display:block}
+.category-slider-photo{flex:0 0 calc((100% - 28px)/3);aspect-ratio:1/1;background:#fff;overflow:hidden}
+.category-slider-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .category-slider-arrow{width:42px;height:42px;border:1px solid #ddd;background:#fff;color:#111;font-size:24px;cursor:pointer;flex:0 0 42px}
 .category-slider-arrow:hover{background:#111;color:#fff}
 .category-quotation{text-align:center;padding-top:18px;padding-bottom:65px}
@@ -85,9 +85,8 @@ section h2{margin:0 0 32px;text-align:center;font-size:30px;font-weight:700;lett
 .full-gallery-item{aspect-ratio:1/1;overflow:hidden;background:#fff}
 .full-gallery-item img{width:100%;height:100%;object-fit:contain;display:block}
 @media(max-width:900px){.category-grid{grid-template-columns:repeat(2,1fr)}.full-gallery{grid-template-columns:repeat(3,1fr)}.hero{height:260px}.hero h1{font-size:32px}}
-@media(max-width:800px){.category-intro{grid-template-columns:1fr;gap:28px;padding-left:5%;padding-right:5%}.category-main-photo{aspect-ratio:1/1}.category-slider-photo{flex-basis:calc((100% - 14px)/2)}.category-header h1{font-size:30px}.contact-layout{grid-template-columns:1fr;gap:30px}.contact-details{text-align:center}.contact-details h2{text-align:center}.map-container iframe{height:340px}.home-slider-window{aspect-ratio:2/1}.home-slide{flex-basis:50%;min-width:50%}.home-slide img{object-fit:contain}}
+@media(max-width:800px){.category-intro{grid-template-columns:1fr;gap:28px;padding-left:5%;padding-right:5%}.category-main-photo{aspect-ratio:4/3}.category-slider-photo{flex-basis:calc((100% - 14px)/2)}.category-header h1{font-size:30px}.contact-layout{grid-template-columns:1fr;gap:30px}.contact-details{text-align:center}.contact-details h2{text-align:center}.map-container iframe{height:340px}.home-slider-window{aspect-ratio:2/1}.home-slide{flex-basis:50%;min-width:50%}.home-slide img{object-fit:contain}}
 @media(max-width:600px){.header-top{flex-direction:column;text-align:center}.contact-top{text-align:center}.contact-actions{justify-content:center}.logo-area img{max-width:280px;max-height:90px}.main-menu a{padding:12px 8px;font-size:14px}.language-switcher{margin:0 0 6px}.hero{height:200px;min-height:0;padding:25px 15px}.hero h1{font-size:23px;letter-spacing:1px}.category-grid{grid-template-columns:repeat(2,1fr);gap:7px}.category-card{min-height:42px;padding:7px 11px;font-size:15px}.section-title{flex-direction:column;gap:12px}.section-title .view-gallery-button{position:static}.home-slider-window{aspect-ratio:2/1}.home-slide{height:100%}.home-slider-arrow{flex-basis:36px;width:36px;height:36px;font-size:24px}.full-gallery{grid-template-columns:repeat(2,1fr);gap:9px}.gallery-page{padding:42px 20px 60px}.gallery-page h1{font-size:28px}}
-
 .category-card{position:relative;overflow:hidden;min-height:48px;border-radius:999px;background:#e7e7e7;color:#111;transition:background .2s,color .2s}
 .category-card-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72;transition:.25s}
 .category-card-name{position:relative;z-index:2;text-align:center;padding:7px 14px;font-size:17px;font-weight:600;letter-spacing:.5px;line-height:1.05}

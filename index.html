@@ -8,8 +8,62 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=20260920lang">
+
+<style>
+/* HOMEPAGE REDESIGN */
+.home-page{background:#fff}
+.home-page .hero{height:520px;min-height:520px;padding:0}
+.home-page .hero-cover-image{object-fit:cover}
+.home-page .hero-cover-overlay{background:linear-gradient(90deg,rgba(0,0,0,.68),rgba(0,0,0,.18))}
+.home-page .hero-content{width:min(1180px,90%);text-align:left}
+.home-page .hero h1{font-size:48px;line-height:1.12;letter-spacing:2px;font-weight:400;max-width:760px}
+.home-page .hero h1 span:last-child{font-weight:300}
+.home-page .intro-strip{max-width:1180px;margin:0 auto;padding:42px 5%;display:flex;justify-content:space-between;gap:40px;align-items:center}
+.home-page .intro-strip p{margin:0;max-width:760px;font-size:18px;line-height:1.7;font-weight:300;color:#555}
+.home-page .intro-mark{font-size:12px;letter-spacing:3px;font-weight:500;white-space:nowrap}
+.home-page .intro-mark span{color:#d71920}
+.home-page .categories-section{padding:65px 5% 75px;background:#f6f6f6}
+.home-page .categories-section>h2{display:block;background:none;color:#111;padding:0;margin:0 auto 42px;font-size:34px}
+.home-page .categories-section>h2:after{content:"";display:block;width:45px;height:2px;background:#d71920;margin:15px auto 0}
+.home-page .category-grid{max-width:1180px;grid-template-columns:repeat(3,1fr);gap:1px;background:#d8d8d8}
+.home-page .category-card{min-height:76px;border-radius:0;background:#fff;color:#111;transform:none!important;padding:18px 22px;justify-content:flex-start;text-align:left}
+.home-page .category-card:hover{background:#d71920;color:#fff}
+.home-page .category-card-name{font-size:17px;font-weight:500;letter-spacing:.7px;padding:0}
+.home-page .home-slider-section{padding:72px 5% 78px;background:#fff}
+.home-page .section-title{max-width:1180px;margin-bottom:28px;justify-content:space-between}
+.home-page .section-title h2{font-size:34px;text-align:left;margin:0}
+.home-page .view-gallery-button{position:static;padding:10px 18px;background:#111}
+.home-page .home-slider{max-width:1180px;gap:12px}
+.home-page .home-slider-window{aspect-ratio:16/6}
+.home-page .home-slide img{object-fit:cover}
+.home-page .home-slider-arrow{background:#111}
+.home-page .home-slider-arrow:hover{background:#d71920}
+.home-page .about-section{padding:82px 5%;background:#111;color:#fff}
+.home-page .about-content{max-width:1180px;display:grid;grid-template-columns:280px 1fr;gap:70px;align-items:start}
+.home-page .about-content h2{color:#fff;font-size:34px;margin:0}
+.home-page .about-content h3{color:#d71920;margin-top:10px}
+.home-page .about-copy p{font-size:17px;line-height:1.85;color:#ddd;margin:0 0 18px}
+.home-page .ask-price-section{padding:72px 5%;background:#f6f6f6}
+.home-page .ask-price-section .price-title{font-size:34px!important;background:none!important;color:#111!important;padding:0!important;margin-bottom:38px!important}
+.home-page .ask-price-section .price-title:after{content:"";display:block;width:45px;height:2px;background:#d71920;margin:15px auto 0}
+.home-page #quotationForm{max-width:820px;background:#fff;padding:35px 40px;box-shadow:0 8px 35px rgba(0,0,0,.06)}
+.home-page .contact-section{padding:75px 5%;background:#fff}
+.home-page .contact-layout{max-width:1180px}
+.home-page .contact-details h2{font-size:34px}
+@media(max-width:800px){
+.home-page .hero{height:390px;min-height:390px}.home-page .hero h1{font-size:34px}
+.home-page .intro-strip{flex-direction:column;align-items:flex-start}.home-page .category-grid{grid-template-columns:repeat(2,1fr)}
+.home-page .about-content{grid-template-columns:1fr;gap:25px}
+}
+@media(max-width:600px){
+.home-page .hero{height:300px;min-height:300px}.home-page .hero h1{font-size:25px}
+.home-page .category-grid{grid-template-columns:1fr}.home-page .category-card{min-height:58px}
+.home-page .section-title{align-items:flex-start}.home-page .section-title h2{font-size:28px}
+.home-page .home-slider-window{aspect-ratio:2/1}.home-page #quotationForm{padding:25px 20px}
+}
+</style>
 </head>
-<body>
+<body class="home-page">
 <header class="site-header">
   <div class="header-top">
     <div class="logo-area"><a href="index.html"><img src="LOGO.png" alt="Laserworks Ideas"></a></div>
@@ -37,8 +91,13 @@
   <div class="hero-content"><h1><span data-i18n="LASER CUTTING - LASER ENGRAVING">LASER CUTTING - LASER ENGRAVING</span><br><span data-i18n="DESIGN - PERSONALISED GIFTS">DESIGN - PERSONALISED GIFTS</span></h1></div>
 </section>
 
+<section class="intro-strip">
+  <div class="intro-mark">LASERWORKS <span>IDEAS</span></div>
+  <p>Laser cutting, engraving and personalised creations in wood, MDF and acrylic — made for christenings, weddings, birthdays, schools, businesses and every special occasion.</p>
+</section>
+
 <section id="categories" class="categories-section">
-  <h2 data-i18n="CATEGORIES">CATEGORIES<span class="red-dot">.</span></h2>
+  <h2 data-i18n="CATEGORIES">CATEGORIES</h2>
   <div id="categoryGrid" class="category-grid"></div>
 </section>
 
@@ -56,11 +115,15 @@
 
 <section id="about" class="about-section">
   <div class="about-content">
-    <h2 data-i18n="ABOUT US">ABOUT US<span class="red-dot">.</span></h2>
-    <h3 data-i18n="EST. 2013">EST. 2013</h3>
-    <p>Laserworks Ideas is a creative laser cutting studio in Limassol, Cyprus, specialising in custom laser cut MDF, wood and acrylic products. We also offer laser engraving and laser craft, creating personalised gifts, names, signs, decorations and custom designs for christenings, birthdays, weddings, schools and events.</p>
-    <p>Our services include personalised clothing printing, custom event decorations and unique gift details such as balloons, soaps, candy and cake decorations.</p>
-    <p>We also create custom corporate gifts and work with event planners and businesses. We deliver throughout Cyprus.</p>
+    <div>
+      <h2 data-i18n="ABOUT US">ABOUT US<span class="red-dot">.</span></h2>
+      <h3 data-i18n="EST. 2013">EST. 2013</h3>
+    </div>
+    <div class="about-copy">
+      <p>Laserworks Ideas is a creative laser cutting studio in Limassol, Cyprus, specialising in custom laser cut MDF, wood and acrylic products. We also offer laser engraving and laser craft, creating personalised gifts, names, signs, decorations and custom designs for christenings, birthdays, weddings, schools and events.</p>
+      <p>Our services include personalised clothing printing, custom event decorations and unique gift details such as balloons, soaps, candy and cake decorations.</p>
+      <p>We also create custom corporate gifts and work with event planners and businesses. We deliver throughout Cyprus.</p>
+    </div>
   </div>
 </section>
 
@@ -113,7 +176,7 @@ loadCategoryCards();
 
 const quotationForm=document.getElementById("quotationForm");
 quotationForm.addEventListener("submit",function(event){event.preventDefault();const type=document.getElementById("type").value,text=document.getElementById("text").value,size=document.getElementById("size").value,material=document.getElementById("material").value,quantity=document.getElementById("quantity").value,additional=document.getElementById("additional").value,customerName=document.getElementById("customerName").value,customerEmail=document.getElementById("customerEmail").value,subject="Laserworks Ideas - Quotation Request",body=`TYPE: ${type}\n\nTEXT: ${text}\n\nSIZE: ${size}\n\nMATERIAL: ${material}\n\nQUANTITY: ${quantity}\n\nADDITIONAL INFORMATION:\n${additional}\n\nNAME: ${customerName}\n\nEMAIL: ${customerEmail}`;window.location.href="mailto:Laserworksideas@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body)});
-</script>>
+</script>
 <script>window.addEventListener("languageChanged",()=>{document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent=tr(el.getAttribute("data-i18n"));});document.querySelectorAll(".category-card").forEach(el=>el.textContent=trCategory(el.dataset.category));});</script>
 </body>
 </html>

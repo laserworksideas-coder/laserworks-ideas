@@ -1,109 +1,15 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laserworks Ideas</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260922cat3">
-<style>
-.category-modern,.category-modern *{font-family:Poppins,Arial,sans-serif!important}
-.modern-category-head h1{font-weight:600!important;letter-spacing:.5px!important}
-.modern-small-title{font-weight:600!important}
-.modern-offers li{font-weight:400!important}
-
-.category-modern{background:#fff!important;max-width:1200px!important;margin:0 auto!important;padding:0 5% 70px!important}
-.modern-category-head{text-align:center;padding:52px 0 30px}
-.modern-category-kicker{font-size:12px;letter-spacing:3px;font-weight:500;margin-bottom:12px}
-.modern-category-head h1{margin:0!important;font-size:42px!important;font-weight:700!important;letter-spacing:2px!important}
-.modern-category-line{width:55px;height:2px;background:#c00;margin:18px auto 0}
-.modern-hero{width:100%;margin:0 auto 38px}
-.modern-main-photo{width:100%;height:min(58vw,560px);min-height:300px;background:#f5f5f5;overflow:hidden}
-.modern-main-photo img{width:100%!important;height:100%!important;display:block!important;object-fit:cover!important;object-position:center!important}
-.modern-offers{padding:10px 0 35px}
-.modern-offers-head{display:flex;justify-content:space-between;align-items:end;gap:25px;border-bottom:1px solid #ddd;padding-bottom:18px;margin-bottom:22px}
-.modern-small-title{font-size:11px;letter-spacing:2.5px;font-weight:500;margin-bottom:6px}
-.modern-offers h2{margin:0!important;font-size:27px!important;font-weight:700!important;letter-spacing:1px!important}
-.modern-offers ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0 35px}
-.modern-offers li{font-size:16px;font-weight:300;padding:12px 0;border-bottom:1px solid #eee;position:relative;padding-left:15px}
-.modern-offers li:before{content:"";width:4px;height:4px;background:#c00;border-radius:50%;position:absolute;left:0;top:20px}
-.modern-gallery{padding:25px 0 10px}
-.modern-gallery .modern-small-title{text-align:center;margin-bottom:15px}
-.modern-gallery-row{display:flex;align-items:center;gap:10px}
-.modern-gallery .category-slider-window{overflow:hidden;flex:1}
-.modern-gallery .category-slider-track{display:flex;gap:14px;transition:transform .3s ease}
-.modern-gallery .category-slider-photo{flex:0 0 calc((100% - 28px)/3)!important;min-width:0!important;aspect-ratio:1/1!important;background:#f5f5f5!important;overflow:hidden}
-.modern-gallery .category-slider-photo img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important}
-.modern-gallery .category-slider-arrow{flex:0 0 40px;width:40px;height:40px;border:1px solid #ddd;background:#fff;color:#222;font-size:20px;cursor:pointer}
-.modern-gallery .category-slider-arrow:hover{background:#c00;color:#fff;border-color:#c00}
-.modern-bottom-cta{text-align:center;padding:35px 0 5px}
-@media(max-width:800px){
-.category-modern{padding:0 4% 45px!important}
-.modern-category-head{padding:38px 0 22px}
-.modern-category-head h1{font-size:31px!important}
-.modern-main-photo{height:62vw;min-height:230px}
-.modern-offers-head{align-items:flex-start;flex-direction:column}
-.modern-offers h2{font-size:23px!important}
-.modern-offers ul{grid-template-columns:repeat(2,1fr);gap:0 20px}
-.modern-offers li{font-size:14px}
-.modern-gallery .category-slider-photo{flex:0 0 calc((100% - 14px)/2)!important}
-}
-</style></head><body>
-<header class="site-header"><div class="header-top"><div class="logo-area"><a href="index.html"><img src="LOGO.png" alt="Laserworks Ideas"></a></div><div class="contact-top"><div>Laserworksideas@gmail.com</div><div class="contact-actions"><span>WhatsApp / Viber: +357 99 303580</span><a class="header-message-button" href="mailto:Laserworksideas@gmail.com?subject=Laserworks%20Ideas%20-%20Message"><span data-i18n="SEND A MESSAGE">SEND A MESSAGE</span></a></div></div></div>
-<nav class="main-menu"><a href="index.html" data-i18n="HOME">HOME</a><a href="index.html#categories" data-i18n="CATEGORIES">CATEGORIES</a><a href="gallery.html" data-i18n="GALLERY">GALLERY</a><a href="index.html#about" data-i18n="ABOUT US">ABOUT US</a><a href="index.html#ask-price" data-i18n="ASK FOR A PRICE">ASK FOR A PRICE</a><a href="index.html#contact" data-i18n="CONTACT">CONTACT</a></nav></header>
-<main class="category-page category-modern">
-<section class="modern-category-head">
-  <div class="modern-category-kicker">LASERWORKS IDEAS</div>
-  <h1 id="categoryTitle"></h1>
-  <div class="modern-category-line"></div>
-</section>
-
-<section class="modern-hero">
-  <div class="modern-main-photo" id="categoryMainPhoto"></div>
-</section>
-
-<section class="modern-offers">
-  <div class="modern-offers-head">
-    <div>
-      <div class="modern-small-title">OUR SERVICES</div>
-      <h2 data-i18n="WHAT WE OFFER">WHAT WE OFFER</h2>
-    </div>
-    <a href="index.html#ask-price" class="quotation-button" data-i18n="ASK FOR A QUOTATION">ASK FOR A QUOTATION</a>
-  </div>
-  <ul id="offerList"></ul>
-</section>
-
-<section class="modern-gallery">
-  <div class="modern-small-title">OUR WORK</div>
-  <div class="modern-gallery-row">
-    <button class="category-slider-arrow prev" type="button">&#10094;</button>
-    <div class="category-slider-window"><div class="category-slider-track" id="categorySliderTrack"></div></div>
-    <button class="category-slider-arrow next" type="button">&#10095;</button>
-  </div>
-</section>
-
-<section class="modern-bottom-cta">
-  <a href="index.html#ask-price" class="quotation-button" data-i18n="ASK FOR A QUOTATION">ASK FOR A QUOTATION</a>
-</section>
-</main><script src="products.js"></script><script src="language.js?v=20260922cat"></script>
-<script>
-const params=new URLSearchParams(location.search),category=params.get("category")||"",title=document.getElementById("categoryTitle"),offerList=document.getElementById("offerList"),mainPhoto=document.getElementById("categoryMainPhoto"),track=document.getElementById("categorySliderTrack");
-title.dataset.categoryName=category;title.textContent=trCategory(category);
-(subcategories[category]||[]).forEach(item=>{const li=document.createElement("li");li.dataset.subcategory=item;li.textContent=trSub(item);offerList.appendChild(li);});
-let photos=[];
-function rawUrl(name){return "https://github.com/laserworksideas-coder/laserworks-ideas/raw/refs/heads/main/"+encodeURIComponent(category)+"/"+name.split("/").map(encodeURIComponent).join("/");}
-function loadCategoryPhotos(){
- photos=(categoryPhotos[category]||[]).map(name=>({name,url:rawUrl(name)}));
- const preferred=mainCategoryPhotos[category];
- const main=photos.find(p=>preferred&&p.name.toLowerCase()===preferred.toLowerCase())||photos[0];
- if(main){const img=document.createElement("img");img.src=main.url;img.alt=category;mainPhoto.appendChild(img);}
- photos.slice(0,6).forEach((photo,i)=>{const card=document.createElement("div");card.className="category-slider-photo";const image=document.createElement("img");image.src=photo.url;image.alt=category;image.loading=i<3?"eager":"lazy";card.appendChild(image);track.appendChild(card);});
- catSetup();
-}
-let catIndex=0;
-function catVisible(){return innerWidth<=800?2:3}
-function catSetup(){const v=catVisible(),gap=14,w=(track.parentElement.clientWidth-(v-1)*gap)/v;track.querySelectorAll(".category-slider-photo").forEach(x=>{x.style.flex="0 0 "+w+"px";x.style.minWidth=w+"px"});catIndex=Math.min(catIndex,Math.max(0,photos.length-v));track.style.transform="translate3d("+(-catIndex*(w+gap))+"px,0,0)"}
-function catMove(d){const v=catVisible(),max=Math.max(0,photos.length-v);catIndex+=d;if(catIndex<0)catIndex=max;if(catIndex>max)catIndex=0;const gap=14,w=(track.parentElement.clientWidth-(v-1)*gap)/v;track.style.transition="transform .3s ease";track.style.transform="translate3d("+(-catIndex*(w+gap))+"px,0,0)"}
-document.querySelector(".category-slider-arrow.prev").onclick=()=>catMove(-1);document.querySelector(".category-slider-arrow.next").onclick=()=>catMove(1);addEventListener("resize",catSetup);
-loadCategoryPhotos();
-addEventListener("languageChanged",()=>{title.textContent=trCategory(category);offerList.querySelectorAll("[data-subcategory]").forEach(li=>li.textContent=trSub(li.dataset.subcategory))});
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Laserworks Ideas</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css?v=20260922structure1"></head><body>
+<header class="site-header"><div class="header-top wrap"><a class="brand" href="index.html"><img src="LOGO.png" alt="Laserworks Ideas"></a><div class="header-contact"><span>Laserworksideas@gmail.com</span><span>WhatsApp / Viber: +357 99 303580</span><a class="top-cta" href="mailto:Laserworksideas@gmail.com?subject=Laserworks%20Ideas%20-%20Message">SEND A MESSAGE</a></div></div><nav class="main-menu"><div class="wrap menu-inner"><a href="index.html">HOME</a><a href="index.html#categories">CATEGORIES</a><a href="gallery.html">GALLERY</a><a href="index.html#about">ABOUT US</a><a href="index.html#ask-price">ASK FOR A PRICE</a><a href="index.html#contact">CONTACT</a></div></nav></header>
+<main class="category-new"><div class="wrap">
+<div class="cat-top"><a href="index.html#categories" class="back-link">← ALL CATEGORIES</a><div class="eyebrow">LASERWORKS IDEAS</div><h1 id="categoryTitle"></h1></div>
+<div class="cat-feature"><div id="categoryMainPhoto" class="cat-main-photo"></div><div class="cat-offers"><div class="eyebrow">WHAT WE CREATE</div><h2>Made for your<br><em>special moments.</em></h2><ul id="offerList"></ul><a href="index.html#ask-price" class="btn btn-dark">ASK FOR A PRICE →</a></div></div>
+<div class="cat-work-head"><div><div class="eyebrow">FROM OUR WORK</div><h2>Ideas made real.</h2></div><div class="cat-arrows"><button id="prev">←</button><button id="next">→</button></div></div><div id="categoryGallery" class="cat-gallery"></div>
+</div></main><footer class="site-footer"><div class="wrap">© 2026 Laserworks Ideas</div></footer>
+<script src="products.js"></script><script src="language.js?v=20260922structure1"></script><script>
+const category=new URLSearchParams(location.search).get("category")||"",title=document.getElementById("categoryTitle"),list=document.getElementById("offerList"),main=document.getElementById("categoryMainPhoto"),gallery=document.getElementById("categoryGallery");title.textContent=trCategory(category);
+(subcategories[category]||[]).forEach(x=>{const li=document.createElement("li");li.textContent=trSub(x);list.appendChild(li);});
+const photos=(categoryPhotos[category]||[]).map(n=>({name:n,url:"https://github.com/laserworksideas-coder/laserworks-ideas/raw/refs/heads/main/"+encodeURIComponent(category)+"/"+n.split("/").map(encodeURIComponent).join("/")}));
+const pref=mainCategoryPhotos[category],hero=photos.find(p=>pref&&p.name.toLowerCase()===pref.toLowerCase())||photos[0];if(hero)main.innerHTML='<img src="'+hero.url+'" alt="'+category+'">';
+let idx=0;function render(){gallery.innerHTML="";photos.slice(idx,idx+6).forEach(p=>{const d=document.createElement("div");d.className="cat-gallery-item";d.innerHTML='<img src="'+p.url+'" alt="'+category+'">';gallery.appendChild(d);});}document.getElementById("prev").onclick=()=>{idx=Math.max(0,idx-3);render()};document.getElementById("next").onclick=()=>{idx=Math.min(Math.max(0,photos.length-6),idx+3);render()};render();
+addEventListener("languageChanged",()=>{title.textContent=trCategory(category);list.querySelectorAll("li").forEach((li,i)=>li.textContent=trSub((subcategories[category]||[])[i]));});
 </script></body></html>

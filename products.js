@@ -167,18 +167,18 @@ const subcategories = {
 const featuredProducts = {};
 
 const mainCategoryPhotos = {
-  "WEDDING": "",
-  "CHRISTENING & NEWBORNS": "",
-  "BIRTHDAY & PARTIES": "",
-  "SEASONAL": "",
-  "SCHOOL & TEACHER": "",
-  "CORPORATE": "",
-  "PERSONALISED": "",
-  "NAMES, MONOGRAMS & TOPPERS": "",
-  "CUSTOMISED FIGURES, CUT OUTS & LASER ENGRAVING": "",
-  "INVITATIONS & DESIGN": "",
-  "BALLOONS, SOAPS & CANDY CAKES": "",
-  "CLOTHING, HATS & TOWELS": ""
+  "WEDDING": "WEDDING (1).jpg",
+  "CHRISTENING & NEWBORNS": "CHRISTENING (2).jpg",
+  "BIRTHDAY & PARTIES": "BIRTHDAY (6).jpg",
+  "SEASONAL": "CHRISTMAS (10).jpg",
+  "SCHOOL & TEACHER": "SCHOOL (11).jpg",
+  "CORPORATE": "CORPORATE (8).jpg",
+  "PERSONALISED": "PERSONALISED-(6).jpg",
+  "NAMES, MONOGRAMS & TOPPERS": "NAMES (1).jpg",
+  "CUSTOMISED FIGURES, CUT OUTS & LASER ENGRAVING": "CUSTOMISED FIGURES (32).jpg",
+  "INVITATIONS & DESIGN": "INVITATIONS (17).jpg",
+  "BALLOONS, SOAPS & CANDY CAKES": "soaps (7).jpg",
+  "CLOTHING, HATS & TOWELS": "CLOTHING-15.jpg"
 };
 
 const categoryPhotos = {

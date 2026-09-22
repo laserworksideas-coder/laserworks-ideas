@@ -70,7 +70,7 @@ function applyLanguage(){
   window.dispatchEvent(new CustomEvent("languageChanged"));
 }
 function addLanguageSwitcher(){
-  const menu=document.querySelector(".header-top .header-contact");
+  const menu=document.querySelector(".main-menu .menu-inner");
   if(!menu||document.getElementById("languageSwitcher")) return;
   const box=document.createElement("div"); box.id="languageSwitcher"; box.className="language-switcher";
   box.innerHTML='<button id="langEL" type="button" aria-label="Ελληνικά">🇬🇷</button><button id="langEN" type="button" aria-label="English">🇬🇧</button>';

@@ -70,10 +70,10 @@ function applyLanguage(){
   window.dispatchEvent(new CustomEvent("languageChanged"));
 }
 function addLanguageSwitcher(){
-  const menu=document.querySelector(".main-menu");
+  const menu=document.querySelector(".header-top .header-contact");
   if(!menu||document.getElementById("languageSwitcher")) return;
   const box=document.createElement("div"); box.id="languageSwitcher"; box.className="language-switcher";
-  box.innerHTML='<button id="langEL" type="button">ΕΛΛΗΝΙΚΑ</button><span>|</span><button id="langEN" type="button">ENGLISH</button>';
+  box.innerHTML='<button id="langEL" type="button" aria-label="Ελληνικά">🇬🇷</button><button id="langEN" type="button" aria-label="English">🇬🇧</button>';
   menu.appendChild(box);
   document.getElementById("langEL").onclick=()=>setLanguage("el");
   document.getElementById("langEN").onclick=()=>setLanguage("en");

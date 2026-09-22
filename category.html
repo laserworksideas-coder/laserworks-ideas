@@ -5,20 +5,81 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=20260922cat2">
-</head><body>
+<style>
+.category-modern{background:#fff!important;max-width:1200px!important;margin:0 auto!important;padding:0 5% 70px!important}
+.modern-category-head{text-align:center;padding:52px 0 30px}
+.modern-category-kicker{font-size:12px;letter-spacing:3px;font-weight:500;margin-bottom:12px}
+.modern-category-head h1{margin:0!important;font-size:42px!important;font-weight:700!important;letter-spacing:2px!important}
+.modern-category-line{width:55px;height:2px;background:#c00;margin:18px auto 0}
+.modern-hero{width:100%;margin:0 auto 38px}
+.modern-main-photo{width:100%;height:min(58vw,560px);min-height:300px;background:#f5f5f5;overflow:hidden}
+.modern-main-photo img{width:100%!important;height:100%!important;display:block!important;object-fit:cover!important;object-position:center!important}
+.modern-offers{padding:10px 0 35px}
+.modern-offers-head{display:flex;justify-content:space-between;align-items:end;gap:25px;border-bottom:1px solid #ddd;padding-bottom:18px;margin-bottom:22px}
+.modern-small-title{font-size:11px;letter-spacing:2.5px;font-weight:500;margin-bottom:6px}
+.modern-offers h2{margin:0!important;font-size:27px!important;font-weight:700!important;letter-spacing:1px!important}
+.modern-offers ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0 35px}
+.modern-offers li{font-size:16px;font-weight:300;padding:12px 0;border-bottom:1px solid #eee;position:relative;padding-left:15px}
+.modern-offers li:before{content:"";width:4px;height:4px;background:#c00;border-radius:50%;position:absolute;left:0;top:20px}
+.modern-gallery{padding:25px 0 10px}
+.modern-gallery .modern-small-title{text-align:center;margin-bottom:15px}
+.modern-gallery-row{display:flex;align-items:center;gap:10px}
+.modern-gallery .category-slider-window{overflow:hidden;flex:1}
+.modern-gallery .category-slider-track{display:flex;gap:14px;transition:transform .3s ease}
+.modern-gallery .category-slider-photo{flex:0 0 calc((100% - 28px)/3)!important;min-width:0!important;aspect-ratio:1/1!important;background:#f5f5f5!important;overflow:hidden}
+.modern-gallery .category-slider-photo img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important}
+.modern-gallery .category-slider-arrow{flex:0 0 40px;width:40px;height:40px;border:1px solid #ddd;background:#fff;color:#222;font-size:20px;cursor:pointer}
+.modern-gallery .category-slider-arrow:hover{background:#c00;color:#fff;border-color:#c00}
+.modern-bottom-cta{text-align:center;padding:35px 0 5px}
+@media(max-width:800px){
+.category-modern{padding:0 4% 45px!important}
+.modern-category-head{padding:38px 0 22px}
+.modern-category-head h1{font-size:31px!important}
+.modern-main-photo{height:62vw;min-height:230px}
+.modern-offers-head{align-items:flex-start;flex-direction:column}
+.modern-offers h2{font-size:23px!important}
+.modern-offers ul{grid-template-columns:repeat(2,1fr);gap:0 20px}
+.modern-offers li{font-size:14px}
+.modern-gallery .category-slider-photo{flex:0 0 calc((100% - 14px)/2)!important}
+}
+</style></head><body>
 <header class="site-header"><div class="header-top"><div class="logo-area"><a href="index.html"><img src="LOGO.png" alt="Laserworks Ideas"></a></div><div class="contact-top"><div>Laserworksideas@gmail.com</div><div class="contact-actions"><span>WhatsApp / Viber: +357 99 303580</span><a class="header-message-button" href="mailto:Laserworksideas@gmail.com?subject=Laserworks%20Ideas%20-%20Message"><span data-i18n="SEND A MESSAGE">SEND A MESSAGE</span></a></div></div></div>
 <nav class="main-menu"><a href="index.html" data-i18n="HOME">HOME</a><a href="index.html#categories" data-i18n="CATEGORIES">CATEGORIES</a><a href="gallery.html" data-i18n="GALLERY">GALLERY</a><a href="index.html#about" data-i18n="ABOUT US">ABOUT US</a><a href="index.html#ask-price" data-i18n="ASK FOR A PRICE">ASK FOR A PRICE</a><a href="index.html#contact" data-i18n="CONTACT">CONTACT</a></nav></header>
-<main class="category-page"><section class="category-header"><h1 id="categoryTitle"></h1></section>
-<section class="category-intro"><div class="category-offer-column"><h2 data-i18n="WHAT WE OFFER">WHAT WE OFFER</h2><ul id="offerList"></ul></div><div class="category-main-photo" id="categoryMainPhoto"></div></section>
-<style>
-.category-main-photo{background:#fff!important;aspect-ratio:16/10!important;}
-.category-main-photo img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;}
-.category-slider-photo{background:#fff!important;aspect-ratio:1/1!important;}
-.category-slider-photo img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;}
-</style><section class="category-slider-section"><div class="category-slider"><button class="category-slider-arrow prev" type="button">&#10094;</button><div class="category-slider-window"><div class="category-slider-track" id="categorySliderTrack"></div></div><button class="category-slider-arrow next" type="button">&#10095;</button></div></section>
-<section class="category-quotation"><a href="index.html#ask-price" class="quotation-button" data-i18n="ASK FOR A QUOTATION">ASK FOR A QUOTATION</a></section></main>
-<footer class="site-footer"><p>© 2026 Laserworks Ideas. All rights reserved.</p></footer>
-<script src="products.js"></script><script src="language.js?v=20260922cat"></script>
+<main class="category-page category-modern">
+<section class="modern-category-head">
+  <div class="modern-category-kicker">LASERWORKS IDEAS</div>
+  <h1 id="categoryTitle"></h1>
+  <div class="modern-category-line"></div>
+</section>
+
+<section class="modern-hero">
+  <div class="modern-main-photo" id="categoryMainPhoto"></div>
+</section>
+
+<section class="modern-offers">
+  <div class="modern-offers-head">
+    <div>
+      <div class="modern-small-title">OUR SERVICES</div>
+      <h2 data-i18n="WHAT WE OFFER">WHAT WE OFFER</h2>
+    </div>
+    <a href="index.html#ask-price" class="quotation-button" data-i18n="ASK FOR A QUOTATION">ASK FOR A QUOTATION</a>
+  </div>
+  <ul id="offerList"></ul>
+</section>
+
+<section class="modern-gallery">
+  <div class="modern-small-title">OUR WORK</div>
+  <div class="modern-gallery-row">
+    <button class="category-slider-arrow prev" type="button">&#10094;</button>
+    <div class="category-slider-window"><div class="category-slider-track" id="categorySliderTrack"></div></div>
+    <button class="category-slider-arrow next" type="button">&#10095;</button>
+  </div>
+</section>
+
+<section class="modern-bottom-cta">
+  <a href="index.html#ask-price" class="quotation-button" data-i18n="ASK FOR A QUOTATION">ASK FOR A QUOTATION</a>
+</section>
+</main><script src="products.js"></script><script src="language.js?v=20260922cat"></script>
 <script>
 const params=new URLSearchParams(location.search),category=params.get("category")||"",title=document.getElementById("categoryTitle"),offerList=document.getElementById("offerList"),mainPhoto=document.getElementById("categoryMainPhoto"),track=document.getElementById("categorySliderTrack");
 title.dataset.categoryName=category;title.textContent=trCategory(category);

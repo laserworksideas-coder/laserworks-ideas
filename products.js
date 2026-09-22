@@ -58,7 +58,7 @@ const mainCategoryPhotos = {
   "CHRISTENING & NEWBORNS": "CHRISTENING (2).jpg",
   "BIRTHDAY & PARTIES": "BIRTHDAY (6).jpg",
   "SEASONAL": "CHRISTMAS (10).jpg",
-  "SCHOOL & TEACHER": "SCHOOL (11).jpg",
+  "SCHOOL & TEACHER": "SCHOOL (77).jpg",
   "CORPORATE": "CORPORATE (8).jpg",
   "PERSONALISED": "PERSONALISED-(6).jpg",
   "NAMES, MONOGRAMS & TOPPERS": "NAMES (1).jpg",

@@ -359,7 +359,7 @@ const categoryPhotos = {
     "PERSONALISED-8.jpg",
     "PERSONALISED-9.jpg"
   ],
-  "NAMES, MONOGRAMS & TOPPERS": [],
+  "NAMES, MONOGRAMS & TOPPERS": ["NAMES (1).jpg","NAMES (2).jpg","NAMES (3).jpg","NAMES (4).jpg","NAMES (5).jpg","NAMES (6).jpg","NAMES (7).jpg","TOPPERS (1).jpg","TOPPERS (18).jpg","TOPPERS (19).jpg","TOPPERS (20).jpg","TOPPERS (21).jpg","TOPPERS (22).jpg","TOPPERS (23).jpg","TOPPERS (24).jpg","TOPPERS (25).jpg","TOPPERS (26).jpg","TOPPERS (27).jpg","TOPPERS (28).jpg","TOPPERS (29).jpg","TOPPERS (30).jpg","TOPPERS (31).jpg","TOPPERS (32).jpg","TOPPERS (33).jpg","TOPPERS (34).jpg","TOPPERS (35).jpg","TOPPERS (36).jpg"],
   "CUSTOMISED FIGURES, CUT OUTS & LASER ENGRAVING": [
     "CUSTOMISED FIGURES (1).jpg",
     "CUSTOMISED FIGURES (10).jpg",

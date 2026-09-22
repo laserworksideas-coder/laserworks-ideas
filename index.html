@@ -102,6 +102,55 @@
 @media(max-width:900px){.home-page .hero{height:500px;min-height:500px}.home-page .hero h1{font-size:46px}.home-page .intro-strip{grid-template-columns:1fr;gap:22px}.home-page .category-grid{grid-template-columns:repeat(2,1fr)}.home-page .about-content{grid-template-columns:1fr;gap:30px}}
 @media(max-width:600px){.home-page .hero{height:360px;min-height:360px}.home-page .hero h1{font-size:31px}.home-page .intro-strip{padding:50px 5%}.home-page .intro-strip p{font-size:18px}.home-page .category-grid{grid-template-columns:1fr}.home-page .category-card{min-height:65px}.home-page .categories-section,.home-page .home-slider-section,.home-page .about-section,.home-page .ask-price-section,.home-page .contact-section{padding-top:60px;padding-bottom:65px}.home-page .section-title{align-items:flex-start}.home-page .home-slider-window{aspect-ratio:1.7/1}.home-page #quotationForm{padding:25px 20px}}
 </style>
+<style id="radical-home">
+*{box-sizing:border-box}
+body.home-page{margin:0;font-family:Arial,Helvetica,sans-serif;color:#171717;background:#fff}
+.home-page .site-header{position:relative;background:#fff;border:0}
+.home-page .header-top{max-width:1280px;margin:auto;padding:22px 5%;min-height:105px}
+.home-page .logo-area img{max-width:250px;max-height:85px}
+.home-page .main-menu{background:#171717}
+.home-page .main-menu a{padding:16px 19px;font-size:13px;letter-spacing:1.5px}
+.home-page .hero{height:650px;min-height:650px;padding:0;background:#111}
+.home-page .hero-cover-image{object-fit:cover!important}
+.home-page .hero-cover-overlay{background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.18))!important}
+.home-page .hero-content{width:min(1280px,90%);text-align:left}
+.home-page .hero h1{font-size:64px!important;line-height:1.02!important;font-weight:400!important;letter-spacing:1px!important;max-width:850px}
+.home-page .hero h1 span:last-child{font-weight:300}
+.home-page .intro-strip{max-width:1280px;margin:auto;padding:85px 5%;display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start}
+.home-page .intro-mark{font-size:13px;letter-spacing:4px;font-weight:600;padding-top:8px}
+.home-page .intro-mark span{color:#d71920}
+.home-page .intro-strip p{font-size:25px;line-height:1.55;margin:0;font-weight:300;color:#333}
+.home-page .categories-section{padding:90px 5% 100px;background:#f3f1ee}
+.home-page .categories-section>h2,.home-page .section-title h2{font-size:38px!important;font-weight:400!important;letter-spacing:1px!important}
+.home-page .categories-section>h2{background:none!important;color:#171717!important;padding:0!important;margin:0 auto 45px!important}
+.home-page .categories-section>h2:after{content:"";display:block;width:50px;height:2px;background:#d71920;margin:16px auto 0}
+.home-page .category-grid{max-width:1280px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;background:none}
+.home-page .category-card{height:270px;min-height:270px!important;border:0!important;border-radius:0!important;margin:0!important;padding:0!important;display:flex!important;align-items:flex-end!important;justify-content:flex-start!important;background:#ddd!important;color:#fff!important;overflow:hidden;position:relative;transform:none!important}
+.home-page .category-card:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.78),rgba(0,0,0,.05) 70%);z-index:1}
+.home-page .category-card:hover:before{background:linear-gradient(0deg,rgba(190,0,0,.86),rgba(0,0,0,.12) 75%)}
+.home-page .category-card-image{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;opacity:1!important}
+.home-page .category-card-name{position:relative!important;z-index:2!important;padding:0 24px 22px!important;font-size:20px!important;font-weight:500!important;letter-spacing:1px!important;line-height:1.1!important}
+.home-page .home-slider-section{padding:95px 5% 100px;background:#fff}
+.home-page .section-title{max-width:1280px;margin:0 auto 30px;justify-content:space-between}
+.home-page .section-title h2{text-align:left;margin:0}
+.home-page .view-gallery-button{position:static!important;background:none!important;color:#171717!important;border-bottom:1px solid #171717;padding:8px 0!important;font-size:13px}
+.home-page .home-slider{max-width:1280px;gap:15px}
+.home-page .home-slider-window{aspect-ratio:16/7!important}
+.home-page .home-slide img{object-fit:cover!important}
+.home-page .home-slider-arrow{background:#171717}
+.home-page .home-slider-arrow:hover{background:#d71920}
+.home-page .about-section{padding:100px 5%;background:#171717;color:#fff}
+.home-page .about-content{max-width:1280px;display:grid;grid-template-columns:300px 1fr;gap:100px}
+.home-page .about-content h2{text-align:left;color:#fff;font-size:38px!important;font-weight:400}
+.home-page .about-content h3{color:#d71920}
+.home-page .about-copy p{font-size:18px;line-height:1.9;color:#ddd;margin:0 0 18px}
+.home-page .ask-price-section{padding:95px 5%;background:#f3f1ee}
+.home-page .ask-price-section .price-title{background:none!important;color:#171717!important;padding:0!important;font-size:38px!important;font-weight:400!important}
+.home-page #quotationForm{max-width:900px;background:#fff;border:1px solid #ddd;padding:45px 50px;box-shadow:none}
+.home-page .contact-section{padding:95px 5%;background:#fff}
+@media(max-width:900px){.home-page .hero{height:500px;min-height:500px}.home-page .hero h1{font-size:48px!important}.home-page .intro-strip{grid-template-columns:1fr;gap:25px}.home-page .category-grid{grid-template-columns:repeat(2,1fr)}.home-page .about-content{grid-template-columns:1fr;gap:30px}}
+@media(max-width:600px){.home-page .hero{height:360px;min-height:360px}.home-page .hero h1{font-size:32px!important}.home-page .intro-strip{padding:55px 5%}.home-page .intro-strip p{font-size:19px}.home-page .category-grid{grid-template-columns:1fr}.home-page .category-card{height:210px;min-height:210px!important}.home-page .home-slider-section,.home-page .categories-section,.home-page .about-section,.home-page .ask-price-section,.home-page .contact-section{padding-top:60px;padding-bottom:65px}.home-page #quotationForm{padding:25px 20px}}
+</style>
 </head>
 <body class="home-page">
 <header class="site-header">
@@ -211,7 +260,7 @@ function addHomeSlide(url,i){const slide=document.createElement("div");slide.cla
 async function loadHomePhotos(){try{const res=await fetch(GITHUB_API+"GALLERY?ref=main");if(!res.ok)return;const files=await res.json();const selected=files.filter(file=>file.type==="file"&&/\\.(jpg|jpeg|png|webp|gif)$/i.test(file.name));sliderPhotos=selected.map(file=>file.download_url).filter(Boolean);sliderPhotos.forEach(addHomeSlide);setupSlider();restartSliderTimer()}catch(e){console.error("Gallery load error",e)}}prevButton.onclick=()=>{showSlide(sliderIndex-1);restartSliderTimer()};nextButton.onclick=()=>{showSlide(sliderIndex+1);restartSliderTimer()};window.addEventListener("resize",setupSlider);loadHomePhotos();
 
 const categoryGrid=document.getElementById("categoryGrid");
-function loadCategoryCards(){for(const category of categories){const card=document.createElement("a");card.className="category-card";card.dataset.category=category;card.href="category.html?category="+encodeURIComponent(category);card.innerHTML='<span class="category-card-name">'+trCategory(category)+'</span>';categoryGrid.appendChild(card)}}
+function loadCategoryCards(){for(const category of categories){const card=document.createElement("a");card.className="category-card";card.dataset.category=category;card.href="category.html?category="+encodeURIComponent(category);const photo=mainCategoryPhotos[category];const imageUrl=photo?RAW_BASE+encodeURIComponent(category)+"/"+photo.split("/").map(encodeURIComponent).join("/"):"";card.innerHTML=(imageUrl?'<img class="category-card-image" src="'+imageUrl+'" alt="">':'')+'<span class="category-card-name">'+trCategory(category)+'</span>';categoryGrid.appendChild(card)}}
 loadCategoryCards();
 
 const quotationForm=document.getElementById("quotationForm");

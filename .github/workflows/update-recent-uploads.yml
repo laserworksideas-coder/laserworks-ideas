@@ -1,0 +1,50 @@
+name: Update recent uploads manifest
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  update-manifest:
+    if: "!contains(github.event.head_commit.message, '[skip recent manifest]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Build manifest
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          REPO: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import json, os, subprocess, datetime
+          before=os.environ["BEFORE"]; after=os.environ["AFTER"]
+          files=subprocess.check_output(["git","diff","--name-status",before,after],text=True).splitlines()
+          imgs=[]
+          exts=(".jpg",".jpeg",".png",".webp",".gif")
+          for line in files:
+            parts=line.split("\t")
+            if len(parts)>=2 and parts[0] in ("A","M"):
+              p=parts[-1]
+              if "/" in p and p.lower().endswith(exts) and not p.startswith("MAIN PHOTOS/"):
+                imgs.append(p)
+          ts=subprocess.check_output(["git","show","-s","--format=%cI",after],text=True).strip()
+          path="recent-uploads.json"
+          try:
+            data=json.load(open(path))
+          except:
+            data=[]
+          old={x["path"]:x for x in data if isinstance(x,dict) and "path" in x}
+          for p in imgs: old[p]={"path":p,"timestamp":ts}
+          out=sorted(old.values(),key=lambda x:x["timestamp"],reverse=True)[:500]
+          json.dump(out,open(path,"w"),indent=2,ensure_ascii=False)
+          PY
+      - name: Commit manifest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add recent-uploads.json
+          git diff --cached --quiet || git commit -m "Update recent uploads manifest [skip recent manifest]"
+          git push

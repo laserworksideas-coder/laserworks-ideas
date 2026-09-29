@@ -8,6 +8,66 @@
 <script src="products.js?v=20260922offers8"></script><script src="language.js?v=20260922menuflags2"></script><script>
 const category=new URLSearchParams(location.search).get("category")||"",title=document.getElementById("categoryTitle"),list=document.getElementById("offerList"),main=document.getElementById("categoryMainPhoto"),gallery=document.getElementById("categoryGallery");title.textContent=trCategory(category);
 (subcategories[category]||[]).forEach(x=>{const li=document.createElement("li");li.textContent=trSub(x);list.appendChild(li);});
-let photos=[];async function loadPhotos(){const base="https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/";try{const cr=await fetch("https://api.github.com/repos/laserworksideas-coder/laserworks-ideas/contents/"+encodeURIComponent(category)+"?ref=main");if(!cr.ok)throw new Error("Could not read category folder");const files=await cr.json();const current=Array.isArray(files)?files.filter(f=>f.type==="file"&&/\\.(jpg|jpeg|png|webp|gif)$/i.test(f.name)).map(f=>f.name):[];let recent=[];try{const cc=await fetch("https://api.github.com/repos/laserworksideas-coder/laserworks-ideas/commits?path="+encodeURIComponent(category)+"&per_page=10");const commits=cc.ok?await cc.json():[];const details=await Promise.all((Array.isArray(commits)?commits:[]).map(c=>fetch(c.url).then(r=>r.ok?r.json():null).catch(()=>null)));for(const c of details){if(!c||!Array.isArray(c.files))continue;for(const f of c.files){const prefix=category+"/";if((f.status==="added"||f.status==="renamed")&&f.filename.startsWith(prefix)){const n=f.filename.slice(prefix.length);if(current.some(x=>x.toLowerCase()===n.toLowerCase())&&/\\.(jpg|jpeg|png|webp|gif)$/i.test(n)&&!recent.some(x=>x.toLowerCase()===n.toLowerCase()))recent.push(n);}}}}catch(e){}const ordered=[...recent];for(const n of current)if(!ordered.some(x=>x.toLowerCase()===n.toLowerCase()))ordered.push(n);photos=ordered.map(n=>({name:n,url:base+encodeURIComponent(category)+"/"+encodeURIComponent(n)+"?v="+Date.now()}));}catch(e){console.error("Category gallery load failed:",e);photos=[];}render();const pref=typeof mainCategoryPhotos!=="undefined"?mainCategoryPhotos[category]:null;if(pref)main.innerHTML='<img src="'+base+encodeURIComponent(category)+'/'+encodeURIComponent(pref)+'?v='+Date.now()+'" alt="'+category+'">';}let idx=0;function render(){gallery.innerHTML="";photos.slice(idx,idx+8).forEach(p=>{const d=document.createElement("div");d.className="cat-gallery-item";d.innerHTML='<img src="'+p.url+'" alt="'+category+'">';gallery.appendChild(d);});document.getElementById("prev").style.visibility=idx>0?"visible":"hidden";document.getElementById("next").style.visibility=idx+8<photos.length?"visible":"hidden";}document.getElementById("prev").onclick=()=>{idx=Math.max(0,idx-4);render()};document.getElementById("next").onclick=()=>{idx=Math.min(Math.max(0,photos.length-8),idx+4);render()};loadPhotos();
+let photos=[];
+async function loadPhotos(){
+  const base="https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/";
+  const known=(typeof categoryPhotos!=="undefined"&&Array.isArray(categoryPhotos[category]))?categoryPhotos[category]:[];
+  const fallback=known.map(n=>({name:n,url:base+encodeURIComponent(category)+"/"+encodeURIComponent(n)+"?v="+Date.now()}));
+  try{
+    const cr=await fetch("https://api.github.com/repos/laserworksideas-coder/laserworks-ideas/contents/"+encodeURIComponent(category)+"?ref=main",{cache:"no-store"});
+    if(!cr.ok) throw new Error("Could not read category folder");
+    const files=await cr.json();
+    const current=Array.isArray(files)?files.filter(f=>f.type==="file"&&/\\.(jpg|jpeg|png|webp|gif)$/i.test(f.name)).map(f=>f.name):[];
+    if(!current.length) throw new Error("Category folder returned no images");
+    const has=n=>current.some(x=>x.toLowerCase()===n.toLowerCase());
+
+    let recent=[];
+    try{
+      const cc=await fetch("https://api.github.com/repos/laserworksideas-coder/laserworks-ideas/commits?path="+encodeURIComponent(category)+"&per_page=10",{cache:"no-store"});
+      const commits=cc.ok?await cc.json():[];
+      for(const c of (Array.isArray(commits)?commits:[])){
+        if(!c||!c.sha) continue;
+        const d=await fetch(c.url,{cache:"no-store"}).then(x=>x.ok?x.json():null).catch(()=>null);
+        if(!d||!Array.isArray(d.files)) continue;
+        for(const f of d.files){
+          const prefix=category+"/";
+          if((f.status==="added"||f.status==="renamed")&&f.filename&&f.filename.startsWith(prefix)){
+            const n=f.filename.slice(prefix.length);
+            if(has(n)&&/\\.(jpg|jpeg|png|webp|gif)$/i.test(n)&&!recent.some(x=>x.toLowerCase()===n.toLowerCase())) recent.push(n);
+          }
+        }
+      }
+    }catch(e){}
+
+    const ordered=[];
+    for(const n of recent) if(!ordered.some(x=>x.toLowerCase()===n.toLowerCase())) ordered.push(n);
+    for(const n of known) if(has(n)&&!ordered.some(x=>x.toLowerCase()===n.toLowerCase())) ordered.push(n);
+    for(const n of current) if(!ordered.some(x=>x.toLowerCase()===n.toLowerCase())) ordered.push(n);
+
+    photos=ordered.map(n=>({name:n,url:base+encodeURIComponent(category)+"/"+encodeURIComponent(n)+"?v="+Date.now()}));
+  }catch(e){
+    console.warn("Using saved category list:",e);
+    photos=fallback;
+  }
+  render();
+  const pref=typeof mainCategoryPhotos!=="undefined"?mainCategoryPhotos[category]:null;
+  if(pref) main.innerHTML='<img src="'+base+encodeURIComponent(category)+'/'+encodeURIComponent(pref)+'?v='+Date.now()+'" alt="'+category+'">';
+}
+let idx=0;
+function render(){
+  gallery.innerHTML="";
+  photos.slice(idx,idx+8).forEach(p=>{
+    const d=document.createElement("div");
+    d.className="cat-gallery-item";
+    d.innerHTML='<img src="'+p.url+'" alt="'+category+'">';
+    gallery.appendChild(d);
+  });
+  document.getElementById("prev").style.visibility=idx>0?"visible":"hidden";
+  document.getElementById("next").style.visibility=idx+8<photos.length?"visible":"hidden";
+}
+document.getElementById("prev").onclick=()=>{idx=Math.max(0,idx-4);render()};
+document.getElementById("next").onclick=()=>{idx=Math.min(Math.max(0,photos.length-8),idx+4);render()};
+loadPhotos();
+
 addEventListener("languageChanged",()=>{title.textContent=trCategory(category);list.querySelectorAll("li").forEach((li,i)=>li.textContent=trSub((subcategories[category]||[])[i]));});
 </script></body></html>

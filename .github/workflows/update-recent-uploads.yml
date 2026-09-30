@@ -40,11 +40,36 @@ jobs:
           for p in imgs: old[p]={"path":p,"timestamp":ts}
           out=sorted(old.values(),key=lambda x:x["timestamp"],reverse=True)[:500]
           json.dump(out,open(path,"w"),indent=2,ensure_ascii=False)
+          cats=[
+            "WEDDING","CHRISTENING & NEWBORNS","BIRTHDAY & PARTIES","SEASONAL",
+            "SCHOOL & TEACHER","CORPORATE","PERSONALISED","NAMES, MONOGRAMS & TOPPERS",
+            "CUSTOMISED FIGURES, CUT OUTS & LASER ENGRAVING","INVITATIONS & DESIGN",
+            "BALLOONS, SOAPS & CANDY CAKES","CLOTHING, HATS & TOWELS"
+          ]
+          files_now=subprocess.check_output(["git","ls-tree","-r","--name-only","HEAD"],text=True).splitlines()
+          current={}
+          for cat in cats:
+            prefix=cat+"/"
+            current[cat]=[p[len(prefix):] for p in files_now if p.startswith(prefix) and p.lower().endswith(exts)]
+          manifest={cat:[] for cat in cats}
+          for cat in cats:
+            names=current[cat]
+            present={n.lower() for n in names}
+            for x in out:
+              p=x["path"]
+              if p.startswith(cat+"/"):
+                n=p[len(cat)+1:]
+                if n.lower() in present and n not in manifest[cat]:
+                  manifest[cat].append(n)
+            for n in names:
+              if n not in manifest[cat]:
+                manifest[cat].append(n)
+          json.dump(manifest,open("category-files.json","w"),indent=2,ensure_ascii=False)
           PY
       - name: Commit manifest
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add recent-uploads.json
+          git add recent-uploads.json category-files.json
           git diff --cached --quiet || git commit -m "Update recent uploads manifest [skip recent manifest]"
           git push

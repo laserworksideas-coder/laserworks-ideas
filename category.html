@@ -15,7 +15,7 @@ async function loadPhotos(){
   const fallback=known.map(n=>({name:n,url:base+encodeURIComponent(category)+"/"+encodeURIComponent(n)+"?v="+Date.now()}));
 
   try{
-    const cr=await fetch("https://api.github.com/repos/laserworksideas-coder/laserworks-ideas/contents/"+encodeURIComponent(category)+"?ref=main",{cache:"no-store"});
+    const cr=await fetch("https://api.github.com/repos/laserworksideas-coder/laserworks-ideas/contents/"+encodeURIComponent(category)+"?ref=main&v="+Date.now(),{cache:"no-store"});
     if(!cr.ok) throw new Error("Could not read category folder");
     const files=await cr.json();
     const current=Array.isArray(files)

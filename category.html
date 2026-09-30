@@ -1,30 +1,55 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Laserworks Ideas</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css?v=20260930galleryfix4"></head><body>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Laserworks Ideas</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css?v=20260930galleryfix5"></head><body>
 <header class="site-header"><div class="header-top wrap"><a class="brand" href="index.html"><img src="LOGO.png" alt="Laserworks Ideas"></a><div class="header-contact"><span>Laserworksideas@gmail.com</span><span>WhatsApp / Viber: +357 99 303580</span><a class="top-cta" href="mailto:Laserworksideas@gmail.com?subject=Laserworks%20Ideas%20-%20Message">SEND A MESSAGE</a></div></div><nav class="main-menu"><div class="wrap menu-inner"><a href="index.html">HOME</a><a href="index.html#categories">CATEGORIES</a><a href="gallery.html">GALLERY</a><a href="index.html#about">ABOUT US</a><a href="index.html#ask-price">ASK FOR A PRICE</a><a href="index.html#contact">CONTACT</a></div></nav></header>
 <main class="category-new"><div class="wrap">
 <div class="cat-top"><a href="index.html#categories" class="back-link">← ALL CATEGORIES</a><div class="eyebrow">LASERWORKS IDEAS</div><h1 id="categoryTitle"></h1></div>
 <div class="cat-feature"><div id="categoryMainPhoto" class="cat-main-photo"></div><div class="cat-offers"><div class="eyebrow">WHAT WE OFFER</div><h2>Made for your<br><em>special moments.</em></h2><ul id="offerList"></ul><a href="index.html#ask-price" class="btn btn-dark">ASK FOR A PRICE →</a></div></div>
 <div class="cat-work-head"><div><div class="eyebrow">FROM OUR WORK</div><h2>Ideas made real.</h2></div><div class="cat-arrows"><button id="prev">←</button><button id="next">→</button></div></div><div id="categoryGallery" class="cat-gallery"></div>
 </div></main><footer class="site-footer"><div class="wrap">© 2026 Laserworks Ideas</div></footer>
-<script src="products.js?v=20260930galleryfix4"></script><script src="language.js?v=20260930galleryfix4"></script><script>
+<script src="products.js?v=20260930galleryfix5"></script><script src="language.js?v=20260930galleryfix5"></script><script>
 const category=new URLSearchParams(location.search).get("category")||"",title=document.getElementById("categoryTitle"),list=document.getElementById("offerList"),main=document.getElementById("categoryMainPhoto"),gallery=document.getElementById("categoryGallery");title.textContent=trCategory(category);
 (subcategories[category]||[]).forEach(x=>{const li=document.createElement("li");li.textContent=trSub(x);list.appendChild(li);});
 let photos=[];
 async function loadPhotos(){
   const base="https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/";
+  const api="https://api.github.com/repos/laserworksideas-coder/laserworks-ideas/contents/"+encodeURIComponent(category)+"?ref=main";
+  const fallback=(typeof categoryPhotos!=="undefined"&&Array.isArray(categoryPhotos[category]))?categoryPhotos[category]:[];
   try{
-    const mr=await fetch("https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/category-files.json?v="+Date.now(),{cache:"no-store"});
-    if(!mr.ok) throw new Error("manifest unavailable");
-    const data=await mr.json();
-    const names=Array.isArray(data[category])?data[category]:[];
-    photos=names.map(n=>({name:n,url:base+encodeURIComponent(category)+"/"+encodeURIComponent(n)+"?v="+Date.now()}));
+    const cr=await fetch(api+"&v="+Date.now(),{cache:"no-store"});
+    if(!cr.ok) throw new Error("Could not read category folder");
+    const files=await cr.json();
+    const current=Array.isArray(files)
+      ? files.filter(f=>f.type==="file"&&/\.(jpg|jpeg|png|webp|gif)$/i.test(f.name)).map(f=>f.name)
+      : [];
+    if(!current.length) throw new Error("No images found in category folder");
+
+    let recent=[];
+    try{
+      const rr=await fetch("https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/recent-uploads.json?v="+Date.now(),{cache:"no-store"});
+      if(rr.ok){
+        const data=await rr.json();
+        if(Array.isArray(data)){
+          const prefix=category+"/";
+          const present=new Set(current.map(n=>n.toLowerCase()));
+          recent=data
+            .filter(x=>x&&typeof x.path==="string"&&x.path.startsWith(prefix))
+            .map(x=>x.path.slice(prefix.length))
+            .filter(n=>present.has(n.toLowerCase()));
+        }
+      }
+    }catch(e){}
+
+    const ordered=[];
+    const add=n=>{if(n&&!ordered.some(x=>x.toLowerCase()===n.toLowerCase())) ordered.push(n)};
+    recent.forEach(add);
+    current.forEach(add);
+    photos=ordered.map(n=>({name:n,url:base+encodeURIComponent(category)+"/"+encodeURIComponent(n)+"?v="+Date.now()}));
   }catch(e){
-    console.warn("Could not load category-files.json:",e);
-    const known=(typeof categoryPhotos!=="undefined"&&Array.isArray(categoryPhotos[category]))?categoryPhotos[category]:[];
-    photos=known.map(n=>({name:n,url:base+encodeURIComponent(category)+"/"+encodeURIComponent(n)+"?v="+Date.now()}));
+    console.warn("Using saved category list:",e);
+    photos=fallback.map(n=>({name:n,url:base+encodeURIComponent(category)+"/"+encodeURIComponent(n)+"?v="+Date.now()}));
   }
   render();
   const pref=typeof mainCategoryPhotos!=="undefined"?mainCategoryPhotos[category]:null;
-  if(pref) main.innerHTML='<img src="'+base+encodeURIComponent(category)+'/'+encodeURIComponent(pref)+'?v='+Date.now()+'" alt="'+category+'">';
+  if(pref) main.innerHTML='<img src="'+base+encodeURIComponent(category)+'/'+encodeURIComponent(pref)+'?v="+Date.now()+" alt="'+category+'">';
 }
 let idx=0;
 function render(){

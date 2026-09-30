@@ -49,7 +49,7 @@ async function loadPhotos(){
   }
   render();
   const pref=typeof mainCategoryPhotos!=="undefined"?mainCategoryPhotos[category]:null;
-  if(pref) main.innerHTML='<img src="'+base+encodeURIComponent(category)+'/'+encodeURIComponent(pref)+'?v="+Date.now()+" alt="'+category+'">';
+  if(pref) main.innerHTML='<img src="'+base+encodeURIComponent(category)+'/'+encodeURIComponent(pref)+'?v='+Date.now()+'" alt="'+category+'">';
 }
 let idx=0;
 function render(){

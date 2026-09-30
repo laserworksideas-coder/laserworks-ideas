@@ -30,7 +30,7 @@ async function loadPhotos(){
     // We always filter it against the files that still exist, so deleted photos disappear.
     let recent=[];
     try{
-      const mr=await fetch("/laserworks-ideas/recent-uploads.json?v="+Date.now(),{cache:"no-store"});
+      const mr=await fetch("https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/recent-uploads.json?v="+Date.now(),{cache:"no-store"});
       if(mr.ok){
         const data=await mr.json();
         if(Array.isArray(data)){

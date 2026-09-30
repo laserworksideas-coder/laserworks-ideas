@@ -19,7 +19,7 @@ async function loadPhotos(){
     if(!cr.ok) throw new Error("Could not read category folder");
     const files=await cr.json();
     const current=Array.isArray(files)
-      ? files.filter(f=>f.type==="file"&&/\\.(jpg|jpeg|png|webp|gif)$/i.test(f.name)).map(f=>f.name)
+      ? files.filter(f=>f.type==="file"&&/\.(jpg|jpeg|png|webp|gif)$/i.test(f.name)).map(f=>f.name)
       : [];
     if(!current.length) throw new Error("Category folder returned no images");
 
@@ -30,7 +30,7 @@ async function loadPhotos(){
     // We always filter it against the files that still exist, so deleted photos disappear.
     let recent=[];
     try{
-      const mr=await fetch("recent-uploads.json?v="+Date.now(),{cache:"no-store"});
+      const mr=await fetch("/laserworks-ideas/recent-uploads.json?v="+Date.now(),{cache:"no-store"});
       if(mr.ok){
         const data=await mr.json();
         if(Array.isArray(data)){

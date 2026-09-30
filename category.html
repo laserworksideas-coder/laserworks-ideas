@@ -11,58 +11,20 @@ const category=new URLSearchParams(location.search).get("category")||"",title=do
 let photos=[];
 async function loadPhotos(){
   const base="https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/";
-  const known=(typeof categoryPhotos!=="undefined"&&Array.isArray(categoryPhotos[category]))?categoryPhotos[category]:[];
-  const fallback=known.map(n=>({name:n,url:base+encodeURIComponent(category)+"/"+encodeURIComponent(n)+"?v="+Date.now()}));
-
   try{
-    const cr=await fetch("https://api.github.com/repos/laserworksideas-coder/laserworks-ideas/contents/"+encodeURIComponent(category)+"?ref=main&v="+Date.now(),{cache:"no-store"});
-    if(!cr.ok) throw new Error("Could not read category folder");
-    const files=await cr.json();
-    const current=Array.isArray(files)
-      ? files.filter(f=>f.type==="file"&&/\.(jpg|jpeg|png|webp|gif)$/i.test(f.name)).map(f=>f.name)
-      : [];
-    if(!current.length) throw new Error("Category folder returned no images");
-
-    const same=(a,b)=>a.toLowerCase()===b.toLowerCase();
-    const exists=n=>current.some(x=>same(x,n));
-
-    // recent-uploads.json records the order in which new images were uploaded.
-    // We always filter it against the files that still exist, so deleted photos disappear.
-    let recent=[];
-    try{
-      const mr=await fetch("https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/recent-uploads.json?v="+Date.now(),{cache:"no-store"});
-      if(mr.ok){
-        const data=await mr.json();
-        if(Array.isArray(data)){
-          const prefix=category+"/";
-          recent=data
-            .filter(x=>x&&typeof x.path==="string"&&x.path.startsWith(prefix))
-            .filter(x=>exists(x.path.slice(prefix.length)))
-            .map(x=>x.path.slice(prefix.length));
-        }
-      }
-    }catch(e){}
-
-    const ordered=[];
-    for(const n of recent) if(!ordered.some(x=>same(x,n))) ordered.push(n);
-    for(const n of known) if(exists(n)&&!ordered.some(x=>same(x,n))) ordered.push(n);
-    for(const n of current) if(!ordered.some(x=>same(x,n))) ordered.push(n);
-
-    photos=ordered.map(n=>({
-      name:n,
-      url:base+encodeURIComponent(category)+"/"+encodeURIComponent(n)+"?v="+Date.now()
-    }));
+    const mr=await fetch("https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/category-files.json?v="+Date.now(),{cache:"no-store"});
+    if(!mr.ok) throw new Error("manifest unavailable");
+    const data=await mr.json();
+    const names=Array.isArray(data[category])?data[category]:[];
+    photos=names.map(n=>({name:n,url:base+encodeURIComponent(category)+"/"+encodeURIComponent(n)+"?v="+Date.now()}));
   }catch(e){
-    console.warn("Using saved category list:",e);
-    photos=fallback;
+    console.warn("Could not load category-files.json:",e);
+    const known=(typeof categoryPhotos!=="undefined"&&Array.isArray(categoryPhotos[category]))?categoryPhotos[category]:[];
+    photos=known.map(n=>({name:n,url:base+encodeURIComponent(category)+"/"+encodeURIComponent(n)+"?v="+Date.now()}));
   }
-
   render();
-
   const pref=typeof mainCategoryPhotos!=="undefined"?mainCategoryPhotos[category]:null;
-  if(pref){
-    main.innerHTML='<img src="'+base+encodeURIComponent(category)+'/'+encodeURIComponent(pref)+'?v='+Date.now()+'" alt="'+category+'">';
-  }
+  if(pref) main.innerHTML='<img src="'+base+encodeURIComponent(category)+'/'+encodeURIComponent(pref)+'?v='+Date.now()+'" alt="'+category+'">';
 }
 let idx=0;
 function render(){

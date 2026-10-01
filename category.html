@@ -57,7 +57,7 @@ function render(){
   photos.slice(idx,idx+8).forEach(p=>{
     const d=document.createElement("div");
     d.className="cat-gallery-item";
-    d.innerHTML='<img src="'+p.url+'" alt="'+category+'">';
+    d.innerHTML='<img src="'+p.url+'" alt="'+getImageAlt(category,p.name)+'">';
     gallery.appendChild(d);
   });
   document.getElementById("prev").style.visibility=idx>0?"visible":"hidden";

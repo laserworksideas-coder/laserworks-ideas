@@ -6,6 +6,38 @@
 <div class="cat-work-head"><div><div class="eyebrow">FROM OUR WORK</div><h2>Ideas made real.</h2></div><div class="cat-arrows"><button id="prev">←</button><button id="next">→</button></div></div><div id="categoryGallery" class="cat-gallery"></div>
 </div></main><footer class="site-footer"><div class="wrap">© 2026 Laserworks Ideas</div></footer>
 <script src="products.js?v=20260930galleryfix5"></script><script src="language.js?v=20260930galleryfix5"></script><script>
+function getImageAlt(category,name){
+  const exact={
+    "WEDDING (1).jpg":"Bride and groom wedding hanger","WEDDING (2).jpg":"Wedding house sign","WEDDING (3).jpg":"Wedding church sign","WEDDING (4).jpg":"Personalised bridesmaid box","WEDDING (5).jpg":"Bride's wedding house sign","WEDDING (6).jpg":"Groom's wedding house sign","WEDDING (7).jpg":"Groom's wedding house sign","WEDDING (8).jpg":"Wedding church sign","WEDDING (9).jpg":"Customised wedding boxes","WEDDING (10).jpg":"Wedding house sign","WEDDING (11).jpg":"Wedding house sign","WEDDING (12).jpg":"Wedding house sign","WEDDING (13).jpg":"Wedding house sign","WEDDING-(13).jpg":"Wedding money box","WEDDING-(14).jpg":"Wedding cake topper",
+    "CHRISTENING (2).jpg":"Full christening set","CHRISTENING (3).jpg":"Christening wishes board","CHRISTENING (4).jpg":"Christening wish book","CHRISTENING (6).jpg":"Newborn gift sign","CHRISTENING (7).jpg":"Newborn months calendar","CHRISTENING (8).jpg":"Christening hanger","CHRISTENING (9).jpg":"Newborn gift sign","CHRISTENING (12).jpg":"Christening hanger","CHRISTENING (13).jpg":"Christening photo frame decor gift","CHRISTENING (15).jpg":"Christening money box",
+    "BIRTHDAY (11).jpg":"Mirror gift","BIRTHDAY (12).jpg":"Door hanger","BIRTHDAY (16).jpg":"Customised coasters","BIRTHDAY (2).jpg":"Acrylic keyring","BIRTHDAY (29).jpg":"Photo frame","BIRTHDAY (32).jpg":"Piggy bank","BIRTHDAY (33).jpg":"Customised photo frame magnets","BIRTHDAY (34).jpg":"Customised initial gift","BIRTHDAY (36).jpg":"Customised photo frame","BIRTHDAY (37).jpg":"Customised photo frame","BIRTHDAY (38).jpg":"Customised photo frame","BIRTHDAY (39).jpg":"Customised photo frame","BIRTHDAY (4).jpg":"Piggy bank","BIRTHDAY (6).jpg":"Customised photo frame magnets","BIRTHDAY (7).jpg":"Customised girl's mirror","BIRTHDAY (9).jpg":"Customised initial gift","BIRTHDAY-40.jpg":"Puzzle","BIRTHDAY-41.jpg":"Board game","BIRTHDAY-42.jpg":"Box","BIRTHDAY-43.jpg":"Customised birthday soaps","BIRTHDAY-44.jpg":"Customised birthday soaps","BIRTHDAY-45.jpg":"Mirror keyring",
+    "PERSONALISED (14).jpg":"Customised box","PERSONALISED-11.jpg":"Puzzle figure","SCHOOL (10).jpg":"Custom figures painting","SCHOOL-82.jpg":"Colour paint palette","SCHOOL-88.jpg":"Ruler","SCHOOL-93.jpg":"XOX game","SCHOOL-98.jpg":"Tangram game",
+    "CORPORATE (1).jpg":"Corporate tea box","CORPORATE (5).jpg":"Corporate gift box","CORPORATE (6).jpg":"Corporate photo frames","CORPORATE (7).jpg":"Corporate gift box","CORPORATE (8).jpg":"Corporate USB boxes","CORPORATE (10).jpg":"Corporate gift boxes","CORPORATE (11).jpg":"Corporate wine boxes","CORPORATE (12).jpg":"Corporate keyring","CORPORATE (13).jpg":"Corporate tissue boxes","CORPORATE-(14).jpg":"Corporate tea box","CORPORATE-15.jpg":"Corporate coasters","CORPORATE-16.jpg":"Corporate spin wheel","CORPORATE-17.jpg":"Corporate song keyrings"
+  };
+  if(exact[name]) return exact[name];
+  if(category==="SEASONAL"){
+    const n=name.toLowerCase();
+    if(n.startsWith("christmas")) return "Christmas ornaments";
+    if(n.startsWith("easter")) return "Custom Easter gift ideas";
+    if(n.startsWith("mothers")) return "Custom Mother's Day gifts";
+    if(n.startsWith("fathers")) return "Custom Father's Day gifts";
+    if(n.startsWith("valentines")) return "Custom Valentine's Day gift ideas";
+  }
+  if(category==="SCHOOL & TEACHER") return "Custom student and teacher gift ideas";
+  if(category==="PERSONALISED") return "Personalised gift";
+  if(category==="NAMES, MONOGRAMS & TOPPERS") return "Custom names, monograms and cake toppers";
+  if(category==="CUSTOMISED FIGURES, CUT OUTS & LASER ENGRAVING") return "Customised figures, cut outs and laser engraving";
+  if(category==="INVITATIONS & DESIGN") return "Custom invitations and design";
+  if(category==="BALLOONS, SOAPS & CANDY CAKES"){
+    const n=name.toLowerCase();
+    if(n.startsWith("ballons")) return "Custom balloon gift";
+    if(n.startsWith("soaps")) return "Custom personalised soaps";
+    return "Custom candy cake gift";
+  }
+  if(category==="CLOTHING, HATS & TOWELS") return "Customised clothing, hats and towels";
+  if(category==="CHRISTENING & NEWBORNS" && name.toLowerCase().startsWith("newborns")) return "Newborn gift sign";
+  return category;
+}
 const category=new URLSearchParams(location.search).get("category")||"",title=document.getElementById("categoryTitle"),list=document.getElementById("offerList"),main=document.getElementById("categoryMainPhoto"),gallery=document.getElementById("categoryGallery");title.textContent=trCategory(category);
 (subcategories[category]||[]).forEach(x=>{const li=document.createElement("li");li.textContent=trSub(x);list.appendChild(li);});
 let photos=[];
@@ -49,7 +81,7 @@ async function loadPhotos(){
   }
   render();
   const pref=typeof mainCategoryPhotos!=="undefined"?mainCategoryPhotos[category]:null;
-  if(pref) main.innerHTML='<img src="'+base+encodeURIComponent(category)+'/'+encodeURIComponent(pref)+'?v='+Date.now()+'" alt="'+category+'">';
+  if(pref) main.innerHTML='<img src="'+base+encodeURIComponent(category)+'/'+encodeURIComponent(pref)+'?v='+Date.now()+'" alt="'+getImageAlt(category,pref)+'">';
 }
 let idx=0;
 function render(){

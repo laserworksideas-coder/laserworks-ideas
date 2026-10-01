@@ -1,4 +1,26 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Laserworks Ideas</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css?v=20260930galleryfix5"></head><body>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Laserworks Ideas</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css?v=20260930galleryfix5"><script>
+const categorySEO={
+"WEDDING":{title:"Laser Cut Wedding Gifts & Decorations | Laserworks Ideas",description:"Personalised wedding gifts, signs, hangers, cake toppers and decorations made with laser cutting and engraving in Limassol, Cyprus. We serve customers throughout Cyprus."},
+"CHRISTENING & NEWBORNS":{title:"Christening & Newborn Gifts | Laserworks Ideas Cyprus",description:"Personalised christening and newborn gifts, hangers, wish books, frames and decorations, created with laser cutting and engraving in Limassol, Cyprus."},
+"BIRTHDAY & PARTIES":{title:"Birthday & Party Gifts | Personalised Laser Gifts Cyprus",description:"Personalised birthday and party gifts, photo frames, keyrings, mirrors, games and decorations made with laser cutting and engraving in Limassol, Cyprus."},
+"SEASONAL":{title:"Seasonal Personalised Gifts | Laserworks Ideas Cyprus",description:"Personalised gifts and decorations for Christmas, Easter, Mother's Day, Father's Day and Valentine's Day, created in Limassol, Cyprus."},
+"SCHOOL & TEACHER":{title:"School & Teacher Gifts | Personalised Gifts Cyprus",description:"Personalised school and teacher gifts, educational games, decorations and keepsakes made with laser cutting and engraving in Limassol, Cyprus."},
+"CORPORATE":{title:"Corporate Gifts & Laser Engraving | Limassol Cyprus",description:"Personalised corporate gifts, engraved boxes, wine boxes, keyrings, coasters and business gifts made with laser cutting and engraving in Limassol, Cyprus."},
+"PERSONALISED":{title:"Personalised Gifts | Laser Cutting & Engraving Cyprus",description:"Personalised gifts made from wood, MDF and acrylic, including boxes, frames, keyrings, mirrors and unique designs. Based in Limassol, serving all Cyprus."},
+"NAMES, MONOGRAMS & TOPPERS":{title:"Custom Names, Monograms & Cake Toppers | Cyprus",description:"Custom names, monograms and cake toppers in wood, MDF and acrylic, made with laser cutting in Limassol, Cyprus. Available for customers throughout Cyprus."},
+"CUSTOMISED FIGURES, CUT OUTS & LASER ENGRAVING":{title:"Custom Cut Outs & Laser Engraving | Limassol Cyprus",description:"Custom figures, cut outs and laser engraving in wood, MDF, plywood and acrylic, designed and made in Limassol, Cyprus."},
+"INVITATIONS & DESIGN":{title:"Custom Invitations & Event Design | Limassol Cyprus",description:"Custom invitations and event design for weddings, christenings, birthdays and special occasions, created by Laserworks Ideas in Limassol, Cyprus."},
+"BALLOONS, SOAPS & CANDY CAKES":{title:"Balloons, Personalised Soaps & Candy Cakes | Cyprus",description:"Personalised balloons, soaps and candy cake gifts for birthdays, christenings, weddings and special occasions, created in Limassol, Cyprus."},
+"CLOTHING, HATS & TOWELS":{title:"Personalised Clothing, Hats & Towels | Cyprus",description:"Personalised clothing, hats and towels for gifts, events, schools and special occasions, available from Laserworks Ideas in Limassol, Cyprus."}
+};
+const seoCategory=new URLSearchParams(location.search).get("category")||"";
+const seo=categorySEO[seoCategory];
+if(seo){
+ document.title=seo.title;
+ const m=document.createElement("meta");m.name="description";m.content=seo.description;document.head.appendChild(m);
+ const l=document.createElement("link");l.rel="canonical";l.href=location.origin+location.pathname+"?category="+encodeURIComponent(seoCategory);document.head.appendChild(l);
+}
+</script></head><body>
 <header class="site-header"><div class="header-top wrap"><a class="brand" href="index.html"><img src="LOGO.png" alt="Laserworks Ideas"></a><div class="header-contact"><span>Laserworksideas@gmail.com</span><span>WhatsApp / Viber: +357 99 303580</span><a class="top-cta" href="mailto:Laserworksideas@gmail.com?subject=Laserworks%20Ideas%20-%20Message">SEND A MESSAGE</a></div></div><nav class="main-menu"><div class="wrap menu-inner"><a href="index.html">HOME</a><a href="index.html#categories">CATEGORIES</a><a href="gallery.html">GALLERY</a><a href="index.html#about">ABOUT US</a><a href="index.html#ask-price">ASK FOR A PRICE</a><a href="index.html#contact">CONTACT</a></div></nav></header>
 <main class="category-new"><div class="wrap">
 <div class="cat-top"><a href="index.html#categories" class="back-link">← ALL CATEGORIES</a><div class="eyebrow">LASERWORKS IDEAS</div><h1 id="categoryTitle"></h1></div>

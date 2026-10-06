@@ -80,12 +80,13 @@
 
 <section id="ask-price" class="quote-new"><div class="wrap quote-grid">
  <div><div class="eyebrow">YOUR IDEA → OUR WORK</div><h2>Tell us what<br><em>you have in mind.</em></h2><p>Send the details and we’ll get back to you with a quotation.</p></div>
- <form id="quotationForm" class="quote-form">
-  <div class="form-row"><label>TYPE<select id="type" required><option value="">Select</option><option>NAME</option><option>MONOGRAM</option><option>NUMBER</option><option>WORD</option><option>PHRASE</option><option>OTHER</option></select></label><label>TEXT<input id="text" type="text" placeholder="Your text"></label></div>
-  <div class="form-row"><label>SIZE<select id="size"><option value="">Select size</option><option>2 cm</option><option>5 cm</option><option>10 cm</option><option>15 cm</option><option>20 cm</option><option>30 cm</option><option>40 cm</option><option>50 cm</option><option>60 cm</option><option>70 cm</option><option>80 cm</option></select></label><label>MATERIAL<select id="material"><option value="">Select material</option><option>WOOD</option><option>MDF 3mm</option><option>MDF 4mm</option><option>MDF 6mm</option><option>ACRYLIC GOLD</option><option>ACRYLIC SILVER</option><option>ACRYLIC ROSE GOLD</option><option>ACRYLIC OTHER COLOUR</option></select></label></div>
-  <div class="form-row"><label>QUANTITY<input id="quantity" type="number" min="1" value="1"></label><label>NAME<input id="customerName" required type="text"></label></div>
-  <div class="form-row"><label>PHONE NUMBER<input id="customerPhone" type="tel"></label></div>
-  <label>EMAIL<input id="customerEmail" required type="email"></label><label>ADDITIONAL INFORMATION<textarea id="additional" placeholder="Tell us anything important about your idea"></textarea></label>
+ <form id="quotationForm" class="quote-form" method="POST" action="https://formsubmit.co/laserworksideas@gmail.com">
+  <input type="hidden" name="_subject" value="Laserworks Ideas - Quotation Request">
+  <div class="form-row"><label>TYPE<select id="type" name="type" required><option value="">Select</option><option>NAME</option><option>MONOGRAM</option><option>NUMBER</option><option>WORD</option><option>PHRASE</option><option>OTHER</option></select></label><label>TEXT<input id="text" name="text" type="text" placeholder="Your text"></label></div>
+  <div class="form-row"><label>SIZE<select id="size" name="size"><option value="">Select size</option><option>2 cm</option><option>5 cm</option><option>10 cm</option><option>15 cm</option><option>20 cm</option><option>30 cm</option><option>40 cm</option><option>50 cm</option><option>60 cm</option><option>70 cm</option><option>80 cm</option></select></label><label>MATERIAL<select id="material" name="material"><option value="">Select material</option><option>WOOD</option><option>MDF 3mm</option><option>MDF 4mm</option><option>MDF 6mm</option><option>ACRYLIC GOLD</option><option>ACRYLIC SILVER</option><option>ACRYLIC ROSE GOLD</option><option>ACRYLIC OTHER COLOUR</option></select></label></div>
+  <div class="form-row"><label>QUANTITY<input id="quantity" name="quantity" type="number" min="1" value="1"></label><label>NAME<input id="customerName" name="name" required type="text"></label></div>
+  <div class="form-row"><label>PHONE NUMBER<input id="customerPhone" name="phone" type="tel"></label></div>
+  <label>EMAIL<input id="customerEmail" name="_replyto" required type="email"></label><label>ADDITIONAL INFORMATION<textarea id="additional" name="additional" placeholder="Tell us anything important about your idea"></textarea></label>
   <button class="btn btn-dark" type="submit">SEND QUOTATION →</button>
  </form>
 </div></section>
@@ -101,6 +102,6 @@
 <script>
 const grid=document.getElementById("categoryGrid");
 for(const category of categories){const a=document.createElement("a");a.className="category-row";a.href="category.html?category="+encodeURIComponent(category);a.innerHTML='<span class="cat-number">'+String(categories.indexOf(category)+1).padStart(2,"0")+'</span><span class="cat-name">'+trCategory(category)+'</span><span class="cat-arrow">↗</span>';a.dataset.category=category;grid.appendChild(a);}
-const form=document.getElementById("quotationForm");form.addEventListener("submit",e=>{e.preventDefault();const body='TYPE: '+type.value+'\\n\\nTEXT: '+text.value+'\\n\\nSIZE: '+size.value+'\\n\\nMATERIAL: '+material.value+'\\n\\nQUANTITY: '+quantity.value+'\\n\\nADDITIONAL INFORMATION:\\n'+additional.value+'\\n\\nNAME: '+customerName.value+'\\n\\nPHONE NUMBER: '+customerPhone.value+'\\n\\nEMAIL: '+customerEmail.value;location.href="mailto:Laserworksideas@gmail.com?subject="+encodeURIComponent("Laserworks Ideas - Quotation Request")+"&body="+encodeURIComponent(body);});
+
 addEventListener("languageChanged",()=>{document.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=tr(el.getAttribute("data-i18n")));document.querySelectorAll(".category-row").forEach(el=>el.querySelector(".cat-name").textContent=trCategory(el.dataset.category));});
 </script></body></html>

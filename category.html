@@ -23,7 +23,7 @@ if(seo){
 </script></head><body>
 <header class="site-header"><div class="header-top wrap"><a class="brand" href="index.html"><img src="LOGO.png" alt="Laserworks Ideas"></a><div class="header-contact"><span>Laserworksideas@gmail.com</span><span>WhatsApp / Viber: +357 99 303580</span><a class="top-cta" href="mailto:Laserworksideas@gmail.com?subject=Laserworks%20Ideas%20-%20Message">SEND A MESSAGE</a></div></div><nav class="main-menu"><div class="wrap menu-inner"><a href="index.html">HOME</a><a href="index.html#categories">CATEGORIES</a><a href="gallery.html">GALLERY</a><a href="index.html#about">ABOUT US</a><a href="index.html#ask-price">ASK FOR A PRICE</a><a href="index.html#contact">CONTACT</a></div></nav></header>
 <main class="category-new"><div class="wrap">
-<div class="cat-top"><a href="index.html#categories" class="back-link">← ALL CATEGORIES</a><div class="eyebrow">LASERWORKS IDEAS</div><h1 id="categoryTitle"></h1></div>
+<div class="cat-top"><a href="index.html#categories" class="back-link">← ALL CATEGORIES</a><div class="eyebrow">LASERWORKS IDEAS</div><div class="category-title-row"><h1 id="categoryTitle"></h1><span id="categorySeoLine" class="category-seo-line"></span></div></div>
 <div class="cat-feature"><div id="categoryMainPhoto" class="cat-main-photo"></div><div class="cat-offers"><div class="eyebrow">WHAT WE OFFER</div><h2>Made for your<br><em>special moments.</em></h2><ul id="offerList"></ul><a href="index.html#ask-price" class="btn btn-dark">ASK FOR A PRICE →</a></div></div>
 <div class="cat-work-head"><div><div class="eyebrow">FROM OUR WORK</div><h2>Ideas made real.</h2></div><div class="cat-arrows"><button id="prev">←</button><button id="next">→</button></div></div><div id="categoryGallery" class="cat-gallery"></div>
 </div></main><footer class="site-footer"><div class="wrap">© 2026 Laserworks Ideas</div></footer>
@@ -60,7 +60,21 @@ function getImageAlt(category,name){
   if(category==="CHRISTENING & NEWBORNS" && name.toLowerCase().startsWith("newborns")) return "Newborn gift sign";
   return category;
 }
-const category=new URLSearchParams(location.search).get("category")||"",title=document.getElementById("categoryTitle"),list=document.getElementById("offerList"),main=document.getElementById("categoryMainPhoto"),gallery=document.getElementById("categoryGallery");title.textContent=trCategory(category);
+const categorySeoLine={
+"WEDDING":"Laser Cutting & Engraving in Limassol, Cyprus · Personalised Wedding Gifts & Custom Wedding Decorations",
+"CHRISTENING & NEWBORNS":"Laser Cutting & Engraving in Limassol, Cyprus · Personalised Christening & Newborn Gifts",
+"BIRTHDAY & PARTIES":"Laser Cutting & Engraving in Limassol, Cyprus · Personalised Birthday Gifts & Custom Party Decorations",
+"SEASONAL":"Laser Cutting & Engraving in Limassol, Cyprus · Personalised Seasonal Gifts & Decorations",
+"SCHOOL & TEACHER":"Laser Cutting & Engraving in Limassol, Cyprus · Personalised School & Teacher Gifts",
+"CORPORATE":"Laser Cutting & Engraving in Limassol, Cyprus · Personalised Corporate Gifts & Custom Engraving",
+"PERSONALISED":"Laser Cutting & Engraving in Limassol, Cyprus · Personalised Gifts & Custom Laser Cut Designs",
+"NAMES, MONOGRAMS & TOPPERS":"Laser Cutting & Engraving in Limassol, Cyprus · Custom Names, Monograms & Cake Toppers",
+"CUSTOMISED FIGURES, CUT OUTS & LASER ENGRAVING":"Laser Cutting & Engraving in Limassol, Cyprus · Custom Figures, Cut Outs & Laser Engraving",
+"INVITATIONS & DESIGN":"Laser Cutting & Engraving in Limassol, Cyprus · Custom Invitations & Event Design",
+"BALLOONS, SOAPS & CANDY CAKES":"Laser Cutting & Engraving in Limassol, Cyprus · Personalised Balloons, Soaps & Candy Cake Gifts",
+"CLOTHING, HATS & TOWELS":"Laser Cutting & Engraving in Limassol, Cyprus · Personalised Clothing, Hats & Towels"
+};
+const category=new URLSearchParams(location.search).get("category")||"",title=document.getElementById("categoryTitle"),seoLine=document.getElementById("categorySeoLine"),list=document.getElementById("offerList"),main=document.getElementById("categoryMainPhoto"),gallery=document.getElementById("categoryGallery");title.textContent=trCategory(category);seoLine.textContent=categorySeoLine[category]||"";
 (subcategories[category]||[]).forEach(x=>{const li=document.createElement("li");li.textContent=trSub(x);list.appendChild(li);});
 let photos=[];
 async function loadPhotos(){
@@ -121,5 +135,5 @@ document.getElementById("prev").onclick=()=>{idx=Math.max(0,idx-4);render()};
 document.getElementById("next").onclick=()=>{idx=Math.min(Math.max(0,photos.length-8),idx+4);render()};
 loadPhotos();
 
-addEventListener("languageChanged",()=>{title.textContent=trCategory(category);list.querySelectorAll("li").forEach((li,i)=>li.textContent=trSub((subcategories[category]||[])[i]));});
+addEventListener("languageChanged",()=>{title.textContent=trCategory(category);seoLine.textContent=categorySeoLine[category]||"";list.querySelectorAll("li").forEach((li,i)=>li.textContent=trSub((subcategories[category]||[])[i]));});
 </script></body></html>

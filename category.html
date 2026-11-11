@@ -89,7 +89,7 @@ async function loadPhotos(){
     if(!mr.ok) throw new Error("Could not read category image manifest");
     const manifest=await mr.json();
     if(!manifest||!Array.isArray(manifest[category])) throw new Error("Category missing from image manifest");
-    ordered=manifest[category].filter(n=>typeof n==="string"&&/\\.(jpg|jpeg|png|webp|gif)$/i.test(n));
+    ordered=manifest[category].filter(n=>typeof n==="string"&&/\.(jpg|jpeg|png|webp|gif)$/i.test(n));
     if(!ordered.length) throw new Error("No images listed for this category");
   }catch(manifestError){
     console.warn("Using GitHub folder as image-list fallback:",manifestError);
@@ -99,7 +99,7 @@ async function loadPhotos(){
       if(!cr.ok) throw new Error("Could not read category folder");
       const files=await cr.json();
       const current=Array.isArray(files)
-        ? files.filter(f=>f.type==="file"&&/\\.(jpg|jpeg|png|webp|gif)$/i.test(f.name)).map(f=>f.name)
+        ? files.filter(f=>f.type==="file"&&/\.(jpg|jpeg|png|webp|gif)$/i.test(f.name)).map(f=>f.name)
         : [];
       if(!current.length) throw new Error("No images found in category folder");
       ordered=current;

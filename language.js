@@ -9,6 +9,12 @@ const categoryGreek = {
   "SCHOOL & TEACHER GIFTS":"ΣΧΟΛΙΚΑ & ΔΩΡΑ ΓΙΑ ΔΑΣΚΑΛΟΥΣ",
   "CORPORATE":"ΕΤΑΙΡΙΚΑ ΔΩΡΑ & ΧΑΡΑΞΗ LASER",
   "LASER ENGRAVING":"ΧΑΡΑΞΗ LASER",
+  "CORPORATE BOXES & WINE BOXES":"ΕΤΑΙΡΙΚΑ ΚΟΥΤΙΑ & ΚΟΥΤΙΑ ΚΡΑΣΙΟΥ",
+  "COASTERS, NAME TAGS & SIGNS":"ΣΟΥΒΕΡ, ΚΑΡΤΕΛΑΚΙΑ & ΠΙΝΑΚΙΔΕΣ",
+  "LOGO, PROMOTIONAL & EVENT GIFTS":"ΧΑΡΑΞΗ LOGO, ΠΡΟΩΘΗΤΙΚΑ & ΔΩΡΑ ΕΚΔΗΛΩΣΕΩΝ",
+  "MUGS & TUMBLERS":"ΚΟΥΠΕΣ & ΘΕΡΜΟΣ",
+  "GLASS & LEATHER ENGRAVING":"ΧΑΡΑΞΗ ΣΕ ΓΥΑΛΙ & ΔΕΡΜΑ",
+  "PERSONALISED LASER ENGRAVING":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΗ ΧΑΡΑΞΗ LASER",
   "INVITATIONS & DESIGN":"ΠΡΟΣΚΛΗΣΕΙΣ & DESIGN",
   "BALLOONS, SOAPS & CANDY CAKES":"ΜΠΑΛΟΝΙΑ, ΣΑΠΟΥΝΙΑ & CANDY CAKES",
   "CLOTHING & TOWELS":"ΡΟΥΧΑ & ΠΕΤΣΕΤΕΣ"

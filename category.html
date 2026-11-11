@@ -79,42 +79,37 @@ const category=new URLSearchParams(location.search).get("category")||"",title=do
 let photos=[];
 async function loadPhotos(){
   const base="https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/";
-  const api="https://api.github.com/repos/laserworksideas-coder/laserworks-ideas/contents/"+encodeURIComponent(category)+"?ref=main";
   const fallback=(typeof categoryPhotos!=="undefined"&&Array.isArray(categoryPhotos[category]))?categoryPhotos[category]:[];
+  let ordered=[];
+
+  // Use the automatically updated manifest first. It contains only files
+  // that currently exist and places newly uploaded images at the beginning.
   try{
-    const cr=await fetch(api+"&v="+Date.now(),{cache:"no-store"});
-    if(!cr.ok) throw new Error("Could not read category folder");
-    const files=await cr.json();
-    const current=Array.isArray(files)
-      ? files.filter(f=>f.type==="file"&&/\.(jpg|jpeg|png|webp|gif)$/i.test(f.name)).map(f=>f.name)
-      : [];
-    if(!current.length) throw new Error("No images found in category folder");
-
-    let recent=[];
+    const mr=await fetch("category-files.json?v="+Date.now(),{cache:"no-store"});
+    if(!mr.ok) throw new Error("Could not read category image manifest");
+    const manifest=await mr.json();
+    if(!manifest||!Array.isArray(manifest[category])) throw new Error("Category missing from image manifest");
+    ordered=manifest[category].filter(n=>typeof n==="string"&&/\\.(jpg|jpeg|png|webp|gif)$/i.test(n));
+    if(!ordered.length) throw new Error("No images listed for this category");
+  }catch(manifestError){
+    console.warn("Using GitHub folder as image-list fallback:",manifestError);
     try{
-      const rr=await fetch("https://raw.githubusercontent.com/laserworksideas-coder/laserworks-ideas/main/recent-uploads.json?v="+Date.now(),{cache:"no-store"});
-      if(rr.ok){
-        const data=await rr.json();
-        if(Array.isArray(data)){
-          const prefix=category+"/";
-          const present=new Set(current.map(n=>n.toLowerCase()));
-          recent=data
-            .filter(x=>x&&typeof x.path==="string"&&x.path.startsWith(prefix))
-            .map(x=>x.path.slice(prefix.length))
-            .filter(n=>present.has(n.toLowerCase()));
-        }
-      }
-    }catch(e){}
-
-    const ordered=[];
-    const add=n=>{if(n&&!ordered.some(x=>x.toLowerCase()===n.toLowerCase())) ordered.push(n)};
-    recent.forEach(add);
-    current.forEach(add);
-    photos=ordered.map(n=>({name:n,url:base+encodeURIComponent(category)+"/"+encodeURIComponent(n)+"?v="+Date.now()}));
-  }catch(e){
-    console.warn("Using saved category list:",e);
-    photos=fallback.map(n=>({name:n,url:base+encodeURIComponent(category)+"/"+encodeURIComponent(n)+"?v="+Date.now()}));
+      const api="https://api.github.com/repos/laserworksideas-coder/laserworks-ideas/contents/"+encodeURIComponent(category)+"?ref=main";
+      const cr=await fetch(api+"&v="+Date.now(),{cache:"no-store"});
+      if(!cr.ok) throw new Error("Could not read category folder");
+      const files=await cr.json();
+      const current=Array.isArray(files)
+        ? files.filter(f=>f.type==="file"&&/\\.(jpg|jpeg|png|webp|gif)$/i.test(f.name)).map(f=>f.name)
+        : [];
+      if(!current.length) throw new Error("No images found in category folder");
+      ordered=current;
+    }catch(apiError){
+      console.warn("Using saved category list:",apiError);
+      ordered=fallback.slice();
+    }
   }
+
+  photos=ordered.map(n=>({name:n,url:base+encodeURIComponent(category)+"/"+encodeURIComponent(n)+"?v="+Date.now()}));
   render();
   const pref=typeof mainCategoryPhotos!=="undefined"?mainCategoryPhotos[category]:null;
   if(pref) main.innerHTML='<img src="'+base+encodeURIComponent(category)+'/'+encodeURIComponent(pref)+'?v='+Date.now()+'" alt="'+getImageAlt(category,pref)+'">';

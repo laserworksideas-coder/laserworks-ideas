@@ -1,7 +1,7 @@
-const categoryLabels = {"CORPORATE":"CORPORATE GIFTS & LASER ENGRAVING","PERSONALISED":"PERSONALISED GIFTS & DECOR","CUSTOMISED FIGURES, CUT OUTS & LASER ENGRAVING":"COLOURED FIGURES, CUSTOM CUT OUTS & FOAMBOARDS"};
+const categoryLabels = {"CORPORATE":"CORPORATE GIFTS & LASER ENGRAVING","PERSONALISED":"PERSONALISED GIFTS, DECOR & CUT OUTS","CUSTOMISED FIGURES, CUT OUTS & LASER ENGRAVING":"CUSTOM FIGURES, CUT OUTS & FOAMBOARDS"};
 const categoryGreek = {
-  "PERSONALISED":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΑ ΔΩΡΑ & ΔΙΑΚΟΣΜΗΣΗ",
-  "CUSTOMISED FIGURES, CUT OUTS & LASER ENGRAVING":"ΧΡΩΜΑΤΙΣΤΕΣ ΦΙΓΟΥΡΕΣ, CUSTOM CUT OUTS & FOAMBOARDS",
+  "PERSONALISED":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΑ ΔΩΡΑ, ΔΙΑΚΟΣΜΗΣΗ & CUT OUTS",
+  "CUSTOMISED FIGURES, CUT OUTS & LASER ENGRAVING":"CUSTOM FIGURES, CUT OUTS & FOAMBOARDS",
   "CHRISTENING & NEWBORNS":"ΒΑΠΤΙΣΗ & ΝΕΟΓΕΝΝΗΤΑ",
   "NAMES, MONOGRAMS & TOPPERS":"ΟΝΟΜΑΤΑ, ΜΟΝΟΓΡΑΜΜΑΤΑ & TOPPERS",
   "WEDDING":"ΓΑΜΟΣ",
@@ -14,7 +14,7 @@ const categoryGreek = {
   "CORPORATE BOXES & WINE BOXES":"ΕΤΑΙΡΙΚΑ ΚΟΥΤΙΑ & ΚΟΥΤΙΑ ΚΡΑΣΙΟΥ",
   "COASTERS, NAME TAGS & SIGNS":"ΣΟΥΒΕΡ, ΚΑΡΤΕΛΑΚΙΑ & ΠΙΝΑΚΙΔΕΣ",
   "LOGO, PROMOTIONAL & EVENT GIFTS":"ΧΑΡΑΞΗ LOGO, ΠΡΟΩΘΗΤΙΚΑ & ΔΩΡΑ ΕΚΔΗΛΩΣΕΩΝ",
-  "MUGS & TUMBLERS":"ΚΟΥΠΕΣ & ΘΕΡΜΟΣ",
+  "MUGS & TUMBLERS":"ΚΟΥΠΕΣ & ΘΕΡΜΟΣ","MUG & TUMBLER ENGRAVING":"ΧΑΡΑΞΗ ΣΕ ΚΟΥΠΕΣ & ΘΕΡΜΟΣ",
   "GLASS & LEATHER ENGRAVING":"ΧΑΡΑΞΗ ΣΕ ΓΥΑΛΙ & ΔΕΡΜΑ",
   "PERSONALISED LASER ENGRAVING":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΗ ΧΑΡΑΞΗ LASER",
   "INVITATIONS & DESIGN":"ΠΡΟΣΚΛΗΣΕΙΣ & DESIGN",
@@ -29,7 +29,7 @@ const subGreek = {
   "BABY GIFT SETS":"ΣΕΤ ΔΩΡΩΝ ΓΙΑ ΜΩΡΑ","NEWBORN BOXES":"ΚΟΥΤΙΑ ΝΕΟΓΕΝΝΗΤΟΥ","PERSONALISED BABY GIFTS":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΑ ΔΩΡΑ ΓΙΑ ΜΩΡΑ",
   "BABY CLOTHING":"ΒΡΕΦΙΚΑ ΡΟΥΧΑ","BABY TOWELS":"ΒΡΕΦΙΚΕΣ ΠΕΤΣΕΤΕΣ","BABY NAME DECORATIONS":"ΔΙΑΚΟΣΜΗΣΕΙΣ ΜΕ ΟΝΟΜΑ ΜΩΡΟΥ",
   "NEWBORN KEEPSAKES":"ΑΝΑΜΝΗΣΤΙΚΑ ΝΕΟΓΕΝΝΗΤΟΥ","BABY GIFT BASKETS":"ΚΑΛΑΘΙΑ ΔΩΡΩΝ ΓΙΑ ΜΩΡΑ",
-  "NAMES":"ΟΝΟΜΑΤΑ","MONOGRAMS":"ΜΟΝΟΓΡΑΜΜΑΤΑ","CAKE TOPPERS":"TOPPERS ΤΟΥΡΤΑΣ","FLOWER TOPPERS":"TOPPERS ΛΟΥΛΟΥΔΙΩΝ","NAME & AGE TOPPERS":"TOPPERS ΜΕ ΟΝΟΜΑ & ΗΛΙΚΙΑ","CUSTOMISED TOPPERS":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΑ TOPPERS","WOOD & ACRYLIC CUT OUTS":"ΞΥΛΙΝΑ & ΑΚΡΥΛΙΚΑ CUT OUTS","TABLE DECOR":"ΔΙΑΚΟΣΜΗΣΗ ΤΡΑΠΕΖΙΟΥ","CUSTOMISED DECORATIONS":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΕΣ ΔΙΑΚΟΣΜΗΣΕΙΣ",
+  "NAMES":"ΟΝΟΜΑΤΑ","MONOGRAMS":"ΜΟΝΟΓΡΑΜΜΑΤΑ","CAKE TOPPERS":"TOPPERS ΤΟΥΡΤΑΣ","FLOWER TOPPERS":"TOPPERS ΛΟΥΛΟΥΔΙΩΝ","NAME & AGE TOPPERS":"TOPPERS ΜΕ ΟΝΟΜΑ & ΗΛΙΚΙΑ","CUSTOMISED TOPPERS":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΑ TOPPERS","WOOD & ACRYLIC CUT OUTS":"ΞΥΛΙΝΑ & ΑΚΡΥΛΙΚΑ CUT OUTS","CUSTOM SIGNS":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΕΣ ΠΙΝΑΚΙΔΕΣ","TABLE DECOR":"ΔΙΑΚΟΣΜΗΣΗ ΤΡΑΠΕΖΙΟΥ","CUSTOMISED DECORATIONS":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΕΣ ΔΙΑΚΟΣΜΗΣΕΙΣ",
   "WEDDING SIGNS":"ΠΙΝΑΚΙΔΕΣ ΓΑΜΟΥ","WEDDING BOXES":"ΚΟΥΤΙΑ ΓΑΜΟΥ","CUSTOMISED WEDDING TABLE DECOR":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΗ ΔΙΑΚΟΣΜΗΣΗ ΤΡΑΠΕΖΙΟΥ ΓΑΜΟΥ",
   "WEDDING ACCESSORIES":"ΑΞΕΣΟΥΑΡ ΓΑΜΟΥ","PERSONALISED WEDDING SOAPS":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΑ ΣΑΠΟΥΝΙΑ ΓΑΜΟΥ","PERSONALISED WEDDING GIFTS":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΑ ΔΩΡΑ ΓΑΜΟΥ",
   "INVITATIONS":"ΠΡΟΣΚΛΗΣΕΙΣ","CHRISTMAS":"ΧΡΙΣΤΟΥΓΕΝΝΑ","EASTER":"ΠΑΣΧΑ","VALENTINE'S DAY":"ΑΓΙΟΥ ΒΑΛΕΝΤΙΝΟΥ","MOTHER'S DAY":"ΓΙΟΡΤΗ ΤΗΣ ΜΗΤΕΡΑΣ",

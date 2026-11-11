@@ -1,3 +1,4 @@
+const categoryLabels = {"CORPORATE":"CORPORATE GIFTS & LASER ENGRAVING"};
 const categoryGreek = {
   "CHRISTENING & NEWBORNS":"ΒΑΠΤΙΣΗ & ΝΕΟΓΕΝΝΗΤΑ",
   "NAMES, MONOGRAMS & TOPPERS":"ΟΝΟΜΑΤΑ, ΜΟΝΟΓΡΑΜΜΑΤΑ & TOPPERS",
@@ -6,7 +7,7 @@ const categoryGreek = {
   "BIRTHDAY & PARTIES":"ΓΕΝΕΘΛΙΑ & ΠΑΡΤΙ",
   "PERSONALISED GIFTS":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΑ ΔΩΡΑ",
   "SCHOOL & TEACHER GIFTS":"ΣΧΟΛΙΚΑ & ΔΩΡΑ ΓΙΑ ΔΑΣΚΑΛΟΥΣ",
-  "CORPORATE GIFTS":"ΕΤΑΙΡΙΚΑ ΔΩΡΑ",
+  "CORPORATE":"ΕΤΑΙΡΙΚΑ ΔΩΡΑ & ΧΑΡΑΞΗ LASER",
   "LASER ENGRAVING":"ΧΑΡΑΞΗ LASER",
   "INVITATIONS & DESIGN":"ΠΡΟΣΚΛΗΣΕΙΣ & DESIGN",
   "BALLOONS, SOAPS & CANDY CAKES":"ΜΠΑΛΟΝΙΑ, ΣΑΠΟΥΝΙΑ & CANDY CAKES",
@@ -34,8 +35,8 @@ const subGreek = {
   "CORPORATE BOXES":"ΕΤΑΙΡΙΚΑ ΚΟΥΤΙΑ","WINE BOXES":"ΚΟΥΤΙΑ ΚΡΑΣΙΟΥ","NAME TAGS":"ΚΑΡΤΕΛΑΚΙΑ ΟΝΟΜΑΤΟΣ","RESTROOM SIGNS":"ΠΙΝΑΚΙΔΕΣ WC",
   "CUSTOMISED CORPORATE GIFTS":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΑ ΕΤΑΙΡΙΚΑ ΔΩΡΑ","CORPORATE SIGNS":"ΕΤΑΙΡΙΚΕΣ ΠΙΝΑΚΙΔΕΣ","LOGO ENGRAVING":"ΧΑΡΑΞΗ LOGO",
   "CORPORATE EVENT GIFTS":"ΔΩΡΑ ΕΤΑΙΡΙΚΩΝ ΕΚΔΗΛΩΣΕΩΝ","PROMOTIONAL GIFTS":"ΠΡΟΩΘΗΤΙΚΑ ΔΩΡΑ",
-  "MUGS":"ΚΟΥΠΕΣ","THUMBLERS":"ΘΕΡΜΟΣ","WOOD ENGRAVING":"ΧΑΡΑΞΗ ΣΕ ΞΥΛΟ","ACRYLIC ENGRAVING":"ΧΑΡΑΞΗ ΣΕ ΑΚΡΥΛΙΚΟ",
-  "LEATHER ENGRAVING":"ΧΑΡΑΞΗ ΣΕ ΔΕΡΜΑ","GLASS ENGRAVING":"ΧΑΡΑΞΗ ΣΕ ΓΥΑΛΙ","COLOUR-COATED METAL ENGRAVING":"ΧΑΡΑΞΗ ΣΕ ΜΕΤΑΛΛΟ ΜΕ ΕΠΙΧΡΩΜΑΤΙΣΜΟ","CUSTOM ENGRAVING":"ΠΡΟΣΑΡΜΟΣΜΕΝΗ ΧΑΡΑΞΗ",
+  "MUGS":"ΚΟΥΠΕΣ","TUMBLERS & THERMOS":"ΘΕΡΜΟΣ & ΘΕΡΜΟΚΟΥΠΕΣ","THUMBLERS":"ΘΕΡΜΟΣ","WOOD ENGRAVING":"ΧΑΡΑΞΗ ΣΕ ΞΥΛΟ","ACRYLIC ENGRAVING":"ΧΑΡΑΞΗ ΣΕ ΑΚΡΥΛΙΚΟ",
+  "LEATHER ENGRAVING":"ΧΑΡΑΞΗ ΣΕ ΔΕΡΜΑ","LEATHER CUT OUT & ENGRAVING":"ΚΟΠΗ & ΧΑΡΑΞΗ ΣΕ ΔΕΡΜΑ","GLASS ENGRAVING":"ΧΑΡΑΞΗ ΣΕ ΓΥΑΛΙ","PERSONALISED ITEMS":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΑ ΑΝΤΙΚΕΙΜΕΝΑ","LASER ENGRAVING":"ΧΑΡΑΞΗ LASER","COLOUR-COATED METAL ENGRAVING":"ΧΑΡΑΞΗ ΣΕ ΜΕΤΑΛΛΟ ΜΕ ΕΠΙΧΡΩΜΑΤΙΣΜΟ","CUSTOM ENGRAVING":"ΠΡΟΣΑΡΜΟΣΜΕΝΗ ΧΑΡΑΞΗ",
   "CHRISTENING INVITATIONS":"ΠΡΟΣΚΛΗΣΕΙΣ ΒΑΠΤΙΣΗΣ","WEDDING INVITATIONS":"ΠΡΟΣΚΛΗΣΕΙΣ ΓΑΜΟΥ","BIRTHDAY INVITATIONS":"ΠΡΟΣΚΛΗΣΕΙΣ ΓΕΝΕΘΛΙΩΝ","PARTY INVITATIONS":"ΠΡΟΣΚΛΗΣΕΙΣ ΠΑΡΤΙ","SCHOOL INVITATIONS":"ΣΧΟΛΙΚΕΣ ΠΡΟΣΚΛΗΣΕΙΣ","SEASONAL INVITATIONS":"ΕΠΟΧΙΑΚΕΣ ΠΡΟΣΚΛΗΣΕΙΣ",
   "LOGO DESIGN":"ΣΧΕΔΙΑΣΜΟΣ LOGO","FLYER DESIGN":"ΣΧΕΔΙΑΣΜΟΣ FLYER","BUSINESS CARD DESIGN":"ΣΧΕΔΙΑΣΜΟΣ ΕΠΑΓΓΕΛΜΑΤΙΚΗΣ ΚΑΡΤΑΣ","INVITATION DESIGN":"ΣΧΕΔΙΑΣΜΟΣ ΠΡΟΣΚΛΗΣΗΣ","BROCHURE DESIGN":"ΣΧΕΔΙΑΣΜΟΣ BROCHURE","POSTER DESIGN":"ΣΧΕΔΙΑΣΜΟΣ ΑΦΙΣΑΣ","MENU DESIGN":"ΣΧΕΔΙΑΣΜΟΣ MENU","SOCIAL MEDIA DESIGN":"ΣΧΕΔΙΑΣΜΟΣ SOCIAL MEDIA","LABEL & STICKER DESIGN":"ΣΧΕΔΙΑΣΜΟΣ ΕΤΙΚΕΤΑΣ & STICKER","CATALOGUE DESIGN":"ΣΧΕΔΙΑΣΜΟΣ ΚΑΤΑΛΟΓΟΥ","PACKAGING DESIGN":"ΣΧΕΔΙΑΣΜΟΣ ΣΥΣΚΕΥΑΣΙΑΣ","CUSTOM GRAPHIC DESIGN":"CUSTOM ΓΡΑΦΙΣΤΙΚΟΣ ΣΧΕΔΙΑΣΜΟΣ",
   "BUBBLE BALLOONS":"BUBBLE BALLOONS","PERSONALISED SOAPS":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΑ ΣΑΠΟΥΝΙΑ","CANDY CAKES":"CANDY CAKES","CANDY BOUQUETS":"CANDY BOUQUETS","PERSONALISED BALLOON GIFTS":"ΠΡΟΣΩΠΟΠΟΙΗΜΕΝΑ ΔΩΡΑ ΜΕ ΜΠΑΛΟΝΙΑ",
@@ -55,7 +56,7 @@ const uiGreek = {
 };
 function getLanguage(){return localStorage.getItem("lw-language")||"en";}
 function setLanguage(lang){localStorage.setItem("lw-language",lang); applyLanguage();}
-function trCategory(v){return getLanguage()==="el" ? (categoryGreek[v]||v) : v;}
+function trCategory(v){const label=categoryLabels[v]||v;return getLanguage()==="el" ? (categoryGreek[v]||label) : label;}
 function trSub(v){return getLanguage()==="el" ? (subGreek[v]||v) : v;}
 function tr(v){return getLanguage()==="el" ? (uiGreek[v]||v) : v;}
 function applyLanguage(){
